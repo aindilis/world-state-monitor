@@ -1,0 +1,521 @@
+It is clear that FR has the lowest cost
+when modification queries in the network is below 25%.
+As the
+percentage of modification queries increases, FR becomes less
+attractive than the two partial data replication approaches as
+the benefit of full data locality is offset by the high update
+propagation costs.
+The materialized view approach (MV)
+becomes the most attractive alternative when the modification
+queries varies between 25% and 60%.
+TIF becomes the
+dominant approach when modification queries exceeds 60%.
+The benefit of TIF is that it excludes the time sensitive data
+from replication and, in the best case, as assumed in this analysis, there is no update propagation.
+However, TIF requires
+data transmission to answer queries accessing remote time
+sensitive data.
+MV, on the other hand, does not require any
+data transmission because it materializes these data into local
+replicas.
+As such, MV benefits from lower update propagation
+costs at low modification query percentages.
+As modification
+queries increase, MV is overwhelmed with materialized view
+updates and is surpassed by TIF.
+Note that when all the queries
+in the network are modification queries, the costs for NR, MV,
+and TIF are the same because there is no data replication for
+MV and TIF.
+Thus, the three cost lines in Fig.
+6 merge when
+the percentage of modification queries is 100%.
+B. The Effect of Network Size
+When the size of the network increases, TIF becomes
+even more attractive.
+Fig.
+7 shows the cost lines of the four
+strategies when the number of nodes is increased from 5 to
+10 with everything else being the same.
+Here, MV dominates
+FR at 5% as against 25% modification queries in five-node
+network.
+This is because there are more nodes (nine rather than
+four) requiring the propagation.
+Since update propagation is
+more expensive than data retrievals, the benefit of data locality
+of FR is offset more quickly in a larger network.
+TIF becomes
+the preferred strategy at 30% modification queries as against
+60% in the five-node network.
+As more materialized views
+may be required in a larger network and, consequently, higher
+cost is incurred in maintaining data currency.
+NR becomes the
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+204
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+"i
+70
+Fig.
+8.
+Costs of the four strategies (2000 base queries, 10 nodes).
+most effective strategy when more than 95% are modification
+queries.
+Saving in the retrievals of remote time invariant data
+does not offset the cost of TIF creation as it does in a smaller
+network.
+its performance with that of non-replication, full-replication,
+and materialized view approaches using simulation.
+The initial
+results are promising.
+It shows that TIF approach can be
+effective under the following conditions:
+1) The percentage of TSA's is low, i.e., most of the data
+C. The Effect of Number of Queries
+is time invariant;
+2) The percentage of modification queries is high, and
+In the above analysis the number of base queries in the
+3 ) The size of the network is large.
+network is set to 200.
+This parameter represents the total
+The current research can be extended in the following
+number of unique queries in the network.
+For a 10-node
+network with 2000 base queries the costs of the four strategies directions:
+are plotted in Fig.
+8.
+We observe that TIF would not become
+1) Improving the precision of time-sensitivity dejnition.
+The
+the preferred strategy until modification queries reaches SO%,
+definition of time-sensitivity is done to attribute level.
+A
+which is higher than that in the 200 base queries network
+more precise definition such as at the value range level
+(30%).
+The increase in the number of retrieval queries requires
+could provide more data to time invariant fragments and
+higher retrieval costs of time sensitive data, and, consequently,
+improve the percentage of local processing.
+delays the low cost lead of TIF.
+NR is never attractive unless
+2) Refreshing TIF's.
+TIF's are created independently for
+all the queries are modification queries.
+The increases in
+each application session.
+Time invariant fragments
+relative magnitude of both retrieval and modification costs to
+across sessions may overlap, i.e. part of data in the time
+TIF creation cost makes NR more difficult to surpass TIF.
+invariant fragments created in one session is still valid
+The above reasoning shows that:
+and can be used in another session (s).
+The detection
+of these common time-invariant data will reduce data
+1) FFt is still the best strategy for small and/or nontransmission cost.
+modification-query networks,
+2) MV has a larger dominance area,
+3) TIF also has a larger dominance area and a flatter
+dominance line, and
+APPENDIX
+4, NR has a much flatter dominance line and does not
+Notation, Formulation, and Values of Parameters for the
+become attractive until at very high modification per- costs of the Four Data Allocation/Replication Approaches
+centages and the network size exceeding 100 nodes.
+Notation.
+The following notations are used in formulating
+the costs of the four approaches:
+V. CONCLUSION
+N Number of nodes in the network.
+This paper presents a learning based approach to the creation
+Qn Total number of base queries in the network.
+These
+are unique queries inquired in the network.
+Additional
+and allocation of time invariant fragments.
+For an application
+session, first, the time-invariant fragments at a node are defined
+retrieval queries are added when the network expands
+through conceptual aggregation of expressions in the query
+and the volume for each node is calculated through a
+history.
+Next, a set of queries to retrieve remote data for the
+distribution factor, as will be explained later.
+creation of time invariant fragments are generated.
+Finally,
+PmqPercentage of modification queries in the network.
+these remote data retrieval queries are executed to build time
+Qm; Number of modification queries at node i.
+invariant fragments and transmitted to the destination node.
+CEIQmi = Q;LLf'mp.
+To demonstrate the usefulness of the TIF approach and
+QTi Number of retrieval queries at node i.
+the conditions under which it may work best, we compare
+Qi Number of queries at node i. Qi = QTi Qm;.
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI et 01.: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+R, Replication factor of network retrieval queries per addi-
+205
+overhead includes verification of the appropriateness
+of the modification, transmission of modified data
+back to the remote nodes from modification originating node, locking of the multiple copies if necessary,
+verification message of the modification from remote
+nodes, etc., are required for modification queries.
+Thus, M, > 1.
+R M Efficacy
+~
+factor of a materialized view refresh method
+such as differential files, etc. It represents the ratio
+of entire-view-refresh cost incurred when a refresh
+method is applied.
+The lower the value, the more
+cost effective the refresh method is.
+RFR Efficacy factor of a full-replication update propagation method.
+The lower the value, the more cost
+effective the propagation method is.
+Eri Expansion factor from average data retrieved per query
+to overall coverage of data retrieved by queries of node
+i. A small value of Eri indicates that the retrieval
+queries at node i access large amount of common
+= N.
+remote data.
+D,i Distribution factor of network retrieval queries to node
+E,; Expansion factor from remote modification data to
+i. Le., Qri = & ~ *-Pmq)*[l+
+(l
+(N- l)”Rp]/N*Dri,
+overall modified data, both local and remote, by
+where N > 1, CL1Drz= N .
+queries of node i . A small value of E,; indicates
+P,; Percentage of modification queries at node i . P,i =
+that a large portion of data modified by the queries at
+Qmi/Qinode i are stored at local base tables.
+Arri Average percentage of retrieval query data is remote
+P,,,
+Percentage of network modification queries modify
+for node $i$ queries.
+data materialized in the views in the network.
+Amri Average percentage of modification query data is
+Pmvmi Percentage of network modification queries modify
+remote for node i queries.
+data materialized in the view at node i. The number
+T, Threshold network size for retrieval queries.
+When the
+of modification queries is Qn*Pmq*
+Pmvmi.
+network is small, it is easier to achieve high data
+Ma Percentage of Pnmvm
+allocated to node i. Thus,
+locality through database partition.
+As the network
+Pmvmi = Pnmvm*Mi.
+size increases, the maintenance of high data locality
+CNR Total costs of non-replication strategy.
+becomes more difficult.
+When the expansion of the
+CFR Total costs of full-replication strategy.
+network exceeds a threshold size, the locality of data
+CMVTotal costs of materialized view strategy.
+is sharply reduced to a very low level because the size
+CTIF Total costs of TIF strategy.
+of the unpartitioned base table is fixed and too much
+Major
+assumptions To simplify the complexity of the probpartitioning will result in meaningless fragments.
+The
+lem, we assume the following:
+larger T, is the larger the network can expand without
+1) Data storage/maintenance cost is negligible.
+a sharp reduce of data locality.
+To capture this nature
+2) Unit data transmission costs between any two nodes are
+of data locality, we propose that
+equal.
+Arri =1) [(N - 1)/N]*1.1(N-TT)/2, if N < T,.
+3) Database directory is replicated at all the nodes, i.e., the
+‘
+possible location of data can be identified locally.
+2) [ ( N - l)/N]*[l- e(TT-N)/2], if N L 3T,.
+4) Messages for requesting remote data in retrieval queries
+When N = 1, Arrl = 0.
+are included in the cost of the transmissions of the
+T, Threshold network size for modification queries.
+It is
+requested data.
+The messages for modifying remote data
+similar to T,.
+except it is for modification queries.
+Thus,
+are also included in the remote modification cost.
+Typical
+messages include requesting for locks at remote nodes,
+Armi =1) [(N - 1)/N]*1.1(N-Tm)/2, if N < T,
+granting locks from remote nodes, and requesting for
+2) [ ( N - l)/N]*[l
+- e(Tm-N)/21, if N 2 T,.
+releasing locks at remote nodes.
+To capture the relative
+higher cost of modification to retrieval queries for the
+When N = 1, Arml = 0.
+same data, we include a cost multiplier for modification
+PrtsaiPercentage of node i retrieval queries retrieve TSA’s.
+queries.
+Its values are assumed to be 1.5 in this analysis.
+Artsai Average coverage of remote TSA’s by the retrieval
+The value means a modification query is 50% more
+queries of node i .
+Mm Cost multiplier for modification queries.
+It is more
+costly than a retrieval query to access the same amount
+costly to modify a data item than to retrieve it because
+of remote data.
+The effect of the communication cost of
+of additional operations and data transmissions.
+This
+these messages in the design of distributed systems has
+tional node.
+When a node is broken into multiple nodes
+(e&.
+West Coast is broken into Washington, Oregon,
+Northern California, and Southern California), a query
+in the original topology can be requested by one or more
+nodes in the new network because the nodes sharing
+the query result in the old network can now inquire
+themselves.
+The number of such additional queries is
+R, percent of the network base retrieval queries for
+each additional node.
+Hence, the number of retrieval
+queries = Qk(1- Pmq) * [l ( N - l)*&],N> 1.
+Since the number of retrieval queries increases as the
+network expands, the number of queries in the network
+also increases.
+D,i Distribution factor of network modification queries
+to node i. That is, Qmi = Qn * Pmq/N*Dmz.
+Thus,
+N
+N
+C i = 1 Q m i = Cz,lQn*Pmq/N*L”i = Qn*P
+mq
+because the number of modification queries in the
+network is assumed to be a constant.
+Therefore,
+cE~D,~
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+been studied.20
+Additional costs for unsuccessful retrieval and modification queries are assumed to be zero.
+The amount of data transmitted in refreshing a materialized view is lower than that of creating the entire
+view.
+Whenever a discrepancy between the data in the
+view and that in the base table occurs (because of
+a modification query), only a portion of the view is
+refreshed.
+Various materialized view refresh techniques
+have been proposed and the effectiveness of these techniques depends upon environments under which they
+are utilized.
+To capture the performance of different
+materialized view refresh techniques, we include an
+efficacy factor in our model.
+In the current analysis, we
+assume a value of lo%, which indicates that on average
+only 10%of the view is refreshed to maintain the desired
+level of currency of data, although this may depend upon
+the refresh strategy selected.
+The amount of data transmission in maintaining database
+currency for full-replication strategy is not proportional
+to the number of nodes.
+As for materialized views,
+more effective update propagation techniques could be
+utilized to reduce currency maintenance cost.
+To capture
+this phenomenon, we include an efficacy factor in our
+model similar to that for materialized views.
+We assume
+a 10% value for the factor in the current analysis.
+The
+value indicates that on average only 10% of the modified
+data are transmitted to other nodes to maintain database
+currency, although this may vary from system to system.
+The value of a parameter is the same for all the nodes.
+Heterogeneous network nodes are expected in practice.
+But to keep the analysis from being too complicated,
+we assume the same value for a parameter across the
+network.
+Cost formulation.
+The costs of the four strategies are
+formulated as follows:
+Non-Replication
+N
+CNR= C [ A r r i
+(1 - Pmi)]
+Qi
+i=l
+(Retrieval Cost)
+N
++ Mm
+C[Amri
+Qi
+N
++ M, C [ A m r ; Q i Pmi](Modification Cost)
+i=l
++ RMV Mm [ E r i Arri Qn p m q Pmvmi]
+0
+0
+0
+(Refresh Cost)
+Time-Invariant Fragmentation
+N
+[E,;0 Arri 0 (1 - Artsa;)]
+CTIF=
+(Creation Cost)
+i=l
+N
++C[Arri
+Artsai
+(1 - Pmi)
+Qi
+Prtsai]
+i=l
+(TSA’s Retrieval Cost)
++ M,
+N
+0
+C [ A m r i0 Qi
+0
+Pm;XModification Cost)
+i=l
+Parameter Values.
+The parameter values used in the current
+study are based on realistic business scenarios.
+They are as
+follows:
+Artsai random number between 0% and loo%, with 80%
+probability of being below 20%, 15% probability of
+being between 20% and 50%, and 5% probability of
+being above 50%
+Dmi 1
+Dri 1
+Eli 2.5
+Emi 3
+M i 10%
+M, 1.5%
+f‘nmvm
+10%
+Prtsai random number between 0% and loo%, with 80%
+probability of being below 20%, 15% probability of
+being between 20% and 50% and 5%$ probability
+of being above 50%
+R, 1%
+RMV 10%
+RFR 10%
+T, 50
+T, 50
+Pmi]
+i=l
+REFERENCES
+(Modification Cost)
+Full-Replication
+N
+CFR= M,
+0
+( N - 1)0 RFR0 C[Em
+0 Amri
+i 0 Q i 0 Pmi]
+i=l
+(Modification Cost)
+Materialized Views
+(Creation Cost)
+[I] M. E. Adiba and B. G. Lindsay, “Database snapshots,” in Proc.
+Int.
+Con$ VLDB, Montreal, PQ, Canada, 1980, pp.
+8691.
+[2] R. Alonso, D. Barbara, H. Garcia-Molina, and S. Abad, “Quasi-copies:
+Efficient data sharing for information retrieval systems,” in Lecture
+Notes in Computer Science, vol.
+303, J. W. Schmidt, S. Ceri, and M.
+Missikoff, ed.
+Springer-Verlag, 1988, pp.
+443-468.
+[3] P. M. G. Apers, “Data allocation in distributed database systems,” ACM
+TODS, vol.
+13, no. 3, pp.
+263-304, 1988.
+[4] J. Blakeley, P. Larson, and F. Tompa, “Efficiently updating materialized
+views,” ACM SIGMOD 86, pp.
+61-71, 1986.
+[5] R. G. Casey, “Allocation of copies of a file in an information network,”
+in Proc.
+Spring Joint Computer Con$, AFIPS, 1972.
+[6] S. Ceri, S. Navathe, and G. Wiederhold, “Distribution design of logical
+database schemas,” IEEE Trans.
+Sofrware Eng., pp.
+487-504, 1983.
+[7] S. Ceri, B. Pemici, and G. Wiederhold, “Optimization problems and solution methods in the design of data distribution,” Information Systems,
+vol.
+14, no. 3, pp.
+261-272, 1989.
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI et a).: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+A. Chaturvedi,G. Hutchinson,and D. Nazareth, “A synergisticapproach
+to manufacturing systems control using machine learning,” J. Intelligent
+Manufacturing, vol.
+3, pp 43-57, 1992.
+W. W Chu, “Optimal file allocation in a multiple computer system,”
+IEEE Trans.
+Computers, vol.
+C-18, 1969.
+L. W. Dowdy and D. V. Foster, “Comparative models of the file
+assignment problem,” ACM Computing Surveys, vol.
+14, no. 2, pp.
+287-313, 1982.
+A. Dutta, “Modeling of multiple copy update costs for file allocation
+in distributed databases,” Int.
+J. Computer and Info.
+Sci., vol.
+14, no. 1,
+pp.
+29-34, 1985.
+E. R. Hanson, “A performance analysis of view materialization strategies,” in Proc.
+ACM-SIGMOD Int.
+Con& Manage.
+of Data, 1987, pp.
+44w53.
+B. Kahler and 0.
+Risnes, “Extending logging for database snapshot
+refresh,” in Proc.
+Int.
+Con$ VLDB, 1987, pp.
+389-398.
+B. Lindsay, L. Haas, C. Mohan, H. Pirahesh, and P. Wilms, “A
+snapshot differential refresh algorithm,” in Proc.
+ACM-SIGMOD Int.
+Con5 Manage.of Data, 1986, pp.
+53-60.
+S. Navathe, S. Ceri, G. Wiederhold, and J. Dou, “Vertical partitioning
+algorithms for database design,” ACM TODS, vol.
+9, no. 4, pp.
+680-710,
+1984.
+S. Navathe and M. Ra, ‘Vertical partitioning for database design: A
+graphical algorithm,” in Proc.
+ACM-SIGMOD Int.
+Cons Manage.
+of
+Data, 1989, pp.
+440-450.
+T. R. Rakes,--L.
+S. Franz, and A, Sen, “A heuristic approximation
+for reducing problem size in network file allocation models,” Comput.
+BrOps.

@@ -1,0 +1,599 @@
+informs
+Information Systems Research
+Vol.
+16, No. 1, March 2005, pp.
+47–60
+issn 1047-7047 eissn 1526-5536 05 1601 0047
+®
+doi 10.1287/isre.1050.0043
+© 2005 INFORMS
+Competition Among Sellers in Online Exchanges
+Subhajyoti Bandyopadhyay
+Warrington School of Business, University of Florida, Gainesville, Florida 32611,
+shubho.bandyopadhyay@cba.uﬂ.edu
+John M. Barron, Alok R. Chaturvedi
+Krannert Graduate School of Management, Purdue University, West Lafayette, Indiana 47907
+{barron@mgmt.purdue.edu, alok@mgmt.purdue.edu}
+W
+ith the advent of the Internet, and the minimal information technology requirements of a trading partner
+to join an exchange, the number of sellers who can qualify and participate in online exchanges is greatly
+increased.
+We model the competition between two sellers with different unit costs and production capacities
+responding to a buyer demand.
+The resulting mixed-strategy equilibrium shows that one of the sellers has a
+normal high price with random sales, while the other seller continuously randomizes its prices.
+It also brings
+out the inherent advantages that sellers with lower marginal costs or higher capacities have in joining these
+exchanges, and provides a theoretical basis for understanding the relative advantages of various types of sellers
+in such exchanges.
+Key words: online exchanges; reverse auctions; pricing power; mixed-strategy equilibria
+History: Tridas Mukhopadhyay, Senior Editor; H. R. Rao, Associate Editor.
+This paper was received on
+December 20, 2002, and was with the authors 11 months for 2 revisions.
+Introduction
+An example of a successful exchange is ChemConnect, a consortia-backed exchange connecting buyers
+and sellers in industries such as chemicals, plastics,
+pharmaceuticals, paper, and so on.
+In 2002, its transaction volume exceeded $8.8 billion.
+Another prominently mentioned example is Covisint, the online
+marketplace formed by the Big Three automakers.
+In the ﬁrst six months of 2001, the founders of
+Covisint had channeled $33 billion, or 13% of their
+annual purchase transactions, through the exchange
+(Helper and MacDufﬁe 2001).2 A research report by
+Roland Berger (2000), a specialized automotive industry consulting ﬁrm, estimates that 33% of the cost
+savings in the North American auto industry will
+Online exchanges for business-to-business (or B2B)
+transactions have become ubiquitous in industries
+ranging from automotive to retailing.1 The Wall
+Street Journal (Angwin 2003) mentions the remarkable
+turnaround of the B2B Internet commerce sector, and
+that U.S. businesses spent $482 billion in B2B transactions, up 242% from two years earlier.
+The online
+research and consulting ﬁrm Jupiter Media Metrix predicts $5.4 trillion in goods and services will be transacted online among businesses by 2006, and a more
+optimistic Gartner Group forecast estimates worldwide B2B commerce to swell to $5.9 trillion by the end
+of 2004.
+Forrester Research indicates that in the third
+quarter of 2001, 49% of organizations that buy more
+than $1 billion per year reported using an online auction, with most of them subsequently increasing their
+usage of these venues.
+2
+Covisint has since sold off its auction division to FreeMarkets,
+a leading B2B exchange, and has reinvented itself as a B2B solutions provider and standards maker for the automobile industry.
+Although the automotive industry continues to implement B2B
+solutions for communication, collaboration, and procurement, Covisint has decided to concentrate on the long-term beneﬁts of developing industrywide solutions and standards that promote B2B
+practices within the industry.
+1
+Zhu (2004) deﬁnes a B2B exchange as “an online platform that
+creates a trading community linked by the Internet and provides
+the mechanism for B2B interactions using industry-wide data standards and computer systems” (p. 670).
+47
+48
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+come from purchase-related savings fueled by Internet
+technologies.
+Three prominent and successful private exchanges
+that are worth mention in the present context are GE
+Global eXchange Services (GXS), with 100,000 trading partners (Tomak and Xia 2002), Dow Chemical
+Co.
+(which now conducts 15% of its business online,
+a ﬁve-fold increase over 2,000 levels) (Angwin 2003),
+and Wal-Mart, which started its own private exchange
+in 2001.
+Another growing trend is to use specialized
+B2B software for private auctions.
+For example, Gateway Inc. has extensively used Spend Management
+Solutions from Ariba, one of the largest B2B solutions providers, to procure its components from Asian
+manufacturers for its home electronics business.3
+Carrier Corp., the world’s largest manufacturers of
+air conditioners and one of the pioneers of using
+online exchanges, quantiﬁed its own beneﬁts of using
+this mechanism.
+By putting its requirements online
+through FreeMarkets, and thereby getting a larger
+number of sellers to bid for the requirements, the
+company realized average savings of 15% on the cost
+of components, amounting to more than $100 million
+(Fast Company 2001) of savings in the year 2000.
+The
+company ﬁrmly believes that the online exchanges
+can be a powerful cost-cutting tool when there are
+several vendors from which to choose, especially in
+the current environment of worldwide sourcing for
+components in the manufacturing sector.
+ChemConnect provides the example of Sunoco Inc., a leading
+manufacturer and marketer of petroleum and petrochemical products, which expanded its universe of
+sellers by two and realized cost savings of 12%.4
+3
+Waltner (1999) gives the example of the oil-drilling company
+Schlumberger Ltd. that realized a triple-digit return on investment
+(ROI) from such online procurement software.
+4
+Not all transactions can be channeled through an exchange, however.
+Our paper analyzes the competition among sellers in a fairly
+general setting, regardless of industry, but the model is not applicable when the goods are heterogeneous (where other factors such
+as quality variance, delivery schedules, and so on take precedence),
+or when the supplier has a strategic relationship with the buyer
+ﬁrm (such as developing new technologies).
+Katok and Roth (2004)
+points out that most B2B auctions are held for homogeneous goods.
+As the Chief Information Ofﬁcer (CIO) of a supermarket retailer
+comments in Barlas (2003), one cannot go to Procter and Gamble
+to reverse auction Tide, but the process (through FreeMarkets) has
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+B2B exchanges reduce transaction costs, add product and pricing transparency, generate market liquidity, and facilitate bidding by a broad spectrum
+of potential suppliers in a standardized platform
+(Zhu 2002).
+In this paper, we analyze the competition between sellers who are bidding for the business
+of large buyers.
+This sort of competition is common in online exchanges that are called “buy-centric
+markets” or “procurement hubs” in industry parlance.
+(All the previously mentioned exchanges are
+examples of such buy-centric markets.)
+Although raw
+materials and components seem to be natural candidates to be traded on such exchanges, as the example of Wal-Mart’s private exchange shows, any large
+buyer of relatively homogeneous goods will have signiﬁcant interests in joining an exchange.
+This homogeneity might come about in two ways: (1) where the
+buyer ﬁrm is chieﬂy concerned with lowering costs
+of the ﬁnal product so that price becomes the primary differentiator, and (2) where after meeting the
+other criteria for selection (quality control, delivery
+times, reliability, and so on), price remains as the surviving differentiator.
+Thanks to the open standards of
+these online technologies, the barrier to entry for a
+new seller has become very low, compared with the
+extremely costly interorganizational systems (or IOSs)
+that were common a few years back.
+One result is the
+increasing diversity of the sellers that compete for a
+request for proposal online.
+Most B2B auctions are used to transact huge quantities of homogeneous goods (Katok and Roth 2004).
+We analyze the case of competition between heterogeneous sellers of a single raw material or component
+vying for business from a single large buyer within
+a buy-centric B2B exchange framework.
+We concentrate on the mechanism of a one-sided, sealed-bid
+reverse auction.
+We assume that open standards eliminate a capacity constraint in that all sellers combined
+can supply the entire demand.
+Individual ﬁrms, however, cannot fulﬁll the entire market’s demand.
+This
+means that although there is a competition between
+the ﬁrms to be the low-price bidder (for prices above
+a ﬁrm’s marginal cost), it is not as extreme as a
+been successful for the company in decreasing prices up to 25% in
+nonbranded segments such as vegetables or frozen foods or indirect items such as personal computers or stationery.
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+Bertrand game5 that results in prices equal to marginal cost.
+As the nature of the equilibrium shows,
+however, there remains an incentive to be the lowprice bidder and to have the ﬁrst invitation to supply
+a requirement.
+Our prior analysis (Bandyopadhyay and Barron
+2004) considers the competition among sellers with
+the same marginal costs of production and capacities.
+Although the analysis shows the basic nature of the
+equilibrium (for example, the existence of a mixedstrategy equilibrium for the sellers that randomize
+their prices in an interval), it does not consider the
+characteristics of equilibrium when sellers differ, a
+key feature of B2B exchanges because they allow participation by a variety of sellers.
+In this paper, we
+arrive at an explicit characterization of an equilibrium
+where the sellers have different marginal costs and
+capacities, and can affect changes to both these strategic variables to compete effectively in this new market
+environment.
+The results provide a theoretical basis
+for understanding the effect of these two variables in
+electronic transactions.
+Literature Review
+Electronic exchanges can be thought of as intermediaries that bring together buyers and sellers.
+Intermediaries have been analyzed in the economics literature
+variously as time-saving agents, value-added agents,
+and experts (see, for example, Rubinstein and Wolinsky 1987, Biglaiser 1993, and Boyd and Prescott 1986).
+Bhargava et al.
+(2000) analyzes the aggregation beneﬁt
+that consumers derive from having access to multiple
+providers through an intermediary.
+The modern B2B electronic exchange can be considered under a broad class of technology called IOS,
+the most common among them being the electronic
+data interchange (EDI).
+Several papers have studied
+the effect of EDI (see, for example, Barua and Lee
+1997, Riggins et al. 1994, Wang and Seidmann 1995,
+Zhu 1999, and Zhu and Weyant 2003).
+However, the
+modern-day exchange differs signiﬁcantly from EDI
+systems in terms of unprecedented data transparency
+5
+In a Bertrand competition, each seller assumes that the others will
+maintain their current prices, leading to the use of a price-cutting
+strategy, especially when the products are good substitutes.
+Prices
+thus get driven down toward marginal costs.
+49
+and open standards that make it easier for suppliers
+to join the exchange (Zhu 2004).
+Zhu (2004) looks at the effect of information transparency in electronic markets.
+As the results of the
+analysis show, it is this information transparency that
+suppliers perceive as a threat to joining the online
+exchanges (Jap 2000).
+Conversely, the decreasing cost
+of hardware and software (an Internet-enabled personal computer and a secure web browser are perhaps
+the absolute minimum requirements) and the extensive use of open standards in developing the electronic exchanges of today have ensured the growth
+in B2B marketplaces.
+Dai and Kauffman (2003) argue
+that in contrast to closed extranets, which were popular among large organizations and their sellers,
+today’s electronic markets are open networks where
+sellers have reduced information on buyers.6 In this
+context, the characteristics of other sellers become relatively more important in determining seller strategy.
+It is therefore important for the sellers to understand the dynamics of the competition in an online
+exchange, and the impact of different production costs
+and capacities of the sellers.
+Prior research has analyzed several variations of competition under capacity constraints.
+We refer to that research in the next
+section.
+Model Environment and Assumptions
+Dai and Kauffman (2003) point out that, unlike closed
+extranets, open electronic markets expose sellers to
+increased competition from diverse competitors.
+It is
+this competition that we model in this paper.
+In the
+process, we look at a competitive game that is special in several respects.
+First, the demand for materials posted on the exchange will tend to be inelastic.
+The buyer decides on the quantity and the reservation price below which it is ready to buy the entire
+quantity.7 Furthermore, any seller meeting the basic
+6
+Conversely, buyers gain from lower costs due to automating
+the procurement process, reverse auctions, interoperability among
+users, collaborative planning and collaborative design (Helper and
+MacDufﬁe 2001).
+7
+We contacted Roland Berger (May 2002) to conﬁrm this assumption.
+We found out that auto manufacturers indeed have “target
+cost” structures for components, which is equivalent to the reservation price in our nomenclature.
+See also Footnote 9.
+50
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+requirements of the buyer is qualiﬁed to bid.8 With
+the advent of the online exchange, buyers put their
+requirements on the exchange only once, instead of
+contacting the sellers individually.
+Sellers look at this
+entire requirement, and then decide to quote their
+prices.
+The sellers are also given a date (usually several weeks in the future) by which they are expected
+to place their bids.
+Sellers bid their selling prices, all
+of which are opened at a later date.
+The seller with
+the lowest-bid price gets the ﬁrst invitation to cater to
+the demand, followed by the seller with the secondlowest bid price, and so on, until the entire demand
+is met.9
+From the modeling point of view, it is immaterial
+whether the sellers respond to an aggregate demand
+of several buyers (which might raise an antitrust
+issue), or one single demand from a buyer.10 The
+entire requirement is auctioned to the sellers, and a
+lower-priced bidder has the ﬁrst turn to satisfy any
+unfulﬁlled demand.11
+With unlimited capacity, the sellers respond with
+a Bertrand competition in prices wherein the seller
+or sellers with the lowest marginal cost outbid the
+others.12 This is not to the advantage of the sellers.
+8
+Wal-Mart, for example, has a seller certiﬁcation process, and a
+seller standards program; similar vendor certiﬁcation programs are
+common in a variety of industries, and nowadays many organizations detail these programs on the Internet, allowing for any potential seller worldwide to become certiﬁed.
+9
+A conﬁrmation of this mechanism was obtained from IndiaMarkets.com, India’s largest B2B portal.
+The software used at IndiaMarkets.com is licensed from one of the pioneer B2B portals, Ariba.
+The appendix shows an actual request for quote (RFQ) at this site,
+as presented to sellers.
+Identities have been concealed for conﬁdentiality reasons.
+10
+The assumption in the case of multiple buyers, of course, is that
+all of them have the same reservation price.
+If that is not so, we
+would have to consider the contract between the buyers that speciﬁes the way they would divide a seller’s output between themselves.
+11
+The use of multiple vendors for the same component is very
+much standard practice (Rubin and Benton 1993)—other than the
+beneﬁts of competition, the practice also reduces the possibility
+that the production is disrupted due to some problems of a single
+vendor.
+12
+If Seller 1 knows that Seller 2 can supply to the entire demand,
+he responds by charging Seller 2’s marginal price, because the best
+response of Seller 2 at any higher price is to undercut it by an
+inﬁnitesimal amount.
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+Kreps and Scheinkman (1983), and several variants
+of the original model, such as Allen et al.
+(1992),
+show that if sellers could limit capacity, then a quantity precommitment and Bertrand competition yield
+Cournot outcomes that have equilibrium prices above
+marginal cost.
+At the other end of the spectrum, if the
+total capacity of the sellers is so limited as to be less
+than the total demand, the sellers can sell their entire
+capacities at the buyer’s reservation price.13
+Our model is different from either of these cases.
+It is realistic to think of sellers having limited capacities so that any one seller cannot meet market demand.
+In our setting, however, we add the condition that the aggregate output of the sellers exceeds
+total quantity demanded and that a ﬁrm sells all it
+can produce only if it is the low-price seller.
+That is,
+the lowest-priced seller sells to capacity, but a higherpriced seller only sells to a residual demand.
+Sellers,
+therefore, are pulled by two opposing forces; on the
+one hand, higher prices fetch higher margins, but on
+the other, higher prices bring about increased chances
+of being underbid by competition and thus selling a
+lesser amount.
+Our analysis proceeds in three steps.
+First, we consider the equilibrium obtained when both the sellers
+have the same capacity and different marginal costs.
+We then repeat the analysis for the same marginal
+costs and different capacities.
+These two analyses provide the intuition behind the results of the model with
+asymmetric costs and capacities.
+The Model
+Our earlier paper (Bandyopadhyay and Barron 2001)
+analyzes the equilibrium where two sellers have equal
+capacity k that is individually less than the buyer’s
+total requirement Q (the speciﬁc functional form of
+the demand is suggested in Varian 1980), but the
+combined capacity exceeds total demand so that
+2k > Q > k. In such a setting, the lower-priced seller
+is invited ﬁrst to sell the required quantity, and after
+it has supplied its total capacity k, the other seller
+can then sell the residual demand Q − k . Both sellers have a common ﬁxed marginal cost of production, c. There exists a mixed-strategy equilibrium for
+13
+Because either seller can sell to capacity at or below the reservation price, there is no incentive for either to undercut competition.
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+this game (the existence of a mixed-strategy game
+with discontinuous payoffs is proved in Dasgupta
+and Maskin 1986), with both sellers randomizing their
+prices based on the probability distribution
+F p =
+p−c k− r −c Q−k
+p − c 2k − Q
+(1)
+between the interval p1 r , where p1 is given by
+p1 =
+r −c Q−k
++c
+k
+(2)
+and r is the buyer’s reservation price.
+Because diversity among sellers is an important
+aspect of B2B exchanges, we now look at the generalized two-seller game where the sellers i = 1 2, can
+have different marginal costs or capacities, or both.
+We assume, without loss of generality, that c1 ≤ c2 , and
+that k2 = k1 , where is any positive real number.
+We
+retain the assumption that ki < Q, i = 1 2, but that
+i=1 2
+ki = 1 +
+k1 > Q
+If sellers charge the same price, following the convention of Deneckere and Kovenock (1996), the one with
+the lower cost sells its capacity.
+If sellers charge the
+same price and sellers have the same cost, we arbitrarily have Seller 1 sell its capacity.
+As Sinha (2000) points out, the use of reverse-auction bidding, XML mapping, and so on allow participants in these exchanges to see the price ﬂoors of the
+various players more easily than is possible in traditional markets.
+Therefore, the assumption of the various costs and capacities as common knowledge seems
+reasonable.
+For seller i, deﬁne pi∗ as the minimum price it will
+set to sell its capacity ki given the alternative of selling
+the residual Q − ki at the maximum price r. Neither
+seller has an incentive to price below pi∗ = r − ci ·
+Q − kj /kj + ci , which we call the seller’s indifference
+price.
+Seller 1, the low-cost seller, will have p1∗ < p2∗ if and
+only if
+c1 − c2
+Q− 1+
+k1 /k1 > 1 −
+r
+(3)
+If the two sellers have the same capacity ( = 1, such
+that k1 = k2 = k , then Seller 1 will have a lower minimum price p1∗ < p2∗ , given that the residual demand
+51
+is less than capacity 2k > Q > k . If the two sellers
+have the same cost c1 = c2 = c , then the seller with
+the higher capacity will have a lower minimum price.
+Below we reconsider the equilibrium with heterogeneous sellers.
+We begin our analysis by focusing on
+the case where capacities are identical k1 = k2 = k
+but Seller 1 has a lower marginal cost c1 < c2 .
+The analysis extends the existence results of
+Deneckere and Kovenock (1996), which focuses on
+how the costs or capacity differences can lead to
+different characterizations of equilibrium—pure strategy versus mixed—in a Bertrand-Edgeworth framework.
+Our speciﬁcation of the functional form of the
+demand allows us to present explicit solutions for
+the mixed-strategy equilibrium price distributions of
+heterogeneous sellers who differ in their marginal
+costs as well as production capacities.
+These explicit
+solutions allow one to generate testable implications
+regarding the effect of changes in the magnitude of
+cost or capacity differences on parameters of the distributions.
+In doing so, we offer speciﬁc guidance to
+researchers pursuing empirical analysis in this area.
+In addition, our explicit results for the special cases
+of cost differences only and capacity differences only
+provide the intuition behind the general theory, and
+thus make the general theory more accessible.
+Heterogeneity in Cost
+We ﬁrst establish the general character of the equilibrium, if it exists, as a mixed-strategy equilibrium.
+Thus we have the following proposition.
+Proposition 1.
+There can be no pure strategy in prices.
+Suppose the low-cost seller (Seller 1) charges a
+single price.
+In this case, the best response of the highcost seller (Seller 2) is to charge a price an inﬁnitesimal amount lower and sell to capacity to obtain the
+highest proﬁts if the price is in the interval p2∗ r , or if
+the price is equal to or below p2∗ , charge a price equal
+to the maximum price r and sell the residual demand
+to obtain the highest proﬁts.
+Now suppose the highcost seller charges a single price.
+In this case, the
+best response of the low-cost seller is to charge the
+same price and sell to capacity to obtain the highest proﬁts if the price is in the interval p1∗ r . If the
+price is below p1∗ , the best response of the low-cost
+seller to charge a price equal to the maximal price r
+52
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+and sell the residual demand to obtain the highest
+proﬁts.14
+At any set of prices p1 p2 set by the two sellers, the above characterization of the best response
+for each seller ensures that at least one seller would
+seek to change the price.
+In particular, any time the
+low-cost seller matches the high-cost seller’s price, the
+high-cost seller has the incentive to charge a different
+price.
+Thus, there is no pure-strategy equilibrium.
+Let
+the mixed strategy in prices for seller i be represented
+by Fi p .
+We now use the ordering of the pi∗ to present a key
+feature of the mixed-strategy equilibrium: The lower
+support for both sellers is equal to the higher of the
+two indifference prices.
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+the bid at price p (an event we call a success) is given
+by si p , whereas the proﬁt realized by the seller if
+it loses the bid at price p (a failure) is given by fi p .
+In general, if a mixed-strategy equilibrium exists, it
+must provide for each seller identical proﬁts at all
+prices charged.
+We now have the following characterization of the equilibrium price density functions.
+For
+seller i, proﬁts at all prices must equal the proﬁt level
+at r, such that
+i
+Proposition 3.
+For any p ∈ p∗ r , Fi p is strictly
+increasing.
+If this is not the case, let there be an interval p p
+where f p = 0.
+For any p where p < p < p , seller i
+can get the same outcome of either selling to capacity ki , or by selling the residual Q − kj , as by pricing
+at the lower p , but get a higher payoff.
+We now provide a characterization of equilibrium
+for the case of different costs c1 < c2 but identical capacities k1 = k2 = k when p1∗ < p2∗ . Although
+the proposed characterization is proved to be a valid
+and plausible equilibrium of the game G k1 k2 c1 c2 ,
+there might be other Nash equilibria to the game.
+We denote the proﬁt of any seller i at a price p to
+be i p . The proﬁt realized by the seller if it wins
+14
+Note that this property is an effect of the nature of the demand
+curve.
+If the sellers faced a downward sloping demand curve, it is
+possible (depending on the exact functional form of the demand
+curve) that the sellers respond with a pure-strategy equilibrium.
+We thank one of the referees for pointing this out.
+i
+r
+i=1 2
+(4)
+where
+i
+Proposition 2.
+If pi∗ < pj∗ , the minimum support price
+for Fi p , i = 1 2, is the higher of the two indifference
+prices pj∗ .
+The above follows from the fact that seller i has no
+incentive to price below pi∗ , the seller’s indifference
+price, because the seller always have the higher-proﬁt
+alternative of selling at least to residual demand at
+price r. This pi∗ is the price at which the seller i makes
+the same proﬁt by supplying its entire capacity as by
+supplying the residual demand at r.
+p =
+p =
+si
+p 1 − Fj p +
+1
+r ≡
+s1
+p Fj p
+(5)
+p = p − ci k
+(6)
+p = p − ci Q − k
+(7)
+si
+fi
+fi
+r 1 − F2 r +
+f1
+r F2 r
+(8)
+and
+2
+r ≡
+f2
+r
+(9)
+Proposition 4.
+If a mixed-strategy equilibrium exists,
+the pricing strategy of the low-cost seller, Seller 1, is deﬁned
+by a continuous distribution over the range p2∗ r with no
+mass15 at any price.
+High-cost Seller 2’s pricing strategy
+is also deﬁned by a continuous distribution over the range
+p2∗ r , but Seller 2 now places a positive mass at the upper
+bound of the distribution r .
+The above characterization has Seller 1’s pricing
+strategy similar to the characterization we obtained
+for the symmetric case.
+However, unlike the symmetric case, Seller 2’s pricing strategy now has ﬁrst-order
+stochastic dominance over Seller 1’s pricing strategy,
+such that F2 p < F1 p for all p < r. The interpretation of this outcome is that the high-cost seller has
+a normal price equal to the r, but engages in random sales.
+The low-cost seller engages in sales (price
+below r) almost always, and thus is more likely to sell
+to capacity.
+15
+By mass, or by the phrase placing mass later in this paper, we
+mean that a seller places a positive probability of choosing a particular strategy (in our case, choosing a particular price) in the
+mixed-strategy distribution.
+In other words, the cumulative density
+function has a discontinuity at that price.
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+53
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+A key feature of the above equilibrium, a positive
+mass at r for the high-cost seller, ensures proﬁts for
+the low-cost seller at r that exceed what could be
+obtained by simply selling to the residual demand.
+The higher proﬁts for Seller 1 are achieved with a
+mass by Seller 2 at r, because there now exists a positive probability that Seller 1 will not be the highpriced seller at r, and thus (as the low-cost producer),
+can sell capacity at r with positive probability.
+This
+higher level of proﬁts for the low-cost seller holds at
+all other prices as well, and in particular at the lower
+bound p2∗ , given that p1∗ < p2∗ .
+Using (5) through (9), we therefore have
+F1 p =
+s2
+p −
+s2
+p −
+f2
+r
+f2
+p
+(10)

@@ -1,0 +1,344 @@
+Note that this behavior, and the resulting higher average sales by the seller with the larger
+capacity, does not rely on advantages the larger sellers may have with respect to customer demand (such
+as would exist if, for instance, buyers view largercapacity sellers as more reliable, or think it advantageous to do business with fewer sellers).
+As the generalized heterogeneous-cost-and-capacities model shows, the manager of a seller ﬁrm has two
+strategic variables with which to play.
+Lower costs
+of production give inherent beneﬁts to a seller, as
+do larger capacities.
+Thus, a seller relatively disadvantaged in terms of marginal costs might want to
+increase its production capacity.
+If the industry is fragmented, with no single overwhelmingly large seller, a
+move toward online exchanges by the original equipment manufacturers (OEMs) might trigger a wave of
+consolidation among several sellers, because increasing capacities in this fashion is an easier strategic variable to manipulate, at least in the short run, than lowering marginal costs of production.
+In a report on the
+automotive industry, McKinsey & Company (2000)
+notes that industry has seen a large amount of consolidation among OEMs in recent years, and that this
+trend is expected to continue.
+It is also conceivable that a seller with superior efﬁciencies of production can, over time, price its competitor out of the market by ratcheting up production
+capacity.
+Such behavior is seen in real life, though
+there are conceivably factors other than increased capacity or cost efﬁciencies at work.
+For example, in
+the personal computers industry the cost leader, Dell
+Computer, has over the years become the largest producer in the world.
+In fact, after the second quarter of
+2003, it announced that it would reduce the prices of
+its computers by an average of around 20%, even as
+the nearest competitor, Hewlett-Packard, announced
+that its personal computing division is deeply in the
+58
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+red as a result of severe price wars (CNet News
+2003).16
+Future Directions of Research
+We are currently trying to implement a B2B reverse
+auction in a synthetic environment, where semiintelligent sellers learn over time to converge on an
+optimum strategy.
+Some questions that we hope to
+answer include: Can such agents learn over time to
+converge to an optimal game-theoretic equilibrium?
+If yes, how fast do they converge to that equilibrium?
+How does increasing the memory of the past
+results increase the speed to convergence toward the
+equilibrium?
+The results will hold much more interest for the heterogeneous costs and capacities model,
+because the artiﬁcial agents are expected to understand over time that (a) it makes no sense to price in
+the interval of the two indifference prices, and (b) the
+agent with the higher indifference price has a positive
+probability of pricing at the reservation price r. We
+brieﬂy describe our approach in the next paragraph.
+We modeled software agents that use reinforcement
+learning (speciﬁcally Q-learning) algorithms (for a
+background on the use of reinforcement learning
+in game theory, see Oliver (1996), Rapaport et al.
+(1998), Roth and Erev (1995), and Sandholm and
+Crites (1996) to learn the ideal behavior over time
+(the agents start off initially without bias)).
+We then
+compare the prices chosen for various combinations
+of demand, capacities, and marginal costs to the theoretical cumulative distributions for goodness of ﬁt.
+Our initial algorithms worked well for similar sellers (see Bandyopadhyay et al. 2003, Bandyopadhyay
+et al. 2005), but not for dissimilar sellers.
+A modiﬁed
+algorithm has given very promising results (for example, the agents quickly learn not to price below the
+higher of the indifference prices, and the agent with
+the higher indifference price places a positive probability for bidding at r), but we have yet to test it
+rigorously for various combinations of Q, K, and c.
+We also explore the value of information in this setting: By how much do the average proﬁts go up when
+16
+The move by Hewlett-Packard to merge with Compaq in 2002
+seems to make sense at least from the viewpoint of the analysis
+of this paper, because the combined capacities of the two organizations would allow to partially offset the disadvantage of higher
+marginal costs.
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+the agents start with the initial knowledge about the
+suboptimality of pricing below the higher indifference
+point?
+Considering the recent work in understanding game-theoretic behavior in experimental settings,
+these experiments with continuous strategy spaces
+and complicated equilibrium solutions would be of
+considerable interest to researchers and practitioners alike.
+Extensions of such research can have useful implications in the implementation of automated
+mechanisms by buyers and sellers in transactions of
+this kind.
+Conclusion
+The Internet and the subsequent development of open
+standards are making the concept of a buy-centric
+online exchange increasingly popular in a variety of
+industries.
+Sellers of a component or raw material can
+be situated anywhere in the world, thus increasing the
+universe of sellers from whom an organization can
+buy its products.
+We have analyzed the competition
+between these sellers in an online sealed-bid reverse
+auction.
+The equilibria for the various models show
+the effects of the two strategic variables—cost and
+capacity—in a manager’s decision-making model.
+The model captures some of the unique features that
+we can expect to see in an exchange (limited number
+of sellers with huge buying power, modiﬁed capacity constraints, inelastic demand function below reservation price), and shows how competition in those
+environments can reduce the overall price paid by the
+buyers, as well as how operating costs and capacities
+affect the strategies of the competing sellers.
+We are currently researching whether synthetic
+agents can learn from experience to implement our
+results.
+With the ubiquity of online transactions, such
+automated handling of transactions can potentially be
+very beneﬁcial.
+Acknowledgments
+This research is partially funded by the National Science
+Foundation Grant DMI-0122214.
+The authors are indebted
+to several observations, suggestions, and corrections by
+three anonymous referees and Professor Ira Horowitz of the
+University of Florida in earlier versions of the paper.
+The
+authors also acknowledge crucial input from Mr. Antonio
+Benecchi, Project Manager at Roland Berger Strategy Consultants, and executives at Indiamarkets.com for sharing
+some of their live auction data and their observations.
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+59
+Appendix.
+A B2B RFQ at IndiaMarkets.com, India’s Largest B2B Portal
+References
+Allen, B., R. Deneckere, T. Faith, D. Kovenock.
+1992.
+Capacity precommitment as a barrier to entry: A BertrandEdgeworth approach.
+North Amer.
+Winter Meetings Econometric
+Soc.
+(January).
+Angwin, Julia.
+2003.
+Renaissance in cyberspace.
+The Wall Street J.
+(November 20) B1.
+Baer, M., J. Davis.
+2001.
+Some assembly required.
+Business 2.0
+(February 20) 76–85.
+Bandyopadhyay, S., J. M. Barron.
+2004.
+A generalized model of
+competition among sellers in a B2B exchange.
+Working paper,
+Krannert Graduate School of Management, Purdue University,
+West Lafayatte, IN.
+Bandyopadhyay, S., J. M. Rees, J. M. Barron.
+2005.
+Simulating sellers
+in online exchanges.
+Decision Support Systems.
+Forthcoming.
+Bandyopadhyay, S., A. Chaturvedi, J. Barron, J. Rees, S. Mehta.
+2003.
+Simulating sellers’ behavior in a reverse auction B2B
+exchange.
+P. M. A. Sloot et al., eds.
+Internat.
+Conf.
+Comput.
+Sci.,
+Lecture Notes Comput.
+Sci., No. 2660, 365–374.
+Barlas, D. 2003.
+The value of reverse auctions.
+Line56 (July) http://
+www.line56.com/articles/default.asp?articleid=4788.
+Barua, A., B. Lee.
+1997.
+An economic analysis of the introduction
+of an electronic data interchange system.
+Inform.
+Systems Res.
+8(4) 398–422.
+Bhargava, H. K., V. Choudhary, R. Krishnan.
+2000.
+Pricing and
+product design: Intermediary strategies in an electronic market.
+Internat.
+J. Electronic Commerce 5(5) 37–56.
+Biglaiser, G. 1993.
+Middlemen as experts.
+RAND J. Econom.
+24(2)
+212–223.
+Boyd, J. H., E. C. Prescott.
+1986.
+Financial intermediary coalitions.
+J. Econom.
+Theory 38 211–232.
+CNet News.
+2003.
+Dell cuts prices across range of products.
+(August) http://news.com.com/2100-1003_3-5066500.html?tag
+=fd_top.
+Dai, Q., R. J. Kauffman.
+2003.
+To B2B or not to B2B: An evaluative model for e-procurement adoption.
+Working paper, MIS
+Research Center, Carlson School of Management, University of
+Minnesota, Minneapolis, MN.
+Dasgupta, P., E. Maskin.
+1986.
+The existence of equilibrium in
+discontinuous economic games, II: Applications.
+Rev. Econom.
+Stud.
+53(1) 27–41.
+Deneckere, Raymond J., D. Kovenock.
+1996.
+Bertrand-Edgeworth
+duopoly with unit cost asymmetry.
+Econom.
+Theory 8 1–25.
+60
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+Fast Company.
+2001.
+How I saved $100 million on the Web.
+43(February) 174.
+Helper, S., J. P. MacDufﬁe. 2001.
+B2B and modes of exchange: Evolutionary and transformative effects.
+Bruce Kogut, ed.
+The Global
+Internet Economy.
+Jap, S. D. 2000.
+The impact of online, reverse auctions on buyersupplier relationships.
+Working paper, EBusiness@MIT Center,
+Leaders for Manufacturing Program and MIT-Ford Alliance.
+Katok, E., A. E. Roth.
+2004.
+Auctions of homogeneous goods
+with increasing returns: Experimental comparison of alternative “Dutch” auctions.
+Management Sci.
+50(8) 1044–1063.
+Kreps, D., J. Scheinkman.
+1983.
+Quantity precommitment and
+Bertrand competition yield Cournot outcomes.
+Bell J. Econom.
+326–337.
+McKinsey & Company.
+2000.
+The automotive industry: A new
+model to be invented!
+(August).
+Oliver, J. 1996.
+A machine learning approach to automated negotiation and prospects for electronic commerce.
+J. Management
+Inform.
+Systems 13(3) 83–112.
+Rapoport, A., T. E. Daniel, D. A. Searle.
+1998.
+Reinforcement-based
+adaptive learning in asymmetric two-person bargaining with
+incomplete information.
+Experiment.
+Econom.
+1 221–253.
+Riggins, F. J., C. Kriebel, T. Mukhopadhyay.
+1994.
+The growth of
+interorganizational systems in the presence of network externalities.
+Management Sci.
+40 984–998.
+Roland Berger Strategy Consultants and Deutsche Bank.
+2000.
+Automotive e-commerce: A (virtual) reality check.
+(June) http://
+www.rolandberger.com.
+Roth, A. E., I. Erev.
+1995.
+Learning in extensive-form games: Experimental data and simple dynamic models in the intermediate
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+term.
+Games Econom.
+Behavior 8(1, Special Issue: Nobel Symposium) 164–212.
+Rubin, P. A., W. C. Benton.
+1993.
+Jointly constrained order quantities with all-units discounts.
+Naval Res.
+Logist.
+40 255–278.
+Rubinstein, A., A. Wolinsky.
+1987.
+Middlemen.
+Quart.
+J. Econom.
+102(3) 581–594.
+Sandholm, T. W., R. H. Crites.
+1996.
+Multiagent reinforcement learning in the iterated prisoner’s dilemma.
+BioSystems 37 147–166.
+Sinha, I. 2000.
+Cost transparency: The net’s real threat to prices and
+brands.
+Harvard Bus.
+Rev. 78(March–April) 3–8.
+Tomak, K., M. Xia.
+2002.
+Evolution of B2B marketplaces.
+Electronic
+Markets 12(2).
+Varian, H. 1980.
+A model of sales.
+Amer.
+Econom.
+Rev. 70(4) 651–659.
+Waltner, C. 1999.
+Procurement pays off—Companies are ﬁnding
+that procurement software comes with a quick ROI.
+Inform.
+Week 745(July 26) http://www.informationweek.com/745/
+procure.htm.
+Zhu, K. 1999.
+Strategic investment in information technologies:
+A real-options and game-theoretic approach.
+Doctoral dissertation, Stanford University, Stanford, CA.
+Zhu, K. 2002.
+Information transparency in electronic marketplaces: Why data transparency may hinder the adoption of
+B2B exchanges.
+Electronic Markets 12(2, Special Issue on B2B
+E-Commerce) 92–99.
+Zhu, K. 2004.
+Information transparency of business-to-business
+electronic markets: A game-theoretic analysis.
+Management Sci.
+50(5) 670–685.
+Zhu, K., J. Weyant.
+2003.
+Strategic decisions of new technology
+adoption under asymmetric information.
+Decision Sci.
+34(4)
+643–675.

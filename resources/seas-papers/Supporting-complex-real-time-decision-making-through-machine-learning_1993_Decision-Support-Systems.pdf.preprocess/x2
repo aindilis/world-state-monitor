@@ -1,0 +1,649 @@
+The workstations interface with the MHS
+by rotary SHUTTLES.Each shuttle has positions for
+two work pieces and provides for interchange
+between the AGV and WORKSTATION.
+All workpieces in a batch have the same processing requirements specified by the batch routing, though several routings are possible.
+The
+maximum number of possible routings is controlled by the decision maker.
+Each routing specifies a list of operations and the workstation types
+needed to perform the operation.
+The routing
+and variation selected is based on a priori probabilities culled from historical data.
+The arrival
+time of each batch is recorded for use in decision
+making and system performance evaluation.
+The
+number of batches that are active in the production mix, i.e., available for processing is also under the control of the decision maker.
+When the
+last workpiece of a batch is completed, the
+219
+makespan for the batch is recorded and a new
+batch is selected from the backlog of those available, using the specified decision rule.
+The choice of decision strategies to be employed for the experiments was based on applicability, degree of use, and amenability to revision.
+Strategies that were specific to individual objectives at the expense of others were excluded.
+Likewise, esoteric rules that are not widely employed, or introduce significant complexity in the
+decision making process were also not included.
+Strategies that are difficult to revise midstream,
+or are revised at substantial performance penalties, were also excluded.
+The decision strategies
+finally chosen were first come first serve (FCFS),
+shortest processing time (SPT), earliest due date
+(EDD), and minimum number of jobs remaining
+(M JR).
+The decision strategies were employed in
+a manner as to achieve specific objectives, such as
+increasing workstation utilization, minimizing tardiness, and reducing WIP inventories.
+Clearly,
+other objectives could have been considered, but
+in the interests of tractability, the analysis was
+limited to those mentioned.
+The problem can
+now be stated more, concisely.
+Problem.
+Given a cellular FMS configuration, decision making objectives, the current status of the
+FMS, and a historical database of prior decisions,
+one must determine an appropriate scheduling
+decision concerning workpiece introduction into
+the job stream and subsequent assignment to
+workstations, so as to achieve the objectives to
+the extent possible, compile knowledge acquired
+into a form that could be utilized to improve
+future scheduling decisions, and permits incremental refinement through subsequent experience.
+4.
+FMS-DSS architecture
+FMS-DSS is based on a machine learning
+strategy termed goal-directed conceptual aggregation (GDCA).
+G D C A is a dynamic learning
+mechanism that acquires and refines knowledge
+about the domain in an incremental manner, thus
+allowing for redefinition of causal relationships
+between concepts and reorganization of the domain knowledge structure, thereby reducing the
+extreme dependence on training observations [5].
+220
+A.R. Chaturvedi et al. / Machine learningfor real-time decision making
+GDCA has evolved from the conceptual clustering approach [45], and represents an improved
+learning strategy in that it creates tighter associations between concepts than traditional learning
+by observation strategies, since all concepts are
+now related to specific goals.
+Moreover, it recognizes that there may be some imperfections in the
+data, and employs semantic, contextual, and temporal aggregations to synthesize meaningful
+knowledge from possibly problematic data.
+In
+addition to GDCA's learning capabilities, it can
+also function in a decision making role.
+It works
+on the premise that an organization's database
+contains a wealth of information that can be
+gainfully employed in future decision making.
+The
+parallel functions of decision making and knowledge acquisition are assisted through the use of
+selective aggregation of conceptual information.
+The choice of the environment for FMS-DSS
+development was dictated by the need to manage
+large amounts of possibly uncertain data, as well
+as to capture and refine FMS scheduling and
+control knowledge in a dynamic manner.
+This
+suggested the use of a frame-based representation, permitting the creation of declarative and
+procedural knowledge.
+The need to interface to a
+Action
+Module
+d e c i ~ions
+resu
+teci!
+Retrieval~,~/
+Module [
+ECSL-based simulation system constrained the
+search to that of microcomputer-based knowledge environments.
+Goldworks was selected for
+its ability to provide these features with relative
+ease.
+Key features of this implementation include
+the development of GDCA algorithm, the representation of background knowledge as taxonomies of frames and rules, the design of control structures for reasoning with incomplete information, the design and implementation of a
+domain database to be used by GDCA, the user
+interface, and the simulation model.
+The integrated system is implemented on an IBM PS/2
+80.
+Conceptually, FMS-DSS fits well with the
+generic architecture of DSS formulated by Bonczek et al. [1] and is depicted in fig.
+2.
+Its knowledge system contains information about a specific
+domain (in this case FMS scheduling), its problem processing system provides a mechanism to
+manipulate this knowledge (the base GDCA system), and its language system provides an interface that facilitates communication with the user.
+In addition, FMS-DSS also permits ready access
+to other external entities, viz.
+the organization's
+database, and a simulation model used to validate
+Control
+Module
+i,'eq,,o ts
+L•earning
+Domain
+Knowledge
+ions
+Noise
+~oi~y [
+[Module Reduct'n~ - ~
+HisLorical
+Database I
+decision
+rules
+External Knowledge /
+Augmenting System t _
+(Simulation Model) /
+Fig.
+2.
+FMS-DSS architecture.
+updates
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+system performance.
+Most importantly, FMS-DSS
+provides a means of refining and embellishing
+existing domain knowledge, through the use of an
+active learning module.
+The structure and functions of the important modules of FMS-DSS are
+presented in figure 2.
+4.1.
+Language system
+The language system in GDCA is currently
+implemented as a set of imperative verbs.
+When
+faced with a decision-making situation, the user
+specified an action, its target, the objective, any
+dimensions if relevant, and their directions.
+In
+the FMS application, an action would include
+verbs as SCHEDULE,or ASSIGN; the target could be
+a BATCH, or JOB; the objectives may include
+MEET-DUE-DATE, MINIMIZE-WIP; dimensions of interest include AVERAGE-TARDINESS, o r MAXIMUM-LATENESS, with directions as IMPROVE, REDUCE etc. In addition, the user may specify multiple objectives, and place different emphasis on
+each of these objectives.
+Additionally, the language system supports a set of retrieval commands, in the form of on-line access to the system
+status and the database, through a QUERY option.
+4.2.
+Knowledge system
+The knowledge system comprises a set of conceptual maps about the domain and a database of
+prior activity.
+The domain knowledge is provided
+to the system, and is refined with time, while the
+database is continually updated.
+4.
+2.1.
+Domain knowledge
+The domain knowledge describes concepts of
+relevance to the system.
+These concepts link decision making objectives to decision variables and
+structural descriptors of the system.
+Presently,
+the domain knowledge is structured as hierarchies of frames, samples of which appear in fig.
+3.
+FMS-DSS's domain knowledge includes entities, aggregation dimensions, and skeletal decisions.
+Entities represent items of interest in the
+analysis.
+They could be physical entities, as a
+workstation or an operator, or abstract concepts,
+as a schedule.
+Anything that is countable or measurable within the system, and is of interest to the
+user is viewed as an entity.
+Aggregation dimensions represent the dimensions that can be used
+221
+to characterize the state of, or otherwise describe
+an entity.
+Skeletal decisions provide the goals
+which seek to aggregate the data as appropriate
+to the task on hand.
+These decisions are represented in great generality.
+More specific goals
+can be derived through reasoning.
+The data required by these functions vary in concept and
+content, and hence, data may be aggregated differently.
+Skeletal decisions form the basis of capturing decision-making knowledge in FMS-DSS.
+The taxonomy of domain knowledge is presented
+in fig.
+4.4.2.2.
+Historical database
+The database stores historical case-based information about decisions, and is employed to
+narrow the search in regular decision making.
+Information in the database includes the conditions under which the decision was made, user
+objectives selected in making the decision, the
+decision variables selected, and the performance
+on the chosen objectives.
+4.3.
+Problem processing system
+Manipulation and enhancement of the domain
+knowledge is handled by the problem processing
+system, which comprises a control module, a noise
+reduction module for managing uncertainty, and
+a learning module.
+(DEFINE-FRAME WORKSTATION
+:print-namc "WORKSTATION"
+NUMBER-OF-STARTS)
+TIME-OF-PROCESSING)
+UTILIZATION)
+BACKLOG))
+WORKSTATION Frame
+(DEFINE-FRAME BATCH
+(:print-name "BATCH"
+:is ENTITY)
+TU RNAROUND-TI ME)
+MAXIMUM-TARDINESS)
+AVERAGE-TARDINESS)
+TOTAL-LATENESS)
+AVERAGE-LATENESS)
+NUMBER-OF-TARDY-BATCH ES)
+TOTAL-BATCHES-DONE))
+BATCH Frame
+Fig.
+3.
+Examples of domain knowledge frames.
+222
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+/
+Batch ~
+~
+Entity
+Batch-route l
+Batch-route2
+~ Batch-route3
+~
+AGV
+/ WP-route 1
+Workpiece ~ W P - r o u t e 2
+WP-route3
+Stacker
+/ / Machine-Classl - ~Machine-Class2 -Workstation \
+\ Machine-Class3 ~
+Aggregation~
+Dimension
+~ .
+Skeletal
+Average
+~" Tradeoff- f u n c t i o n
+~
+Due-date
+Decision-goals ~-------------~Production-rate
+~
+Machine-utilization
+~
+Work-in-process
+/Analyze
+--Schedule
+Decision-class ~
+Decision
+Improve
+Balance
+Decision-criteria ~
+~
+, Working
+Knowledge
+Machine3
+Machine4
+Maximum
+~
+Minimum
+Aggregation - o p e r a t o r s ~ S u m
+~
+Top-frame
+Machinel
+Machine2
+Clock
+~
+_
+~
+_
+~------Increase
+~ Decrease
+Parameter
+Decision-to-be-made
+~
+Dispatch-rules ~
+Min-job-remaining
+Earliest-due-date
+First-come-first-serve
+Shortest-processing-time
+Fig.
+4.
+Representation of domain knowledge.
+4.3.1.
+Control module
+The control module covers the major functioning of the FMS-DSS system.
+It is represented
+entirely as rules, partitioned into sets that relate
+to specific contexts.
+Rules are used to determine
+the most appropriate goal given the objectives
+specified by the user, choose the most appropriate aggregation strategy for the goal and context
+in question, as well as update the database if
+need be.
+Rules are also employed to determine if
+there is enough knowledge available to process
+this particular context.
+If not, the learning module is invoked to create the requisite knowledge.
+FMS-DSS's control module also employs a large
+set of working knowledge that relates to the context at hand.
+This working knowledge is implemented as frames, and is currently domain sensitive.
+More detailed descriptions of the system
+knowledge and structures are presented in [7].
+The English-like version of a backward chaining
+control rule appears in fig.
+5.
+The antecedents of the backward rule represent the stages necessary for problem solving with
+FMS-DSS.
+Each stage comprises a forward chaining rule set, that performs a specific task.
+The
+first set classifies the objectives specified by the
+user in the concept-attribute framework, determines the goal concept to be created, creates the
+goal concept, and creates the context for the goal.
+The second rule set creates an instance of the
+IF
+AND
+AND
+AND
+AND
+AND
+The Aggregate-Concept is Created
+The Goal-Analysis is Finished
+Uncertainty is Resolved
+Classification is Complete
+Parameters are Filed
+All-Goals are Retracted
+THEN
+Mission is Accomplished
+Fig.
+5.
+Rule accomplish-mission.
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+relevant context of the goal concept, analyzes
+relevant goals, determines the aggregation operator required to meet the goals, analyzes the system's sample data, calculates the ratings for the
+goal attributes, and checks for noise and temporal uncertainty in the data.
+The third rule set
+resolves any uncertainty arising from noisy data
+by comparing the attribute values of the sample
+with the corresponding attribute-values of similar
+contexts in the database.
+The similarity between
+cases is determined by partial matching and selects the relevant parameters by classifying the
+historical data, and is described in more detail in
+the next subsection.
+Decision recommendations
+are made by the fourth rule set, wherein all
+classification tasks are completed.
+The fifth set of
+rules appends the sample data to the historical
+database, updates the context tree if an unusual
+situation occurred, instantiates the output frame,
+and writes the parameters to an output file.
+The
+rule set re-initializes the system for solving the
+next problem.
+The taxonomy of forward chaining
+rules used by FMS-DSS appears in fig.
+6.4.3.2.
+Noise reduction module
+Excessive volume and noise in the data available to FMS-DSS is managed through abstraction.
+The abstraction techniques vary with the
+nature of uncertainty encountered.
+At present,
+the system is able to deal with temporal, contextual, and procedural uncertainty.
+Knowledge for
+handling uncertainty is also implemented as rules
+and aggregation hierarchies.
+The noise-reduction
+module, when activated by the control module,
+first determines the manifestation and the type of
+noise in the data, and then finds the remedy
+using a combination of clustering and case-based
+approach.
+This module can handle missing and
+contradictory values of a parameter or a goal
+attribute.
+The contradiction-reduction algorithm analyzes the sample (status information from the
+simulation) for evidence of data inconsistency.
+The database is searched for an instance ?X
+based on the partial match on the parameters
+and the clock values.
+Goal attribute ratings are
+compared, and a difference of more than 20%
+/: Assign-goal-requirements
+/Create-aggregate-concept
+Aggregate-coneeptIdentify-c°ncepts-t°-be-created
+~ Create-context
+Finished-creating-concepts
+Goal - a n a l y s i s
+Analyse-sample-data
+Identify-attribute
+Determine - o p e r a ) o r
+Instantiate-eoneept
+Finished - g o a l - a n a l y s i s
+/ / / Analyze-goals
+<<
+•<Classify-data
+_R S e l c c t - p a r a l n e t e r s
+Classification-done
+Accomplish
+mission
+Resolve-uncertainty ~
+l~esolve-uneertainly
+Resolve-contradiction
+Resolve-incompleteness
+Resolve-temporal -uncertainty
+Uncertainty-resolved
+-/
+/
+J
+" O u t p u t - p a l ' a m e t e r s ~-~7~ ' j - ~ - ~-77:~[~ - -_
+-
+"x
+\
+'~ R e t r a c t - g o a l s ~
+Fig.
+6.
+Taxonomy of forward chaining rules.
+__
+223
+Aplmnd-hist°rical-database
+Update-conlext-tree
+Instar, t i a t e - o u t p u t _ e o n e e l ) t
+E e n d - l ) a r a m e t e r - I o - outp u t - f i l e
+I.'inish c d - s o rl i n g - paran~el ers
+Retract goals
+-- Finishcd-relraeting-goals
+224
+A.R. Chaturvedi et al. / Machinelearningfor real-time decision making
+suggests a contradiction may exist.
+The ratings on
+all relevant non-goal attributes are compared,
+and if they are within prescribed limits, it is
+inferred that the two scenarios are the same with
+contradictory goal attributes.
+The reasoning behind this is that if an abnormal situation occurred
+during the simulation run in question, it would
+affect non-goal attributes as well.
+Thus if the goal
+attribute was machine-utilization and if the machine did go down during the sampling period, its
+effect would be manifest in non-goal attributes
+such as WlP, AGV-utilization, production-rate, in
+addition to machine utilization.
+In cases of such
+inconsistency, the values of the goal attributes are
+discarded and replaced with reliable values from
+the instance ?X. If the non-goal attributes also do
+not match, then it is inferred that the parameters
+are contradictory and the database is searched
+again, but this-time based on the partial match of
+clock and goal-attribute ratings.
+If the search is
+successful and the non-goal attributes match, then
+it is inferred that the two instances are the same
+and the parameters of the sample are corrected.
+If the find is unsuccessful or the non-goal attributes do not match, then it is inferred that the
+situation is exceptional.
+The contradiction reduction algorithm in fig.
+7.In this algorithm a variance of 10 and 20% is
+used to compare attribute ratings.
+This is the
+result of an experiment wherein ten identical
+simulations were run with different random number seeds.
+Allowing 10% in random variations in
+the performance ratings of simple, composite,
+and multiple goals covered almost all cases.
+Hence, a variance of 10% for single period comparisons, and a variance of 20% for two period
+comparisons was employed to allow for randomness of the system.
+4.3.3.
+Learning module
+The learning module is a LISP program based
+on conceptual clustering algorithm, INDUCE/2
+[45] and includes aggregation operators minimum, maximum, variance, and fuzzy trade-off
+function, among others.
+If the available domain
+knowledge is insufficient for dealing with the
+current decision, the learning module tries to
+acquire new knowledge in an attempt to satisfy
+the goal.
+Functions performed by the learning
+module include selection of decision parameters
+for data generation via the simulation system,
+specification of the best and worst possible performance to date, computation of current performance relative to the extremes, identification of
+Start
+Find an Instance ?X in the Database with same Parameters AND
+Clock values as the Instance ?Sample
+;; The FMS is sampled at clock 5001, 10001, 15001 and
+;; 2000O
+Compare Goal-Attr~ute ratings
+If the variance in Goal-Attribute ratings is < = 20%
+Assert "Parameters OK" AND "Goal-Attributes OK"
+Exit
+Else Assert "Parameters may be Contradictory"
+Compare All Non-Goal-Attribute ratings
+If the variance in Non-Goal-Attribute ratings is < = 20%
+Assert 'Parameters OK" AND "Goal-Attributes are Contradictory"
+Replace the ?Sample Goal-Attributes with ?X Goal-Attributes
+Assert Goal-Attributes corrected
+Retract ?Sample Uncertainty-Type
+Exit
+Else Find an Instance ?Yin the Database with same
+Clock value as ?Sample AND with variance in
+Goal-Attribute ratings < = 10%
+If the Find is successful AND
+Variance in Non-Goal-Attribute ratings is < = 10%
+Assert "Parameters are Contradictory"
+Replace ?Sample Parameters with ?Y Parameters
+Assert Parameters corrected
+Retract ?Sample Uncertainty-Type
+Exit
+Else Assert (Situation ?Sample Exceptional)
+Exit
+Fig.
+7.
+Algorithm to analyze-resolve-contradiction.
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+225
+IF
+There is an Instance ?Instance-Name of Frame ?Context with
+Backlog-Limit as Unknown
+Dispatch-Rule as Unknown
+WP-Start-Rule as Unknown
+Clock as ?clock
+AND
+There is no Instance of Frame Sampledata
+THEN Send-Msg to ?Instance-Name :Select-Best-Ratings
+AND-THEN Display
+FMS-DSS= >Parameters selected at clock = ?clock arc
+( ?Blim ?Disrul ?Adrul) and
+Maximum achievable Performance-Rating is ?rating
+Fig.
+8.
+Rule to select-decision-parameters.
+decisions to be made for the current context, and
+update of the context tree to reflect new data
+collected by the system.
+Some of these functions
+are performed through production rules, while
+others employ LISP procedures.
+A sample rule
+that selects decision parameters appears in fig.
+8,
+while the procedure for selecting the best cases is
+described in fig.
+9.
+Training examples needed for refinement of
+the domain knowledge are produced via an interface to an external knowledge augmenting system, which in this case is the simulation model.
+Some training examples may be deemed to be
+exceptional situations, i.e., when the sample data
+for a goal attribute falls outside the prior extremes for that attribute.
+In these cases the performance ratings need to be altered and the
+context tree updated.
+The parameters giving the
+highest performance rating may change due to
+the presence of an exceptional situation.
+As such,
+the context tree is updated continually to support
+dynamic decision making.
+This is done by invoking the method: Update-context which is presented in fig.
+10.
+The method searches the context-tree for all the contexts affected by the exceptional situation, recalculates performance ratings, selects the best parameters, and updates the
+instances of the context.
+The functioning of the
+entire system as set of coherently interacting units
+is described in the next section.
+5.
+FMS-DSS operation
+Conceptually, FMS-DSS operates using an elegant three-stage procedure with provision for
+feedback in cases where performance is not
+deemed satisfactory, as depicted in fig.
+11.
+The
+first stage comprises goal representation wherein
+user objectives are translated into a hierarchy of
+related goals using available domain-specific
+knowledge.
+In case the available knowledge is
+deficient, FMS-DSS employs a reasoning strategy
+that explicates the goal into known concepts.
+The
+second stage constitutes classification of current
+context vis-a-vis historical data.
+New concepts are
+learned or acquired through the use of a conceptual clustering technique, modified to provide a
+strong goal orientation.
+The final stage involves
+concept aggregation and evaluation.
+Semantic
+connections between the learned concepts and
+the highest-level goal are established at this stage.
+The effectiveness of the system is also tested at
+this stage through the use of an evaluation function.
+The use of evaluation functions allows for
+assessment of whether the goal has been satisfactorily met or whether further aggregation is warranted [13,36].
+Goals that are partially met are
+further reclassified, whereas unmet goals mandate the creation of an alternative hierarchy from
+that currently employed.
+At a procedural level, FMS-DSS functions in
+Start
+From All-Instances of the Frame Database
+For the context list ?Goal-Context
+Calculate Total Performance-Rating by calling Handler :Calculate-Rating
+Select the Instance ?Xwith Maximum Performance-Ratings
+Assert the Parameters and the Performance-Rating values in
+the slots of Instance ?Instance-Name of Frame ?Context
+Exit
+Fig.
+9.
+Algorithm to select-best-ratings.
+226
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+Start
+Set all-slots of ?Sample to ?context-list
+Loop till ?context-list is exhausted
+Find the context
+Set all-instances to ?inst-list
+Loop till ?inst-list is exhausted
+If not updated
+Calculate Performance-Rating for the instance
+by calling the Handler :Calculate-Ratings
+Select best parameters by calling the Handler
+:Select-Best-Ratings
+Update the instance
+Flag the instance updated
+Exit
+Fig.

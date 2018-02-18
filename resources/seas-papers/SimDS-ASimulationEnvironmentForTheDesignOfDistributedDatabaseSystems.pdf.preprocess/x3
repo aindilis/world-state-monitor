@@ -1,0 +1,370 @@
+200
+i
+150
+100
+FIFO
+Deadline
+Slack
+O
+5O
+0
+1.1
+E
+1.2
+I
+1.3
+r
+1.4
+I
+1.6
+I
+1.7
+I
+1.8
+1.9
+Arrival Rate
+Figure 5.
+Impact of CPU priority assignment on number of completed transactions.
+a significant impact on the number of transactions
+completed prior to the deadline.
+The difference in
+the performance of the system under the three policies increases with an increase in the load on the
+system.
+At low loads, all policies yield similar
+throughputs.
+The behavior is easily explained by
+examining the number of transactions waiting in the
+IO queue.
+Figure 7 illustrates the change in the
+waiting time in the IO queue.
+At low loads, the average number of transactions
+waiting in the IO queue are less than one.
+Thus the
+priority assignment policies will not impact the performance of the system.
+At high loads however, the
+mean length of the queues increase significantly and
+therefore the scheduling of transactions is crucial.
+Interestingly, the policy of prioritizing the transactions based on the "least slack" policy performs better than the "FIFO" policy while the "earliest deadline" policy performs worse than "FIFO."
+Since slack
+is defined as the difference between deadline and
+the estimate of processing time, the exact determination of processing estimates is crucial to the system performance.
+However, processing time estimation has certain costs associated with it.
+The
+authors propose to explore the trade-offs involved
+in processing time estimation and the benefits that
+accrue from such estimates in future research.
+Impact of Lock Conflict Resolution
+Policy
+In this set of experiments, we studied the impact of
+lock conflict resolution on the behavior of the system under different scheduling polices and varying
+loads.
+Figure 8 illustrates the results obtained.
+Under very light load situations, there was some difference in the behavior of the system in different situations, but in heavier loads the scheduling policy
+governs the behavior.
+Upon deeper observation, it became clear that the
+performance of the system is quite independent of
+the conflict resolution policy used since the transaction can be rolled back only at one point in its life
+just after preprocessing.
+Since the CPU is not the
+bottleneck in the system, rolling back a transaction
+is not critical to system performance.
+There are
+normally two orders of magnitude difference between
+the rollback time and the blocking time (since block
+time is equal to expected transaction processing time
+including IO time).
+Therefore, the main determinant
+of the system performance is the waiting time of
+transactions in the IO queue.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+77
+Impact of IO Priority Assignment
+400
+3oo
+.o
+FIFO
+200
+--A
+Slack
+100
+Z~-
+Deadline
+0
+1.1
+1.3
+1.5
+1.7
+1.9
+Arrival Rate
+Figure 6.
+Impact of IO priority assignment.
+IO Priority Assignment
+Mean IO Queue Lengths
+8
+c-
+6
+•
+cQ)
+-O
+"
+4
+FIFO
+--!1-- Deadline
+"v
+2
+Slack
+Q)
+04-1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9
+Arrival Rate
+Figure 7.
+Impact of IO priority assignment on resource queues.
+78
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+Impact of Lock Conflict Resolution
+35
+3O
+__=_ All/Block
+__=_ All/Restart
+.__=_ Feasible/Block
+20
+15
+--B-- Feasible/Restart
+10
+._=__ NoTardy/Block
+5
+---ta-- NoTardy/Restart
+9
+I
+F
+I
+I
+12
+15
+18
+21
+Arrival Rates
+Figure 8.
+Impact of conflict resolution policy.
+Conclusion and Future Research
+While the above study was intended to demonstrate
+the capabilities of SimDS, it provided the following
+significant results.
+The SimDS environment is quite conducive to the
+study of the performance of distributed TP systems
+under varying conditions and policies.
+In its present
+form, it simulates a variety of CPU and IO scheduling policies, transaction priority assignments, centralized and distributed serialization, and different
+replication and read-write policies for real-time distributed systems connected by different network topologies.
+Sample experiments were conducted to
+study the impact of CPU and IO scheduling, transaction priori-tization, and concurrency conflict-resolution policies for different systems loads in a twosite system.
+Studies suggest that the throughput of
+the system is almost solely governed by the waiting
+time of transactions in the IO queue.
+SimDS is an ideal tool in the design and evaluation
+of a distributed TP system under different environmental and operational conditions.
+Some of the studies that are currently being done using SimDS include impact of network delays and scalability of
+RDTPS performance, the cost and benefit of providing intelligence in resource allocation within a data
+site, and the allocation of transaction to data sites;
+the "best" set of design and operational policies un-
+der different applications and environmental conditions.
+These include concurrency control and scheduling policies, data and transaction allocation, and
+centralized and distributed control of the RDTPS.
+Bibliography
+Abott, R.K., and Garcia-Molina, H.
+(1988).
+"Scheduling Real-time Transactions" ACM SIGMOD Rec.,
+pp.
+71-81.
+Abott, R.K., and Garcia-Molina, H.
+(1988)"Scheduling Real-time Transactions: A Performance Evaluation," Proceedings of the 14th VLDB Conference,
+pp.
+1-12.
+Abott, R.K., and Garcia-Molina, H.
+(1990).
+"Scheduling I/O Transactions with Deadlines: A performance Evaluation," IEEE Real- Time System Symposium, pp.
+113-124.
+Abott, R.K., and Garcia-Molina, H.
+(1992).
+"Scheduling Real-time Transactions: A Performance
+Evaluation," ACM Transactions on Database Systems, Vol.
+17, No. 3, pp.
+513-560.
+Agrawal, R., Carey M.J., and Livny M.
+(1987).
+"Concurrency Control Performance Modeling: Alternatives and Implications," ACM Transactions on
+Database Systems, Vol.
+12, No. 4, pp.
+609-654.
+Bandyopadhyay, S, Morrissey, J., and Sengupta, A.
+(1996).
+"Query Optimization Strategy for Distributed Databases on All-optical Networks," Canadian Conference on Electrical and Computer Engineering, Vol.
+1, IEEE, pp.
+245-248.
+Bouras, C.J., and Spirakis, P.G.
+(1996)."Performance
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+79
+Modeling of Distributed Timestamp Ordering: Perfect and Imperfect Clocks" Performance Evaluation, Vol.
+25, No. 2, pp.
+105-130.
+Carey, M., Jauhari, R., and Livny, M.
+(1989).
+"Priority in DBMS Resource Scheduling" Proceedings
+of the 15th VLDB Conference, pp.
+397-410.
+Chaturvedi, A.R., Choubey,A.K, and Roan, J.
+(1994).
+"Scheduling the Allocation of Data Fragments in a
+Distributed Database Environment: A Machine
+Learning Approach," IEEE Transactions on Engineering Management, Vol.
+41, No. 2, pp.
+194-207.
+Chen, Graham.
+(1985).
+"Distributed Transaction Processing Standards and Their Applications," Computer Standards & Interfaces, Vol.
+17, No. 4, pp.
+363-373.
+Ciciani, Bruno, Dias, Daniel M., and Yu, Philip S.
+(1992).
+"Analysis of Concurrency-coherency Control Protocols for Distributed Transaction Processing Systems with Regional Locality" IEEE Transactions on Software Engineering, Vol.
+18, No. 10,
+pp.
+899-914.
+Davidson, S., Lee, I., and Wolfe, V. "A Protocol for
+Timed Atomic Commitment" IEEE Conference on
+Distributed Computing Systems, pp.
+199-206.
+Dayal, U., Blaustein, B., et al.
+(1988).
+"The HiPAC
+Project: Combining Active Databases and Timing
+Constraints" ACM SIGMOD Rec., pp.
+51-70.
+Gavish, B., and Suh, M.W.
+(1992).
+"Configuration of
+Fully Replicated Distributed Database System over
+Wide Area Networks," Annals of Operation Research, Vol.
+36, pp.
+167-192.
+Haque, Waqar, and Wong, Johnny (1994).
+"Distributed Real-time Nested Transactions" Journal of
+Systems & Software, Vol.
+27, No. 2, pp.
+85-95.
+Harista, J., Carey, M., and Livny, M.
+(1990).
+"On Being Optimistic about Real-time Constraints" Proceedings of ACM Symposium on Principles of
+Database Systems, pp.
+331-343.
+Harista, J., Carey, M., and Livny, M.
+(1990)."Dynamic
+Real-time Optimistic Concurrency Control" IEEE
+Real-time Systems Symposium, pp.
+94-103.
+Hsiao H., and Dewitt, D.
+(1993).
+"Performance Study
+of 3 High Availability Data Replication Strategies"
+Distributed and Parallel Databases, Vol.
+1, No. 1,
+pp.
+53-80.
+Huang, J., et al.
+(1990).
+"On Using Priority Inheritance in Real-time Databases" COINS TR 90-121,
+Department of Computer Science, University of
+Massachusetts.
+lyer, B., Yu, P., and Lee, Y.
+(1986).
+"Analysis of Recovery Protocols in Distributed On Line Transaction Processing Systems" IEEE Real-time Systems Symposium, (December), pp.
+226-233.
+Krishnamurthi, Murali, Basavatia, Amar, and
+80
+Thallikar, Sanjeev (1994).
+"Deadlock Detection and
+Resolution in Simulation Models;' Winter Simulation Conference Proceedings, IEEE, pp.
+708-715.
+Lamport, L., and Melliar-Smith, P.M.
+(1985).
+"Synchronization of Clocks in the Presence of Faults,"
+JournalofACM, Vol.
+32, No. 1, pp.
+52-78.
+Lee, H., and Liu Sheng, O.R.
+(1992).
+"A Multiple Criteria Model for the Allocation of Data Files in a
+Distributed Information System," Computers &
+Operation Research, Vol.
+19, No. 1, pp.
+21-33.
+Morrissey, J. M., and Bandyopadhyay, S.
+(1995).
+"Computer Communication Technology and Its
+Effects on Distributed Query Optimization Strategies;' Canadian Conference on Electrical and
+Computer Engineering, Vol.
+1, IEEE, pp.
+598-601.
+Nikolaou, C. N., Marazakis, M., and Georgiannakis,
+G.
+(1997).
+"Transaction Routing for Distributed
+OLTP Systems: Survey and Recent Results" Information Sciences, Vol.
+97, No. 1-2, pp.
+45-82.
+Rahm, Erhard (1992).
+"Framework for Workload Allocation in Distributed Transaction Processing
+Systems" Journal of Systems & Software, Vol.
+18,
+No. 2, pp.
+171-190.
+Rahm, Erhard (1993)."Evaluation of Closely Coupled
+Systems for High Performance Database Processing", 13th International Conference on Distributed
+Computing Systems Proceedings ~ International
+Conference on Distributed Computing Systems,
+IEEE, pp.
+301-310.
+Rajagopal, R., and Comfort, J.C.
+(1989).
+"Contrasting Distributed Simulation with Parallel Replication: A Case Study of a Queuing on a Network of
+Transputers" Proceedings of 1989 Winter Simulation Conference, pp.
+746-755.
+Ram, S., and Chastain, C.L.
+(1989).
+"Architecture of
+Distributed Data Base Systems" Journal of Systems & Software, Vol.
+10, pp.
+77-95.
+Ram, S., and Narasimhan, S.
+(1994).
+"Database Allocation in a Distributed Environment: Incorporating a Concurrency Control Mechanism and Queuing Costs" Management Science, Vol.
+40, No. 8,
+pp.
+969-983.
+Ramathirtham, K., and Stankovic, J.A.
+(1994).
+"Scheduling Algorithms and Operating System
+Support for Real-time Systems" Proceedings of
+IEEE, Vol.
+82, No. 1, pp.
+55-66.
+Rolia, J. A.
+(1994).
+"Distributed Application Performance, Metrics and Management" IFIP Transactions C: Communication Systems, No.
+C-20, pp.
+235-246.
+Samaras, George, Kshemkalyani, Ajay D., and Citron, Andrew (1996).
+"Context Management and Its
+Applications to DistributedTransactions;' Proceedings ~ International Conference on Distributed
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+Computing Systems, IEEE, pp.
+683-691.
+Schaad, Werner, Schek, Hans-J., and Weikum, G.
+(1995).
+"Implementation and Performance of Multilevel Transaction Management in a Multidatabase
+Environment," Proceedings of the International
+Workshop on Research Issues in Data Engineering ~ Distributed Object Management ~ RIDEDOM, IEEE, pp.

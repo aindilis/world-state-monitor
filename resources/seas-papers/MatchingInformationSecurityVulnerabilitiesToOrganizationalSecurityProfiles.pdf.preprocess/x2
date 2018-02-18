@@ -1,0 +1,721 @@
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+rative approach to solve test problems of small size for
+comparison purposes.
+5.1.
+Specific GA Implementation
+Organizations have two major objectives for
+managing their information security investments:
+(1)
+Min
+s
+(2)
+Min
+s
+Choose a security combination that maximizes
+the coverage of vulnerabilities or in other words
+minimizes the weighted residual vulnerability.
+This objective can be represented as
+m
+X
+ð6Þ
+ai r i
+i¼1
+Choose a security combination that minimizes
+the costs to the firm.
+This objective can be
+represented as
+n
+X
+ð7Þ
+cj sj
+j¼1
+5.2.
+Simulation experiment design
+The fitness function for learning the security
+profiles combines both objective functions into one.
+The fitness function for any security combination S k is
+described as
+F¼a
+m
+X
+i¼1
+seed the next generation.
+The strings are sorted in
+descending order of their fitness.
+A certain percentage
+of the best security profiles are automatically copied
+(inherited) into the next generation.
+The remaining
+strings in the previous generation are selected for the
+next generation using stochastic selection with replacement until the full population size is reached.
+The
+probability of a security profile getting selected is
+proportional to the value of its fitness function.
+This
+process is undertaken for pairs of strings.
+Once a pair of
+strings has been selected, a weighted coin is tossed to
+determine if they will undergo a single-point crossover
+operation.
+If they are chosen to crossover, the pair of
+strings will exchange bits after a preset crossover
+position.
+After the crossover operation is completed,
+the population undergoes mutation where each bit in all
+security profiles is toggled according to a pre-defined
+mutation probability.
+The above operations are
+repeated until the best solution does not improve for a
+certain number of generations.
+ai ri þ b
+n
+X
+cj s j
+ð8Þ
+j¼1
+where
+a þ b ¼ 1 and a; bV1
+a and b are non-negative and represent the
+preferences of the organizations.
+Some organizations
+wish to cover as many of the vulnerabilities as
+possible.
+For these organizations, addressing these
+vulnerabilities is more important than paying an extra
+price for security technologies.
+This preference can be
+implemented by choosing aNb.
+For other organizations, the security budget is quite limited so they try to
+minimize the cost of security while covering most of
+the vulnerabilities.
+This case can be represented by
+choosing abb.
+We use a simple GA, similar to [5], including the
+operations of selection, crossover and mutation.
+We
+start with a random population of security profiles in the
+initial generation.
+An elitist selection strategy is used to
+A set of 25 random vulnerability scenarios was
+created for testing the performance of the GA. We
+compare the GA approach to an enumerative or
+exhaustive search (which we call bBrute ForceQ (BF))
+approach to compare the efficiency and efficacy of the
+GA approach for problems of small size.
+We also
+examine different sizes of problems (in terms of
+numbers of vulnerabilities and security technologies)
+to examine the scalability of the GA approach.
+The
+results of these simulation experiments and a discussion
+of these results are provided in the next section.
+6.
+Results
+For the first set of experiments, we tested 25
+random vulnerability combinations and searched for
+the optimal security portfolio using both the GA
+approach as well as a BF search.
+We assigned random
+weights to each vulnerability and security technology.
+We assumed that organizations consider covering the
+vulnerabilities and the cost of security to be equal and
+assign the same weight to these parameters (a=b).
+The
+results of the first set of experiments are presented in
+Table 4.
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+599
+Table 4
+GA performance
+Vulnerability
+GA solution
+BF solution
+GA
+fitness
+BF
+fitness
+%
+Error
+GA
+time
+(ms)
+BF
+time
+(ms)
+GA
+faster by
+factor of
+00001011011100010101
+00110001000010011000
+01111110011101011110
+11111101000100011110
+11101011111010111110
+11001010101001010001
+10001011111101010101
+11010100110111000110
+10001011010010001000
+00111100010011010111
+10111110101000110101
+01111111011010110001
+10111111101100111001
+01101001111000001101
+10100000110011011111
+10000001110100000110
+01000111101101001000
+00110101010000000101
+11100100101000010110
+00010111011111101101
+01001110100100000110
+01000011110111100100
+10111101011111001101
+10001010011111010000
+10001101101011110000
+0000000101000
+0000000001011
+1000000001001
+1000000001001
+1000000001011
+1000000001000
+1000000001001
+1000010000010
+1000000001011
+0000000110000
+1000000001001
+0000000011000
+1000000001001
+1000000001001
+1000000001011
+1000010001000
+1000000001001
+0000010001000
+1000000001001
+0000000001011
+1000010000010
+0000000110000
+1000000001011
+0000000011000
+0000000011000
+0000000101000
+0000000001011
+1000000001001
+1000000001001
+1000000001011
+1000000001000
+1000000001001
+1000010000010
+1000000001011
+0000000110000
+1000000001001
+0000000011000
+1000000001001
+1000000001001
+1000000001011
+1000010001000
+1000000001001
+0000010001000
+1000000001001
+0000000001011
+1000010000010
+1000010001010
+1000000001011
+0000000011000
+0000000011000
+0.1314
+0.1152
+0.1322
+0.1055
+0.1470
+0.1249
+0.1322
+0.0875
+0.1274
+0.0982
+0.1252
+0.1275
+0.1252
+0.1322
+0.1274
+0.0816
+0.1252
+0.0684
+0.1252
+0.1442
+0.0611
+0.0982
+0.1470
+0.1275
+0.1275
+0.1314
+0.1152
+0.1322
+0.1055
+0.1470
+0.1249
+0.1322
+0.0875
+0.1274
+0.0982
+0.1252
+0.1275
+0.1252
+0.1322
+0.1274
+0.0816
+0.1252
+0.0684
+0.1252
+0.1442
+0.0611
+0.0966
+0.1470
+0.1275
+0.1275
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+1.72
+0.00
+0.00
+0.00
+220
+240
+180
+150
+160
+160
+140
+190
+160
+150
+160
+170
+160
+160
+140
+190
+170
+160
+150
+180
+170
+170
+150
+150
+160
+420
+360
+360
+370
+360
+370
+360
+370
+360
+350
+360
+350
+360
+350
+370
+360
+360
+370
+370
+350
+350
+370
+360
+370
+370
+1.91
+1.50
+2.00
+2.47
+2.25
+2.31
+2.57
+1.95
+2.25
+2.33
+2.25
+2.06
+2.25
+2.19
+2.64
+1.89
+2.12
+2.31
+2.47
+1.94
+2.06
+2.18
+2.40
+2.47
+2.31
+GA specifications
+Population size
+Elitist/inherited
+100
+40%
+Population
+Crossover rate
+Crossover point
+Mutation rate
+Stopping criteria
+0.85
+Mid-point (fixed)
+0.01
+50 stable generations
+From the above results, we can easily see that
+the GA-based approach was able to find the best
+solution for all but 1 of 25 test cases that we
+analyzed.
+Not only did the GA-based approach give
+us the right solution, the execution time (CPU time
+for finding the solution) for the algorithm was
+much faster than the exhaustive BF approach.
+The
+GA-based approach performed consistently better
+than the BF technique.
+We carried out the analysis
+for 20-bit vulnerabilities and 13-bit security profiles.
+These vulnerability and security profiles
+matched with the classification of vulnerabilities
+and security technologies provided in [1].
+Table 5
+presents the best security profiles for actual
+vulnerabilities for some of the above results.
+In the section above, we demonstrated the
+effectiveness of the GA-based approach of matching
+security technologies and vulnerabilities for a problem size of 20 vulnerabilities and 13 security
+technologies.
+However, it is much more realistic to
+have other possible combinations of vulnerabilities
+and security technologies.
+In this section, we analyze
+the performance of the GA-approach based on the
+problem size.
+600
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+Table 5
+Security profiles for selected vulnerabilities
+Vulnerability profile
+Vulnerabilities
+Security profile
+Security technologies
+00001011011100010101
+Homogeneity, Predictability, Rigidity,
+Gullibility, Capacity Limits, Lack of
+Recoverability, Electronic Accessibility,
+Physical Accessibility, Dependency
+Singularity, Centralization, Separability,
+Homogeneity, Sensitivity, Predictability,
+Gullibility, Capacity Limits, Lack of
+Recoverability, Difficulty of Management,
+Electronic Accessibility, Transparency,
+Physical Accessibility, Electromagnetic
+Susceptibility
+Uniqueness, Separability, Homogeneity,
+Predictability, Rigidity, Gullibility, Lack
+of Recoverability, Lack of Self-awareness,
+Difficulty of Management, Complacency/
+Co-optability
+Singularity, Homogeneity, Sensitivity,
+Predictability, Malleability, Lack of
+Recoverability, Physical Accessibility,
+Electromagnetic Susceptibility
+0000000101000
+Segmentation, Decentralization
+and Quarantine, Self-organization
+and Collective behavior
+1000000001001
+Heterogeneity, Self-organization
+and Collective behavior, Threat/
+Warning Response Structure
+0000000011000
+Immunologic Identification,
+Self-organization and Collective
+behavior
+1000010000010
+Heterogeneity, Rapid Recovery
+and Reconstitution, Centralized
+Management of Information
+Resources
+01111110011101011110
+10001101101011110000
+01001110100100000110
+Additionally, the population size used in the GAbased approach also affected the performance of the
+algorithm.
+We analyzed different population sizes
+along with the problem size to demonstrate that
+relatively small population sizes result in an
+effective GA performance.
+Fig.
+1 demonstrates the
+accuracy of the GA-based approach compared to
+the optimal solution obtained by the BF search of
+the security technologies and vulnerabilities.
+The
+error rate as compared with the optimal solution
+appears on the y axis and the problem size appears
+on the x axis.
+From Fig.
+1, it can be seen that the GA-based
+approach has error levels of less than 5% with
+Fig.
+1.
+GA accuracy for varying problem sizes.
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+optimal population sizes, even with the problem size
+of 24 vulnerabilities and 24 security technologies.
+The GA-based approach accuracy suffered for larger
+problems when, for example, the population size of
+20 or 50 security profiles was used for each
+generation.
+However, a population of 50 security
+profiles represents only 0.0002% of all the possible
+security profiles.
+We can easily see that GA-based
+approach is accurate for population sizes above 100
+security profiles.
+In instances when the GA-based
+technique does not provide the optimal solution, the
+error is low enough for the solution to be considered
+to be a viable solution.
+It has to be noticed that given
+the complex nature of information security technologies, even the optimal solutions do not guarantee a
+complete coverage of all vulnerabilities.
+However,
+such a solution provides an approach to manage the
+risk of exposure while keeping the costs under
+control.
+From a management perspective, such an
+approach provides insight into viable security solutions and generates an awareness of the exposed
+risk that management can further address through
+disaster recovery measures.
+Nevertheless, the question still remains: Is the
+GA-based approach fast enough for larger problems
+with a bigger population size?
+Fig.
+2 presents the
+performance of the GA-based approach as the
+601
+problem size increases.
+From Fig.
+2, it is evident
+that the BF approach performs better for smaller
+problem sizes.
+However, the execution time of the
+BF approach increases exponentially with the problem size.
+For larger problem sizes, the GA-based
+approach performs several thousand times faster than
+the BF approach.
+It is also interesting to see that the
+execution time for GAs does not increase exponentially with an increase in the population size.
+7.
+Conclusions and future directions
+In this research, we presented a GA-based
+approach to allow organizations to match their
+security technologies against their vulnerabilities.
+Matching security technologies and vulnerabilities is
+a dual-objective problem: maximizing the vulnerabilities covered and minimizing the security costs.
+The
+problem was reduced to a set-covering problem,
+known not to be solvable in polynomial time.
+Therefore, a heuristic approach using GAs was used.
+We used a weighted average GA approach to
+combine the objective functions and find a good
+security match to the vulnerabilities while trying to
+minimize the security cost.
+The GA-based approach
+was much faster than the BF approach of searching
+Fig.
+2.
+GA execution time.
+602
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+for the best security–vulnerability combination.
+The
+algorithm scales very well with the problem size
+and the execution time increases almost linearly
+with the increase in the problem size (search space),
+i.e., the increase in the number of vulnerabilities and
+security technologies.
+The GA-based approach also
+showed acceptable levels of accuracy in determining
+the correct solution.
+In future research, this mapping can easily be
+extended to match securities to vulnerabilities with
+specific implementations of vulnerabilities and
+security technologies.
+Carrying out case studies in
+organizations and applying the techniques described
+in this paper would truly demonstrate and hopefully underscore the practicality and usefulness of
+the approach.
+The implementation of the GA used
+here can be refined and extended to improve
+performance and scalability of the approach, as
+well as compared against other heuristics to further
+measure performance.
+Eventually, we envision this
+GA-based approach being incorporated into a
+decision support tool for supporting managers in
+information security planning and management
+activities.
+Finally, much more research in general
+needs to be done to assist organizations in
+protecting their informational assets from harm at
+an acceptable cost.
+Appendix A. Pseudo-code for genetic algorithm
+Procedure reproduce
+Input: cur_pop: a vector of solution population
+mid: the position at which crossover take place
+mutate_prob: mutation probability
+Output: next_pop: a vector of the same size as the
+input pop.
+Begin:
+sort cur_pop according to the solution fitness in
+descending order
+inherit a percentage of best performing solutions
+to the next_pop
+while next_pop.sizebcur_pop.size(), do
+copy two solutions, s1, s2, from the cur_pop.
+//The chance for each solution getting picked
+is proportional to its fitness.
+if (crossover_prob)
+call crossover(s1, s2, mid)
+mutate s1, s2, according to mutate_prob
+insert s1, s2 in next_pop
+increment next_pop by 2
+end loop
+End
+Procedure crossover
+Input:s1, s2: parent strings
+mid: the position at which crossover take place
+Output: none
+Begin:
+exchange the bits from 0 to mid between s1 and
+s2.
+End
+Procedure GA
+Input:
+Output:
+Begin:
+call Generate_initial_population(pop)
+old_best=0;
+for ibÀ0 to max_generation, do
+best=Compute_fitness(pop);
+if old_best!=best
+old_best=best;
+ctr=0;
+else
+ctr++;
+if ctrNstable
+return best;
+end if
+end if
+next_pop=reproduce(pop);
+pop=next_pop;
+end loop
+End
+References
+[1] R.H. Anderson, P.M. Feldman, S. Gerwehr, B.K. Houghton,
+R. Mesic, J. Pinder, J. Rothenberg, J.R. Chiesa, Securing the
+U.S. Defense Information Infrastructure: A Proposed
+Approach, RAND Document MR-993-OSD/NSA/DARPA
+(1999).
+[2] A. Charnes, W.W. Cooper, Management Models and Industrial
+Applications of Linear Programming, John Wiley and Sons,
+NY, 1961.
+[3] C.A.C. Coello, An updated survey of GA-based multiobjective
+optimization techniques, ACM Computing Surveys 32 (2)
+(2002) 109–143.
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+[4] T.H. Cormen, C.E. Leiserson, R.L. Rivest, C. Stein, Introductions to Algorithms, The MIT Press, Cambridge, MA, 2001.
+[5] D.E. Goldberg, Genetic Algorithms: In Search, Optimization
+and Machine Learning, Addison-Wesley, Reading, MA, 1989.
+[6] Y. Ijiri, Management Goals and Accounting for Control, North
+Holland Publishing, Amsterdam, 1965.
+[7] W. Jackob, M. Gorges-Schleuter, C. Blume, Applications of
+genetic algorithms to task planning and learning, in: R.
+M7nner, B. Manderick (Eds.), Proceedings of the Second
+Workshop on Parallel Problem Solving from Nature, North
+Holland Publishing, Amsterdam, The Netherlands, 1992,
+pp.
+291–300.
+[8] D. Quagliarella, A. Vicini, Coupling genetic algorithms and
+gradient based optimization techniques, in: D. Quagliarella, J.
+Pe´riaux, C. Poloni, G. Winter (Eds.), Genetic Algorithms and
+Evolution Strategies in Engineering and Computer Science:
+Recent Advances in Industrial Applications, John Wiley and
+Sons, Chichester, UK, 1995.
+[9] B.J. Ritzel, J.W. Eheart, S. Ranjithan, Using genetic algorithms to solve a multiobjective groundwater pollution
+containment problem, Water Resources Research 30 (5)
+(1994) 1589–1603.
+[10] E. Sandgren, Multicriteria design optimization by goal programming, in: H. Adeli (Ed.), Advances in Design Optimization, Chapman & Hall, London, UK, 1994, pp.
+225–265.
+[11] G. Stoneburner, Underlying Technical Models for Information
+Technology Security, National Institute for Standards and
+Technology SP 800-33 (2001).
+[12] G. Syswerda, J. Palmucci, The Applications of Genetic
+Algorithms to Resource Scheduling, in: R.K. Belew, L.B.
+Booker (Eds.), Proceedings of the Fourth International Conference on Genetic Algorithms, University of California, San
+Diego, Morgan Kaufmann Publishers, San Mateo, CA, 1991.
+[13] P.B. Wienke, C. Lucasius, G. Kateman, Multicriteria target
+optimization of analytical procedures using a genetic algorithm, Analytica Chimica Acta 265 (2) (1992) 211–225.
+603
+[14] P.B. Wilson, M.D. Macleod, Low implementation cost of IIR
+digital filter design using genetic algorithms, Proceedings of
+the IEE/IEEE Workshop on Natural Algorithms and Signal
+Processing, 1993.
+Mukul Gupta is an assistant professor in the Department of
+Operations and Information Management in the School of Business
+at the University of Connecticut.
+He earned his doctorate from the
+Krannert School of Management at Purdue University in 2003.
+His
+current research interests are information security management and
+agent-based simulations.
+Jackie Rees is an assistant professor in the Krannert School of
+Management at Purdue University.
+She earned her doctorate from
+the University of Florida in 1998.
+She has published in Decision
+Support Systems, INFORMS Journal of Computing, Communications of the ACM, European Journal of Operational Research and
+Information Technology and Management.
+Her current research
+interests are in the intersection of information security risk
+management and machine learning.
+Alok Chaturvedi is an associate professor at the Krannert School of
+Management and founder and director of Purdue e-Business
+Research Center (PERC) at Purdue University.
+He earned his
+doctorate from the University of Wisconsin-Milwaukee in 1989.
+He
+has published in such journals as Information Systems Research,
+Communications of the ACM, Decision Support Systems, International Journal of Information Management, Journal of Organizational Computing and Electronic Commerce and Database.
+His
+current research interests are information warfare and synthetic
+environments.
+Jie Chi is a doctoral student in Computer Science at Purdue
+University.
+He also serves as a graduate research assistant at the
+Purdue e-Business Research Center.

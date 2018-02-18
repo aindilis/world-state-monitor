@@ -1,0 +1,525 @@
+Dserv
+Figure 1.
+Topological design of the simulated system.
+70
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+performance statistics for the entire system, and
+gracefully terminating each simulation run.
+time to all data servers.
+When the new time is received, the data servers update their individual
+clocks and proceed to complete the activity that is
+scheduled for that time instant.
+Each data server
+computes the time of the next activity and sends
+this message to the name server.
+When Apex receives all "next activity times," it advances the clock
+to the minimum of these times and broadcasts the
+time.
+Next, a predefined number of data servers (Dservs)
+are activated.
+When each Dserv becomes active, it
+receives the global view of the system through handshaking.
+Figure 2 describes the sequence of messages for a two-data server system.
+1.Dserv 1 contacts Apex and communicates its
+receive port.
+2.
+Dserv 2 repeats the process.
+3,4.
+Apex initializes all sites.
+This includes data/
+view materialization, communication of ports,
+location of data, global protocols like
+concurrency control policy, etc., and the clock
+initialization.
+Clock synchronization between different sites is
+maintained only for the purpose of simplicity.
+Lamport and Mellier-Smith (1985) and others have
+discussed the problems in clock synchronization in
+a distributed environment.
+In SimDS, therefore, a
+data server timestamps each incoming transaction
+with its own clock.
+All further processing within a
+data server is done using the local clock.
+Each data
+server also communicates with each other through
+an exchange of messages.
+Since each Dserv has
+an independent thread of control, it is difficult to ensure that all activity scheduled for a particular time
+is completed prior to the advancement of the clock.
+SimDS achieves the coordination by repeatedly
+transmitting the same clock time until there are no
+intersite messages between two successive "clock"
+broadcasts.
+Simulation Design Choices
+In this section we will describe some of the key components of the simulation environment.
+Clock Management
+The clock in SimDS is controlled by the name server
+- - Apex.
+At the beginning of the simulation, Apex
+initializes the clock and broadcasts the new clock
+Dserv I
+•
+I
+Apex
+•
+• Dserv2
+Figure 2.
+Handshaking between data servers and Apex.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+71
+A similar concept is used to abort and roll back transactions.
+Simulation of transaction abortion is a difficult problem since it is hard to predict whether a
+transaction will abort at one site or at multiple sites,
+and at what time.
+In SimDS, an aborted transaction
+is not erased from the resource queues of each site
+immediately.
+When a transaction is aborted, its state
+is immediately changed to ABORT.
+The transaction, however, remains in the system until all intersite
+communication that occurs at that clock instant has
+been completed.
+Transmission Control Protocol
+SimDS has been developed in 'C' on a UNIX platform.
+It uses the user datagram protocol (UDP) for
+interprocess communication.
+The alternate choice
+was transmission control protocol (TCP).
+UDP is a
+connectionless communication protocol as against
+TCP which first establishes connection between the
+two parties prior to message transfer.
+While TCP
+provides a greater degree of reliability compared to
+UDP, UDP was found to be adequate for this application.
+UDP was observed to be quite reliable when
+the host machines were connected on a small LAN.
+UDP also provides a greater throughput than TCP,
+enabling the simulation to run faster.
+Service Queues
+Each database site in the simulation maintains a
+transaction queue and three resource queues (one
+for each the CPU, disk IO, and network messages).
+The transaction queue maintains a list of transactions and sub-transactions that are alive at a particular site.
+Each transaction is identified by the site
+of origin and a transaction serial number assigned
+by the originating site.
+In the transaction queue,
+multiple entries of the same transaction can exist
+simultaneously.
+For example, the transaction queue
+on the originating site may contain an entry for the
+main transaction, one for the part of the transaction
+that pertains to the data resident on that site, and
+another for a request for data lock (if the site is also
+a lock site).
+The resource queues maintain a list of transactions
+or sub-transactions that are either using the particular resource or are waiting to use the resource.
+The
+current version of SimDS assumes that there is only
+one CPU and one disk at each site.
+The software
+could easily be extended to study multi-process and
+multi-disk data servers.
+72
+The network queue is used to implement network
+delays.
+It can also be extended to simulate network
+failures - - network partitioning and node failure.
+When a site wishes to transmit a message to another site, it enqueues the message in the message
+queue with some estimated delay.
+After the delay
+interval, the message is transmitted to the required
+site.
+Transaction splitting and allocation
+In a RDTPS, a transaction may need to be processed
+at multiple sites.
+SimDS simulates this by splitting a
+transaction and assigning it to multiple data sites.
+Two different policy considerations are implemented
+in SimDS:
+1.
+2.Number of sites to allocate the transaction: This
+depends on the read-write policy simulated by
+the system at the time.
+In the first policy (Read
+One Write All), each transaction is read from only
+one copy of the data while the update is performed on all sites that contain the data item.
+In
+a quorum-based policy, multiple sites are read
+and written.
+Allocation of transaction:The actual assignment
+of transactions to the different sites is done on
+the basis of the assignment policy simulated by
+the system.
+The assignment can be done either randomly or based on the transaction and
+environmental parameters.
+Handles are provided to incorporate intelligent allocation of transactions.
+Atomicity of Broadcasts
+One of the requirements in a distributed system is
+to maintain the atomicity of broadcasts, i.e., any
+causal relationship between two messages need to
+be maintained at the receiving end.
+In other words,
+if site 1 receives message A and uses this message
+to transmit message B, then another site 2 on the
+network must logically receive message A prior to
+message B.
+The network delay estimation process at each node
+is responsible for maintaining the atomicity of broadcasts.
+When a new message is generated, the delay estimation process scans the outstanding message queue for the last message (M) that pertains
+to the same transaction and has the same destination.
+The delay estimate of the new transaction is
+set to be greater than the delay of the message M.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+Deadline Estimation
+Locking Policy
+SimDS estimates the deadline for each transaction
+on the basis of the parameters specified for each
+site.This estimate is generated at the time the transaction is created and is constant throughout the life
+of the transaction.
+SimDS generates deadlines
+through a user-defined uniform distribution.
+In a central site system, the system assigns a lock
+site at the start of the simulation.
+In a primary site
+system, one or more sites could be used to perform
+locking on different subsets of data.
+When a transaction requires a lock, it obtains it by requesting locks
+from all sites that are responsible for maintaining
+locking for the data associated with the transaction.
+Locking granularity is held constant at a page of
+memory (Abott and Garcia-Molina, 1988).
+Estimation of Transaction Completion Time
+The time taken for each step in the processing of
+transactions is determined externally through a parameter file.
+The estimated time of processing a
+transaction is the sum total of all sub-steps plus expected waiting time in one or more resource queues.
+(The default value of the expected waiting time is
+set to zero).
+Priority Allocation
+SimDS computes priority of each transaction at the
+time a transaction is created.
+Abott and GarciaMolina (1988) have indicated that a static priority
+assignment works at least as well as a dynamic
+policy.
+Thus once a priority value is computed, it
+remains unaltered throughout the life of the transaction.
+SimDS generates priorities from a multimodal distribution.
+The distribution is a composite of many
+uniform distributions, each having a usage probability associated with it.
+The system first chooses a
+distribution from this set of distributions using a uniformly distributed random number (0,1).
+Next, a priority estimate is computed based on the distribution
+chosen in the earlier step.
+This enables the user to
+simulate a mixture of different classes of transactions, such as emergency, important, and routine.
+Scheduling of Transactions in CPU and
+IO Queues
+When a transaction needs to use a resource, it is
+enqueued in the resource queue.
+Whenever the
+particular resource is free, its scheduler scans the
+queue to pick the transaction with the highest priority.
+The transaction is then verified to check if it can
+be scheduled on the basis of scheduling policies.
+If
+needed, the originating site of the transaction is informed to coordinate a clean abort.
+The scheduling
+policies for IO and CPU queues are independent of
+each other.
+Users can specify different prioritizing
+schemes for "read-only transactions" and "update
+transactions" in the IO queue.
+The lock site maintains the number of shared and
+exclusive locks it has granted.
+This is used to compute the number of pages locked by transactions.
+When a new request is received, the lock mechanism either grants the lock or refuses it using the
+fraction of database locked by existing transactions.
+When a transaction terminates, the lock mechanism
+reduces the number of pages locked.
+Simulation Parameters
+This section describes the different parameters used
+by SimDS.
+Arrival Rates: A user can specify the transaction
+arrival rate at each site.
+The inter-arrival time is set
+to an exponential distribution with the mean as the
+reciprocal of the arrival rate.
+Transaction Sizes: The default for granularity of
+database size is a page of memory.
+(The system
+could be set to change the granularity to a tuple of a
+data table).
+For example, each transaction will either read or write (or both) a number of pages of
+memory that were determined by a normal distribution with a mean of 12 pages and a variance of four
+pages.
+(The smallest data size affected by each
+transaction was off-course zero).
+Volatility:.
+Volatility is the measure of the fraction of
+transactions that updates the database as a percentage of the total number of incoming transactions.
+Number of Data Sites: SimDS is a scalable system
+and can simulate a very large system.
+The total
+number of data sites that can be simulated is restricted by the operating system and network considerations.
+Each process maintains an open socket
+for each of the other processes.
+Since the operating system restricts the number of sockets that can
+be opened simultaneously, it governs the size of the
+system that can be simulated.
+The performance of
+the system is seen to grow linearly with the number
+of data sites and does not restrict scaling.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+73
+Concurrency Control Protocols: SimDS is capable
+of simulating two of the most widely studied
+concurrency control protocols - - locking based and
+optimistic.
+Furthermore, SimDS simulates centralized or distributed concurrency control.
+For example,
+one can designate data site "one" as the only lock
+site.
+Thus all locking tables would reside at site "one"
+and all sites request lock from this site.
+the statistics.
+At the end of the simulation run, Apex
+sends a terminating message to the data sites.
+At
+this point each site transmits a message to Apex,
+informing it of the statistics pertaining to the resource
+queues.
+Locking Mechanism: Each transaction determines
+its read-write set at the very outset (at the completion of the precompute stage) and requests and releases all locks at one time.
+Such an assumption
+allows one to ignore the simulation of deadlock detection and prevention/avoidance and simplifies the
+state transition of the system to a large extent.
+•Number of transactions completed prior to the deadline.
+SimDS currently simulates a uniformly distributed
+access pattern, i.e., transactions can access any of
+the data items in a database.
+A lock is granted to a
+transaction if there is no overlap between its read
+sets and the write sets of all transactions currently
+holding locks or between its write sets and the read
+sets of the existing transactions.
+If a lock is denied,
+SimDS can currently restart the transaction, or it
+blocks it for a fixed period of time.
+•Mean queue lengths for each site and each resource.
+Scheduling Protocols: In a real-time transaction processing environment, scheduling of different transactions is crucial to performance of the system.
+SimDS incorporates four different scheduling strategies: FIFO, earliest deadline first, least slack first,
+and maximum "benefit" first.
+Related to these algorithms is the strategy for preemption of current transaction.
+SimDS is designed to simulate any of the
+three given strategies: Wait, Preempt, and Preempt
+and Promote.
+I0 Protocols: Scheduling strategies affect the allocation of the CPU to each transaction.
+A similar set
+of strategies allow scheduling of transaction that are
+waiting to complete disk I/O. Additionally, the user
+can opt for different strategies for read operations
+as against write operations.
+Included among the different statistics computed
+by the system are:
+•Throughput-- the number of transactions completed
+prior to the deadline divided by the simulation clock
+elapsed.
+•Total delay observed by all transactions.
+•Mean time spent in the resource queue by each
+transaction at each site and for each resource.
+Experiment Design
+This sections demonstrates how RDTPS experiments can be run using SimDS.
+Experiments conducted in this set simulates a total of 600 transactions.
+The first 100 transactions were ignored to allow the system to reach a steady state.
+The stability
+of the system was checked by examining the length
+of resource queues periodically during the simulation run.
+Arrival rates beyond which the system became unstable were excluded from the study.
+Bias originating from the generation of random number sequence was eliminated by conducting each
+experiment several times with different "seed" values.
+Different system parameters like average
+throughput, number of transactions completed prior
+to the deadline, etc., were measured.
+The results
+are the average value determined by each set of
+experiments.
+Examples and Discussion
+Deadline Estimation: The estimation of deadlines in
+SimDS is set to a composite distribution comprising
+of one or more uniform distributions.
+Observation Parameters
+The server Apex maintains all results observed in
+the system.
+When a transaction is committed or
+aborted, the originating site informs Apexto update
+74
+This section presents some sample results obtained
+in the study.
+SimDS was used to simulate a twodata site system where the data were partly replicated.
+Single site locking was used as the
+serializability mechanism.
+Experiments were conducted to study the impact of scheduling policies,
+priority assignment, and concurrency conflict resolution policies on different system parameters.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+Impact of Load on the System
+In this set of experiments, the impact of increasing
+the arrival rates was observed on the throughput of
+the system and the number of transactions completed prior to the deadline.
+Figure 3 presents the
+results obtained.
+Clearly, the most striking feature of the above chart
+is the difference in behavior of the system when all
+transactions are scheduled against when tardy transactions are aborted.
+When the system decides to
+schedule all transactions, the throughput initially increases with arrival rate but it drops rapidly at very
+high loads.
+This behavior was observed under all
+combinations of priority assignments and preemption policies.
+The behavior of the system is markedly different when the scheduling policy changes
+from "All" to "Feasible" or "Alive Only:' In these cases
+the throughput continues to rise with increase in arrival rates.
+This is again an expected result since
+the scheduling policies prevent overloading of the
+system.
+Another interesting statistics is the number of transactions completed within stipulated time as a fraction of the number of transactions that enter the system.
+Figure 4 presents that result.
+The number of transactions completed prior to deadlines shows a marked decline when all transactions
+are scheduled.
+When the system tries to schedule
+only feasible transactions, the number of transactions completed within stipulated time is fairly stable.
+When the system schedules all transactions that
+have not reached the deadline, the number of "correct"transactions shows a decline, although a small
+one.
+Also, it appears that the fraction of correct transactions reaches a stable value at high system loads.
+This is quite reasonable since the scheduling policies prevent system overload.
+Impact of Scheduling Policies
+In this set of experiments, the scheduling policies
+and the arrival rates were altered, and the impact
+on the system performance under different priority
+assignments and abort policies was observed.
+The
+results obtained in all categories were identical to
+the ones represented in Figures 3 and 4.
+Apart from the system behavior at high system loads,
+it is also interesting to study the performance of the
+scheduling policies in a lightly loaded system.
+At
+low arrival rates, scheduling all transactions yields
+the highest throughput and the highest fraction of
+"correct" transactions.
+Clearly, deliberately aborting
+a transaction since it is not expected to be completed
+by its deadline is an overkill and deteriorates the
+system performance.
+The "No Tardy" scheduling
+policy on the other hand yields throughput rates close
+to the policy of scheduling all transactions.
+Thus
+under these conditions, the "No Tardy" policy yields
+good results at all system loads.
+Impact of Priority Assignment
+In this set of experiments, system behavior was studied under the influence of different priority assignment policies.
+The transactions in the CPU queue
+were prioritized according to the governing priority
+assignment policy while the IO transactions were
+scheduled on a FIFO basis.
+Figure 5 illustrates the
+results obtained.
+The above results were obtained for the case where
+the system would schedule all transactions.
+It is clear
+that the priority assignment policy did not have any
+significant effect on the behavior of the system.
+A
+similar result was obtained for all other scheduling
+policies.
+To get a deeper understanding of this result, some snapshots of the process queues were
+studied at random points during the simulation.
+It
+was observed that the ordering of transactions in
+each queue was almost independent of the priority
+assignment policy.
+A more clear understanding of the impact of priority
+assignment policies is obtained from examining the
+CPU queue of both servers.
+The average number
+of transactions waiting for the CPU was observed to
+be less than one, even for fairly high loads.
+CPU
+priority assignment policies will have an impact on
+the throughput if two or more transactions have to
+contend for the CPU at a given time.
+Clearly, there
+is very little contention for the CPU resource, even
+at very high loads.
+Priority Assignment in the IO Queue
+In this set of experiments, we altered the priority
+assignment of transactions and used these assignments to schedule transactions in the IO queue.
+Figure 6 yields the results obtained from this set of
+experiments.
+The priority assignment policies for IO queues have
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+75
+I m p a c t of Ardval Rates
+30
+25
+20
+"~ 15
+10
+All
+Feasible
+•
+No Tardy
+5
+9
+I
+I
+b
+I
+12
+15
+18
+21
+Tra nsa c tio nl Se c
+Figure 3.
+Impact of system load on throughput of the system.
+500
+400
+m
+~AII
+300
+200
+Feasible
+No Tardy
+100
+0
+9
+I
+I
+I
+I
+12
+15
+18
+21
+Arrival Rates
+Figure 4.
+Impact of system load on number of transactions completed within deadline.
+76
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+OK
+350
+300
+250
+O
+--"--

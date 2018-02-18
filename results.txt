@@ -1,0 +1,1631 @@
+<at time T1 I saw that object X was at location Y>
+(#$thereExists ?I7
+ (#$and
+  (#$isa ?I7
+   (#$ThingDescribableAsFn
+    (#$WordFn I) #$Noun))
+  (#$thereExists ?T15-2
+   (#$and
+    (#$thereExists ?T15-1
+     (#$and :RESTR
+      (#$isa ?T15-1
+       (#$ThingDescribableAsFn
+        (#$WordFn T1) #$Noun))))
+    (#$temporallyIntersects ?T15-2
+     (#$StartFn ?SAW8))))
+  (#$awareOf ?I7 :CLAUSE)))
+
+(#$thereExists ?I7
+ (#$and
+  (#$isa ?I7
+   (#$ThingDescribableAsFn
+    (#$WordFn I) #$Noun))
+  (#$thereExists ?T15-2
+   (#$and
+    (#$thereExists ?T15-1
+     (#$and :RESTR
+      (#$isa ?T15-1
+       (#$ThingDescribableAsFn
+        (#$WordFn T1) #$Noun))))
+    (#$at-UnderspecifiedLandmark ?SAW8 ?T15-2)))
+  (#$awareOf ?I7 :CLAUSE)))
+
+
+
+<again at later time T2 I saw that object X was still at location Y>
+
+
+<where is object X>
+(#$and
+ (#$isa ?OBJECT6 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X7) #$XRating)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+(#$and
+ (#$isa ?OBJECT6 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X7) #$XRating)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+(#$and
+ (#$isa ?OBJECT6 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X7) #$MDMA-TheStimulant)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+(#$and
+ (#$isa ?OBJECT6 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X7) #$MDMA-TheStimulant)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+(#$and
+ (#$isa ?OBJECT6 #$Objecting-CommunicationAct)
+ (#$equals ?X7 #$X-MusicGroup)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+(#$and
+ (#$isa ?OBJECT6 #$PartiallyTangible)
+ (#$equals ?X7 #$X-MusicGroup)
+ (#$underspecifiedLocation ?IS3 ??WHERE))
+
+
+
+<at time T1, where was object X>
+(#$and
+ (#$thereExists ?OBJECT11-1
+  (#$and
+   (#$thereExists ?T15-2
+    (#$and
+     (#$thereExists ?T15-1
+      (#$and :RESTR
+       (#$isa ?T15-1
+        (#$ThingDescribableAsFn
+         (#$WordFn T1) #$Noun))))
+     (#$at-UnderspecifiedLandmark ?OBJECT11-1 ?T15-2)))
+   (#$isa ?OBJECT11-1 #$PartiallyTangible)
+   (#$isa ?OBJECT11-1
+    (#$ThingDescribableAsFn
+     (#$WordFn X) #$Adjective))))
+ (#$underspecifiedLocation ?WAS9 ??WHERE))
+
+(#$and
+ (#$thereExists ?OBJECT11-1
+  (#$and
+   (#$thereExists ?T15-2
+    (#$and
+     (#$thereExists ?T15-1
+      (#$and :RESTR
+       (#$isa ?T15-1
+        (#$ThingDescribableAsFn
+         (#$WordFn T1) #$Noun))))
+     (#$at-UnderspecifiedLandmark ?OBJECT11-1 ?T15-2)))
+   (#$isa ?OBJECT11-1 #$Objecting-CommunicationAct)
+   (#$isa ?OBJECT11-1
+    (#$ThingDescribableAsFn
+     (#$WordFn X) #$Adjective))))
+ (#$underspecifiedLocation ?WAS9 ??WHERE))
+
+
+
+<in plan case P1, if it is known where object X should be at time T3 in the future, please tell me.>
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark
+        (#$InstanceFn ?X19) ?T326-2)))
+     (#$isa ?OBJECT18 #$Objecting-CommunicationAct)
+     (#$isa
+      (#$InstanceFn ?X19) #$XRating))))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark
+        (#$InstanceFn ?X19) ?T326-2)))
+     (#$isa ?OBJECT18 #$PartiallyTangible)
+     (#$isa
+      (#$InstanceFn ?X19) #$XRating))))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark
+        (#$InstanceFn ?X19) ?T326-2)))
+     (#$isa ?OBJECT18 #$Objecting-CommunicationAct)
+     (#$isa
+      (#$InstanceFn ?X19) #$MDMA-TheStimulant))))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark
+        (#$InstanceFn ?X19) ?T326-2)))
+     (#$isa ?OBJECT18 #$PartiallyTangible)
+     (#$isa
+      (#$InstanceFn ?X19) #$MDMA-TheStimulant))))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark #$X-MusicGroup ?T326-2)))
+     (#$isa ?OBJECT18 #$Objecting-CommunicationAct))))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$acquaintedWith ?IT11 ?SUBJECT))))
+
+(#$thereExists ?IT11
+ (#$and
+  (#$thereExists ?P17-2
+   (#$and
+    (#$thereExists ?P17-1
+     (#$and :RESTR
+      (#$isa ?P17-1
+       (#$ThingDescribableAsFn
+        (#$WordFn P1) #$Noun))))
+    (#$in-UnderspecifiedContainer ?IT11 ?P17-2)))
+  (#$isa ?IT11
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$thereExists ?SUBJECT
+   (#$knows ?SUBJECT
+    (#$and
+     (#$thereExists ?T326-2
+      (#$and
+       (#$thereExists ?T326-1
+        (#$and :RESTR
+         (#$isa
+          (#$InstanceFn ?FUTURE31) #$CommoditiesFuture)
+         (#$in-UnderspecifiedContainer ?T326-1
+          (#$InstanceFn ?FUTURE31))
+         (#$isa ?T326-1
+          (#$ThingDescribableAsFn
+           (#$WordFn T3) #$Noun))))
+       (#$at-UnderspecifiedLandmark #$X-MusicGroup ?T326-2)))
+     (#$isa ?OBJECT18 #$PartiallyTangible))))))
+
+
+
+<the last known location of object X is Y>
+(#$and
+ (#$isa ?OBJECT12 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X13) #$MDMA-TheStimulant)
+ (#$isa
+  (#$InstanceFn ?LOCATION8) #$ContemporaryArtifact)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X13)
+  (#$InstanceFn ?LOCATION8))
+ (#$isa
+  (#$InstanceFn ?Y16)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y16)
+  (#$InstanceFn ?LOCATION8)))
+
+(#$and
+ (#$isa ?OBJECT12 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X13) #$MDMA-TheStimulant)
+ (#$isa
+  (#$InstanceFn ?LOCATION8) #$ContemporaryArtifact)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X13)
+  (#$InstanceFn ?LOCATION8))
+ (#$isa
+  (#$InstanceFn ?Y16)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y16)
+  (#$InstanceFn ?LOCATION8)))
+
+(#$and
+ (#$isa ?OBJECT12 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?LOCATION8) #$ContemporaryArtifact)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION8))
+ (#$isa
+  (#$InstanceFn ?Y16)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y16)
+  (#$InstanceFn ?LOCATION8)))
+
+(#$and
+ (#$isa ?OBJECT12 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?LOCATION8) #$ContemporaryArtifact)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION8))
+ (#$isa
+  (#$InstanceFn ?Y16)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y16)
+  (#$InstanceFn ?LOCATION8)))
+
+
+
+<the default location of object X is Y>
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$isa
+  (#$InstanceFn ?Y14)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y14)
+  (#$InstanceFn ?LOCATION6)))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$isa
+  (#$InstanceFn ?Y14)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y14)
+  (#$InstanceFn ?LOCATION6)))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$isa
+  (#$InstanceFn ?Y14)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y14)
+  (#$InstanceFn ?LOCATION6)))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$isa
+  (#$InstanceFn ?Y14)
+  (#$ThingDescribableAsFn
+   (#$WordFn Y) #$Noun))
+ (#$equals
+  (#$InstanceFn ?Y14)
+  (#$InstanceFn ?LOCATION6)))
+
+
+
+<the default location of object X was changed at time T4>
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$ReplacingAnObject)
+    (#$objectActedOn ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$doneBy ?CHANGED13 ?SUBJECT)
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$temporallyIntersects ?T418-2
+       (#$StartFn ?CHANGED13))))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation
+  (#$InstanceFn ?X11)
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+(#$and
+ (#$isa ?OBJECT10 #$PartiallyTangible)
+ (#$isa ?DEFAULT5 #$DefaultingOnLoan)
+ (#$objectFoundInLocation #$X-MusicGroup
+  (#$InstanceFn ?LOCATION6))
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?CHANGED13
+   (#$and
+    (#$isa ?CHANGED13 #$IntrinsicStateChangeEvent)
+    (#$performedBy ?CHANGED13 ?SUBJECT)
+    (#$objectOfStateChange ?CHANGED13
+     (#$InstanceFn ?LOCATION6))
+    (#$thereExists ?T418-2
+     (#$and
+      (#$thereExists ?T418-1
+       (#$and :RESTR
+        (#$isa ?T418-1 #$RDXExplosive)))
+      (#$at-UnderspecifiedLandmark ?CHANGED13 ?T418-2)))))))
+
+
+
+<it is unknown where object X was at time t5>
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+    (#$isa
+     (#$InstanceFn ?X11) #$XRating)
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X11) ?T517-2)))))
+
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$PartiallyTangible)
+    (#$isa
+     (#$InstanceFn ?X11) #$XRating)
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X11) ?T517-2)))))
+
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+    (#$isa
+     (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X11) ?T517-2)))))
+
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$PartiallyTangible)
+    (#$isa
+     (#$InstanceFn ?X11) #$MDMA-TheStimulant)
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X11) ?T517-2)))))
+
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$Objecting-CommunicationAct)
+    (#$at-UnderspecifiedLandmark #$X-MusicGroup ?T517-2)))))
+
+(#$thereExists ?IT2
+ (#$and
+  (#$isa ?IT2
+   (#<
+    (#$ThingDescribableAsFn #$Unknown-TheWord #$Adjective) >))
+  (#$isa ?IT2
+   (#$ThingDescribableAsFn
+    (#$WordFn it) #$Noun))
+  (#$underspecifiedLocation ?WAS12 ??WHERE)
+  (#$thereExists ?T517-2
+   (#$and
+    (#$thereExists ?T517-1
+     (#$and :RESTR
+      (#$isa ?T517-1
+       (#$ThingDescribableAsFn
+        (#$WordFn t5) #$Noun))))
+    (#$isa ?OBJECT10 #$PartiallyTangible)
+    (#$at-UnderspecifiedLandmark #$X-MusicGroup ?T517-2)))))
+
+
+
+<object X was purchased at time t6>
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X4) #$XRating)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X4) #$XRating)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X4) #$MDMA-TheStimulant)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X4) #$MDMA-TheStimulant)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6 #$X-MusicGroup)
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6 #$X-MusicGroup)
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$temporallyIntersects ?T611-2
+       (#$StartFn ?PURCHASED6))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X4) #$XRating)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X4) #$XRating)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$isa
+  (#$InstanceFn ?X4) #$MDMA-TheStimulant)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$isa
+  (#$InstanceFn ?X4) #$MDMA-TheStimulant)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6
+     (#$InstanceFn ?X4))
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6 #$X-MusicGroup)
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$thereExists ?SUBJECT
+  (#$thereExists ?PURCHASED6
+   (#$and
+    (#$isa ?PURCHASED6 #$Buying)
+    (#$buyer ?PURCHASED6 ?SUBJECT)
+    (#$objectPaidFor ?PURCHASED6 #$X-MusicGroup)
+    (#$thereExists ?T611-2
+     (#$and
+      (#$thereExists ?T611-1
+       (#$and :RESTR
+        (#$isa ?T611-1
+         (#$ThingDescribableAsFn
+          (#$WordFn t6) #$Noun))))
+      (#$at-UnderspecifiedLandmark ?PURCHASED6 ?T611-2)))))))
+
+
+
+<object X was sold, consumed or destroyed at time t7>
+(#$and
+ (#$isa ?OBJECT3 #$Objecting-CommunicationAct)
+ (#$thereExists ?SOLD7
+  (#$and
+   (#$isa ?SOLD7 #$SalesActivity)
+   (#$objectPaidFor ?SOLD7 #$X-MusicGroup)
+   (#$thereExists ?CONSUMED10
+    (#$and
+     (#$isa ?CONSUMED10 #$ConsumingFoodOrDrink)
+     (#$performedBy ?CONSUMED10 #$X-MusicGroup)
+     (#$thereExists ?DESTROYED12
+      (#$and
+       (#$isa ?DESTROYED12 #$DestructionEvent)
+       (#$inputsDestroyed ?DESTROYED12 :OBJECT)
+       (#$doneBy ?DESTROYED12 #$X-MusicGroup)
+       (#$thereExists ?T717-2
+        (#$and
+         (#$thereExists ?T717-1
+          (#$and :RESTR
+           (#$isa ?T717-1
+            (#$ThingDescribableAsFn
+             (#$WordFn t7) #$Noun))))
+         (#$at-UnderspecifiedLandmark ?DESTROYED12 ?T717-2))))))))))
+
+(#$and
+ (#$isa ?OBJECT3 #$PartiallyTangible)
+ (#$thereExists ?SOLD7
+  (#$and
+   (#$isa ?SOLD7 #$SalesActivity)
+   (#$objectPaidFor ?SOLD7 #$X-MusicGroup)
+   (#$thereExists ?CONSUMED10
+    (#$and
+     (#$isa ?CONSUMED10 #$ConsumingFoodOrDrink)
+     (#$performedBy ?CONSUMED10 #$X-MusicGroup)
+     (#$thereExists ?DESTROYED12
+      (#$and
+       (#$isa ?DESTROYED12 #$DestructionEvent)
+       (#$inputsDestroyed ?DESTROYED12 :OBJECT)
+       (#$doneBy ?DESTROYED12 #$X-MusicGroup)
+       (#$thereExists ?T717-2
+        (#$and
+         (#$thereExists ?T717-1
+          (#$and :RESTR
+           (#$isa ?T717-1
+            (#$ThingDescribableAsFn
+             (#$WordFn t7) #$Noun))))
+         (#$at-UnderspecifiedLandmark ?DESTROYED12 ?T717-2))))))))))
+
+
+
+<there are 3 copies of object X in stock, in various conditions - c1, c2 and c3>
+(#$thereExistAtLeast 3 ?COPIES7
+ (#$and
+  (#$in-UnderspecifiedContainer
+   (#$InstanceFn ?X12) :OBJECT)
+  (#$isa ?OBJECT11 #$PartiallyTangible)
+  (#$isa
+   (#$InstanceFn ?X12) #$MDMA-TheStimulant)
+  (#$physicalCopies ?COPIES7
+   (#$InstanceFn ?X12))
+  (#$equals ?COPIES7 ?THERE2)))
+
+(#$thereExistAtLeast 3 ?COPIES7
+ (#$and
+  (#$in-UnderspecifiedContainer
+   (#$InstanceFn ?X12) :OBJECT)
+  (#$isa ?OBJECT11 #$Objecting-CommunicationAct)
+  (#$isa
+   (#$InstanceFn ?X12) #$MDMA-TheStimulant)
+  (#$physicalCopies ?COPIES7
+   (#$InstanceFn ?X12))
+  (#$equals ?COPIES7 ?THERE2)))
+
+(#$thereExistAtLeast 3 ?COPIES7
+ (#$and
+  (#$in-UnderspecifiedContainer #$X-MusicGroup :OBJECT)
+  (#$isa ?OBJECT11 #$PartiallyTangible)
+  (#$physicalCopies ?COPIES7 #$X-MusicGroup)
+  (#$equals ?COPIES7 ?THERE2)))
+
+(#$thereExistAtLeast 3 ?COPIES7
+ (#$and
+  (#$in-UnderspecifiedContainer #$X-MusicGroup :OBJECT)
+  (#$isa ?OBJECT11 #$Objecting-CommunicationAct)
+  (#$physicalCopies ?COPIES7 #$X-MusicGroup)
+  (#$equals ?COPIES7 ?THERE2)))
+
+
+
+<object X may have been at location L sometime around duration T8 - T9>
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and :RESTR
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X3) ?L11-2)))
+  (#$isa
+   (#$InstanceFn ?X3) #$XRating)))
+
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and
+    (#$thereExists ?L11-1
+     (#$and :RESTR
+      (#$isa ?L11-1 #$Lewisite)))
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X3) ?L11-2)))
+  (#$isa
+   (#$InstanceFn ?X3) #$XRating)))
+
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and :RESTR
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X3) ?L11-2)))
+  (#$isa
+   (#$InstanceFn ?X3) #$MDMA-TheStimulant)))
+
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and
+    (#$thereExists ?L11-1
+     (#$and :RESTR
+      (#$isa ?L11-1 #$Lewisite)))
+    (#$at-UnderspecifiedLandmark
+     (#$InstanceFn ?X3) ?L11-2)))
+  (#$isa
+   (#$InstanceFn ?X3) #$MDMA-TheStimulant)))
+
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and :RESTR
+    (#$at-UnderspecifiedLandmark #$X-MusicGroup ?L11-2)))))
+
+(#$thereExists ?OBJECT1
+ (#$and
+  (#$isa ?OBJECT1
+   (#$ThingDescribableAsFn
+    (#$WordFn object) #$Verb))
+  (#$isa ?OBJECT1 #$Situation)
+  (#$thereExists ?L11-2
+   (#$and
+    (#$thereExists ?L11-1
+     (#$and :RESTR
+      (#$isa ?L11-1 #$Lewisite)))
+    (#$at-UnderspecifiedLandmark #$X-MusicGroup ?L11-2)))))
+
+
+
+<we've run out of object X as of now>
+
+
+<consumable X is expected to be fully consumed by time T>
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT
+  (#$thereExists ?EXPECTED6 ?CONSUMED11)))
+
+(#$thereExists ?SUBJECT
+ (#$expects ?SUBJECT ?CONSUMED11))
+
+
+
+<condition C holds at time T>
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$CommonwealthOfNationsOrganization)))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$CommonwealthOfNationsOrganization)))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$C-ProgrammingLanguage)))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$C-ProgrammingLanguage)))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$CommonwealthOfNationsOrganization)))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$CommonwealthOfNationsOrganization)))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$C-ProgrammingLanguage)))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$temporallyIntersects ?T10-2
+    (#$StartFn #$C-ProgrammingLanguage)))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$at-UnderspecifiedLandmark #$CommonwealthOfNationsOrganization ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$at-UnderspecifiedLandmark #$CommonwealthOfNationsOrganization ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$at-UnderspecifiedLandmark #$C-ProgrammingLanguage ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$HomoSapiens)
+     (#$lastName ?T10-1 T)))
+   (#$at-UnderspecifiedLandmark #$C-ProgrammingLanguage ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$at-UnderspecifiedLandmark #$CommonwealthOfNationsOrganization ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$at-UnderspecifiedLandmark #$CommonwealthOfNationsOrganization ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3
+  (#<
+   (#$SubcollectionOfWithRelationFromTypeFn #$Thing #$preconditionFor-Props #$Thing) >))
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$at-UnderspecifiedLandmark #$C-ProgrammingLanguage ?T10-2))))
+
+(#$and
+ (#$isa ?CONDITION3 #$PhysiologicalCondition)
+ (#$thereExists ?T10-2
+  (#$and
+   (#$thereExists ?T10-1
+    (#$and :RESTR
+     (#$isa ?T10-1 #$Thymine-Base)))
+   (#$at-UnderspecifiedLandmark #$C-ProgrammingLanguage ?T10-2))))

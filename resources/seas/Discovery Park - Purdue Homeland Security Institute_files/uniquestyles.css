@@ -1,0 +1,56 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 15:52:14 May 27, 2010 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:10:45 Sep 24, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/* Unique Center Styles Document */
+/* Styles which are consistent across DP should be brought into dpmain.css */
+/* Use this for temporary holding until CSS is brought over to main or for unique center CSS */
+
+/* Align the image to the left */
+img.floatLeft
+	{
+	float:			left;
+	margin:			5px;
+	}
+/* Align the image to the right */
+img.floatRight
+	{
+	float:			right;
+	margin:			5px;
+	}
+	
+blockquote
+	{
+	padding:		0px 15px;
+	border: 		1px solid black;
+	}
+	
+#col1 h3.line 
+	{
+	font-weight:		bold;
+	clear:				both;
+	position:			left;
+	margin:				40px 0 15px;
+	border-top:			1px solid #c7c7c7;
+	}
+	
+#col1 h3.line span
+	{
+	background:			#fff;
+	float:				left;
+	margin-top:			-11px;
+	padding-right:		7px;
+	position:			relative;
+	z-index:			500;
+	}
+	
+	

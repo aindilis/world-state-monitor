@@ -1,0 +1,580 @@
+194
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+Scheduling the Allocation of Data
+Fragments in a Distributed Database
+Environment: A Machine Learning Approach
+Alok R. Chaturvedi, Ashok K. Choubey, Member, IEEE, and Jinsheng Roan
+allocation strategy permits a single copy of the database to be
+stored in the network (no replication).
+Here, the database or its
+fragments are allocated to the nodes that minimize the overall
+system communication cost, query response time, and/or other
+criteria depending upon the objectives of the database designer
+[61, P81.
+Another strategy involves storing multiple copies of all
+(complete replication) or a part (partial replication) of the
+database across the network [3], [5], [7], [lo], [ I l l , [171.
+Although this reduces transmission costs and response time, it
+increases data redundancy, storage costs, and update costs.
+Several partial replication techniques have been proposed.
+Database snapshots are the read-only replica of a selected
+portion of the database [l]; materialized views are stored
+copies of the result of retrieving views from the database [4];
+and quasi files are the portions of database stored in the cache
+Index Terms- Machine learning, distributed database, time memory at the user nodes [2].
+invariant fragmentation, scheduling.
+Although these techniques have proven merits, they have
+the following shortcomings:
+1) They are ‘static’ techniques, and do not adapt to the
+I. INTRODUCTION
+changes in the usage pattern in determining the content
+N A DISTRIBUTED DATABASE SYSTEM (DDBS), geof the data.
+They assume the data usage is constant,
+ographically dispersed databases are interconnected by a
+while in reality, requirements tend to change frequently.
+computer network, and their administration is done by a
+Moreover, these techniques do not utilize the knowledge
+distributed database management system (DDBMS) in such
+hidden in the query history of each node.
+a way that the distribution of logical and physical components
+2) At a given time, data in a base table may be inconsistent
+of the databases are transparent to the user.
+The interest
+with that of its copies.
+To overcome this problem, the
+in (DDBS) research is motivated primarily by reliability,
+above techniques require expensive update synchronizaperformance, and economic concerns.
+The reliability concern
+tions [2], [4], [12]-[141, [201.
+pertains to making the DDBS fault-tolerant; performance
+3,
+In practice, most DDBS have attributes Of an entity
+concerns include reducing query response time and increasing
+whose values do not change for lengthy periods of
+throughput; and economic concerns include reducing data
+time.
+For instance, a typical customer relation of a
+communication and update synchronization costs.
+commercial database has attributes, such as customer
+To realize the above objectives, the database may be parnumber, name, address, and telephone, whose values
+titioned into a number of non-overlapping fragments and
+are relatively ‘static.’ This is an important property of
+allocated over the network.
+Different strategies have been
+data, and is called time invariance.
+This property is not
+adopted to allocate data fragments in a DDBS.
+One data
+exploited by any of the above methods.
+The god of this paper is to develop an adaptive method,
+Manuscript received November 25, 1992.
+Review of this manuscript was
+processed by Editor S. S. Erenguc.
+based on the time invariance concept, that can autonomously
+A. R. Chaturvedi is with the Krannert Graduate School of Management,
+detect data usage patterns from the query history of the given
+Purdue University, West Lafayette, IN 47907.
+A. K. Choubey is with the Information Systems-Data Management database, identify time-invariant fragments and their respective
+Applications, Bell Atlantic, Freehold, NJ 07728 USA.
+time windows, and allocate these fragments to the nodes such
+J. Roan is with thr Institute of Business Administration, National Chung
+that data communication and update synchronizations costs are
+Cheng University, Min-Hsiung Hsiang, Chia-Yi, Taiwan, R.O.C.
+IEEE Log Number 9400867.
+minimized.
+Re-stating the problem concisely,
+Abstract- Different database fragmentation and allocation
+strategies have been proposed to partially replicate data in
+a partitioned, distributed database (DDB) environment.
+The
+replication strategies include database snapshots, materialized
+views, and quasi-copies.
+These strategies are ‘static’ and do not
+adapt to the changes in the data usage patterns.
+Furthermore,
+they often require expensive update synchronizations to maintain
+data consistency and do not exploit the knowledge embedded
+in the query history.
+This paper describes a machine learning based time invariant
+fragmentation method (MLTIF) that acquires knowledge about
+the data usage patterns for each node.
+Based on this knowledge,
+MLTIF designs time invariant fragments (TIF) and schedules
+its allocation and selective update for a specified time period.
+Simulation is used to compare the effectiveness of the MLTIF
+approach with that of full replication, materialized views,
+and non replication strategies.
+Initial results indicate that for
+most normal operating conditions, the MLTIF approach can
+be effective.
+I
+0018-9391/94$04.00 0 1994 IEEE
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+195
+CHATURVEDI et al.: SCHEDULING THE ALLOCATlON OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+Given: (1) A non-replicated distributed database, and
+( 2 ) Query history for each node in the network
+Find: (1) Acceptable time intervals
+(2) Eme invariant fragments (TIF’s)
+( 3 ) Schedule for TIF allocation and update.
+a1
+a1
+L 50
+AND [a2
+I 20
+OR a3
+201
+L SO AE~o a2 I 20
+a3
+i 20
+a3
+I 20
+11.
+DESIGNAND ALLOCATION
+OF
+TIME INVARIANT FRAGMENTS
+A time invariant fragment (TIF) is a partition of a base
+relation whose contents are ‘static’ during a specified time
+interval.
+In other words, the values of each component attribute
+in a TIF are constant throughout this time interval.
+These
+attributes are called Eme-Invariant Attributes (TIA’s), and
+the remaining attributes, Time-SensitiveAttributes (TSA’s).
+A
+formal definition of TIA and TSA is given below.
+Let ez3 be the jth attribute in the ith tuple of a database
+relation R. Then the value sets of R and its jth attribute, u3,
+can be defined, in terms of ezj, as follows:
+R = { e , j l i = 1 , 2 ,...,m ; j = 1 , 2 ,..., n } ,
+u3 = {e,jJi = 1 , 2 , . ..,m}.
+u3 is a TSA for time interval T
+if 3 (v(ez,t> # v(ezjtl>>
+i E {1,2, ...,m }
+a1 2
+so
+a1
+L
+a2 I20
+75
+Q1: SELECT al, a3
+FROM R1
+WHERE a b 50
+AND a2< 20
+I
+Q2: SELECT al, a2
+FROM R1
+WHERE a b 15
+AND a3< 30
+Fig.
+1.
+Conceptual aggregation.
+through disconfirmatory feedback.
+Many learning strategies
+have been devised to solve problems in different domains [8].
+Learning strategies include learning by being told, learning
+from example, learning from observations, case-based learning, analogical learning, and explanation-based learning.
+One of the induction based strategies, learning from observation, is adopted for the design of time invariant data fragments in a distributed database environment.
+The technique,
+t ,t’ E T
+called machine learning based time invariant fragmentation
+t # t‘
+(MLTIF), has its roots in goal directed conceptual aggregation
+u3 is a TIA for time interval T
+(GDCA), developed by Chaturvedi et al [8].
+The creation of
+if V(v(e;jt) = v(e;,tt>>
+a TIF is a problem solving exercise for MLTIF.
+From the
+i E {1,2, ...,m }
+timestamps on the queries an initial time slice is determined.
+t,t’ E T .
+Each query in the history is then decomposed into subt # t’
+expressions.
+Next, patterns of data retrieval and modification
+where: v(e;J is the value of e;j at time t,
+is generated from the sub-expressions.
+Similar patterns are
+m is the cardinality of R, and
+aggregated to form the most general concepts.
+An example
+n is the degree of R.
+to demonstrate this process is given below.
+TIF’s are constructed from the query history of the entire
+Example I: Here we show how MLTIF creates aggregate
+system.
+Some queries are periodic while others are ad hoc.
+concepts from queries.
+Suppose there are two queries, Q1 and
+The periodic queries, typically, follow patterns; for example, Q2 in the query history.
+These queries are first decomposed
+monthly sales statistics are inquired at the end of every month.
+into sub-expressions such as u l 2 50,u2 5 20.
+Using
+Some periodic queries tend to appear together such as the aggregation operators (AND, OR, etc.,), these expressions are
+group of queries required for the generation of a monthly converted into higher level concepts till a single concept covers
+sales report by geographic area, customer type, product type, all data requirements for a relation (Fig.
+1).
+Finally, the highest
+and sales personnel.
+Some of these queries may access a large level concept is used to create a query to the base table for
+amount of common data.
+If the update of the database is not creating the fragment.
+intensive in the time interval within which data access takes
+The concepts, generated by MLTIF are evaluated using a
+place, it could be beneficial to retrieve the commodshared cost-based evaluation function.
+These steps are repeated till the
+time-invariant, remote data in one attempt.
+least cost time slice and most general concepts are determined.
+The need to acquire knowledge about the retrieval patterns Finally, TIF’s for the time slice, and for each node, will be
+from query history suggests the use of a machine learning created from the base tables using the most general concepts.
+technique.
+One of the roles of machine learning is to seek to The contents of TIF’s are illustrated in Fig.
+2.
+acquire knowledge from available data and use it to create new
+The creation of proprietary TIF’s for each node in the
+theories about the domain in question, in an entirely automated network could lead to the sub-optimality and computational
+manner.
+Machine learning techniques employ a small number intractability problems.
+When a number of nodes have high
+of extremely general induction strategies coupled with some degrees of commonality between their respective TIF’s, the
+basic domain knowledge.
+The domain knowledge may involve likelihood of a large amount of common data being transmitted
+structural descriptions, procedural explanations, or even dis- to individual nodes increases, as do the update synchronization
+coveries of new domain concepts.
+Due to the inductive nature costs.
+In addition, as the size of the network increases, the TIF
+of reasoning involved there is always some possibility of error.
+approach may become computationally intractable.
+In order to
+Consequently, most techniques allow for self-improvement reduce the costs and computational complexity, network nodes
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+196
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+Table R(A,B,C,D)
+Time Invariant Attributes are replicated onall
+SBNWS.
+server 1
+Time Sensitive Attributes only’ on the
+SeNW.
+I
+Fig.
+2.
+The contents of TIF’s.Network
+// I.\\
+cluster y
+cluster x
+/I\
+nodca
+Fig.
+3.nodcb
+nodec
+cluster
+noded
+z
+nodcp nodeg
+TIF hierarchy.
+are clustered according to the closeness of their locations and
+to the similarity in their query patterns (Fig.
+3).
+Nodes with
+similar query patterns in a geographic area are assigned to
+the same cluster.
+For each cluster, one of the nodes may be
+selected or a new data server node may be created to store
+the common TIF.
+The common TIF may be retrieved by the
+member nodes in the cluster and may be refreshed when update
+synchronizations take place.
+Multiple levels of node clustering
+may be required.
+In such an event, two or more clusters may be
+combined into a larger cluster, and the TIF’s are created for the
+member clusters in the same fashion as that for the nodes.
+The
+TIF hierarchy grows as long as it is computationally necessary.
+The increases in data retrieval costs and response times are
+offset by the decreases in TIF creation costs, data storage costs,
+and update synchronization costs.
+111.
+ALGORITHM
+FOR CREATION AND ALLOCATION
+OF TIF’S
+The premise of the MLTIF approach is its capability of
+detecting the patterns that are likely to vary over time.
+As
+discussed above, a static methodology does not work in the
+ever-changing environment.
+A new approach that allows dynamic, continuous, and automatic detection of query patterns
+of a user node is required to provide the benefits discussed
+previously.
+Conceptual aggregation allows the computer program to aggregate observations (query statements) and provide
+meaningful explanation of aggregate concepts (query patterns)
+formed.
+Situations that are not currently handled are:
+a) Queries With Statistical Operations.
+Attributes with statistical function such as SUM, MAX, and MIN, etc.,
+are excluded from query statements.
+These operations
+usually involve simple values to be sent over from
+the remote base tables as a result of such functions.
+Our approach creates TIF’s that contain fragments of
+remote base tables which would unnecessarily retrieve
+‘raw data’ and increase communication cost.
+Therefore
+it would be more appropriate to set aside attributes with
+these statistical functions in the creation of TIF’s.
+b) Updates With Insertion and Deletion.
+Deletion and insertion of tuples are usually done periodically in batch
+mode.
+These update queries are excluded from this
+research without loss of generality.
+c) Data Movement.
+Update with modification that causes
+data to move from one base table to another that is stored
+at different site.
+This is usually found in the change
+in the value of an attribute whose values are the basis
+of a horizontal partitioning of the database table.
+When
+the new value exceeds the value range of a base table,
+the entire tuple has to be removed from this table and
+added to an appropriate one.
+This type of update is an
+equivalence of an deletion followed immediately by an
+insertion.
+The following algorithm is used by MLTIF to determine the
+TIF’s for each site based on the query histories of the entire
+system.
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI et al.: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+Step 1.
+Classify the queries of each site into retrieval and
+update queries.
+Further classify the update queries into
+insertion, deletion, and modification.
+Step 2.
+Classify the retrieval queries of each site into localaccess and remote-access based on the location of data these
+queries address.
+Classify modification queries in a similar
+fashion.
+Step 3.
+Transmit all the remote-access modification queries
+for each base table to their respective sites.
+For each base
+table, use these remote-access modification queries and
+the local-access modification queries to determine the time
+sensitive and invariant attributes.
+Step 4.
+Remove time sensitive attributes from each remoteaccess retrieval query if these attributes are time sensitive
+in their remote base tables.
+All remaining attributes in this
+remote-access retrieval query are time invariant.
+Step 5.
+Apply aggregation technique to construct the query
+for the creation of a TIF from a remote base table for
+each site.
+This is based on the entire remote-access retrieval
+queries for the base table at this site.
+We now explain each step in detail.
+Step 1.
+The type of database access of each query is
+identified.
+In SQL query language, a query start with a
+‘SELECT’ i s a retrieval, an ‘UPDATE?
+a modification, an
+‘INSERT’ an insertion, or a ‘DELETE’ a deletion query.
+Only
+retrieval and modification queries are used in the following
+steps for the determination of TIF’s. Insertion and deletion
+queries are discarded.
+Step 2.
+A retrieval or modification query in a partitioned,
+non-replicated database environment may refer to a data
+attribute of one of the following three types:
+A. The attribute and all the data values are locally stored
+in a base table.
+B. The attribute is not stored in any local base table.
+C. The attribute is stored in a local base table but the
+referred data values are not stored or partially stored
+in this table.
+The data values that are not locally stored
+may spread over more than one remote base tables.
+A type A attribute is either an attribute that is included in
+a vertically partitioned local base table or one that is used
+as the only attribute for horizontal partitioning of the original
+non-partitioned table and the values of this attribute in the
+local base table are the super-set of the required values of
+this attribute in the query statement.
+A type B attribute is an
+attribute that is not stored in the local base table which is a
+fragment of a vertically partitioned table.
+A type C attribute
+is an attribute whose values in the local base table are not the
+super-set of the required values in the query statement.
+This
+can be a result of a horizontal or a mixed partitioning of the
+original table.
+All attributes in the SELECT part (selecting attributes) of a
+retrieval query or in the SET part (modifying attributes) of a
+modification query, or in WHERE part (restricting attributes)
+of both types of queries will be assigned one of these three
+types according1y.A query is ‘local-access’ if all its attributes
+are of type A, is ‘remote-access’ if all its attributes are of type
+B, and otherwise is ‘mixed-access’.
+Dealing with a mixed-
+197
+access query is not as straightforward, as it is successively
+decomposed into multiple sub-queries till each subquery can
+be classified as a local-access or a remote-access query.
+All attributes of a mixed-access query are first assigned into
+one of the two groups: group A in which all attributes are of
+type Aand group B in which all attributes are of type B. An
+attribute of type C is assigned to both groups if the location of
+the base table containing its value cannot be identified from
+the database fragmentation conditions.
+An attribute that is not
+used to horizontally partition a database is usually of this type
+unless other restricting attributes in the same query statement
+can be used to assist the identification of the data source
+locations.
+We will exclude the selecting or modifying attributes
+with no restricting attribute stored in the same group.
+For a
+vertically partitioned database table, this situation implies that
+join operations are required for this query.
+For a horizontally
+partitioned database table, this means that there is not data to
+be accessed from this group of attributes.
+The union of all the
+local attributes in group A is still local and a query statement
+can be constructed to retrieve these data values from the local
+base table.
+This query is ‘local-access’.
+A ‘remote-access’
+query statement can be constructed from attributes in group
+B in the same fashion for the remote data of mixed-access
+query attributes.
+Step 3.
+Remote-access modification queries are transmitted
+to the sites of the base tables they modify.
+The union of
+modifying attributes of both remote-and local-access queries
+for each base table will include some values that would vary in
+this time slice.
+These attributes are therefore ‘time sensitive’.
+The supplement set of the attributes of this base table is ‘time
+invariant’.
+The information of time sensitive attributes of a
+base table is sent back to all the sites with queries that modify
+this base table.
+Step 4.
+Since a time sensitive restricting attribute will cause
+invalid selection of data fragment, this attribute should be
+eliminated from the remote-access retrieval queries.
+All time
+sensitive selecting attributes are dropped from these query
+statements.
+A remote access retrieval queries becomes invalid
+if there is no restricting or selecting attributes left in the query
+after the removal of time-sensitive attributes.
+Therefore, all the
+attributes in the queries are time-invariant, and will be used
+as the basis for constructing query statements for the creation
+of TIF’s. The reason we did not further consider insertion and
+deletion queries after Step 1 is now clear.
+These two types of
+queries always change the content of base tables.
+Step 5 . At each site, all queries now consist of time-invariant
+attributes only.
+The remote access retrieval queries are grouped
+by base tables and for each base table all the queries are
+decomposed into sub-expressions.
+MLTIF takes all the subexpressions corresponding to all the restricting attributes of the
+queries for a base table and aggregate them to form a higher
+level concept of the restricting attributes iteratively until no
+further aggregation is required.
+This final highest concept is
+used to construct the query to create a TIF of that remote base
+table.
+The restricting attributes that are not part of selecting
+attributes are added into the selecting attribute list because the
+restricting condition of a restricting attribute is an aggregation
+of the individual conditions.
+TIF’s of the same domain and
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+198
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+whether
+Remote-access: 2, 3 CYTD-ORDER > 1500000
+and
+CREDITLINE < 100000 in
+query 2 are local or remote
+A. Illustrative Examples
+Site B:
+Local-access: 5
+We now illustrate this procedure by two examples.
+The
+Remote-access: 5
+first example shows the creation of a TIF in a horizontally
+Modification queries:
+partitioned database environment and the second example
+Site A:
+shows the creation of a TIF in a vertically partitioned database
+Local-access: 4
+environment.
+Remote-access: none /* because CITY = ‘A’ cannot
+Example 2: Suppose two sites in a network each stores a
+be divided into two fragments *I
+horizontally partitioned database table as follows:
+Site B:
+CUST(CNUM, CNAME, CITY, CYTD-ORDER,
+Local-access: 6
+CREDITLINE, CREDIT-USED)
+Remote-access: 6
+Site A: stores the fragment with CITY = ‘A’, and
+Step 3: Identify time sensitivity.
+Site B: stores the fragment with CITY = ‘B’.
+Site A: Time-sensitive: CYTD-ORDER, CREDIT-USED
+The query histories are as follows:
+Time-invariant: all other attributes
+Site A:
+Site B: Time-sensitive: CREDIT-USED
+1.
+SELECT CNUM, CNAME, CYTD-ORDER
+Time-invariant: all other attributes
+FROM CUST
+Step 4: Remove time-sensitive attributes from remote-access
+WHERE CYTD-ORDER > 1OOOOOO
+retrieval queries.
+AND CITY = ‘A’
+Site A:
+remote-access query
+2.
+SELECT CNUM, CNAME, CYTD-ORDER
+Query 2: SELECT CNUM, CNAME, CYTD-ORDER
+FROM CUST
+FROM CUST
+WHERE CYTD-ORDER > 15oooOO
+WHERE CYTP-ORDER > 1500000
+AND CREDITLINE < 1OOOOO
+AND CREDITLINE < 100000
+3.
+SELECT CNUM, CNAME, CREDITLINE,
+Query 3: SELECT CNUM, CNAME, CREDITLINE
+CREDIT-USED FROM CUST
+FROM CUST
+WHERE CREDITLINE > 150000
+WHERE CREDITLINE > 150000
+4.

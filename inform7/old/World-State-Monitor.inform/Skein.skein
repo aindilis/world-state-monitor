@@ -1,0 +1,2024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x2734490" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7</generator>
+  <activeNode nodeId="node-0x2734490"/>
+  <item nodeId="node-0x2734490">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+You are in the CW.  However, the air mattress is out of place.  Please put it back where it belongs, the one-windowed room.
+
+World State Monitor
+An Interactive Fiction by Andrew Dougherty
+Release 1 / Serial number 140825 / Inform 7 build 6L02 (I6/v6.33 lib 6/12N) SD
+
+computer room
+A small room filled with computers.
+
+You can see a fan, an air filter and Andrew here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734610"/>
+      <child nodeId="node-0x2e7f930"/>
+      <child nodeId="node-0x2e7fc30"/>
+      <child nodeId="node-0x2ec3ef0"/>
+      <child nodeId="node-0x2ee01b0"/>
+      <child nodeId="node-0x2ee0330"/>
+      <child nodeId="node-0x2f08110"/>
+      <child nodeId="node-0x2f24ee0"/>
+      <child nodeId="node-0x2f4bd90"/>
+      <child nodeId="node-0x2fb7a90"/>
+      <child nodeId="node-0x2fb7d90"/>
+      <child nodeId="node-0x2ffa720"/>
+      <child nodeId="node-0x2ffaa20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734610">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Gallery
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734790"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734790">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734910"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734910">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734a90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734a90">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734c10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734c10">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734d90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734d90">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2734f10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2734f10">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+couch room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58180"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58180">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+bathroom
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58300"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58300">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58480"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58480">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58600"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58600">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+couch room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58780"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58780">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+main room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58900"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58900">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+inside hallway
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58a80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58a80">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+one-window room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58c00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58c00">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+inside hallway
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58d80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58d80">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e58f00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e58f00">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7f1b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7f1b0">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+southern entrance room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7f330"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7f330">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+kitchen
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7f4b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7f4b0">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+southern entrance room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7f630"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7f630">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+windowed room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7f7b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7f7b0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+southern entrance room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e7f930">
+    <command xml:space="preserve">Where is the air mattress/</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7fab0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7fab0">
+    <command xml:space="preserve">Where is the air mattress?</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2e7fc30">
+    <command xml:space="preserve">take the mattress.</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7fdb0"/>
+      <child nodeId="node-0x2ec35f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7fdb0">
+    <command xml:space="preserve">go to the one-window room</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e7ff30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e7ff30">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Gallery
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c140"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c140">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c2c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c2c0">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c440"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c440">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+inside hallway
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c5c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c5c0">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c740"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c740">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+southern entrance room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9c8c0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9c8c0">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+kitchen
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9ca40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9ca40">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+southern entrance room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9cbc0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9cbc0">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">
+inside hallway
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9cd40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9cd40">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+one-window room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2e9cec0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2e9cec0">
+    <command xml:space="preserve">put down air mattress</command>
+    <result xml:space="preserve">Dropped.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3170"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3170">
+    <command xml:space="preserve">Where is the air mattress?</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec32f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec32f0">
+    <command xml:space="preserve">Where does the air mattress belong?</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3470"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3470">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">one-window room
+You can see an air mattress here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ec35f0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3770"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3770">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec38f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec38f0">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3a70"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3a70">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3bf0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3bf0">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ec3d70"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ec3d70">
+    <command xml:space="preserve">drop the mattress</command>
+    <result xml:space="preserve">
+
+    *** Good job. ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ec3ef0">
+    <command xml:space="preserve">x plain white desks</command>
+    <result xml:space="preserve">You see nothing special about five plain white desks.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ee01b0">
+    <command xml:space="preserve">x desks</command>
+    <result xml:space="preserve">You see nothing special about 5 plain white desks.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ee0330">
+    <command xml:space="preserve">take air mattress.</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee04b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee04b0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0630"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0630">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee07b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee07b0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0930"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0930">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0ab0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0ab0">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Chuck&apos;s room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0c30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0c30">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0db0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0db0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ee0f30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ee0f30">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2f08110">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08290"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08290">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08410"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08410">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08590"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08590">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window, an eastern window and an air mattress here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08710"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08710">
+    <command xml:space="preserve">get the mattress</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08890"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08890">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:
+  an air mattress
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08a10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08a10">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window and an eastern window here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08b90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08b90">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08d10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08d10">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f08e90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f08e90">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window and an eastern window here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24160"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24160">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f242e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f242e0">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+couch area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24460"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24460">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f245e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f245e0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24760"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24760">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f248e0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f248e0">
+    <command xml:space="preserve">drop matress</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24a60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24a60">
+    <command xml:space="preserve">drop the air matress</command>
+    <result xml:space="preserve">I only understood you as far as wanting to drop the air mattress.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24be0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24be0">
+    <command xml:space="preserve">drop the air mattress</command>
+    <result xml:space="preserve">Dropped.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f24d60"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f24d60">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2f24ee0">
+    <command xml:space="preserve">go n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b190"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b190">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b310"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b310">
+    <command xml:space="preserve">go right</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b490"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b490">
+    <command xml:space="preserve">go east</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b610"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b610">
+    <command xml:space="preserve">go wst</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b790"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b790">
+    <command xml:space="preserve">go weat</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4b910"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4b910">
+    <command xml:space="preserve">go weast</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4ba90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4ba90">
+    <command xml:space="preserve">go west</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4bc10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4bc10">
+    <command xml:space="preserve">where does the air mattress belong?</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2f4bd90">
+    <command xml:space="preserve">pick up</command>
+    <result xml:space="preserve">What do you want to pick up?
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f4bf10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f4bf10">
+    <command xml:space="preserve">air mattress</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x27201b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x27201b0">
+    <command xml:space="preserve">go</command>
+    <result xml:space="preserve">You&apos;ll have to say which compass direction to go in.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720330"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720330">
+    <command xml:space="preserve">go n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x27204b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x27204b0">
+    <command xml:space="preserve">go e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720630"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720630">
+    <command xml:space="preserve">go sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x27207b0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x27207b0">
+    <command xml:space="preserve">go se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720930"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720930">
+    <command xml:space="preserve">go nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window and an eastern window here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720ab0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720ab0">
+    <command xml:space="preserve">go nw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720c30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720c30">
+    <command xml:space="preserve">go e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720db0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720db0">
+    <command xml:space="preserve">go northeasr</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2720f30"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2720f30">
+    <command xml:space="preserve">go northeast</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c120"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c120">
+    <command xml:space="preserve">go se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c2a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c2a0">
+    <command xml:space="preserve">go nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window and an eastern window here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c420"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c420">
+    <command xml:space="preserve">go sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c5a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c5a0">
+    <command xml:space="preserve">go se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c720"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c720">
+    <command xml:space="preserve">go nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window and an eastern window here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9c8a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9c8a0">
+    <command xml:space="preserve">go ew</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9ca20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9ca20">
+    <command xml:space="preserve">go nne</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9cba0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9cba0">
+    <command xml:space="preserve">go down</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9cd20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9cd20">
+    <command xml:space="preserve">go up</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2f9cea0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2f9cea0">
+    <command xml:space="preserve">go downeast</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7190"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7190">
+    <command xml:space="preserve">help</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7310"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7310">
+    <command xml:space="preserve">gose</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognise.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7490"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7490">
+    <command xml:space="preserve">go se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7610"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7610">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7790"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7790">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7910"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7910">
+    <command xml:space="preserve">put down</command>
+    <result xml:space="preserve">(the air mattress)
+
+
+    *** Good job!  You have won! ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2fb7a90">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7c10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7c10">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+couch area
+A place where one can rest.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2fb7d90">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fb7f10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fb7f10">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+A triangular shaped area connecting three other areas.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf100"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf100">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf280"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf280">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf400"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf400">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">
+Chuck&apos;s room
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf580"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf580">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf700"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf700">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+A triangular shaped room.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdf880"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdf880">
+    <command xml:space="preserve">ne</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdfa00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdfa00">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">
+triangular area
+A triangular shaped area connecting three other areas.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdfb80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdfb80">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">
+gallery
+A larger white room.
+
+You can see a free shelf, a bookshelf, a printer table, a western window, a mid-western window, a mid-eastern window, an eastern window and an air mattress here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdfd00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdfd00">
+    <command xml:space="preserve">take mattress.</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2fdfe80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2fdfe80">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffa120"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffa120">
+    <command xml:space="preserve">se</command>
+    <result xml:space="preserve">
+triangular area
+A triangular shaped area connecting three other areas.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffa2a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffa2a0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">
+main area
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffa420"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffa420">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">
+one-windowed room
+A triangular shaped room.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffa5a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffa5a0">
+    <command xml:space="preserve">drop mattress.</command>
+    <result xml:space="preserve">
+
+    *** Good job!  You have won! ***
+
+
+
+Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?
+&gt; </result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ffa720">
+    <command xml:space="preserve">turn off the fan</command>
+    <result xml:space="preserve">You switch the fan off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffa8a0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffa8a0">
+    <command xml:space="preserve">turn off the air filter</command>
+    <result xml:space="preserve">You switch the air filter off.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x2ffaa20">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffaba0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffaba0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffad20"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffad20">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x2ffaea0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x2ffaea0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>

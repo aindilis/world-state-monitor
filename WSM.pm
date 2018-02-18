@@ -1,0 +1,1 @@
+/var/lib/myfrdcsa/codebases/minor/world-state-monitor/attempts/2/WSM.pm

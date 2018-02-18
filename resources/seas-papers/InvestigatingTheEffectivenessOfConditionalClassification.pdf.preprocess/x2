@@ -1,0 +1,584 @@
+p=l
+where
+b,
+H3(SI
+x,= X S P ) = -
+f(S I xz = 2 * P , C J 9 )
+q=l
+x log,(f(S
+r = l q,=l
+This formula can be extended to m dimensions quite easily to
+compute Hjnlj,- 1,...,j, (SI.
+As with the case of single output dimension classification,
+the procedures for computing entropies for selection of a
+dimension Xi and the stopping rule remains the same, except
+that the formula for conditional entropy is now used.
+I x,= 2 , p , c J q ) ) i= 1,2, .,n C. Concept-Based Conditional Class$cation(C3) Algorithm
+*
+f
+The algorithm for concept-based conditional classification
+(C3) parallels that developed for simple classification as
+Selection of a dimension Xi is based on the minimum overall embodied in ID3, C4, and the like [19], [20], [22].
+Given
+the expanded notation employed in this paper, algorithms will
+entropy, i.e.
+be presented for simple, joint, and conditional classification,
+Simple Classijication Algorithm (SC):
+Xi* = XiImjn[Hj(S,Xi)];i = 1,2,-.* ,a}
+(7)
+0.
+S + T
+At subsequent stages, dimensions already used for classifi- 1.
+Compute H j , (S)
+cation are excluded from the set of candidate dimensions 2.
+If H 3 , ( S )= 0
+stop
+available.
+The process continues recursively until no further
+Else
+classification is possible, i.e.,
+(VXi, i = 1,2,.
+..,n), Xi not selected before
+Compute Hj, (S,Xi)
+H j ( S ,Xi) = 0
+(8)
+Select XT = (Xilmin,[Hj,(S,X,)]; i = 1,2,.-.,n}
+\dp in xip,p = 1,2,.
+,ai
+Drawing from information theory, joint entropy can be defined
+s ( S I xi = Zip)
+assuming classification on output dimensions c1, c2, . . .
+,cm
+Go to 1
+simultaneously.
+This is defined for the dual case first, and
+The algorithm is simple, elegant, and is generally amenable
+then extended to the multidimensional case.
+to complete automation.
+However, it may encounter some
+difficulty under certain circumstances for the selection of X:,
+if the entropy values are tied.
+In this situation, ties need to
+be resolved appropriately.
+Several strategies can be employed
+for resolving ties, including a first-come-first-select strategy, a
+(6)
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+188
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+random strategy, or a strategy based on semantic input from the case of conditional classification though, the observations
+the decision maker.
+Quinlan has advocated a strategy based on at the level may possess different values for the first output
+probabilities of further classification [21].
+It should be pointed dimension, but these will map to consistent values for the
+out that the strategy used for the resolution of ties has a definite second output dimension.
+impact on the structure of the decision tree, and hence affects
+the efficiency and perhaps effectiveness of classification.
+For
+IV.
+CONDITIONAL
+CLASSIFICATION
+the moment, it is assumed that a reasonable strategy is availFOR MANUFACTURING
+SCHEDULING
+able for breaking ties.
+Section IVA.
+lists available strategies
+The utility of concept-based conditional classification is
+for the application, and discusses implications of selecting a
+investigated within the context of manufacturing scheduling.
+specific strategy.
+The algorithm for joint classification is identical to that for The problem involved the establishment of twin goals of
+simple classification except that joint entropy is used instead production rate and workstation utilization, based on the
+of the standard entropy measure.
+The algorithm is presented manipulation of several controllable variables.
+Given that there
+for two output dimensions but can be easily extended to m is a tangible relationship between these goals, it follows that
+concept-based classification is more appropriate than contextoutput dimensions.
+based or user-defined conditional classification.
+Joint ClassiJcation Algorithm (JC):
+Observations for the classification algorithm C3 were gen0.
+S + T
+erated
+by a simulation model.
+A fraction of this data was
+1.
+Compute HJ1,32(S)
+employed to generate the decision trees, and the balance
+2.
+If HJlr3,
+( S )= 0
+holdout set was used to test the effectiveness of the classificastop
+tion algorithm.
+The next few segments describe the problem
+Else
+setting, the simulation model, the decision tasks, and the
+VX,, i = 1,2,.
+,n, X; not selected before
+experimental conditions in some detail.
+Compute HJ1,j2
+( S ,XZ)
+Select X,* = {X,Imin;[H,,,j,(S,X,)];i
+= i,2,...,n}
+A. The Problem Setting
+Vp in xZp,p= 1,2,..
+,a,
++ (SIX; = x i p )
+The simulation models a European factory that is engaged
+Go to 1
+in the production of industrial equipment.
+It produces a wide
+The algorithm for concept-based conditional classification variety of workpieces from eight major part families.
+The
+is presented for two output dimensions only, though it is production quantities and probability of occurrence determine
+easily extensible to multiple dimensions.
+The algorithm is the manufacturing mission for the system.
+The physical layout
+based on that for simple classification and is relatively simple.
+of the plant is shown in Fig.
+6.
+The material flow in the
+Classification on the first output dimension is performed system can be traced from the delivery of castings from
+using the simple classification algorithm, SC.
+Subsequent vendors.
+These casting are delivered via the external material
+classification employs a measure of conditional entropy, and handling system (EMHS) to a palletizing work area, where
+is presented as algorithm CC.
+they will be transferred to the stacker crane interface.
+Castings
+Concept-Based Conditional Classijication Algorithm(C3):
+remain in the storage rack until required for production.
+At
+0.
+Let C,, Cb represent the dimensions to be classified in the this stage, they are fetched by the stacker crane, taken to the
+order specified.
+material handling system (MHS) interface, and transported to
+1.
+Apply SC using C,, i.e. compute H,(S), H,(S, X,), etc.
+the shuttle of the appropriate workstation.
+After the operations
+2.
+Apply CC using c b , i.e. compute H+(S),Hbl,(S,X;),
+are completed, material is routed back via the MHS to the
+etc.
+stacker crane, which places it back on the rack.
+Conditional Classijication Algorithm (CC):
+1.
+The Simulation Model: The simulation model of the sys0.
+S c T
+tem is implemented in MAST in a PS/270 environment.
+1.
+Compute H,, ljl (S)
+An overview of the model is presented here.
+For further
+2.
+If H 3 1 , 3 2 ( s=) 0
+details, the reader is referred to [7].
+The model comprises two
+stop
+stacker cranes, four automatic guidance vehicles (AGV), four
+Else
+workstations, and three storage racks.
+One stacker crane serves
+VX,, i = 1,2,.
+,n, X; not selected before
+the EMHS through transfer of raw castings to the system and
+finished products to storage.
+The other handles the movement
+compute HJ2J1
+( S ,Xd
+Select X,* = {X,lmin,[H,,,,,(S,X,)];i=
+1,2,...,n} of fixtures, castings, and workpieces from storage racks to
+Vpinz,,,p= 1,2,-.-,a,
+the MHS interface.
+The MHS component of the system also
+encompasses turnout facilities so at to prevent blocking during
+s + (S I x, = & p )
+Go to 1
+loading and unloading at a workstation.
+Individual AGV’s can
+It should be noted that the observations at the leaf level carry a single workpiece at a time.
+The AGV’s interface with
+for conditional classification will be different than those for workstations via a rotary shuttle that accommodates up to two
+simple and joint classification.
+In the case of simple or joint palletized workpieces.
+Workstations in the system comprise
+classification, the stopping rule ensures that the observations at a vertical machine center, two horizontal machine centers,
+the leaf level share the same value of the output dimension.
+In and a measuring system.
+Individual storage racks are used
+s
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI AND NAZARETH: EFFECTIVENESS OF CONDITIONAL CLASSIFICATION APPLICATION TO MANUFACTURING SCHEDULE
+I
+!Backer
+I
+for castings, finished goods, fixtures, WIP, and also serve
+as a buffer for the palletizing work area.
+All stackers are
+pass-through, enabling loading and unloading from either side.
+For simplicity, only the major entities and their attributes
+are described in this section.
+The driving function for the
+model is the arrival of orders.
+The corresponding entity is
+BATCHES, which consists of a number of WORKPIECES, and
+their technological processing requirements, given by a ROUTING.
+The routing is an ordered linear list of OPERATIONS
+needed to transform a raw casting into a finished product.
+The
+operation specifies the type of WORKSTATION on which it is
+to be performed and the duration of the operation.
+The MHS
+comprises several entities- STACKER, RACK, and AGV.
+The
+stacker crane serves the racks, while the AGV's move material
+between the MHS interface and the respective workstations.
+In
+addition, each workstation interfaces with the AGV through a
+SHUlTLE.
+All stacker operations occur between the MHS interface and
+the rack, with fetch and store times specified from computed
+averages.
+The prioritization of stacker resources for fetch and
+store tasks presents a problem though.
+If the stacker is idle,
+then any request for service, either load or unload, would be
+responded to immediately.
+If another request arrives during
+the execution of the activity, then it would be queued up,
+and processed upon completion of the first task.
+However,
+when multiple tasks are queued, a first-come-first-serve approach would be clearly inappropriate.
+For example, if two
+AGV's arrive to unload workpieces, and while the first is
+being unloaded, there is a request for a workpiece from a
+workstation.
+Since the MHS interface can accommodate only
+one AGV at its bay, it would appear prudent that the request for
+a workpiece be serviced by the first AGV, thereby displacing
+the unload request from the second AGV.
+The problem is
+further complicated when batch priorities are to be included
+in the analysis.
+In the simulation model, all requests for
+stacker functions were coordinated through a set of outstanding
+notices, which logged the workpiece involved, its source and
+destination, request timestamp, and the status of originating or
+target resources.
+This enabled some lookahead and planning
+of efficient stacker utilization.
+189
+Since the amount of buffer space could not be accurately
+estimated ahead of time, it was decided to model the racks with
+unbounded capacity.
+This allowed the tracking of maximum
+storage requirements more accurately, while simultaneously
+simplifying the location and retrieval problems.
+Information
+stored about the racks included current utilization, and location
+of specific workpieces in the rack.
+It was determined that, in principle, two AGV's would
+suffice for the movement of material throughout the system.
+However, given the possibility of breakdown, and the need to
+provide reserve capacity, it was decided that up to four AGV's
+would be employed.
+As with the stacker, a set of outstanding
+notices was also maintained for AGV's.
+However, while each
+stacker had its own list, a common list was maintained for all
+AGV's.
+The information tracked about AGV's included their
+current status, location, destination (if applicable), and a code
+to indicate if its progress was impeded for any reason.
+Four workstations were employed in this system-two
+horizontal spindle machines, one vertical spindle machine,
+and a measuring machine.
+Each workstation used a rotary
+shuttle to transfer workpieces from the AGV to the machine.
+The shuttle was capable of handling two workpieces, thereby
+enabIing the next workpiece to be available when an operation
+was completed.
+This strategy was employed in an effort to
+maximize workstation utilization.
+One shuttle position was
+always kept open to prevent station blockage.
+Decisions as
+to which workpiece would be loaded onto a workstation form
+part of the control problem that is being investigated, and are
+discussed in the next segment.
+The parameters used during the simulation are based on
+the actual data from the factory setting.
+All units are in min
+(or min2).
+The arrival of batches was modeled as expo(700).
+The type of workpiece was specified based on a histogram
+specifying the relative probabilities of different workpieces.
+The number of workpieces was drawn from U(5,15).
+The
+lead time for a batch was computed from an expected time
+per workpiece multiplied by the batch size.
+Workpiece operation times were drawn from N(750,40 000).
+This lead time,
+coupled with the arrival time, was used to specify the due date.
+A workpiece could follow any of three possible routings, based
+on prior probabilities of occurrence.
+Each routing specified the
+operations to be performed for producing the final product.
+Within a routing, several variations were possible, reflecting a
+spectrum of operation times.
+As with the case of routings, the
+variations were selected based on an input histogram reflecting
+es.
+The number of active batches in the system
+was restricted to 2.
+As soon as a batch was completed, another
+was selected from the backlog of orders for completion.
+The
+selection of a specific order from this set formed the other
+aspect of the control problem that was investigated as part of
+this exercise.
+2.
+The Scheduling Tusk: The model affords significant variability in terms of physical design characteristics, operations
+managed, and decision making strategies adopted.
+Physical
+design considerations include size and scope of the FMS,
+as in working at the level of a facility, shop, or cell, with
+a limited number of workstations, robots, material handling
+system, and automated guided vehicles.
+They also cover the
+190
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+FMS organization including hierarchical or cellular design.
+multiple scheduling criteria are to be used.
+An alternative
+Operations of interest in FMS scheduling and control include approach is to employ some combining function, as in a utility
+the selection of parts from an order stream for inclusion in or other multi-criteria function, to simultaneously consider
+the job stream, assignment of parts to cells for production, all desired scheduling criteria.
+The multiple criteria decision
+routing within the cell, loading and tooling decisions, and making literature provides several approaches to accomplish
+maintenance of resources in the system.
+Decision strategies this effectively, though it imposes a caveat that any such
+will vary according to the operation at hand-e.g., part loading combining function is likely to be specific to the individual
+decisions could follow heuristics as First-Come-First-Serve, decision maker, and hence of limited generalizability.
+Second,
+Shortest Processing Time, Earliest Due-Date, or other appro- and perhaps more important, the knowledge gleaned from such
+priate strategy.
+Clearly, the number of alternative scenarios for an approach is likely to be applicable to the chosen F M S
+complete coverage of the domain represents an exponentially model only, thereby limiting its usefulness in other scheduling
+complex term.
+applications.
+The task involved the selection and assignment of parts to
+Given these restrictions, it was decided that classification
+workstations in a cellular structure, with a view to achieving would be performed using the raw values of the output dispecific management goals.
+The first decision addressed in mensions.
+This does pose the risk that there may be individual
+the scheduling process was the selection of a batch from the observations where the input dimensions are identical, but the
+order stream for processing.
+The decision was influenced by output dimensions differ.
+This situation may be considered to
+such factors as the need to maximize workstation utilization, be an anomaly.
+Anomalies of this sort can be resolved in a
+minimize work in process, and adhere to the due dates.
+variety of ways.
+The anomaly can be treated as a conflict, in
+Decision strategies employed included the First-Come-First- which case the conflict is to be resolved prior to classification.
+Serve, Shortest Processing Eme, Earliest Due Date and Min- This can be achieved by discarding either or both observations.
+imum number of Jobs Remaining heuristic scheduling rules.
+In situations where no information is available, both need to
+The second decision of interest addressed the assignment of be discarded.
+If expert assessment is possible, then only one
+workpieces to workstations.
+Factors of interest here included needs to be discarded.
+Since scheduling experts were not easily
+adherence to due dates, and utilization of cell resources, available, this approach was ruled out.
+including workstation, AGV, and stacker cranes.
+The same
+The alternative strategy is to treat an anomaly as given,
+four heuristic decision rules were employed at this stage too.
+recognizing that both observations are genuinely possible.
+In
+The choice of heuristic scheduling rules was to some extent such cases, the classification algorithm will terminate at a
+influenced by its relevance to the selected objectives, and point with non-zero entropy, indicating the inability to further
+extent of usage in practical settings.
+Consequently, scheduling classify.
+A simple probabilistic strategy may be applied at this
+rules that introduced significant complexity were omitted from stage, based on the relative size of the subsets involved.
+Since
+the analysis.
+Additionally, this kept the problem tractable.
+data was generated through the simulation model, it is possible
+to ensure that no anomalies are present.
+B. The Classijication Task
+The application of the C3 algorithm differs from the traditional in some respects.
+Normal classification applications
+involve the use of explicit specification of all input and output
+dimension values for each observation.
+There is no room for
+inconsistent observations.
+Moreover, output dimension values
+are treated as given.
+These may be based on incontrovertible
+facts as in whether a mushroom is poisonous or not, or may
+be specified through expert opinion, as in when to accept an
+application for credit.
+In the case of F M S scheduling, the lack
+of provably superior decision rules and the paucity of human
+experts render this strategy for determining output dimension
+values inadmissible.
+Yet another strategy calls for the application of all decision rules in several simulation runs, and then selecting the
+“best” for that scenario.
+The “best” decision rule can then
+be employed for classification tasks.
+This approach, though
+appealing in some respects, suffers from some obvious flaws.
+First, the notion of “best” is not easily defined.
+Several criteria
+may be employed to evaluate FMS scheduling performance,
+and the decision rule that is selected will vary with the
+criteria.
+This entails the creation of separate classification
+tasks for each criterion, which aside from being potentially
+expensive, provides little guidance to the decision maker when
+C. Implementation of C3
+The C3 algorithm used in this research was implemented in
+C++ and runs on an IBM PS2flO.
+Given the overall simplicity
+of the algorithm, the choice of language was dictated more
+by convenience rather than other factors as efficiency, data
+structures supported, recursive ability, and the like.
+One problem faced during the execution of the program was
+the propensity to encounter situations where the conditional
+entropies for several candidate dimensions were identical at
+a classification stage.
+This situation was termed a tie.
+In
+general, there are several mechanisms for breaking ties.
+A
+simple strategy is to select the first dimension as the preferred
+dimension at all stages.
+The initial ordering of dimensions
+will dictate the resolution of ties under this strategy.
+Another
+strategy that can be employed involves the random selection
+from the set of tied dimensions.
+While this is relatively
+easy to implement, it may lead to an unbalanced tree.
+Yet
+another strategy involves lookahead to determine which is the
+preferred dimension for selection at this stage, based on the
+information content of the next level of the tree.
+However, this
+approach violates the “greedy” structure of the classification
+algorithms, and its logical extension would comprise a branchand-bound solution.
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+191
+CHATURVEDI AND NAZARETH: EFFECTIVENESS OF CONDITIONAL CLASSIFICATION: APPLICATION TO MANUFACTURING SCHEDULE
+The above procedures are devoid of any semantic content,
+using some information theoretic measures at best.
+It may
+sometimes be desirable to employ domain knowledge to
+break ties.
+This may be done at a global level, assuming
+trakitivity of importance of individual dimensions, and the
+overall importance can be then specified by an ordered list
+of input dimensions.
+If transitivity of preferences cannot be
+guaranteed, then a matrix depicting pairwise preferences can
+be used.
+However, it may be the case that the preference for
+utilizing a dimension at any stage over other tied dimensions
+may indeed be context sensitive.
+In this case, for every
+branch of the decision tree, a list or matrix indicating relative
+preference among dimensions is needed.
+The overall objectives of the classification exercise will
+dictate the strategy for resolving ties.
+If the objective is merely
+to create a decision tree that can be later employed at will
+for classification purposes, then the random or first-come-firstselect approach may be useful.
+If efficiency of classification is
+a criterion of significant importance, the lookahead strategy is
+preferred, in that it engenders parsimony of the resulting tree.
+If, on the other hand, the classification exercise is intended
+to shed light on the domain, such that this knowledge can
+be employed at a later point, the semantic-based approach is
+preferred.
+This will facilitate the creation of systems that employ alternative knowledge structures, for example, production
+rules, frames, and the like.
+In this particular application of conditional classification, the
+overall objective was to generate an effective decision tree,
+Le., one which performed well on subsequent classification
+tasks.
+Parsimony of the tree, though desirable, was not the
+overriding objective.
+Since the knowledge encapsulated in the
+tree will not be converted to other forms, semantic information
+for breaking ties is not warranted.
+Consequently, the random
+strategy was employed to break ties.
+D. Class@cation Exercises
+The essential aim of the research was to assess the viability
+of concept-based conditional classification for manufacturing
+scheduling decisions.
+Several mechanisms are available for
+evaluating the outcome of the classification process.
+One
+strategy is to examine the outcome of the classification exercise itself.
+This can be done from an information theoretic
+perspective (e.g., parsimony of the decision tree), or from a
+domain semantic perspective (where the tree is examined for
+soundness of the classification rules).
+A more effective strategy
+involves the predictive validity of the resulting decision tree
+by applying it to a set of new observations.
+This study elected
+to use a set of training observations to construct the decision
+trees, and then evaluate its ability to effectively classify a set
+of holdout data.
+A set of 64 observations was employed for classification and
+evaluation.
+The input dimensions for classification included
+batch data and cell status information, and are summarized in
+Table I. Though there were several variables or dimensions that
+could be manipulated in the simulation runs, it was decided
+to restrict the number to a value that could be handled by a
+human decision maker.
+Further, only decision variables that
+TABLE I
+PUT DIMENSION
+FOR CLASSIFICATION
+Xi
+zip
+Batch characteristics
+Number Bf-part -t ypes
+Cell Status characteristics
+Palette-capacit y
+Number-ofAGVs
+AGVspeed
+WSavailability
+Buffer-capacity
+OUTPUT
+2.
+3
+5, 6
+2, 4
+Low, High (100, 125)
+3, -4
+2, 3
+TABLE II
+DIMENSION
+FOR CLASSFICATION
+Cj
+cjq
+Production rate
+Utilization
+Met, Notmet
+Met.

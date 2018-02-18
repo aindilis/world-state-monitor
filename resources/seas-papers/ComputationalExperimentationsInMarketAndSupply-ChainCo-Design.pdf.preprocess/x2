@@ -1,0 +1,444 @@
+While each consumer
+segment is attached to a particular ﬁrm, a particular channel, and a
+particular market segment, (which is given by their behavior from the
+previous period) they can switch upon payment of a switching cost measured in dollars.
+There are separate switching cost for ﬁrms, channels, and
+products.
+Thus if a particular consumer segment bought computers of
+brand x1, from channel y1, in market segment z1 in the previous period
+but switched to brand x2 while keeping channels and market segments the
+same, he would incur only a brand switching cost which would be added
+to the price.
+If he changed channels as well, the channel switching cost
+would be added as well.
+The consumers evaluate each product on oﬀer in the market based on
+their valuations of attributes.
+Then they compare the prices charged by
+vendors and choose the one product that oﬀers the maximum surplus (value
+minus price) based on their speciﬁc valuation taking into account the
+switching costs as described above.
+Once the product choice is made in this fashion, the quantity is determined by a system of Cobb-Douglas demand equations.
+If there are n competing manufacturers selling diﬀerentiated goods, and
+the quantity Q1 is sold by ﬁrm 1 at price P1 and the quantity Qn sold by ﬁrm
+n at price Pn then the demand is assumed to be:
+b
+b
+b
+b
+Q1 ¼ A1 P1Àa1 P2 2;1 P3 3;1 P4 4;1 . . .
+Pn n;1
+..
+b
+b
+b
+bnÀ1;n
+Qn ¼ An PnÀan P1 1;n P2 2;n P3 3;n . . .
+PnÀ1
+where a is the own price elasticity of demand and b is the cross price
+elasticity of demand.
+In general, there should be a separate a for every
+commodity and a separate b for every ordered pair of commodities, but
+for simplicity in this exercise all a’s are taken to be equal as are all b’s.
+Firms can invest in advertising.
+The advertising level chosen by i ﬁrm
+increases its demand by increasing its shift parameter Ai given above in
+the Cobb-Douglas demand case.
+It simultaneously causes the demand for
+the other ﬁrms to drop but not by the full amount of the increase in
+demand of the advertising ﬁrm.
+In other words, if all ﬁrms increased
+advertising simultaneously, total demand would increase, but some ﬁrms
+could suﬀer a drop in demand on account of the relative eﬀects.
+Similar
+argument applies to other investments as well.
+Computational experimentations in market
+37
+4.3 Conﬁguration and calibration
+We used data from a variety of sources to populate our synthetic economy.
+We used the reports by industry analysts, published articles, annual reports,
+SEC ﬁlings, company websites, and other published materials.
+For elasticity
+of demand, a major PC manufacturer made available to us the basic marketing data on price responsiveness collected by it.
+They also gave us data on
+brand perception, switching costs, and valuation of attributes such as processor speed etc. Marginal cost of production for the various manufacturers
+were inferred from prices and margin estimates published in the industry
+press.
+Once the data is gathered, economy was populated with 30,000 artiﬁcial
+agents with 10,000 agents in each of the high, medium and low segments.
+Their behaviors were calibrated and veriﬁed against a few known scenarios
+to create the SEAS virtual execution environment.
+Two small (12–15 participants) and two midsized (40–45 participants)
+experiments were conducted to validate, verify, and calibrate the synthetic
+environment.
+Business executives participated in the small group experiments while MBA students participated in the midsized experiments.
+The
+purpose of these experiments was to assess the realism and reasonableness of
+the synthetic environment as well as test the stability and performance of the
+model.
+Based on the recommendations and the results of these experiments,
+the parameters were adjusted, algorithms were reﬁned, and the environment
+was tuned for performance.
+Also, these experiments gave insights into scalability of the SEAS environment.
+4.4 Experiment and results
+The main experiment was run with 180 students, divided into four parallel
+sessions.
+Each session had the full complement of manufacturers, channels,
+and B2B exchanges.
+The experiment comprised of several steps—some involved a facilitator and the others used computer-based simulation.
+The ﬁrst
+step involved ideas and insights generation.
+In this step, participants brought
+forth their own ideas, insights, and understanding of the issues facing the
+companies they represented and the industry as a whole.
+The second step
+involved testing these ideas and insights against the industry structure pertaining to relative positions of ﬁrms on product mix, customer perception,
+and infrastructure sophistication.
+In addition to the structure, the ideas and
+insights were also tested for robustness against economic, cultural, and
+competitive uncertainties.
+The fourth step involved the development of different options and business ideas.
+The ﬁfth step involved testing the business
+ideas in SEAS’ synthetic economy.
+The sixth and ﬁnal step involved an afteraction review, in which participants discussed their moves, counter-moves,
+and outcomes.
+While the teams devised several strategies during the facilitated idea
+generation session, the ﬁve most commonly used strategies for the manufacturing ﬁrms were:
+38
+A. R. Chaturvedi et al.
+1.
+2.
+3.
+4.
+5.Stay a pure manufacturer.
+Develop a symbiotic relationship with the channel.
+Go direct aggressively with bundled services.
+Subscribe to an existing B2B exchange.
+Collaborate with other manufacturers and channel ﬁrm to create a new
+B2B exchange.
+The channel ﬁrms, likewise, identiﬁed the following ﬁve options to explore:
+1.
+2.
+3.
+4.
+5.Just add value through service.
+Develop a symbiotic relationship with the manufacturer.
+Compete aggressively with the name brand ﬁrms through white-boxes.
+Subscribe to an existing B2B exchange.
+Collaborate with manufacturers and other channel ﬁrms to create a new
+B2B exchange.
+Experiments were run in two phases.
+In the ﬁrst phase, OEMs’ had to
+decide whether they were going to setup a ‘‘dot com’’ or not and the channels
+had to react to those decisions.
+In phase two of the experiment, a neutral
+exchange was introduced as well as OEMs and channels were given the
+ability to start their own exchanges.
+The results of these experiments are
+given below.
+4.4.1 To dot com or not to dot com
+Phase I of the experiment—‘‘to dot com or not to dot com’’ focuses more on
+the relationship between the manufacturer and the channel partner.
+When
+PC manufacturers ﬁrst considered venturing into ‘‘going direct,’’ they did so
+with much trepidation.
+They did not want to roil the retailers on whom they
+so intimately depended.
+The retailers, carefully watching the rise in the
+number of manufacturers going direct, kept the pressure on manufacturers
+to restrict their eﬀorts to bypass their traditional sales channels.
+The boxmakers (OEMs) quickly discovered one of the fundamental sources of
+channel conﬂict—where they wanted to send fully loaded boxes while the
+channel wanted ‘‘stripped down’’ versions of boxes.
+The channels were quite
+successful in playing oﬀ one manufacturer against the other.
+As a result, the box-makers quickly discovered that the only way to move
+fully loaded boxes was to go direct, (see next section).
+This preference for
+going direct was reinforced by the ﬁnding that the channels were increasingly
+turning to the generics (white boxes) to supply them with low-end machines.
+Manufacturers found going direct challenging, as they feared channel
+ﬁrms could ﬁght back by concentrating on white boxes.
+However, indecision
+proved to be even worse.
+Gradually many came to the realization that there
+was no alternative.
+Regardless of the diﬃculty of selling direct, manufacturers still found ways to sell direct to customers without oﬀending the
+distribution channel, e.g.,
+Computational experimentations in market
+39
+(a) Some manufactures negotiated with their channel partners to sell only
+certain conﬁgurations direct and the rest through them.
+Thus, the
+channel partners did not ﬁnd them to be in direct competition.
+(b) Successful manufacturers sold low base systems with low option load
+through the traditional channel and sold high-end systems directly.
+(c) Manufacturers who oﬀered a wide range of products through the
+channel and made no investment in direct sales facility, very quickly lost
+their bargaining power.
+Without appropriate infrastructure to sell direct
+and without a channel ﬁrm to sell their products, these manufacturers
+ended up losing substantial market share, and lost their leverage with the
+channel.
+When they ﬁnally did decide to go direct, it was too little and
+too late.
+Their customers had left them and very few returned.
+(d) Going direct with just hardware proved diﬃcult.
+These ﬁrms did not gain
+enough new customers to justify their move and lost the trust of the
+channel to boot.
+Manufacturers bundling services ended up with higher
+proﬁt margins and market share.
+White box play was key for channel ﬁrms.
+As more manufacturers
+resorted to direct selling, the channel ﬁrms came back aggressively with
+white boxes and bundled them with service.
+Power play for margins was
+quite evident in the exercise.
+Some manufacturing ﬁrms used ‘‘reward
+power’’ to entice channels to cooperate.
+In this power play, the manufacturing ﬁrm allowed the channel to take margins on low-end base systems while they went direct with the high-end conﬁgurations.
+This
+approach seemed to work in the short run and the channels’ bargaining
+power gradually eroded.
+Two channel ﬁrms were relegated to being rather
+insigniﬁcant pure value-added resellers.
+However, when the channel ﬁrm was aggressive with the right mix of
+white boxes and branded products, it wielded signiﬁcant market power.
+In
+certain cases, it was even able to exert ‘‘coercive power’’ on the manufacturer, especially with those brands that found going a bit tough.
+These
+manufacturers had to agree to bigger share of the proﬁt on options in order
+to sell their systems.
+Figure 4 shows the proﬁts of the ﬁrms over time, one of
+which, named D (representing Dell), managed to stem the trend toward
+lower proﬁts by aggressively bundling services with hardware and attained
+industry leadership.
+4.4.2 To B2B or not to B2B
+In phase II of the experiment, a ﬁctitious, neutral B2B exchange, PCex, was
+introduced.
+In a B2B exchange, multiple buyers and sellers come together to
+trade.
+PCex was set up as a vendor neutral exchange.
+In other words, it had
+no interest in success or failure of the participating members.
+Every OEM
+had the choice to subscribe to this exchange.
+The key strategic issues that the
+players had to consider were:
+1.
+Status quo.
+2.
+Sell all direct.
+40
+A. R. Chaturvedi et al.
+120
+100
+% Profits
+80
+60
+40
+20
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Time
+M1
+M2
+M3
+M4
+D
+M1- M3 = Branded OEMs; M4 = Generic OEM; and D = Dell
+Fig.
+4 The proﬁts of the ﬁrms over time.
+M1–M3 branded OEMS, M4 generic OEM,
+D dell
+3.
+4.
+5.
+6.Sell high-valued products direct.
+Sell commodity and surplus products through the exchange.
+Sell direct to value-added resellers.
+Go all out through B2B exchange.
+B2B exchanges allowed a complex set of strategic alternatives to OEMs.
+The choices were between three diﬀerent business models—traditional, direct, and through the exchange.
+The evolutions of ﬁrms adopting diﬀerent business models were quite
+interesting.
+For example, initially, OEMs successfully segmented the market.
+They sold commodity PCs through the exchange, used the direct model to
+serve the high-value accounts with high-end systems, and used value-added
+resellers to sell to small and midsized customers who had higher needs for
+service.
+PCEx that started as an exchange for surplus and commodity
+product became a full-service vertical market.
+This resulted in channel
+companies becoming pure service providers.
+Prices were lower, the margins
+were higher with the exchanges as the transaction, and search costs for the
+customers came down.
+An interesting hybrid business model that worked
+was to sign up customers on the exchange and then service them direct.
+Once the B2B exchange acquired a critical mass, making proﬁts on a
+neutral exchange became a real challenge for all manufacturers.
+Given the
+transparency of prices, and quantities, prices very quickly converged to the
+marginal costs of the manufacturers.
+It is quite evident from the Fig.
+5 that
+Computational experimentations in market
+41
+90
+80
+70
+% Profit
+60
+50
+40
+30
+20
+10
+0
+1
+2 3
+4
+5 6
+7
+8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Time
+M1
+M2
+M3
+M4
+Fig.
+5 Proﬁts of ﬁrms in a neutral exchange
+intense competition between ﬁrms led to total erosion of proﬁts.
+Artiﬁcial
+agents adapted their behaviors to the actions of the manufacturers.
+They
+started to hold back their demand in anticipation of prices going down.
+At
+each price point, diﬀerent groups of agents bought computers.
+This outcome
+mirrors what happened in the real world as well.
+Having multiple B2B exchanges in an industry was disastrous.
+With four
+exchanges (B2B1–B2B4), customers were confused and switched rapidly
+between exchanges and between ﬁrms.
+As a result of this churning, their
+surplus was much lower, brand loyalty was greatly diminished, and the lack
+of critical mass on each exchange resulted in poor liquidity for the exchanges.
+At this point, the neutral exchange not only lacked loyalty among buyers,
+but also lacked support from the sellers, as the branded manufacturers
+created their own exchange.
+Failing to sustain its business model, the neutral
+exchange exited the space and the intermediary-oriented exchange reduced
+its investment in the exchange and chose to become a niche player supporting ‘‘branded’’ surplus and white-boxes.
+As shown in Fig.
+6, all four
+B2B Exchanges either lost money or barely broke even since at 20% or less
+they did not cover ﬁxed costs.
+B2B1 was a neutral exchange, B2B2 was a
+seller-oriented exchange, B2B3 was a private exchange, and B2B4 was an
+intermediary-oriented exchange.
+Markets became very stable with two prominent exchanges.
+The prominent ‘‘direct’’ seller continued to have high proﬁts and volumes with its own
+exchange but the growth in its market share slowed down considerably because customers seeking best price migrated to the sellers’ exchange to lower
+their search costs.
+Proﬁt margins for branded products were quite high.
+Each
+42
+A. R. Chaturvedi et al.
+25
+Gross Margins (%)
+20
+15
+10
+5
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Time
+B2B1
+B2B2
+B2B3
+B2B4
+Cost
+Fig.
+6 Proﬁts of B2B exchanges
+of these ﬁrms was able to maintain its positions quite well and was able to
+segment its markets quite eﬀectively.
+Two dominant and stable exchanges and an eﬃcient niche player (2+1
+model) seemed to be the optimal solution as in Fig.
+7.
+In this case, the
+customer surplus was quite high, the switching was low, and the search and
+70
+60
+% Profit
+50
+40
+30
+20
+10
+0
+1
+2
+3
+4
+6
+5
+Time
+B2B2
+Fig.
+7 Sustainable 2+1 exchanges
+B2B3
+B2B4
+7
+8
+Computational experimentations in market
+43
+transaction costs were quite low, but towards the end proﬁtability started to
+erode here as well.
+5 Conclusion
+This paper describes an agent-based computational experimentation for
+product and supply-chain co-design.
+It considers the rationale behind the
+research in the area of synthetic agents and their use in artiﬁcial economies.
+Past research has shown how analysis of the behavior of artiﬁcial agents can
+lead to valuable insights for businesses.
+With the growth of the Internet and
+artiﬁcial agents conducting business transactions therein, there is a need to
+predict possible future scenarios through the use of such synthetic agents
+interacting with human agents in artiﬁcial environments.
+Rapid growth in
+computing power and development of sophisticated software engineering
+methods allow for such modeling.
+Speciﬁcally, this paper builds a synthetic environment representing the
+PC industry with brand name manufacturers as well as generic box makers,
+channels, and business customers.
+This environment combines simulation
+with gaming by putting artiﬁcial agents and human agents in the same
+environment.
+As such, it combines techniques from two diﬀerent domains,
+namely ABS and experimental economics.
+This combination allows us to
+capture depth of decision making as represented by human players, with
+breadth of decision making, as represented by thousands of artiﬁcial agents.
+The manufacturers and channels were played by human players while several
+thousand artiﬁcial agents portrayed three segments of customers (small,
+medium, and large).
+PC makers were able to sell directly to consumers and to
+also engage in value-enhancing investments along various dimensions.

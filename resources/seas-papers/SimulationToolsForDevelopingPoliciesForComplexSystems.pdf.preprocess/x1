@@ -1,0 +1,714 @@
+Health Care Manage Sci (2007) 10:331–339
+DOI 10.1007/s10729-007-9030-y
+Simulation tools for developing policies for complex systems:
+Modeling the health and safety of refugee communities
+James Anderson & Alok Chaturvedi & Mike Cibulskis
+Received: 5 February 2007 / Accepted: 11 July 2007 / Published online: 18 September 2007
+# Springer Science + Business Media, LLC 2007
+Abstract The U.S. Committee for Refugees and Immigrants estimated that there were over 33 million refugees
+and internally displaced persons (IDPs) in the world at the
+beginning of 2005.
+IDP/Refugee communities behave in
+complex ways making it difficult to make policy decisions
+regarding the provision of humanitarian aid and health and
+safety.
+This paper reports the construction of an agent-based
+model that has been used to study humanitarian assistance
+policies executed by governments and NGOs that provide
+for the health and safety of refugee communities.
+Agentbased modeling (ABM) was chosen because the more
+widely used alternatives impose unrealistic restrictions and
+assumptions on the system being modeled and primarily
+apply to aggregate data.
+We created intelligent agents
+representing institutions, organizations, individuals, infrastructure, and governments and analyzed the resulting
+interactions and emergent behavior using a Central Composite Design of Experiments with five factors.
+The
+resulting model allows policy makers and analysts to create
+scenarios, to make rapid changes in parameters, and
+J. Anderson (*)
+Department of Sociology & Anthropology,
+Purdue University,
+700 W. State Street,
+West Lafayette, IN 47907-2059, USA
+e-mail: andersonj@purdue.edu
+A. Chaturvedi
+Krannert School of Management,
+403 W. State Street,
+West Lafayette, IN 47907, USA
+e-mail: alok@purdue.edu
+M. Cibulskis
+Simulex Inc.,
+West Lafayette, IN, USA
+e-mail: mcibulskis@simulexinc.com
+provides a test bed for concepts and strategies.
+Policies
+can be examined to see how refugee communities might
+respond to alternative courses of action and how these
+actions are likely to affect the health and well-being of the
+community.
+Keywords Refugees . Agent-based modeling . Simulation .
+Policy analysis
+1 Background and objectives
+The U.S. Committee for Refugees and Immigrants [1]
+estimated that there were more than 33 million refugees and
+internally displaced persons (IDPs) in the world at the
+beginning of 2005.
+Over two million of these refugees are
+from Afghanistan alone.
+The UN Refugee Agency [2]
+budget as of July 1, 2005 was $1.35 billion.
+According to
+the World Refugee Survey, the United States and the
+European Commission contributed more than $700 million
+U.S. dollars annually to nongovernment organizations
+(NGOs) for refugee aid worldwide in 2004.
+Since the end of World War II, global conflicts have
+generated an increasing number of refugees and IDPs,
+resulting principally from conflicts within states.
+An
+analysis of events and conditions that have led to refugee
+flows in the last quarter of the 20th century suggests that
+the numbers of refugees per conflict have been increasing
+and that certain regions of the world with countries
+experiencing high levels of violence are producing the
+majority of refugees and IDPs [3].
+While during this period
+the traditional countries that have accepted refugees have
+increased the number of refugees accepted for resettlement,
+there is increased domestic pressure within these receiving
+countries to limit admissions of refugees [4].
+At the same
+332
+time, the Institute of Development Studies has raised
+questions as to whether refugees should be integrated into
+the local population and relief programs should work
+through local welfare agencies [5].
+Policy responses to influxes of large numbers of refugees
+and IDPs vary considerably from country to country [6].
+The consequence of providing humanitarian aid to refugees
+creates problems for the country receiving them.
+Reports of
+the United Nations High Commissioner for Refugees to the
+UN Economic and Social Council [7] and Amnesty
+International [8] documented the fact that military and
+armed attacks on refugee camps have increased.
+Consequently, the report calls for international protection of
+refugees especially women and girls, who constitute the
+majority of the refugee population.
+In addition to security, a
+second major problem for refugee communities is the
+provision of health care [9, 10].
+Studies have found
+Hepatitis B, malaria, and tuberculosis prevalent among
+refugees to the U.S. and the U.K. [11].
+Migrants to Spain
+from sub-Saharan Africa were found to be carriers of
+Hepatitis B [12].
+Most refugee camps are located in areas afflicted with
+factional wars, border disputes, and other crises making it
+difficult to carry out effective humanitarian aid efforts.
+IDP/
+Refugee communities behave in complex ways making it
+difficult to make policy decisions regarding the provision of
+humanitarian aid and health and safety.
+International,
+national, institutional, organizational, and human factors
+interact in dynamic ways making it difficult to predict the
+outcomes of policy decisions [6].
+Moreover, in situations
+such as refugee communities, the system is neither directly
+observable nor subject to unifying organizational theories.
+Decisions involve a number of stake-holders with
+conflicting values [13].
+Currently there is a need to view
+the refugee problem as a reoccurring phenomenon with
+identifiable features rather than as individual historical
+events [14].
+One approach to modeling refugee communities is to use
+computer-assisted reasoning in policy analysis [15].
+Simulation can provide a way past some of the difficulties in
+modeling these communities.
+A simulation model represents a theory of how a particular system works.
+The model
+can be used to analyze the forces that are driving refugee
+flows and conditions.
+The impacts of government policies
+can be examined and used to conduct policy experiments to
+see how refugee communities might respond to alternative
+courses of action.
+By executing the computer model with
+different initial values for its parameters and inputs, patterns
+and regularities can be discerned from the results.
+This paper describes an agent-based simulation model
+that was developed to examine policy options regarding the
+provision of humanitarian aid to refuge communities.
+Agent-based modeling (ABM) was chosen because the
+Health Care Manage Sci (2007) 10:331–339
+more widely used alternatives that utilize systems of
+differential equations, statistical decision theory, or operation
+research methods impose unrealistic restrictions and assumptions on the system being modeled such as linearity,
+homogeneity, and normality [16–18].
+Also traditional models
+apply primarily to aggregated data.
+In the following sections we briefly describe the
+rationale for choosing agent-based modeling to study
+refugee communities.
+This is followed by a description of
+the model and the rules that govern individual agents’
+behavior.
+We next present the results of computational
+experiments undertaken to better understand the effects of
+policy decisions on the health and well-being of a refugee
+community.
+2 Methods
+2.1 Agent-based modeling
+Many social systems such as refugee communities are
+inherently nonlinear.
+That is the effects of independent
+variables representing policy decisions on dependent
+variables or outcomes are not proportional and directly
+predictable.
+Such nonlinear systems are difficult to model
+because they cannot be understood analytically [19].
+The
+behavior of the system cannot be predicted from a set of
+equations.
+The only effective way of exploring the behavior
+of nonlinear systems is by building and running simulation
+models.
+Two different approaches to modeling nonlinear
+systems have been developed, system dynamics and agentbased modeling.
+The two approaches, while quite different,
+are complimentary.
+System dynamics models are based on a
+set of differential equations representing complex feedback
+loops among aggregate state variables representing the
+system.
+The feedback structure is what makes a system
+adapt over time [20, 21].
+In contrast, agent-based modeling
+examines the global consequences of interactions among
+individual agents.
+Properties of the system emerge from a
+small set of rules governing interactions among agents [22].
+Agent-based models are capable of modeling the
+complexity of social systems because they utilize the rich
+data and knowledge that are available about behaviors,
+motivations, and relationships among social agents.
+The
+purpose of agent-based modeling is to determine the global
+consequences of individual interactions in a given space.
+Agents are viewed as generating emergent behavior by
+interacting with one another according to a small set of
+rules.
+These interactions among agents give rise to the
+system’s complex behavior.
+The overall behavior of the
+system of actors cannot be derived directly from the rules
+governing individual behavior of actors.
+Emergence then is
+viewed as a property of complex systems [23].
+Health Care Manage Sci (2007) 10:331–339
+We chose to use agent-based modeling of refugee
+communities because it overcomes one of the major
+difficulties associated with policy analysis at this level,
+namely the scarcity of comparable and generalizable
+models of these communities.
+An agent-based synthetic
+environment allows us to generate an understanding of the
+collective behavior of refugees and IDPs through computational experimentation.
+This form of modeling provides
+insights into how macro level phenomenon emerges and
+attains equilibrium and stability over time from micro level
+behavior.
+In summary, agent-based simulation allows: (1)
+virtual simulation of the consequences of decisions, (2)
+integration of multiple theories regarding the phenomenon
+under investigation, (3) representation of agents with
+multiple decision strategies, and (4) modeling of heterogeneous actors who can modify their behavior over time [24].
+The research process involves modifying the rules, the
+environmental parameters, and/or the decision parameters,
+and analyzing the resulting outcomes regarding the emergent behavior of the overall system.
+The purpose of the
+analysis is to determine leverage points in complex systems
+on which to base policy decisions [25, 26].
+Systems Theory provides a theory of modeling that can
+be used for systems that are neither directly observable nor
+subject to a unifying organizational principle.
+A system is
+defined as a collection of interacting objects assumed to
+have multiple modes of responding based on the observed
+input–output relations over time.
+As long as the system is
+nearly decomposable, variables that move together over
+time can be aggregated statistically [25].
+The types of objects that can influence the health and
+well-being of a refugee community system are refugees and
+IDPs; government, nongovernment, and social organizations that provide humanitarian aid; medical centers; and
+hospitals.
+Inputs to the system include numerous aiding
+actions by multiple organizations that affect the availability
+of food and water, medical supplies, and medical personnel
+as well as levels of security and sanitation.
+Within the
+refugee community system, classes of outputs include the
+number of refugees who are sick, dead, or healthy.
+2.2 Model description
+A number of platforms and methods exist that can be used
+for agent-based modeling [27].
+For this study we used the
+Synthetic Environment for Analysis (SEAS)—computational
+experimentation environment [28].
+This platform provides an
+environment that can be used to construct a virtual model of
+a refugee camp.
+The SEAS software has been used to create
+a small-scale artificial society which includes the health care
+system of a refugee community.
+This model is one of several used in concert within the
+synthetic environment to conduct computational experi-
+333
+ments in order to explore the effects of policy decisions
+regarding the provision of humanitarian aid, health and
+safety for refugees The model is based on several social
+science theories, namely certain fundamental or experimentally developed theories are explicitly encoded in the
+agents, for example., well-being [29, 30], set point theories
+from psychology [31], and production and consumption
+theories from micro economics.
+In the next section, agent’s
+attributes are described as well as the inputs to and outputs
+of the model.
+2.2.1 Agent specification
+Individual refugees are constructed as a proportional
+representation of the social makeup of a refugee camp.
+Each individual agent consists of a set of static and
+dynamic traits.
+For example, there are three “income”
+classes for IDP/Refugees: Elite, Middle, and Weak.
+These
+designations correspond to the agent’s Basic Needs level of
+low/medium/high and affect an agent’s likelihood of
+becoming sick.
+Other traits modeled in each refugee agent
+include religion, ethnicity, social networks, and ideology.
+Dynamic traits include the refugee’s subjective wellbeing and health status.
+The refugee agent’s subjective
+well-being is based on the work of Kahneman [30].
+The
+agent’s well-being consists of eight needs: basic, political,
+financial, security, religious, educational, health, and
+freedom of movement.
+A refugee agent’s behavior is
+primarily driven by his/her traits and well-being.
+Information reaches the agent via traditional media sources and
+rumors spread by other agents.
+Initially each agent’s desire of each need is based on the
+socioeconomic class of the citizen.
+Further, we also identify
+weights that identify the relative importance of the
+fulfillment of each need to the citizen.
+Each citizen forms
+a perception of the level of fulfillment of each need from
+several information sources such as social groups, leaders,
+organizations, and media.
+Each agent then identifies
+deprivation of each need as the gap between the perception
+of a need and his/her desires for the need.
+By weighting the
+deprivation of each need, each citizen identifies their
+overall deprivation.
+Citizens adjust their weights as certain needs become
+more significant due to conditions in the environment.
+Citizens focus on needs that they are most deprived of and
+attach less significance to those needs that are fulfilled.
+Organizations, Leaders, and Media can influence a citizen
+into adjusting weights by attaching significance to certain
+issues.
+Citizens are also influenced or coerced by their social
+groups in the needs to which they attach most significance.
+The leader agent is encoded with influence levels that
+reflect his/her power within the group, organization, or
+institution.
+A leader agent is categorized as social, religious,
+334
+Health Care Manage Sci (2007) 10:331–339
+and/or political and has a repertoire that is larger than that
+of citizen agents and includes additional traits such as
+power base, ideology, and his/her stance on economic,
+political, and social policies.
+These agents are able to affect
+the political and social climate of the synthetic environment
+and impose their stances upon citizens and organizations to
+promote their respective goals.
+The goal of leader agents is
+to set the agenda of the organization or institution in which
+they reside and persuade the citizen/member agents to make
+decisions that favor those positions.
+An organization is comprised of a structured group of
+artificial human citizen and leader agents.
+Citizens that
+subscribe to an organization make up the member population, and the combined behaviors and interactions of
+members and leaders results in the behavior for the
+organization.
+Organizational leadership constantly seeks
+maintenance and growth of the organizational membership
+by providing tangible and intangible benefits, and citizens
+subscribe based on a perceived level of benefit that is
+received from the organization.
+Leaders attempt to influence
+the organization to align with their ideologies by framing
+issues and attitude sharing.
+Members also influence each
+other’s attitudes through the formation of intra-group social
+networks that emerge from levels of affinity between
+members.
+Additionally, through inter-organization networks,
+attitudes and resources may be shared between organizations.
+Fig.
+1 Interactions among
+agents
+Through these internal and external interactions, organizations cause significant changes in perception and attitude and
+become core protagonists of activism in the model.
+Within our model media also plays a significant role in
+providing information to members in the form of reports on
+well-being and attitudes.
+Media organizations consist of
+television, radio, newspapers, and magazines.
+They make
+choices about what information to cover, who to cover,
+what statements to report, what story elements to emphasize, and how to report it.
+Media is able to set the agenda
+for domestic policies as well as foreign policy issues.
+Incidents are framed on well-being components and
+formalized in a media report.
+We model institutions as ‘governmental entities’ such as
+the army, police, legislature, courts, executive, bureaucracy,
+and political parties—entities that are able to formulate
+policies that have legal binding and have more discretionary resources.
+We also consider institutions as structures
+that are products of individual choices or preferences, the
+later in turn being constrained by the institutional structures
+(i.e., an interactive process).
+The Government Institution
+agents represent the leadership and various branches of the
+government.
+Institutions are like formal organizations with
+an additional power to influence the behaviors of members
+and nonmembers.
+Figure 1 shows the interactions among
+the agents.
+Engage
+Give Aid
+Interdict
+Media Campaign
+Provide Goods
+Threaten
+Network
+Give Aid
+Collaborate
+Consensus
+Status
+Rebels
+Riot
+Attack
+Demonstrate
+Government
+Institutions
+Org
+Infrastructure
+Give Aid
+Provide Goods Request
+Interdict
+Provide Goods
+Give Aid
+Collaborate
+Consensus
+Organizations
+Join
+Leave
+Change
+Stay
+Media Report
+Adjust
+Perception
+Give Goods
+Give Benefits
+Coerce
+Unify
+Provoke
+Support
+Citizens
+Leaders
+Health Care Manage Sci (2007) 10:331–339
+2.2.2 Sickness model
+Refugees can be in one of four states Healthy, Sick Outside
+the Medical Center, Sick Inside the Medical Center, and
+Dead.
+Refugees will remain in a state for a minimum of one
+time step, representing one hour, after entering.
+Each time
+step, every agent checks to see if they remain in their
+current state or transition to another state.
+State: Healthy This is the default state for agents.
+Agents
+remain in this state until they become sick and transition to
+Sick Outside.
+The probability that an agent will become
+sick is a nonlinear function, f(Basic Needs, Food_Water,
+Sanitation), of the refugees current perceived Basic Needs
+level, the community sanitations level, and the community
+Food/Water level.
+335
+Medical Resources, Medical Personnel, security), a nonlinear function of a number from a triangular distribution, the
+community Medical Resources level, the community
+Medical Personnel level, and the community Security level.
+Each time step, an agent checks to see whether they have
+died in the medical center.
+The probability of dying in the
+Medical Center is p=0.0001 per time step and is an
+important model parameter for calibration.
+If they have
+not died, they check to see if sufficient time has elapsed that
+they have become healthy and can transition to the Healthy
+state.
+State: Dead Once an agent dies, they are removed from the
+camp and undergo no further processing.
+State: Sick Outside the Medical Center When an agent
+becomes sick, they enter this state and are assigned a
+number, Δd , from a triangular distribution that represents
+the number of time steps in which they will die if they are
+unable to enter the medical center.
+Each time step, the agent
+checks to see if they have died as a result of their inability
+to obtain medical attention.
+If they are still alive, they will
+attempt to enter the medical center and transition to the Sick
+Inside state.
+If the medical center has exceeded its capacity,
+the agent is forced to remain in the Sick Outside state.
+2.2.3 Inputs
+State: Sick Inside the Medical Center When an agent enters
+the medical center, they are assigned a number that
+represents the number of time steps in which they will
+become well again and transition to the Healthy state.
+The
+number of time steps until they become healthy is f(Δh,
+The outputs of the model include the numbers of healthy,
+ill, and dead refugees.
+Also the number of ill refugees being
+treated by the clinic/hospital is calculated.
+Figure 2 shows
+the virtual model of the refugee camp and its health care
+system.
+Fig.
+2 Virtual health care system for a refugee camp
+Policy decisions and actions by governments and NGOs
+provide the inputs to the model.
+Levels of Security, Food
+and Water, Medical Personnel, Medical Resources, and
+Sanitation can take on values ranging from 1 to 10.
+The
+capacity of the medical clinic/hospital is established prior to
+a simulation run.
+2.2.4 Outputs
+336
+Health Care Manage Sci (2007) 10:331–339
+2.3 Model evaluation
+3 Results
+The internal validity, sensitivity, and outcome validity of
+the model have been evaluated [32, 33].
+First, the internal
+validity of the model was assessed by verifying that its data,
+variables, and parameters are based on experimentally
+developed theories such as well-being [29, 30] and data
+from the UN Refugee Agency.
+Second, a sensitivity analysis was performed on the
+model.
+For each of the independent input variables (i.e.,
+Food and Water, Sanitation Level, Medical Resources,
+Medical personnel, and Security level), the model was used
+to predict outcome variables such as the number of refugees
+who are sick or who are alive over time.
+Twenty-eight runs
+were performed with different combinations of the five
+input variables.
+A neural network analysis was performed
+to estimate parameters of a model that can be used to
+predict outcomes.
+In order to test the sensitivity and stability of the model,
+levels of food and water were varied while the other four
+parameters were held constant at their midpoints.
+As
+predicted, at low levels of food and water, fewer refugees
+were alive after 50 h. Moreover outcomes for each level of
+food and water stabilize after 50 h. Additional runs were
+performed for each of the other four input variables.
+As
+predicted, sickness rates declined as levels of sanitation,
+medical resources, medical personnel, and security
+increased.
+Also, treatment times or length of stay in the
+medical center decreased as levels of medical resources and
+medical personnel increased.
+Outcome validity was also assessed.
+While limited
+historical data are available to verify the model,
+predictions from the agent-based model were compared
+with the predictions from a system dynamics model [20,
+21].
+Over time, predictions of the number of sick refuges,
+refugees in the medical center, and deaths compare closely
+to the predictions from the agent-based model presented
+here.
+A design of experiment was conducted to capture the
+underlying relationships in the simulation.
+A Central
+Composite Design (CCD) with five factors and three levels
+was created and analyzed by DOE PRO XL software.
+The
+factors were (1) Basic Needs, (2) Food & Water, (3)
+Sanitation, (4) Medical Resources, and (5) Security.
+For this
+experiment the levels of these factors were set by the
+experimenters, but when the synthetic environment is used
+for supporting policy analysis events, the levels are
+modified by autonomous policy-making agents like governments and NGOs.
+DOE PRO XL produced two regression equations, one for
+predicting the percentage sick and one for predicting the
+percentage of the initial camp population alive at any point in
+time.
+The error rates in prediction were larger than expected so
+the alternative method of using neural networks for function
+approximation was applied.
+Using an add-on package for
+Mathematica®, better performing predicting equations were
+derived and used for creating response surfaces.
+The effects of the level of food and water available to
+refugees and medical resources available to refugees are
+shown in Fig.
+3.
+The sickness rate declines with increased
+food and water and the availability of greater medical
+resources in the refugee camp.
+The largest decline in illness
+occurs when both factors are at higher levels.
+Errors in
+prediction appear to be distributed uniformly over the input
+space.
+Figure 4 shows the effects of low levels of food and
+water and sanitation on the number of sick refugees.
+For
+this run the capacity of the medical center was fixed at 45.
+The simulation run indicates that the number of sick
+refugees rapidly exceeds the capacity of the medical center
+to treat them.
+The rapidity with which the number of ill
+refugees overwhelms the health care system in this case
+suggests the importance of surveillance systems for early
+detection of epidemics in refugee camps [34].
+Fig.
+3 Effects of levels of food
+and water and medical resources
+on the percent of refugees who
+were sick after 15 days
+Health Care Manage Sci (2007) 10:331–339
+337
+Fig.
+4 The effect of low levels
+of food and water and sanitation
+on the number of sick refugees
+over 4 days.
+Capacity of the
+medical center equals 45
+The interactions between Food and Water, Sanitation,
+Security, and Medical Resources and their effects upon
+mortality among the refugee population can be seen in
+Figs.
+5 and 6.
+For Fig.
+5, Basic Needs, Medical Resources,
+and Food and Water were fixed at medium levels.
+The
+results show that decreased Security results in increased
+morbidity regardless of the level of Sanitation.
+The worst
+conditions occur when both Sanitation and Security levels
+are at minimum levels.
+The results show that low levels of
+food and water result in a high number of sick refugees.
+The levels of food and water appears to interact with the
+level of security when both food and water supplies and
+security are low, there is a sharp increase in the proportion
+of sick refugees living in the camp.
+For Fig.
+6, Basic Needs, Sanitation, and Security were
+fixed at medium levels Increases in both Food and Water
+and Medical Resources have their greatest impact when
+initial levels are at minimum values.
+In other words, the
+lifesaving effects of these two variables diminish as their
+values increase.
+These results represent a situation where
+the supply of food, water, medical resources, sanitation, and
+security by either a government or NGO are limited.
+Figure 7 shows the effects of levels of sanitation and
+medical resources on the percentage of refugees who are
+sick after 15 days assuming that no new refugees enter the
+camp during this two week period.
+When sanitation and
+medical resources are very low, the number of surviving
+sick persons in the camp falls.
+This is due to the increased
+number of deaths that result from poor sanitation and
+limited medical resources.
+As the number of sick refugees
+increases, the medical center reaches capacity and an
+increasing number of refugees do not receive needed care
+and eventually die.
+Fig.
+5 Effects of levels of sanitation and security on the number of
+sick refugees after 10 days
+Fig.
+6 Effects of levels of food and water and medical resources on
+the percent of refugees remaining alive after 15 days
+338
+Fig.
+7 Effects of levels of sanitation and medical resources on the
+percent of refugees who are sick after 15 days
+4 Discussion
+This paper reports the construction of an agent based model
+that has been used to study humanitarian assistance policies
+executed by governments and NGOs in a synthetic
+environment.
+We have created intelligent agents representing individuals, institutions, organizations, infrastructure,
+and governments and analyzed the resulting interactions
+and emergent behavior.
+A major strength of the model is
+that it allows policy makers to incorporate specific
+characteristics of refugees and the governmental and
+nongovernmental organizations that are providing humanitarian aid to the camp.
+For example the simulation demonstrates the critical role
+of security in providing for the health and well-being of
+refugees.
+The importance of security was highlighted in the
+recommendations that Amnesty International made regarding the African Union Mission in Sudan (AMIS) [8].
+The
+report states that AMIS lacked the manpower and resources
+to adequately protect the refugee population.
+As a result
+refugees were attacked and killed when they sought food,
+water, and firewood.
+Since the factors studied here are likely to be targeted by
+policy makers in governments, NGOs, and relief organizations, this agent based model can be used to explore
+alternative policies that may affect the health and well being
+of refugees and displaced persons resulting from civil
+unrest, wars, and natural disasters like hurricane Katrina.
+These factors are likely to be targeted by policy makers in
+governments and NGOs.
+The limitations to the simulation described here are both
+the unavailability of theories from which to create models
+and data from which to calibrate model parameters.
+These
+same limitations make it even more difficult to utilize other
+modeling techniques that impose restrictive assumptions.

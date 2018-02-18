@@ -1,0 +1,647 @@
+UPDATECUST
+Site B:
+Remote-access retrieval query
+SET CYTD-ORDER = CYTD-ORDER - 200
+Query 5: SELECT CNUM, CNAME, CREDITLINE
+WHERE CNAME = ‘JBM’
+FROM CUST
+AND CITY = ‘A’
+WHERE CREDITLINE > 200000
+Site B :
+Step 5: Construct the queries to create TIF’s
+5.
+SELECT CNUM, CNAME, CREDITLINE
+MLTIF generates the following remote queries to
+FROM ,CUST
+create TIF’s for both sites.
+WHERE CREDITLINE > 200000
+Site A: SELECT CNUM, CNAME, CREDITLINE
+6.
+UPDATECUST
+FROM CUST
+SET CREDIT-USED = CREDIT-USED-200 WHERE
+WHERE CYTD-ORDER > 1500000
+CNUM = “321’
+AND (CREDITLINE < 100000 OR
+7.
+INSERT
+CREDITLINE > 150000)
+INTO CUST (CNUM, CNAME, CITY, CYTD-ORDER,
+Site B: There is only one remote-access query.
+MLTIF will
+CREDITLINE, CREDIT-USED)
+nor generate a new query.
+VALUES (N938, ‘ABC INC.’, ‘B’, 1oo00, 1000000,O)
+Example 3: Suppose two sites in a network each stores a
+The creation procedure of the TIF’s of CUST relation for
+vertically partitioned database table as follows:
+both sites is as follows:
+CUST(CNUM, CNAME, CITY, CYTD-ORDER,
+Step 1:
+Classify query type.
+CREDITLINE, CREDIT-USED)
+Site A: stores the fragment CUST(CNUM, CNAME,
+insert queries: 7
+CY TD-ORDER)
+delete queries: none
+Site B: stores the fragment CUST(CNUM, CITY,
+modification queries: 4, 6
+CRI?,DITLINE, CREDIT-USED)
+retrieval queries: 1, 2, 3, 5
+query 7 will be discarded since it is an INSERT query.
+The query histories are as follows:
+Step 2: Classify local-/remote-access queries.
+Site A:
+Retrieval queries:
+1.
+SELECT CNUM, CNAME, CYTD-ORDER
+Site A:
+FROM CUST
+Local-access: 1, 2, 3 /* because it is transparent
+WHERE CYTD-ORDER 2 1000000
+structure are integrated into a single TIF.
+All the TIF’s for a
+site can be constructed in this manner.
+An example illustrating
+MLTIF was presented in Section I.
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+199
+CHATURVEDI et al.: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+2.
+SELECT CNUM, CYTD-ORDER, CREDITLINE
+FROM CUST
+WHERE CYTD-ORDER 2 1000000
+AND CREDITLINE < 100000
+AND CITY = ‘A’
+3.
+SELECT CNUM, CNAME, CYTD-ORDER,
+CREDITLINE
+FROM CUST
+WHERE CYTD-ORDER 2 10000000
+AND CREDITLINE < 500000
+AND CITY = ‘B’
+Site B:
+4.
+SELECT CNUM, CNAME, CREDITLINE,
+CREDIT-USED, (CREDIT-USED / CREDITLINE)
+FROM CUST
+WHERE CREDIT-USED 2 CREDITLINE * 0.9
+5.
+UPDATE CUST
+SET CREDIT-USED = CREDITLINE - 2000
+WHERE CNUM = 10555
+6.
+SELECT CNUM, CNAME, CYTD-ORDER,
+CREDITLINE, CREDIT-USED
+FROM CUST
+WHERE CNUM = 10555
+7.
+INSERT
+INTO CUST(CNUM, CNAME, CITY,
+CREDITLINE, CREDIT-USED, CREDIT-ORDER)
+VALUE (10056, ‘ABC INC.’, ‘NEW YORK’, 1O000, 0, 0)
+Step 1: Classify query type.
+insert queries: 7
+delete queries: none
+modification queries: 6
+retrieval queries: 1, 2, 3, 4, 5
+query 7 will be discarded since it is an INSERT
+query.
+Step 2: Classify local-/remote-access queries.
+Retrieval queries:
+Site A: Local-access: 1, 2, 3
+Remote-access: 2, 3
+Site B: Local-access: 6
+Remote-access: 6
+(Note: Query 4 is discarded because the remote set contains
+no restricting attribute.)
+Modification queries:
+Site A: None.
+Site B: Local-access: 5
+Remote-access: none
+Step 3: Identify time sensitivity.
+Site A: Time-sensitive: none
+Time-invariant: all attributes
+Site B: Time-sensitive: CREDIT-USED
+Time-invariant: all other attributes
+Step 4: Remove time-sensitive attributes from remoteaccess retrieval queries.
+Site A: remote-access queries
+Query 2: SELECT CNUM, CREDITLINE
+FROM CUST
+WHERE CREDITLINE
+< 100000 /*because
+CYTD-ORDER >=
+AND CITY = ‘A’ 1000000 is not in
+remote set*/
+Query 3: SELECT CNUM, CREDITLINE
+FROM CUST
+WHERE CREDITLINE < 500000
+AND CITY = ‘B’
+Site B: remote-access query
+Query 6: SELECT CNUM, CNAME, CYTD-ORDER
+FROM CUST
+WHERE CNUM = 10555
+Step 5: Construct the queries to create TIF’s.
+MLTIF generates the following remote queries to create TIF’s
+for both sites.
+Site A: SELECT CNUM, CREDITLINE, CITY
+FROM CUST
+WHERE CREDITLINE < 500000
+AND (CITY = ‘A’ OR CITY = ‘B’)
+(Note: CITY is added into the selecting attribute list.)
+Site B: There is only one remote-access query.
+MLTIF
+will not generate a new query.
+B. TIF’sfor Retrieval Queries With Two-way Join
+MLTIF processes two-way join queries in the following
+manner (all the other steps remain the same):
+A. Determine TIF content by evaluating two-way join retrieval
+queries one be one.
+Step A. 1 Split the two-way join query into two single-table
+sub-queries (by dropping the join condition clause
+and splitting the selecting attributes) for the tables
+involved.
+Send each sub-query, along with the join
+condition clause to the nodes containing a copy of
+the base table involved.
+Some nodes might receive
+both sub-queries.
+Step A.2 Evaluate sub-queries.
+Determine from the local
+base table the join attribute values.
+Put these values in a set, called unique join-value set.
+Transmit
+the set to the nodes receiving the other sub-query.
+Every node receiving a sub-query should have
+remote join values for the other sub-query.
+Step A.3 Take the union of the remote unique join-value
+sets and the local unique join-value set, if any, at
+each node.
+Determine the data items satisfying the
+original two-way join query from the resultant set
+and the local base table.
+Example 4: Suppose the two nodes in a network store data
+as follows:
+T l ( g , b, e , d,e,f ) where a is a primary key,
+T 2 ( f ,9,h) where f is a primary key,
+Node A: stores the following base table fragment of T1
+with e =‘A’,
+tuple 1
+tuple 2
+tuple 3
+a
+b
+c
+d
+e
+COO1 Acme 1000 200 A
+500 100 A
+COO3 Erso
+100 100 A
+COO4 Giant
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+f
+SO1
+SO1
+SO2
+200
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+and base table T 2 :
+Sub-query B.2.2 will also be submitted to node A with the
+9
+h
+join condition because base table T 2 is stored only at node A.
+tuple 1 SOT
+Cock
+F
+At Node A: The only condition clause in Sub-query B.2.1
+tuple 2 SO2
+Sam
+M
+contains a TSA, thus the condition is dropped.
+As no restricting
+tuple 3 SO3
+George M
+condition remains in the sub-query, all the three tuples of
+tuple 4 SO4
+Diane
+F
+join attribute, f, for T 1 will be selected.
+The unique joinNode B: stores the following base table fragment of T 1 value set of attribute f is { S o l , S02}, and it is transmitted to
+with e =‘B’.
+the relevant nodes participating in the join operation.
+In this
+a
+b
+c
+d
+e
+f
+example, the set is not sent to node B because no T 2 data is
+tuple 1 CC62 Dons 2000
+800
+B SO3
+stored at node B.
+tuple 2 COO5 Gray
+800
+600
+B SO4
+The condition clause of Sub-query B.2.2 received from node
+The query history at each node is as follows:
+B does not contain a TSA and the evaluation of the query
+Node A:
+shows that tuples 1 and 4 of base table T 2 at node A satisfy
+1.
+SELECT a,b,c
+the query.
+Thus, the unique join-value set of attribute, f, of
+FROM T 1
+T 2 becomes {Sol, S04).
+It is transmitted to node B where a
+WHERE c > 1000
+fragment of base table T 1 is stored.
+Note that there is actually no need to send any unique join2.
+SELECT a, b, c, d , e
+value set to query node because no data will be replicated
+FROM T 1
+from itself.
+WHERE b = ‘Gray’
+At Node B: Similarly, sub-query B.2.1 is evaluated and a
+3.
+SELECT a , b, c
+unique join-value set, {S03}, is generated and transmitted to
+FROM T 1
+A. Note that the restricting attribute, c, is a TIA at node B
+WHERE e =‘A’
+and would not be dropped from the sub-query as the case at
+4.
+UPDATE T 1
+node A.
+SET c = c - 100
+At each node, the unique join-value sets are combined, join
+WHERE a = ‘001’
+operation is evaluated, and the retrieval matrices are marked
+for the data to be replicated.
+Node B:
+Thus the TIF created at node A for the base table T 1 at
+1.
+SELECT a, b, c, d
+node B is as follows:
+FROM T 1
+a
+b
+c
+d
+e
+WHERE c <= 500
+tuple 1 002
+Dons 2000 filler filler
+2.
+SELECT Tl.a,Tl.b,Tl.c,T2.f,T2.g,T2.h
+tuple 2 005 Gray 800 600 B
+FROM T l , T 2
+Note that attributes d and e of tuple 1 are occupied by
+WHERE T1.c >= 1000
+‘fillers’ because the values of these two data items are not
+AND T1.f = T2.f
+replicated in the local TIF.
+A filler is a predefined value for
+AND T2.h = ‘F’
+non-replicated cells in the TIF’s.
+3.
+UPDATE T 1
+Node B: A TIF created at node B for the base table T 1 at
+SET d = 500
+node A is as follows:
+WHEREd<500
+a
+b
+c
+d
+e
+f
+tuple 1 001 Acme filler filler filler SO1
+MLTIF determines time-invariant fragments in the following
+tuple 2 003 Erso filler filler filler SO1
+manner:
+tuple 3 004 Giant filler filler filler filler
+There are no two-way join queries at node A while query
+TIF created at node B for the base table T 2 at node A is
+2 of node B is a two-way join retrieval query.
+The query is
+first decomposed into two single-table queries for base tables as follows:
+h
+T 1 and T 2 as follows:
+tuple 1
+f
+- 9
+Sub-query B.2.1: SELECT a , b, c, f
+SO1
+,Cocki
+F
+FROM T 1
+C. Query Processing in TIF Environment
+WHERE T1.c >= 1000
+and
+Query processing with TIF’s is different from that in a
+Sub-query B.2.2: SELECT f,g , h
+non-replicated environment.
+Local base tables and TIF’s may
+FROM T 2
+contain some of but not all of the data needed to answer a
+WHERE T2.h = ‘F’
+query.
+To satisfy the query request, it is important to accurately
+The join condition is 2’1.
+f = T 2 .f.
+determine the portion of data that satisfies the query but resides
+Note that the join attribute f is included in the selecting at a remote node.
+Hence, each query is processed at the
+attribute list of both Sub-queries so that the original query can relevant base table nodes to determine the data items (not
+be recreated.
+available in local base table or in TIF) to be transmitted to the
+Since both nodes have a fragment of base table T 1 , Sub- query node.
+Processing of modification and retrieval queries
+query B.2.1 and the join condition are submitted to node A. is presented below.
+f
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI et al.: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+201
+c3
+Opportunity
+c?1
+I
+I
+c2
+T3
+T2
+T1
+T4
+Time
+Scheduled Allocation
+Fig.
+4.
+Scheduling the allocation of TIF’s.ModiJication Queries: A modification query in a TIF envitables to be joined) as each node where the join values are
+ronment is processed in the following manner:
+available.
+Determine whether the data items that satisfy the
+join query have been replicated in the query node TIF’s.
+Step 1.
+Consult data directory to determine the nodes where
+Transmit the data items to the query node if they have not
+the relevant base tables are stored.
+Submit the query to those
+been replicated.
+nodes.
+Step 4.Merge the data retreived from local base table, local
+Step 2.
+Update the relevant base tables.
+Examine TSA and
+TIF, and remote base tables.
+Retrieval matrices for the base tables to explore whether
+the updated data items have been replicated at other nodes.
+Propagate the update to those TIF‘s that contain a copy of
+D. Scheduling the Allocation and Update of TIF’s
+the updated data items.
+Step 3.
+Replace the old TIF data items at the destination
+Allocation of TIF’s to the user nodes may require intense
+nodes.
+data communication.
+Therefore, by sending TIF’s selectively
+Retrieval Queries: Single-table retrieval queries and two- and/or during the non-peak hours can substantially reduce the
+communication costs.
+In situations where the update of critical
+way join retrieval queries require different treatments.
+Single-Table Retrievals: The processing of a retrieval query data items is intense, the tolerance to the delay in update can
+be very low and cost of inaccuracy of information can be high.
+is illustrated below:
+Step 1.
+Consult data directory to determine the nodes where By contrast, in time-irrelevant applications where changes in
+the relevant base tables are stored.
+Submit the retrieval query data values are not critical to decision making, the tolerance
+to non-current data can be high, and the cost of inaccuracy of
+to those nodes.
+Step 2.
+Process the query at the destination nodes.
+Examine data can be low.
+The MLTIF algorithm is based on the tradethe Retrieval matrices to determine if the data items exist off between the opportunity cost due to inaccurate data and
+in the TIF’s at the query node.
+Transmit those data items cost of maintaining the accuracy.
+The opportunity cost of inaccurate data can be expected to
+have not been replicated to the query node.
+increase over time as shown by the curve C1 in Fig.
+4.
+The
+Step 3.
+Merge data retrieved from local base table, local
+slope of the curve increases as time increases.
+Applications
+TIF, and remote base tables.
+having low tolerance to non-current data will experience a cost
+Two-Way Join Retrievals: Tne processing of a two-way re- curve similar to C2, where the slope of the curve increases
+triaval query is illustrated below:
+very fast.
+In an extreme case, where the currency of data is
+Step 1.
+Split the two-way join query into two single-table extremely critical, the slope of the cost curve will be infinite
+sub-queries.
+Consult data directory to determine the location as shown by the curve, C3.
+The applications that can tolerate
+of the relevant base tables.
+Send sub-queries to those nodes.
+non-current data will have their cost curves similar to C4,
+Step 2.
+Evaluate queries at destination nodes for the join where the slope of the curve has a long flat lead time before
+attribute and transmit the unique join-value set to the nodes deviating from the time axis.
+Therefore, for a given level of
+which receive the other sub-query.
+opportunity cost, OC1, MLTIF will schedule the creation and
+Step 3.
+Process the sub-queries and check the respective allocation of TIF’s every T1, T2, T3, and T4 time periods
+Retrieval matrix (or matrices, if the node contains both base for the above-mentioned classes of applications.
+In addition,
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+IEEE TRANSACTIONS ON ENGINEERING MANAGEMENT, VOL.
+41, NO. 2, MAY 1994
+202
+Maintenance
+Scheduled Update
+Fig.
+5.
+Scheduling selective updates of TIF’s.MLTIF continuously monitors and adjusts these time periods
+to reflect the most current usage pattern.
+For scheduling selective updates, it is important for MLTIF
+to know the age of TIF’s. The age of a TIF is determined by
+the elapsed time between the creation of the TIF and the first
+update of any of its data item in the source base table.
+As
+shown in Fig.
+5, to keep the cost of non-current data under
+a specified level, IC1, the age of a TIF data item has to be
+maintained within 7’1 units of time.
+The corresponding cost
+of currency maintenance is MC1.
+The currency maintenance
+cost of time invariant fragments climbs as the age limitations
+are stricter to reduce the cost of inaccuracy of the information.
+Therefore, a trade-off between the currency of data and the cost
+of maintaining it has to be made by MLTIF in the selection of
+the data items to be stored in the local TIF’s.
+MLTIF determines the most appropriate schedule for update
+of TIF’s, also by aquiring knowledge from the query history.
+In
+making its update decision, MLTIF considers three important
+issues-‘when’ to update, ‘where’ the update source is, and
+‘how’ the update should be done.
+Refreshing of TIF’s can
+proceed immediately after the update of the base relation or be
+deferred until a query is made to the TIF.
+The deferred strategy
+may include periodic update, update on-demand regardless of
+queries, random, or a combination of the above methods [4].
+The source (s) of the data to be used in the refresh of a TIF
+may be from its base relation or other view (s) recently created
+from this base relation.
+E. BeneJts of the TIF Approach
+a) Reducing database restructuring costs User’s requirements, needs, and the use of data is not constant in
+the current volatile business environment.
+A change in
+the data usage pattern may result in restructuring of a
+distributed database at a significant cost.
+The proposed
+strategy helps reduce the restructuring cost, because TIF
+is created from query patterns and automatically adjusts
+to changes in the environment.
+Reducing transmission costs Overall transmission costs
+for query processing is reduced by storing TIF‘s locally.
+Also, the creation of TIF‘s is based upon query patterns
+and the corresponding data can be transmitted to its
+respective sites during economy or non-peak hours.
+Reducing update costs Multiple copies of TIF do not
+create the problem of update synchronization because, by
+definition, TIF’s do not change for a given time interval.
+Improving response time Unlike other replication techniques, since TIF’s do not change for a given time
+interval, a complete replication of TIF’s is possible
+to provide more local data, and without unnecessarily
+creating update problems.
+Continuously improving pe$ormance Since TIF is tied to
+the query history, as the size of query history increases,
+TIF tends towards optimality.
+OF THE MLTIF APPROACH
+IV.
+EVALUATION
+To demonstrate the usefulness of the MLTIF approach and
+the conditions under which it may work best, we compare
+its performance with that of non-replication, full-replication,
+and materialized view approaches using simulation.
+The comparison is based on a given query history for a given time
+interval.
+Assuming data storage cost being negligible and unit
+data transmission costs between any two nodes being equal, the
+costs for creation of replicas, data retrievals, and modification
+for each approach are formulated.
+Detailed assumptions and
+the values assigned to the parameters can be found in the
+Appendix.
+The costs are averaged for 50 simulation runs for
+each setting involving different percentages of modification
+queries, sizes of network, and number of queries.
+Detailed
+findings are presented below.
+Authorized licensed use limited to: IEEE Xplore.
+Downloaded on December 3, 2008 at 16:36 from IEEE Xplore.
+Restrictions apply.
+203
+CHATURVEDI et al.: SCHEDULING THE ALLOCATION OF DATA FRAGMENTS IN A DISTRIBUTED DATABASE ENVIRONMENT
+1.4
+OJ
+0.6
+OA
+i
+i
+t
+/ \
+5
+0
+10
+Mvvbocomamobm.Mql
+15
+20
+21
+30
+I1
+40
+45
+SO
+:
+11
+:
+60
+:
+61
+70
+71
+80
+85
+70
+71
+10
+DS
+I
+90
+91
+90
+95
+100
+Pcrsnurgs of Modifiution Qu
+"RUFR
+*MvoTF
+Fig.
+6.
+Costs of the four strategies.(200 base queries, five nodes).
+0
+1
+10
+11
+M
+U
+30
+3S
+40
+41
+SO
+SI
+60
+61
+Pcsccnugcof ModUationQw
+.NR
+OFR
+100
+*MvoT?F
+Fig.
+7.
+Costs of the four strategies.(200 base queries, 10 nodes).
+A. The Effect of Percentage of Modification Queries
+Intuitively, the full-replication approach (FR) should perform best for low modification rates, and the non-replication
+approach (NR)for high modification rates.
+Between these two
+extremes, a partial data replication approach should be more
+desirable as long as the decrease in data retrieval costs offset
+the increase in the update synchronization costs.
+To evaluate
+TIF's performance relative to the other strategies, we simulate
+different scenarios varying modification query percentages
+from 0 to 100 at 5% level.
+Results of the simulation is
+summarized in Fig.
+6.

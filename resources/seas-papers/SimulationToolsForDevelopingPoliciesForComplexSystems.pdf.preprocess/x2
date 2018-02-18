@@ -1,0 +1,263 @@
+Agent based modeling enables investigators and policy
+makers to model complex, adaptive social systems and their
+Health Care Manage Sci (2007) 10:331–339
+associated policy problems even when data are limited.
+These social systems present nonlinear sources of uncertainty that can be modeled by interacting adaptive agents
+[35].
+The present model is largely based on literature
+regarding well-being.
+Currently research is ongoing into
+social science theories that shed light on information
+diffusion through social networks of actors, public opinion
+formation, institutional behavior and decision making [36,
+37].
+A great deal more research and modeling is needed to
+better understand the dynamics of these processes, especially in refugee communities.
+The work presented here is
+an initial attempt to model these processes and their effects
+on health and well-being of refugees.
+Much more extensive work is needed to validate the
+model.
+One possibility would be to determine if the present
+model captures the qualitative histories of existing refugee
+camps in Darfur; Palestinian camps such as Ain al-Hilweh;
+and other camps in Ethiopia, Sudan, the Ivory Coast and
+Afghanistan.
+5 Conclusions
+Policy simulations are valuable because of their ability to
+facilitate training and feedback concerning potential impact
+of decisions.
+In the real world, policy decisions may have
+serious consequences.
+Policy simulation models are useful
+because they accelerate creation of scenarios, allow rapid
+changes in parameters, and provide a test bed for concepts
+and strategies.
+In the present application, policies can be
+examined to see how refugee communities might respond
+to alternative courses of action and how these actions are
+likely to affect the health and well-being of the community.
+For example, the model could be used to address some of
+the following questions:
+1.
+How do different mixes of income level, basic needs,
+religion education and ethnicity affect the health and
+well-being of refugees?
+2.
+What are the dynamics among international and
+national organizations that provide optimal health care
+and relief for refugees?
+For example, should refugees
+be allowed to work and contribute to the local
+economy?
+Should relief programs be designed to
+strengthen existing local welfare efforts rather than
+remaining independent of these efforts [5].
+3.
+What are the optimal policies for refugee camps in
+terms of provision of food and water, sanitation,
+security, medical personnel and medical resources in
+order to make maximum use of international aid funds?
+4.
+What is the impact of shocks on the refugee camp
+model: for example, forcing refugees prematurely to
+Health Care Manage Sci (2007) 10:331–339
+return home, interruptions to the supply of food and
+water, limited medical resources, etc., and attacks by
+militia on refugees?
+In the future, the agent types included in this model will
+be expanded and the Refugee Camp Agent will operate
+inside an even more agent-rich environment.
+Also, because
+simulation data can be generated so quickly, larger
+experimental designs will be conducted across a longer
+time span.
+Our model can easily be adapted to represent the
+conditions that exist immediately after natural disasters
+such as hurricane Katrina, the Indonesian tsunami, and
+recent earthquakes.
+In these situations, large populations
+become immediately displaced and require basic housing,
+sustenance, and medical care.
+In some areas, security may
+be an important issue as well.
+The model presented here can
+be used to represent these types of situations and explore
+potential policy decisions.
+References
+1.
+U.S. Committee for Refugees and Immigrants (Available at http://
+www.refugees.org)
+2.
+The UN Refugee Agency (UNHCR), Refugees by Numbers (2005
+edition) (Available at http://www.unhcr.ch/cgi-bin/texis/vtx/print?
+tbl=BASICS&id=3b028097)
+3.
+Weiner M (1996) Bad neighbors, bad neighborhoods: an inquiry
+into the causes of refugee flows.
+Int Secur 21(1):5–42
+4.
+Stein BN (1983) The commitment to refugee resettlement.
+Annals
+of the American Academy of Political and Social Science(May)
+187–201.5.
+5. Gainsbury S (2005) What are refugee camps good for?
+The plight
+of refugees in sub-Saharan Africa.
+Technical report, Institute of
+Development Studies (Available at http://www.id21org/)
+6.
+Jacobsen K (1996) Factors influencing the policy responses of
+host governments to mass refugee influxes.
+Int Migr Rev 30
+(3):655–678
+7.
+Hocke JP (1986) Note on international protection.
+Int Migr Rev
+20(4):1020–1036
+8.
+Amnesty International.(2007) Sudan: Protecting civilians in
+Darfur, a briefing for effective peacekeeping.
+Technical Report
+ENGAFR540242006.
+Amnesty Internal USA, New York, NY.
+(Available at http://www.amnestyusa.org/)
+9.
+Jones D, Gill PS (1998) Refugees and primary care; tackling the
+inequalities.
+Br Med J 317(21):1444–1446
+10.
+Burnett A, Peel M (2001) Health needs of asylum seekers and
+refugees.
+Br Med J 322(3):544–547
+11.
+Walker PF, Jaranson J (1999) Refugee and immigrant health care.
+Medical Clinics of North America 83:1103–1120
+12.
+Garcia-Samaniego J, Soriano V, Enriquez A, Lago M, Martinez
+ML, Muno F (1994) Hepatitis B and C virus infections among
+African immigrants in Spain.
+Am J Gastroenterol 89:1918–1919
+13.
+Kibreab G (1991) Integration of refugees in countries of first
+asylum: past experiences and prospects for the 1990s.
+Paper
+commissioned by the Program in International and U.S. Refugee
+policy, Fletcher School of Law and Diplomacy, Tufts University,
+Medford, MA,
+14.
+Stein BN (1981) The refugee experience: defining the parameters
+of a field of study.
+Int Migr Rev 15(1/2/):320–330
+339
+15.
+Bankes S (2002) Agent-based modeling: a revolution?
+In
+Proceedings of the National Academy of Science 99(Suppl.
+3):7199–7200
+16.
+Holland JH (1999) Emergence: From chaos to order.
+AddisonWesley, Reading, MA
+17.
+Holland JH, Miller JH (1991) Artificial adaptive agents and
+economic theory.
+Am Econ Rev 81:365–370
+18.
+Bankes S (2002) Tools and techniques for developing policies for
+complex and uncertain systems.
+In Arthur M. Sackler Colloquium
+of the National Academy of Sciences
+19.
+Gilbert N, Troitzsch KG (1999) Simulation for the Social
+Scientist.
+Open University Press, Buckingham, UK
+20.
+Anderson JG, Lengacher D, Anderson M (2007) Modeling health
+care in a refugee camp: System dynamics and agent-based models
+Part I, in Proceedings of the 2007 Western Multiconference on
+Computer Simulation WMC 2007.
+San Diego, CA; The Society for
+Modeling and Simulation International, 17–21.
+21.
+Anderson JG, Chaturvedi A, Lengacher D, Cibulskis M (2007)
+Modeling health care in a refugee camp: System dynamics and
+agent-based models Part II, in Proceedings of the 2007 Western
+Multiconference on Computer Simulation WMC 2007.
+San Diego,
+CA; The Society for Modeling and Simulation International,
+22–26.
+22.
+Wakeland WW, Gallaher .EJ, Macovsky LM, Aktipis CA (2004)
+A comparison of system dynamics and agent-based simulation
+applied to the study of cellular receptor dynamics.
+In Proceedings
+of the 37th Hawaii International Conference on System Sciences:
+1–10
+23.
+Epstein JM, Axtel A (1996) Growing Artificial Societies: Social
+Science from the Bottom Up.
+MIT Press, Cambridge, MA
+24.
+Sawyer K (2003) Multiagent systems and the micro–macro link in
+sociological theory.
+Sociol Methods Res 31:325–363
+25.
+Kalman RE (1982) Dynamic econometric models: a systemtheoretic critique.
+In Szego GP (ed) New Quantitative Techniques
+for Economic Analysis.
+Academic Press, New York
+26.
+Scholl H (2001) Agent-based and systems dynamics modeling: a
+call for cross study and joint research.
+In Proceedings of the 34th
+Hawaii International Conference on Systems Sciences, 1–8
+27.
+Gilbert N, Bankes S (2002) Platforms and methods for agentbased modeling.
+In Proceedings of the National Academy of
+Sciences.
+99(Suppl.
+3):7197–98
+28.
+Simulex (2007) SEAS-VIS System Available http://www.
+simulexinc.com/
+29.
+Diener E, Suh EM, Lucas RE, Smith H (1999) Subjective wellbeing: three decades of progress.
+Psychol Bull 125:276–302
+(1999)
+30.
+Kahneman D (1999) Objective happiness.
+In Kahneman D, Diener
+E, Schwarz N (eds) Well-Being: The Foundations of Hedonic
+Psychology.
+Russell Sage Foundation, New York, NY
+31.
+Lyubomirsky S, Sheldon K, Schkade D (2005) Pursuing happiness: the architecture and sustainable change.
+Rev Gen Psychol
+9(2):111–131
+32.
+House P, McLeod J (1977) Large Scale Models for Policy
+Evaluation.
+John Wiley, New York
+33.
+Taber CS, Timpone RJ (1996) Computational Modeling.
+Sage
+Publications, Thousand Oaks, CA
+34.
+Lober R, Karras BT, Wagner MM et al (2002) Roundtable on
+bioterrorism detection: information system based surveillance.
+J
+Am Med Inform Assoc 9:105–115
+35.
+Lomi A, Larsen ER (eds) (2001) Dynamics of Organizations:
+Computational Modeling and Organization Theories.
+AAAI Press,
+Menlo Park, CA,
+36.
+Easton D (ed.)
+(1979).
+A systems analysis of political life.
+The
+University of Chicago Press, Chicago, IL
+37.
+Wallerstein I (2004) World-system analysis: An introduction.
+Duke University Press, Durham, NC

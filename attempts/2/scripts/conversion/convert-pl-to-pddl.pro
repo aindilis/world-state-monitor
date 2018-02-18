@@ -1,0 +1,1 @@
+/var/lib/myfrdcsa/codebases/minor/normal-form/conversion/convert-pl-to-pddl.pro

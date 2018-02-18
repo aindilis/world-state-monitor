@@ -1,0 +1,71 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 5:06:27 Jun 20, 2010 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:10:14 Sep 24, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+p {
+font-family: arial;
+font-size: 10pt;
+}
+
+h1 {
+font-family: arial;
+font-size: 12pt;
+}
+
+h2 {
+font-family: arial;
+font-size: 12pt;
+color:#575757;
+}
+
+td.shadowLeft {
+width: 16px;
+background-image: url(/web/20100620050627/http://seas.mgmt.purdue.edu/shadowLeft.gif);
+}
+
+td.shadowRight {
+width: 16px;
+background-image: url(/web/20100620050627/http://seas.mgmt.purdue.edu/shadowRight.gif);
+}
+
+iframe {
+margin: 0;
+padding: 0;
+frame-border: 0;
+overflow-y:visible;
+
+}
+
+p.tbl {
+font-size: 9pt;
+}
+
+a:link {
+color:#000000;
+text-decoration:underline;
+
+}
+
+a:visited {
+color:#000000;
+text-decoration:underline;
+}
+
+a:hover {
+color:#888888;
+text-decoration: underline;
+}
+
+a:active {
+color:#000000;
+text-decoration:none;
+}

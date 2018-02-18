@@ -1,0 +1,528 @@
+and
+F2 p =
+s1
+p −
+f1
+r − 1 − F2 r
+s1
+p −
+f1
+s1
+r −
+f1
+r
+s2
+p −
+p
+(11)
+s2
+p −
+f2
+r
+f2
+p
+r −p Q−k
+F1 p = 1 −
+p − c2 2k − Q
+F2 p =
+s1
+p −
+(12)
+Note that F1 r = 1.
+Given p2∗ = r − c2 Q − K /K + c2 ,
+at F1 p2∗ we have
+(13)
+F1 p2∗ = 0
+The above distribution for Seller 1 is similar to the
+equilibrium distribution characterization in the symmetric case.
+However, that is not the case for Seller 2.
+Recall that Seller 2 places mass places at r to ensure
+that the proﬁts for Seller 1 at r equal those at p2∗ . Noting that 1s p2∗ = p2∗ −c k, we thus have the following
+condition:
+∗
+(14)
+1s p2 =
+1 r
+which determines that 1 − F2 r > 0.
+The mass the
+high-cost seller places on the highest price r to ensure
+that the low-cost seller achieves proﬁts commensurate
+with proﬁts at the lowest price p2∗ given that p2∗ > p1∗ ,
+implies s1 p2∗ > s1 p1∗ .
+f1
+r − 1 − F2 r
+s1
+F2 p = 1 −
+p −
+f1
+s1
+r −
+f1
+r
+p
+1 − F2 r r − c1
+r −p Q−k
+−
+p − c1 2k − Q
+p − c1
+(15)
+To determine the mass as r 1 − F2 r > 0 , we then
+use the condition that proﬁts for Seller 1 are the same
+at r and at the indifference price for Seller 2:
+1s
+p2∗ =
+1
+r
+p2∗ − c1 k = r − c1 k 1 − F2 r + r − c1 Q − k F2 r
+⇒ F2 r =
+To assume identical proﬁts for the high-cost seller
+at all prices in the range p2∗ r , the distribution of
+prices for the low-cost Seller 1 must take the form
+F1 p =
+We thus have two conditions that deﬁne the distribution of prices for Seller 2.
+The ﬁrst is derived from
+the equal-proﬁt condition for Seller 1 at any p given
+the potential for a mass point at r for Seller 2:
+r − p2∗ k
+2k − Q r − c1
+(16)
+Given p1∗ = r − c1 Q − k /k + c1 < p2∗ , we can
+rearrange this expression to obtain r − p1∗ = r − c1 ·
+2k − Q /k . Substituting into the above, we have
+F2 r = r − p2∗ / r − p1∗
+(17)
+It follows that, given p2∗ > p1∗ , it is the case that
+F2 r < 1.
+Now we can obtain a general expression for the
+price distribution of the high-cost seller (Seller 2).
+Substituting the expression for F2 r obtained from condition (17) into condition (15) as well as the expressions
+for proﬁts when a sale is or is not successful (Equations (6) and (7)), we have
+F2 p = 1 −
++
+r − c1
+r −p Q−k
+−
+p − c1 2k − Q
+p − c1
+r − p2∗ k
+p − c1 2k − Q
+(18)
+where p2∗ = r − c2 Q − k /k + c2 . Substituting in the
+expression for p2∗ , we obtain
+F2 p = 1 −
+c − c1
+r −p Q−k
+− 2
+p − c1 2k − Q
+p − c1
+(19)
+Note that if c1 = c2 , then at r, F2 r = 1 and there
+we have the symmetric outcome, with neither seller
+placing positive mass at r. However, given c1 < c2 ,
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+54
+we have
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+c − c1
+F2 r = 1 − 2
+<1
+p − c1
+high-capacity Seller 1 must takes the form
+(20)
+Thus, in summary, if a mixed-strategy equilibrium
+exists, the characterization of the distribution functions for the high- and low-cost sellers are given by
+Equations (12) and (19), respectively.
+We now turn to the case where sellers differ in
+capacity rather than in cost.
+Heterogeneity in Capacity
+Consider the case where c1 = c2 = c but k1 = k2 . Without loss of generality, let k2 = k1 , with < 1, such
+that Seller 1 has the larger capacity.
+Recall that if the
+two sellers have the same cost, then the seller with
+the higher capacity will have a lower minimum price,
+which means that p1∗ < p2∗ . As before, and arguing similarly, we focus on a mixed-strategy equilibrium, with
+each seller’s distribution of prices deﬁned over the
+common, continuous range p2∗ r . We obtain the following proposition.
+Proposition 5.
+If a mixed-strategy equilibrium exists,
+the pricing strategy of high-capacity Seller 1 is deﬁned by
+a continuous distribution over the range p2∗ r with no
+mass at any price.
+Low-capacity Seller 2’s pricing strategy
+is also deﬁned by a continuous distribution over the range
+p2∗ r , but Seller 2 now places a positive mass at the upper
+bound of the distribution r .
+The above characterization has Seller 1’s pricing
+strategy similar to the one obtained for heterogeneous
+costs, but now the seller with the larger capacity
+behaves similar to the low-cost seller, whereas the
+seller with the smaller capacity behaves similar to the
+high-cost seller.
+We thus have a similar interpretation of this outcome: The low-capacity seller has a
+normal price equal to the r, but engages in random
+sales.
+The high-capacity seller almost always engages
+in sales (price below r) and thus is more likely to sell
+to capacity.
+We now have the following characterization of the
+equilibrium price density functions.
+As before, if a
+mixed-strategy equilibrium exists, it must provide
+identical proﬁts for each seller at all prices.
+To assume
+identical proﬁts for the low-capacity seller at all prices
+in the range p2∗ r , the distribution of prices for the
+F1 p =
+=
+s2
+p −
+s2
+p −
+f2
+r
+f2
+p
+− r − p Q − k1 + p − c Q − k1 − k2
+p − c Q − k1 − k2
+(21)
+r − p Q − k1
+p − c Q − k1 − k2
+F1 p = 1 −
+Note that F1 r = 1.
+Given p2∗ = r − c Q − k1 /k2 + c,
+at F1 p2∗ we have
+F1 p2∗ = 1 −
+r − c Q − k1 − r − c Q − k1 Q − k1 /k2
+r − c Q − k1 /k2 Q − k1 − k2
+F1 p2∗ = 0
+The above distribution for Seller 1 is similar to the
+equilibrium distribution characterization in the symmetric case.
+However, that is not the case for Seller 2.
+Recall that for Seller 2 it is necessary to place mass
+at r to ensure that the proﬁts for Seller 1 at r equal its
+proﬁts at p2∗ . Noting that 1s p2∗ = p2∗ − c k1 , we thus
+have the following condition:
+p2∗ =
+1s
+1
+r
+which determines 1 − F2 r > 0.
+The mass the lowcapacity seller places on the highest price r to ensure
+the high-capacity seller achieves proﬁts commensurate with proﬁts at the lowest price p2∗ given that
+p2∗ > p1∗ , implies that s1 p2∗ > s1 p1∗ .
+We thus have two conditions that deﬁne the distribution of prices for Seller 2.
+The ﬁrst is derived from
+the equal-proﬁt condition for Seller 1 at any p given
+the potential for a mass point at r for Seller 2:
+F2 p =
+s1
+p −
+f1
+r − 1 − F2 r
+s1
+F2 p = 1 −
+p −
+f1
+s1
+r −
+f1
+r
+p
+1 − F2 r r − c
+r − p Q − k2
+−
+p − c k1 + k2 − Q
+p−c
+(22)
+(23)
+To determine the mass as r 1 − F2 r > 0 , we then
+use the condition that proﬁts for Seller 1 are the same
+at r and at the indifference price for Seller 2:
+1s
+p2∗ =
+1
+r
+p2∗ −c k1 = r −c k1 1−F2 r + r −c Q−k2 F2 r
+F2 r =
+r −p2∗
+k1 / k1 +k2 −Q r −c
+(24)
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+55
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+Given p1∗ = r − c Q − k2 /k1 + c < p2∗ , we can
+rearrange this expression for p1∗ to obtain r − p1∗ =
+r − c k1 + k2 − Q /k1 . Substituting into the above,
+we have
+F2 r = r − p2∗ / r − p1∗
+(25)
+It follows that given p2∗ > p1∗ F2 r < 1.
+Now we can obtain a general expression for the
+price distribution of the high-cost seller (Seller 2).
+Substituting the expression for F2 r obtained from Equation (25) into (23), we have
+F2 p = 1 −
++
+r − p Q − k2
+r −c
+−
+p − c k1 + k2 − Q
+p−c
+r − p2∗ k1
+p − c k1 + k2 − Q
+(26)
+where p2∗ = r − c Q − k1 /k2 + c. Substituting in the
+expression for p2∗ , we obtain
+(27)
+r − c k1 − k2
+r − p Q − k2
+F2 p = 1 −
+−
+p − c k1 + k2 − Q
+p − c k2
+Note that if k1 = k2 , then at r, F2 r = 1 and we have
+the symmetric outcome, with neither seller placing
+positive mass at r. However, given k1 > k2 , we have
+k − k1 r − c
+<1
+F2 r = 1 − 2
+p−c
+Proposition 6.
+If a mixed-strategy equilibrium exists,
+the pricing strategy of the seller with the lower indifference
+price (that we call PL ) is deﬁned by a continuous distribution over the range p2∗ r with no mass at any price.
+The other seller (or PH ) has a pricing strategy that is also
+deﬁned by a continuous distribution over the range p2∗ r ,
+but PH now places a positive mass at the upper bound of
+the distribution r . In the equations that follow, the subscripts H and L refer to sellers PH and PL , respectively.
+We can easily show that
+pL∗ =
+r −c
+r − p Q − k2
+−
+F2 p = 1 −
+p − c k1 + k2 − Q
+p−c
+r − c k1 − r − c Q − k1 k1 /k2
++
+p − c k1 + k2 − Q
+still deﬁne the higher of the indifference prices as
+minimum of the support of the strategies of both sellers.
+As before, we focus on a mixed-strategy equilibrium, with each seller’s distribution of prices deﬁned
+over the common range p2∗ r . We obtain the following proposition.
+Heterogeneity in Both Costs and Capacity
+Finally, consider the case where c1 = c2 and k1 = k2 , so
+the sellers differ in both costs and capacities.
+Unlike
+the previous two cases, the relative values of the indifference prices depend on both ci and ki , and being
+either the low-cost or the high-capacity seller does
+not inherently determine the lower of the indifference
+prices, although being the lower-cost or the highercapacity seller makes it relatively easier to have a
+lower indifference price.
+However, note that we can
+and
+r − cH Q − kL
++ cH
+kH
+p∗ = pH∗ =
+(29)
+(30)
+If a mixed-strategy equilibrium exists, it must provide
+identical proﬁts for each seller at all prices charged.
+To assume identical proﬁts for PH at all prices in the
+range p2∗ r , the distribution of prices for PL must
+take the form
+FL p =
+(28)
+Thus, in summary, if a mixed-strategy equilibrium
+exists, the characterization of the distribution functions for the high- and low-capacity sellers is given
+by (21) and (27), respectively.
+r − cL Q − kH
++ cL
+kL
+sH
+p −
+fH
+r
+sH
+p −
+fH
+p
+(31)
+p − cH kH − r − cH Q − kL
+p − cH kL + kH − Q
+(32)
+Note that FL p∗ = 0, and FL r = 1.
+For PH to develop
+a best response to the above response of PL , it is necessary to place mass at r to ensure that the proﬁts
+of PL at r is equal to the proﬁts at p∗ . With Ls pH∗ =
+pH∗ − c kL , we thus have the following condition:
+Ls
+pH∗ =
+L
+r
+(33)
+Equation (33) ensures that PH places mass at r, which
+in turn ensures that PL achieves proﬁts commensurate
+with proﬁts at the lowest price p2∗ (because pH∗ > pL∗
+implies sL pH∗ > sL pL∗ .
+We thus have two conditions that deﬁne the distribution of prices for Seller 2.
+The ﬁrst is derived from
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+56
+Figure 1
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+Graph of FH p and FL p
+1
+1– FH (r) =
+FL( p) =
+FH ( p) =
+ΠsH ( p) – ΠfH ( r)
+(r –pH* )
+(r –pL* )
+ΠsH ( p) – ΠfH ( p)
+ΠsL( p) – ΠfL ( r) – (1– FH (r))(ΠsL( r) –ΠfL ( r))
+ΠsL( p) – ΠfL( p)
+p*
+the equal proﬁt condition for Seller 1 at any p, given
+the potential for a mass point at r for Seller 2:
+FH p =
+sL
+p −
+fL
+r − 1 − FH r
+sL
+p −
+fL
+sL
+r −
+fL
+r
+p
+(34)
+The second condition is arrived at by using condition (33) and rearranging, whereby we obtain the
+expression for FH r ,
+FH r =
+r − pH∗
+r − pL∗
+A relative disadvantage with one can be compensated
+with the other.
+A graphic representation of the two
+cumulative distributions is shown in Figure 1.
+(35)
+which can be inserted in the Equation (34) to get the
+complete characterization of FH p .
+To summarize, a crucial difference between the previous two cases is that the lowest support price is not
+determined solely by the relative costs or capacities,
+but is rather a function of the lower of the indifference prices, which is dependent on both the costs and
+capacities.
+If we substitute the different capacities and
+costs with the same costs and capacities for both sellers, the equilibrium reduces to that derived for the
+symmetric case.
+Generalizing all three cases, we can state that the
+lowest support price in the case of asymmetric costs
+and capacities of a two-seller model depend on the
+relative rankings of the indifference prices.
+Both sellers have two strategic variables to consider to establish the lower indifference price (remember that the
+seller with the lower indifference price can, probabilistically, set higher prices and get higher payoffs).
+Extensions to the n-Seller Case
+The analysis becomes more complex for more than
+two sellers, but we nevertheless can gain some intuition regarding the effect of an increase in the number
+of sellers by analyzing the speciﬁc case of an increase
+in market size with the number of sellers increasing,
+such that the sellers (a) have the same capacity as
+before, (b) remain in the same proportion with respect
+to type, and (c) provide the same aggregate excess
+capacity, such that there remains a single seller with
+the highest price who will sell below capacity by the
+same amount as in the smaller market.
+If such is the
+case, then the bounds for the price distribution and
+the accompanying proﬁts at the lowest price (where
+capacity is sold with probability one) are unchanged
+for each type.
+It is now more likely, however, that
+a price above this lowest price will not be the highest price at the former distribution of prices.
+Thus,
+the original distribution of prices will be too high to
+ensure identical proﬁts at all prices.
+The result will
+be a shift downward in the price distribution with an
+increase in the number of sellers.
+To show this most easily, consider the symmetric
+case when costs and capacities are the same across all
+sellers.
+With n sellers, n − 1 sellers supply to capac-
+Bandyopadhyay, Barron, and Chaturvedi: Competition Among Sellers in Online Exchanges
+Information Systems Research 16(1), pp.
+47–60, © 2005 INFORMS
+ity and the last seller supplies to the residual demand
+nK − Q > 0 . A seller now fails if his price turns out
+to be the highest price among all the sellers (an event
+that happens with a probability of F p n−1 and succeeds otherwise (an event that occurs with a probability of 1 − F p n−1 . Using similar arguments as
+before, we have the expected proﬁts given by
+=
+f
+F p
+n−1
+s
+1− F p
+n−1
+(36)
+which implies a price distribution Fn p for the symmetric n-seller case as
+Fn p =
+−
+s−
+1/ n−1
+s
+f
+(37)
+In (37), we introduce the subscript n to differentiate
+the number of sellers for the particular price distribution under consideration.
+It is important to note that
+to have a valid comparison across markets of different
+numbers of sellers, we specify that s p and f p
+are invariant to changes in the number of sellers.
+The
+support of the price distribution remains unchanged
+as well.
+From Equation (37), given s > > f , it
+follows that
+Fn p > Fn−j p
+(38)
+(that is, Fn−j p stochastically dominates Fn p ) for all p,
+with n > 2 and n − 1 > j > 1.
+The implication is that
+as n goes up, the distribution shifts mass to the lower
+prices, and the average price falls.
+Whether this result
+holds in more general settings with more than one
+type of sellers or with disproportionate changes in the
+types of sellers remains an open question.
+Managerial Insights
+The inherent attraction of B2B marketplaces lies in
+their promise of bringing efﬁciency to the supply
+chain.
+Buyers can get better prices from sellers from
+the effects of increased liquidity, and therefore from
+the increased competition among sellers.
+Our paper
+analyzes this competition, keeping in mind seller
+heterogeneity.
+The competitive status of a seller, and in particular the advantages to cost cutting or capacity growth,
+can be clearly identiﬁed from our analysis.
+The equilibrium result of the two-seller heterogeneous costs
+57
+model is as expected—the lower-cost producer has
+an inherent advantage in its pricing strategies.
+What
+is more interesting is the result of the heterogeneouscapacities model, where the results support the notion
+of bigger is better.
+This result ﬂows directly from
+the fact that the high-capacity seller has a lower
+indifference price; to compensate for that fact, the
+low-capacity seller must allow a higher proﬁt to the
+high-capacity seller in equilibrium at all prices in
+the support.

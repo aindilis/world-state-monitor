@@ -1,0 +1,174 @@
+231
+ing it easier to understand working relationships
+in the dynamic system.
+FMS-DSS is not without
+its disadvantages.
+As in the case of any inductive
+learning system, FMS-DSS may be prone to improper generalizations in the face extremely imprecise situations.
+The knowledge acquired by the
+system is dependent on the set of training data
+employed-clearly, poor examples will engender
+substandard domain knowledge.
+When presented
+with a situation with radically different assumptions than those encountered before, FMS-DSS's
+performance may be questionable.
+Lastly, in its
+current implementation in a LmP environment,
+FMS-DSS is a resource-intensive system.
+8.
+Conclusions
+This paper enumerates some problems with
+current approaches to decision making for realtime systems and discusses the need for new
+methods.
+It then presents FMS-DSS, a decision
+support system based on goal-directed conceptual
+aggregation for supporting FMS scheduling and
+control decisions.
+Conceptual aggregation is an
+AI approach which applies a modified conceptual
+clustering technique and case-based learning for
+explaining and summarizing data.
+It also has the
+capability of dealing with the imperfections of
+data such as inconsistency, contradiction, and incompleteness.
+Results show that upon integration
+with machine learning, DSS can become a powerful tool for supporting, and perhaps making,
+real-time decisions.
+References
+[1] R.H. Bonczek, C.W. Holsapple and A.B. Whinston, Future Directions for Developing Decision Support Systems, Decision Sciences 11, (1980) 616-631.
+[2] L.B. Booker, D.E. Goldberg and J.H. Holland, Classifier
+Systems and Genetic Algorithms, Artificial Intelligence
+40, No. 1-3 (1989) 235-282.
+[3] W. Buntine and D. Stifling, Interactive Induction, Proceedings of the Fourth International Conference on Artificial Intelligence Applications, San Diego, CA (1988)
+320-326.
+[4] J.G. Carbonell, Learning by Analogy: Formulating and
+Generalizing Plans from Past Experience, in: R.S.
+Michalski, J.G. Carbonell and T.M. Mitchell, Eds., Machine Learning: An Artificial Intelligence Approach
+(Tioga Press, Palo Alto, CA 1983) 137-161.
+232
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+[5] A.R. Chaturvedi, Goal-Directed Conceptual Aggregation: An Artificial Intelligence Techniques to Support
+Management Decision Making, Doctoral Dissertation,
+University of Wisconsin, Milwaukee (1989).
+[6] A.R. Chaturvedi and G.K. Hutchinson, A Model for
+Simulating AGV Congestion in An FMS, Paper No. 975,
+Krannert Graduate School of Management, Purdue University, West Lafayette, IN (1990).
+[7] A.R. Chaturvedi, G.K. Hutchinson and D.L. Nazareth,
+FMS Scheduling Using Goal-Directed Conceptual Aggregation, Proceedings of the Seventh IEEE Conference
+on Artificial Intelligence Applications, Miami Beach, FL
+(1991) 315-321.
+[8] K. Chen and C.-Y.
+Lu, A Machine Learning Approach to
+the Automatic Synthesis of Mechanistic Knowledge for
+Engineering Decision Making Proceedings of the Fourth
+International Conference on Artificial Intelligence Applications, San Diego, CA (1988) 306-311.
+[9] R. Davis and D.B. Lenat, Knowledge-based Systems in
+Artificial Intelligence, (McGraw Hill Book Co., New
+York, 1982).
+[10] G. DeJong and R. Mooney, Explanation-Based Learning:
+An Alternative View, Machine Learning 1, No. 2 (1986)
+145-176.
+[11] H.B. Eom and S.M. Lee, A Survey of Decision Support
+System Applications (1971-April 1988), Interfaces 20,No.
+3 (1990) 65-79.
+[12] R.E. Fikes, P.E. Hart and N.J. Nilsson, Learning and
+Executing Generalized Robot Plans, Artificial Intelligence 3, No 4 (1972) 251-288.
+[13] D. Fisher, Improving Inference Through Conceptual
+Clustering, Proceedings of the Sixth National Conference
+on AI, Seattle, WA (1987).
+[14] G.A. Gorry and M.S. Scott Morton, A Framework for
+Management Information Systems, Sloan Management
+Review 13, No. 1 (1971) 55-70.
+[15] R.P. Hall, Computational Approaches to Analogical
+Reasoning: A Comparative Analysis, Artificial Intelligence 39, No. 1 (1989) 39-120.
+[16] G.E. Hinton, Learning in Parallel Networks, BYTE Magazine 10 (1985) 4.
+[17] G.E. Hinton, Connectionist Learning Procedures, Artificial Intelligence 40, No. 1-3 (1989) 185-234.
+[18] J.H. Holland, Adaptation in Natural and Artificial Systems (University of Michigan Press, Ann Arbor, MI,
+1975).
+[19] C.-L.
+Hwang and K. Yoon, Multiple Attribute Decision
+Making - Methods and Applications: A State-of-the-Art
+Survey, (Springer-Verlag, Berlin, 1981).
+[20] S.T. Kedar-Cabelli, Analogy: A Unified Perspective, in:
+D.H. Helman, Ed., Analogical Reasoning (Reidel, Dordrecht, Netherlands 1988).
+[21] P.G.W. Keen and M.S. Scott Morton, Decision Support
+Systems: An Organizational Perspective (Addison Wesley, Reading, MA, 1978).
+[22] D.B. Lenat, The Nature of Heuristics, Artificial Intelligence 19, No. 2 (1982) 189-249.
+[23] D.B. Lenat, Theory Formation by Heuristic Search.
+The
+Nature of Heuristics II: Background and Examples, Artificial Intelligence 21, No. 1,2 (1983) 31-59.
+[24] D.B. Lenat, EURISKO: A Program that Learns New
+Heuristics and Domain Concepts.
+The Nature of Heuristics III: Program Design and Results, Artificial Intelligence 21, No. 1,2 (1983) 61-98.
+[25] D.B. Lenat and J.S. Brown, Why AM and EURISKO
+Appear to Work, Artificial Intelligence 23, No. 3 (1984)
+269-294.
+[26] T.P. Liang, Modeling by Analogy: A Case-based Approach to Automated Linear Program Formulation, Proceedings of the 24th Annual Hawaii International Conference on System Sciences, Vol 4.
+(1991) 276-283.
+[27] T.P. Liang and B.R. Konsynski, Modeling by Analogy:
+Use of Analogical Reasoning in Model Management
+Systems, Proceedings of the 1990 ISDSS Conference
+(1990) 405-421.
+[28] L.T. McCarty and N.S. Sridharan, The Representation of
+an Evolving System of Legal Concepts II: Prototypes and
+Definitions, Proceedings of the Seventh International
+Joint Conference on Artificial Intelligence, Vancouver,
+BC, Canada (1981) 246-253.
+[29] R.S. Michalski, Discovering Classification Rules using
+Variable-Valued Logic System VL1, Proceedings of the
+Third International Joint Conference on Artificial Intelligence (1973) 162-172.
+[30] R.S. Michalski and R. Chilausky, Knowledge Acquisition
+by Encoding Expert Rules Versus Computer Induction
+from Examples: A Case Study Using Soybean Pathology,
+International Journal of Man-Machine Studies 12, No. 1
+(1980) 63-87.
+[31] R.S. Michalski and R.E. Stepp, Learning from Observation: Conceptual Clustering, in: R.S. Michalski, J.G. Carbonell and T.M. Mitchell, Eds., Machine Learning: An
+Artificial Intelligence Approach (Tioga Publishing Company, Palo Alto, CA, 1983) 331-363.
+[32] S. Minton, J.G. Carbonell, C.A. Knoblock, D.R. Kuokka,
+O. Etzoni and Y. Gil, Explanation-Based Learning: A
+Problem Solving Perspective, Artificial Intelligence 40,
+No. 1-3 (1989) 63-118.
+[33] T.M. Mitchell, R.M. Keller and S.T. Kedar-Cabelli, Explanation-Based Generalization: A Unifying View, Machine Learning 1, No. 1 (1986) 47-80.
+[34] S.C. Park, N. Raman and M.J. Shaw, Heuristic Learning
+for Pattern Directed Scheduling in a Flexible Manufacturing System, Proceedings of the Third ORSA/TIMS
+Conference on Flexible Manufacturing Systems (Elsevier,
+Amsterdam 1989) 369-376.
+[35] J.R. Quinlan, Semi-Autonomous Acquisition of Patternbased Knowledge, in: D. Michie, Ed., Introductory Readings in Expert Systems (Gordon and Breach Science
+Publishers, New York, 1982) 192-207.
+[36] L. Rendell, Substantial Constructive Induction using Layered Information Compression: Tractable Feature Formation in Search, Proceedings of the Ninth International
+Joint Conference on Artificial Intelligence, Los Angeles,
+CA (1985) 650-658.
+[37] F. Rosenblatt, The Perceptron: A Probabilistic Model for
+Information Storage and Organization in the Brain, Psychological Review 65 (1958) 386-407.
+[38] F. Rosenblatt, Principles of Neurodynamics and the Theory of Brain Mechanisms (Spartan Books, Washington,
+DC, 1962).
+[39] A.L. Samuel, Some Studies in Machine Learning Using
+A.R. Chaturt'edi et al. / Machine learning for real-time decision making
+[40]
+[41]
+[42]
+[43]
+the Game of Checkers, IBM Journal of Research and
+Development 3, No. 3 (1959) 210-229.
+A.L. Samuel, Some Studies in Machine Learning Using
+the Game of Checkers.
+II - Recent Progress, IBM Journal of Research and Development 11, No. 6 (1967) 601617.
+M.J. Shaw, Applying Inductive Learning to Enhance
+Knowledge-based Expert Systems, Decision Support Systems 3, No. 4 (1987) 319-332.
+M.J. Shaw, Knowledge-based Scheduling in Flexible
+Manufacturing Systems: An Integration of Pattern-Directed Inference and Heuristic Search, International
+Journal of Production Research 26, No. 5 (1988) 821-844.
+M.J. Shaw and A.B. Whinston, An Artificial Intelligence
+Approach to the Scheduling of Flexible Manufacturing
+Systems, liE Transactions 21, No. 2 (1989) 170-183.
+233
+[44] R.H. Sprague and E.D. Carlson, Building Effective Decision Support Systems (Prentice Hall, Englewood Cliffs,
+NJ, 1982).
+[45] R.E. Stepp and R.S. Michalski, Conceptual Clustering of
+Structured Objects: A Goal-Oriented Approach, Artificial Intelligence 28, No. 1 (1986) 43-69.
+[46] K.Y. Tam, Automated Construction of Knowledge-Bases
+from Examples, Information Systems Research 1, No. 2
+(1990) 144-167.
+[47] P.H. Winston, Learning Structural Descriptions from Examples, in: P.H. Winston, Ed., The Psychology of Computer Vision (McGraw Hill, New York, 1975).
+[48] P.H. Winston, Learning and Reasoning by Analogy,
+Communications of the ACM 23, No. 12 (1980) 689-703.

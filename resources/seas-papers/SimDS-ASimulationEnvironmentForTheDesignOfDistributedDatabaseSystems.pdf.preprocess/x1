@@ -1,0 +1,479 @@
+SimDS: A Simulation
+Environment
+for the Design
+of Distributed
+Database Systems
+Alok R. Chaturvedi
+Samir Gupta
+Subhajyoti Bandyopadhyay
+Purdue University
+Abstract
+Design of a distributed transaction processing system is a complex process.
+The paper describes the
+design and implementation of a general purpose
+scalable simulation environment (SimDS) for designing and evaluating the performance of distributed
+transaction processing systems.
+SimDS is a distributed simulation system where each data server is
+implemented as a separate process that communicates with each other through user datagram protocol The paper describes the features of SimDS including various design policies that can be modeled
+by the system.
+It also discusses different design
+issues that one needs to consider in the implementation of a distributed simulation environment.
+The
+paper concludes with some test examples where
+SimDS was used to simulate different configurations
+of a real-time transaction processing system.
+Keywords: information systems, database management, systems, distributed systems, physical design,
+simulation support systems, real time
+ACM Categories: H.2, 1.6
+Introduction
+Benefits accruing from a computer-based system
+critically depend on the business and computer
+management policies.
+These polices interact with
+each other and the overall benefit of the system depends on the complex interplay among these policies.
+As information systems' solutions differ from
+industry to industry and from application to application, there is a need for an environment that enables
+....... an IS designer or manager to evaluate different sets
+of policies and choose the best for the application at
+hand.
+This paper discusses the design and development of a simulation environment for evaluating
+........ management and operational policies for transaction processing systems.
+In particular, the paper
+focuses on a business environment that requires
+distributed real-time transaction processing
+(RDTPS).
+A distributed system is one where data and computing power are located on several machines that
+are linked together by a network.
+The main advantages of a distributed system include increased availability of resources, increased reliability, and often
+increased speed of execution.
+In such systems, however, different computers coordinate activities to
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+65
+complete the given task efficiently.
+Since each computer has a separate thread of execution, coordination of activities among machines is a complex task.
+The overall system benefit thus depends on the efficiency of coordination among machines.
+Nikolaou,
+Marazakis, and Georgiannakis (1997) have surveyed
+recent literature that discuss a number of.different
+transaction routing mechanisms and their performance.
+Further, in a transaction processing (TP) scenario,
+computers operate on large amounts of data that
+are typically resident on secondary storage devices,
+like disks.
+These systems are designed to guarantee data integrity under all conditions, irrespective
+of machine or network failures.
+Design of transaction processing systems focus on the efficiency of
+data retrievals and updates, increasing multiprocessing, and providing higher availability of data under
+different failure scenarios.
+Generally, TP systems are required to complete each
+transaction that is initiated.
+In some cases, however, transactions are required to be completed prior
+to a given deadline (Haque and Wong, 1994).
+Such
+transactions are called hard real-time transactions.
+Examples of such transactions are computer initiated stock trading, threat analysis, defensive maneuvers, process control, etc. In these systems, a
+transaction may lose its value if it is not completed
+prior to its deadline.
+The performance measure of
+such systems is different from "normar'TP systems.
+These systems are geared towards optimizing the
+number of transactions completed prior to the deadlines.
+It is clear from the above discussion that the design
+of a real-time, distributed TP system is extremely
+complex and requires a careful assessment of a
+large number of design and operational policies pertaining to each of the three areas - - distributed processing, database issues, and real-time computing.
+The interactions among these policy choices are
+quite complex and difficult to predict.
+This paper describes a distributed simulation environment that has
+been developed to design and evaluate the performance of real-time distributed transaction processing systems.
+The remainder of the paper is organized as follows.
+The next section discusses the
+need for a simulation environment and discusses
+the related literature in this area.
+Section three describes the simulation environment and the implementation details.
+This section also delves into the
+reasons for opting for some of the mechanisms in
+the implementation of the simulation environment.
+66
+Section four provides some examples and results of
+using this system for the design of a distributed TP
+system.
+The final section summarizes the important results and points to avenues for future research.
+Need for a Distributed Simulation
+Environment
+A survey of relevant literature indicates that researchers have attempted to study the performance of computer systems using one of the three approaches:
+Analytical reasoning: In this methodology, researchers have attempted to represent the system as a
+mathematical model, generally as a queuing system.
+Mechanistic: Another approach followed by many
+researchers is to propose and implement new
+mechanisms for one or more components of the
+overall system and determine the environmental
+conditions where the proposed mechanism would
+perform better than other policies.
+Simulation: A third approach is where researchers
+have attempted to evaluate the performance of the
+database systems using simulation.
+Krishnamurthi,
+Basavatia, and Thallikar (1994) discuss one particular problem in such situations.
+Even though simulation models are validated and verified during the
+development process, a problem known as "deadlock" can still occur and go unnoticed in large, complex simulation models.Table I provides a comparative study of each solution paradigm and some of
+the relevant research in that area.
+Need for Distributed Simulation
+Multiple database sites can be simulated in a single
+physical program through establishment of virtual
+sites.
+For example, in an n site database system,
+one could create n sets of queues, with each set
+representing a data site.
+While such a design is
+simple to develop and maintain, a distributed simulation model is conceptually closer to the actual system and is more elegant from the programming point
+of view.
+In a distributed simulation model, each data base
+site is simulated as a separate process that mayor
+may not reside on the same machine.
+Each site
+can be independently controlled, monitored, and altered.
+For example, the arrival rate of transactions
+and the data access times on site can be different
+from another.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+n-"¢I"
+rr
+o~
+,o
+;g
+n-
+.co,
+~.,a:
+.9.0
+tO
+.o~
+E
+t-
+,o
+•
+rr"
+0-
+¢)
+tll
+i,n
+E
+._~
+"O
+rr-
+t-..~ I~
+"~.~,--.o
+___.-~_=~
+0
+I'~ L,~
+r--
+t-
+¢r >~ rO r~ oO r~ r./)l:) r.O o') IZ:
+o
+-~
+0
+i
+°!
+if)
+°
+_
+L,-
+e-
+-8"~
+o
+g,
+"o~, t-
+o~
+8~3
+cI~
+E
+~o
+or-F:
+0
+¢9
+o
+E
+o~
+IJJ
+O ~.¢:
+EO~
+o
+¢o
+,~,
+-6
+CD
+09
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+67
+The main reason for distributed simulation is that in
+cases where queues may became large and require
+large amounts of virtual memory, one can take advantage of virtual memory on several machines by
+running each process on a separate workstation.
+Distributed simulation also allows one to expand the
+research to study a very large database system comprised of several database sites by setting certain
+parameters in the software.
+Since the processes
+are not bound to a specific workstation, one can run
+an arbitrarily large simulation on a cluster of machines.
+Secondly, Rajagopal and Comfort (1989) report a
+near perfect speedup using a distributed simulation
+model on a parallel machine.
+This feature can be
+exploited to study very large database systems.
+However, there is a price for the greater flexibility
+and speedup.
+First, the system can be difficult and
+tricky to debug and validate.
+A distributed simulation system can have multiple threads of control, and
+there is a dearth of good debugging environments
+for concurrent processes.
+Secondly, the design depends quite heavily on interprocess communication.
+Communication of messages between processes
+that reside on different machines can be unreliable.
+In the final analysis, however, the conceptual clarity
+and scaleability of a distributed simulation system
+are well worth its programming complexity.
+Simulation Environment: SimDS
+A distributed simulation environment called SimDS
+has been developed for the design and evaluation
+of a distributed TP system.
+SimDS simulates a multisite disk-based database system that may or may
+not have real-time constraints.
+The database system is assumed to consist of several data servers
+or nodes.
+Each node has both computing and storage resources.
+The data are logically arranged as
+pages of memory.
+These pages may or may not be
+replicated on different nodes in the network.
+Transactions may arrive at any participating node.
+Each
+transaction has a release time and a deadline before which it needs to be completed (for transactions without real-time constraints this deadline is
+set to infinity).
+Transactions may access any data item that exists
+in the database irrespective of the location of the
+data item.
+Each site possesses the complete data
+dictionary.
+When a transaction arrives, the node
+68
+determines the entire read and write set for the transaction.
+The read-write set is then partitioned into
+sub-transactions and assigned to different sites for
+processing.
+Once the sub-transactions have been processed
+independently at each assigned site, the results are
+returned to the processing site for computation.
+The
+processing site computes the results and then initiates the commit process.
+The transaction is said
+to be completed after the results have been computed and the commit process has taken place.
+If one of the sites decides to abort a transaction, it
+informs the originating site, which then coordinates
+the abort process between all the sites.
+An aborting
+transaction has to release all locks that it had acquired.
+Thus the overhead of rolling back a transaction is the same as the time taken to release all locks.
+Database Design Policies
+There are many issues to be considered in the design of a real-time distributed transaction processing system (RDTPS).
+This section describes some
+of the policy parameters and the options that are
+considered in SimDS design.
+One of the more crucial issues in RDTPS deals with scheduling of transactions.
+For example, if there is more than one transaction ready to be executed by a computational resource, then which one would be scheduled first?
+There are two scheduling issues that need consideration.
+The first deals with data consistency and
+serializability of transactions.
+If two transactions have
+a conflict between their read-write or write-write sets,
+then they cannot be concurrently executed and have
+to be serialized.
+SimDS simulates two widely accepted concurrency control policies:
+Locking Based Policy:.
+Under this option, each transaction requests and obtains access rights (called
+locks) prior to data access from the disk.
+These
+rights can be exclusive (for writing) or shared (for
+reading).
+The locks are released once the transaction is completed (Wolfson, 1987).
+Optimistic Policy.
+Under this policy, transactions are
+permitted to continue execution without any kind of
+locking mechanism.
+However, after the transaction
+is complete and is ready to be committed, the system checks to ensure that it does not have a conflict
+with any of the uncommitted transactions.
+If there is
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+no conflict, then the transaction is committed, else
+some of the conflicting transactions are aborted to
+ensure serializability (Harista, Carey, and Livny,
+1990).
+The second set of scheduling issues is due to realtime constraints.
+Different transactions may have
+different opportunity costs or values and different
+deadlines.
+Some transactions may be so critical that
+they need to be executed at all costs.
+Others, however, may have a lower priority and can be aborted
+without unnecessary loss of value to the system.
+SimDS handles this issue through two different
+mechanisms.
+First, every transaction is assigned a
+priority value, and then the scheduler is designed to
+test different scheduling policies for transactions
+having varied priorities.
+Priority allocation: Each transaction executed by the
+system is assigned priorities.
+These could remain
+unchanged throughout the execution of the program
+or may be recomputed at different stages of the life
+of the transaction.
+Priority is computed as a function of transaction attributes.
+Some of the policies
+modeled in SimDS include time of arrival (FIFO
+policy), deadline (Earliest Deadline Policy), slack in
+transaction execution (Least Slack Policy), and the
+economic estimate of the value of the transaction
+(Value Policy).
+Scheduler Policies: These policies are identical for
+CPU and IO schedulers.
+Once priorities are assigned to transactions and the transaction enters
+either the CPU queue or the IO queue, the scheduler has to allocate the processor (CPU or IO processor) time for this transaction.
+The scheduler may be required to make two decisions at this time:
+To schedule the transaction or not.
+The scheduler
+estimates whether the transaction is likely to be completed prior to its deadline and chooses to schedule
+or abort the transaction on this basis.
+The following
+policies for scheduling are provided:
+a.
+Ignore overload issue and schedule all transactions irrespective of their likelihood of completion (Schedule All Policy).
+tween the deadline and the estimated processing time.
+If the slack is negative, abort the transaction and remove it from the queues.
+To schedule a transaction if the resource is busy: If
+the processor is currently idle or is being used by a
+transaction having a higher priority, then the new
+transaction simply waits.
+If a higher valued transaction requests processor time, the scheduler resolves
+the contention depending on which of the following
+options is currently being exercised:
+a.
+Non-preemptive Policy-- Under this option, the
+current transaction is allowed to be completed
+before any new transaction is scheduled.
+(This
+is the default).
+b.Preemptive Policy-- Under this option, the current transaction is stopped and the new transaction is scheduled.
+The current transaction
+maintains its existing priority value.
+c.Promoting Preemptive Policy-- Under this option, the current transaction stops and lets the
+new transaction be scheduled.
+However, the
+current transaction assumes the priority value
+of the new transaction.
+This ensures that a low
+priority transaction does not repeatedly thrash
+in and out of the resource queue.
+d.Conditional Non-Preemptive Policy--This policy
+allows the current transaction to be completed,
+if it estimates that the new transaction can "afford" to wait for this transaction to be completed.
+The slack value of the new transaction is computed, and if it is more than the estimated time
+of completion of the current transaction, the current transaction is allowed to execute.
+SimDS provides the following policies for data fragmentation and replication:
+No replication policy assumes that only one copy of
+any data item exists in the network.
+This is a viable
+policy option if the application is updated intensively
+and the network is relatively failure safe.
+b.Abort all transactions in the system whose deadlines have elapsed (No Tardy Policy).
+Full replication policy assumes that each site contains all data.
+This policy is viable for applications
+where response time is very crucial and where the
+underlying network is somewhat unreliable.
+c.Abort all transactions which are unlikely to be
+completed before their deadlines (Feasible
+Policy).
+To achieve this, compute the estimated
+slack for the transaction, i.e., the difference be-
+Partial replication policy refers to a policy mix between full and no replication.
+In this policy, different
+numbers of copies (or replicas) may exist for different data items.
+The DATA BASE for Advances in Information Systems - Summer 1998 (Vol.
+29, No. 3)
+69
+All choices that can be simulated in SimDS are given
+in table 2.
+SimDS Implementation
+SimDS is comprised of two sets of servers - - a name
+server called Apex and a set of database servers
+called Dserv.
+These servers are, by default, linked
+through a fully connected network (Figure 1).
+However, different network topologies can be simulated.
+Apexis the first server to be activated in any simulation run and exists on a well known location.
+This
+provides an anchor point for communication.
+Apex
+first creates a "receive port" where it listens for communication from a data server.
+Apexis also responsible for advancing the simulation clock, recording
+Serialization
+Replication
+Commitment
+Scheduling
+Overruns
+Priority
+Assignment
+Disk IO
+Central 2
+Phase Lock
+Full with
+Read One
+Write All
+(ROWA)
+2 Phase
+All
+FIFO
+FIFO
+Scheduling
+Concurrent
+Transactions
+Wait
+Primary site
+2 Phase
+Lock
+None
+3 Phase
+No Tardy
+Earliest
+Deadline
+Earliest
+Deadline
+Wait and
+Promote
+Central
+Optimistic
+Partial with
+ROWA
+Feasible
+Only
+Least Slack
+Least Slack
+High Priority
+Conditional
+Restart
+Primary Site
+Optimistic
+Table 2.
+Possible options in different design policies.
+Apex
+Dserv
+H
+I
+i
+Dserv
+Dserv

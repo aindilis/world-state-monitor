@@ -1,0 +1,615 @@
+1, 20.
+40~~~~.
+(1991).
+Outsourcing saves riser.
+Chain Store Age Executive, May,
+pp.
+157-l 58.
+41RISER FOODS INC. ANNUAL REPORT (1989).
+p. 19.
+42~~~~.
+(1991).
+The Datamation 100: Electronic Data
+Systems Corp. Datamation, 15 June.
+43~~~~~~~,
+A.
+(1992).
+The wrong
+goodbye.
+C/O, September, pp.
+34-43.
+THOMAS,
+K.
+(1991).
+The outsourcing experience.
+Bank Management,
+September, pp.
+29-32.
+45~~~~~~~~,
+J.
+(1992).
+Subaru to outsource daily nets operations to Unisys.
+Network World, 20 January, pp.
+25-26.
+46~~~~.
+(1992).
+Unisys takes driver’s seat at Subaru.
+Computerworld, 13 January.
+47BOOKER, E.
+(1990).
+SUtl R&M Opts for
+outsourcing.
+Computerworld,
+6 August, p. 4.
+48~~~~.
+(1993).
+News Shorts.
+Computerworld,
+3 May, p. 16.
+4g~~~~~~~~,
+N.
+(1992).
+Outsourcing
+boom over?
+You ain’t seen nothing yet.
+Computerworld,
+13 January, p. 8.
+50~~~~~~,
+c.
+(I 992).
+CSC clinches $64 million deal with large steel company.
+Computerworld, 27 April, p. 6.
+51~~~~.
+(1990).
+EDS takes the wheel.
+Computerworld, 7 May, p. 66.
+M.What to outsource?
+There are many questions
+commonly
+asked by managers
+considering
+outsourcing,
+these include: What to outsource?
+Shall firms outsource
+complete IS function?
+Is it better to outsource only certain IS activities?
+Does this depend
+on the nature
+of business
+of the firm?
+The IS
+development
+effort and the role of incomplete
+contracts and outsourcing in that context has been analysed by Richmond
+et al. l3 Incomplete
+contract framework
+is used as most outsourcing
+contracts are incomplete, since rapidly changing technology
+and organizational
+environment makes it impossible to specify every contingency
+in a contract.
+For
+example, the IBM-Kodak
+contract requires IBM to maintain a ‘state-ofthe-art’ data centre during the course of the contract.
+It does not state in
+specific terms what operating system version, disk technology,
+etc. shall
+be used.
+The results of the model, under certain assumptions,
+indicate
+that value generated
+from outsourcing
+and development
+effort comes
+from the specific investments
+made by the vendor,
+and outsourcing
+dominates internal development
+when this investment
+is relatively more
+important
+than investments
+by the internal user group.
+This provides
+one economic explanation
+for the coexistence of both internal development teams and of various outsourcing
+services.
+Does it mean that it is
+better to outsource
+routine application
+systems’ development,
+while
+retaining the more involved, business-related
+applications
+in-house?
+Various other articles make general comments about retaining the IS
+functions
+which are ‘strategic’, while outsourcing
+the operational
+systems.
+What are the contractual issues?
+130p.
+cit., Ref.
+4.
+“WHANG,
+s.
+(1992).
+Contracting
+ware development.
+Management
+38 (No. 2).
+15RICHMOND,
+W.B.AND
+for softScience,
+SEIDMAN,
+A.(1991).
+Outsourcing
+and contracting
+issues
+in the systems
+development
+life cycle.
+Working paper, William E. Simon Graduate School of Business
+Administration,
+University of Rochester,
+NY.
+At the heart of outsourcing
+is the contract which guides the activities of
+the parties involved and is the source for any conflict resolution.
+A
+game-theoretic
+model to incorporate
+incentive
+and information
+issues
+associated with contracting
+for software development
+is developed
+by
+Whang.i4
+Under certain assumptions,
+the model constructs
+a viable
+contract
+that aligns the incentives
+of the contracting
+parties
+and
+produces the same equilibrium
+as for in-house development.
+The paper
+states that the derived contract is mathematically
+neat, but has limited
+applicability
+because of difficulty in obtaining,
+or agreeing on, the input
+parameters.
+Contractual
+issues pertaining
+to the various stages of the systems
+development
+life cycle (SDLC) are identified
+and examined
+by Richmond and Seidman.”
+Using Williamson’s
+Transaction
+Cost framework,
+International Journal of Information Management 1994 Volume 14 Number 4
+259
+IS outsourcing: issues and evidence: K A~tinkemer, A Cha~urved~ and R Culati
+Table 4.
+Vendor
+contract
+issues
+Vendor contract issues
+Experience
+Prior success in outsourcing
+Knowledge of client’s industry
+Planning
+Evidence of long range planning
+International perspective
+Technology/Personnel
+State-of-the-art technology
+Trained personnel in appropriate areas
+Plans for technology improvements
+Contract issues
+Flexibility in entering/exiting
+Willingness to negotiate
+Communication
+Working relationship between vendor and client
+Importance of client’s inpu~~ommunication
+contract
+Transfer of personnel
+Financial stability
+‘%&L cit., Ref.
+2.
+"MCLELLAN, K.
+(1991).
+MIS OUtSOUXitlg,
+organizational networks and competitive
+advantage.
+Working paper, School of Business Administration,
+The University of
+Western Ontario, London, Canada.
+18~xss,R. ANDSNOW,C.
+(1986).Organizations: new concepts for new forms.
+California Managemen# Review, 3, pp.
+62-73.
+'9LEINWSS, E.
+(1991).
+How outsourcing
+impacts IS managers.
+Compu~erworld, 16
+September; LEINFUSS, E.
+(1991).
+IS staff
+can win when outsourcers are employers.
+Computerworld, 23 September.
+"KERLINGER, F.G.
+(1986).
+Foundations of
+behavioural research, 3rd edition, chapter
+30.
+Holt Rinehart and Winston.
+"JARVENPAA,
+S.L. AND
+IVES, B.
+(1990).
+Information
+technology and corporate
+strategy: a view from the top.
+Infor&ation
+Svstems Research.
+I (No. 41.
+DO.
+351-376.
+*iNno, B.S.
+(19SSj.
+~a~tors‘~~~~litating the
+use of information technology for competitive advantage.
+Information and Management, 15, pp.
+191-201.
+authors have shown that for new customized software development,
+with the possible exception of the procedure development phase, all
+other phases are amenable to outsourcing.
+Mapping of other phases to
+different governance structures (market, trilateral and bilateral) is
+proposed.
+Ketler and Walstromi6 present some pertinent issues in
+vendor contracts
+which are grouped as experience,
+planning,
+technology/personnel,
+contract issues, communication, transfer of personnel and financial stability (Table 4).
+Such analytical work needs to be followed up by empirical research to
+show the validity of the results and the assumptions in real situations.
+Empirical evidence for the outsourcing phenomenon is needed, especially: is it really happening across the spectrum of industries?
+Is it part
+of a larger phenomenon whereby the very nature of the firm is
+changing?
+The potential of IS outsourcing resulting in the adoption of a new
+organizational form is explored by M~Lellan.
+l7 This new organizational
+form, known as the ‘dynamic network’, may come as a result of
+large-scale vertical disaggregation, internal and external brokering,
+full-disclosure information systems and market substitutes for administrative mechanisms.
+l8
+The above is not an exhaustive list of issues related to IS outsourcing.
+Many other issues, such as implications for IS professionals,i’ end-user
+computing support etc., are being explored too.
+Content analysis of references to outsourcing in annual
+reports
+Clients’ annual reports
+Content analysis” for information sy stems reseach has been successfully
+used by Jarvenpaa and Tves2i and Neo.** The first addresses the
+relationship between information
+technology (IT) and corporate
+strategy.
+The second deals with IT and the firm’s competitive advantage.
+Here, we will use content analysis to identify the value of the
+outsourcing activity for the 62 companies listed in Table 3.
+For this
+International Journal of Information Management 1994 Volume 14 Number 4
+IS outsourcing:
+issues and evidence: K Altinkemer,
+A Chaturvedi and R
+Gulati
+purpose the annual reports, where the companies explain outsourcing
+activities, are examined.
+Table 5 shows whether a company’s annual
+report refers to the outsourcing activity in the year of the major
+outsourcing contract.
+For the 16 companies who signed an outsourcing
+contract in 1993, their annual reports are not yet available.
+From the
+rest, we collected annual reports for 25 companies.
+Of these, nine did
+not refer to the outsourcing activity to the shareholders.
+The other 16
+mention outsourcing issues in their annual reports.
+Hook SupeRx
+outsourced in 1993 but they mentioned the benefits in their 1992 annual
+report.
+It appears that high technology and information intensive
+companies tend to announce outsourcing activities in their annual
+report.
+Twelve of the companies are international companies and only
+Saab Scania AB’s annual report is available.
+The reasons why companies opt for outsourcing as mentioned in the
+annual reports are given in Tables 6 and 7.
+The most cited reason is cost
+reduction.
+Eleven of the 17 companies believe that specialized IS
+companies can do IS activities cheaper.
+In addition, one company also
+mentioned transforming fixed costs into variable costs as the reason for
+outsourcing.
+The second most mentioned reason is the desire to be at the forefront
+of technology.
+Outsourcing activity is believed to bring the recent
+technological advances to company’s fingertips.
+Nine companies think
+along these lines.
+One additional company believes that they can get
+unlimited capacity which could be translated as the forefront of technology.
+Another company talks about technological integration which can
+be looked under the same umbrella.
+Seven companies point out that outsourcing brings efficiency.
+Four of
+them also mention cost reduction.
+It is interesting that they talk about
+efficiency which shows that they expect outsourcing to reduce the cost as
+well as increase the value.
+Other mentioned characteristics are flexibility, strategic alliance and
+better focus on company’s core business.
+Long-term contract, access to
+companies’ secret information and dependence on each other build a
+deeper relationship between the company and the vendor.
+One’s
+success affects the others.
+One’s performance depends on the others.
+The price the vendor charges is a function of the satisfaction level of the
+existing customers over a period of time.
+The strategic alliance is
+achieved by letting the company do its own business and allowing the
+vendor to perform information services.
+This is accomplished through a
+calculated risk in mutual trust and respect.
+It is interesting that flexibility is mentioned as a plus in some annual
+reports.
+However, the outsourcing literature contends outsourcing
+reduces flexibility, because long-term outsourcing contract binds a
+company in a partnership with the vendor that is difficult to break, thus
+limiting flexibility.
+On the other hand one can easily change the
+computational capacity or a selection of software, which translates into
+increased flexibility.
+We will close this discussion by saying flexibility is
+a function of the contract, an honour system between the vendor and
+the company and the damage that the company can do to the vendor’s
+reputation.
+Deeper research is needed to determine the true effect of
+outsourcing on flexibility.
+Vendors’ annual reports
+An analysis of the annual reports of the outsourcing vendors indicates
+International Journal of Information Management 1994 Volume 14 Number 4
+261
+IS outsourcing: isues and evidence: K Altinkemer,
+Table 5.
+Major outsourcing
+contracts -
+User company
+American Savings of Stockton (CA)
+American Standard Inc.
+Armco Advanced Materials Co.
+Armco Steel
+Bank South
+Bethlehem Steel
+Blue Cross/Blue Shield of Mass.
+Blue Cross/Blue Shield of New Jersey
+Borland Int.
+Inc.
+British Petroleum
+California Republic Bank
+Canada Post
+Chase Manhattan Bank NA
+Continental Airlines
+Continental Bank Corp.
+CuIIen/Forest Bankers
+Dallas County
+Del Monte Foods
+Dial Corp.
+(Greyhound subsidiary)
+Duracell
+Eastman Kodak
+Enron
+Equifax Inc.
+Europcar
+FAA
+First American Bankshares, Inc.
+First City Bancorp of Texas
+First Fidelity Bankcorp
+First Tennessee National Bank
+Freeport-McMoRan
+General Dynamics
+The George Washington University, DC
+H.J. Heinz Co.
+Harvest Foods Inc.
+(Little Rock, AR)
+Hertz Co.
+Hibernia National Bank
+Holiday Inns Inc.
+HookSupeRx
+Housing and Urban Development
+Imperial Oil Co.
+Inter.
+Bank of Asia
+J.P. Morgan
+J.P. Morgan
+Kaiser Permanente
+Kooperativa Forbunder (Sweden)
+McDonnell Douglas Corp.
+Meritor Savings Bank
+Mexico Min.
+of Finance
+National Car Rental System Inc.
+Qualex Inc.
+Riser Foods
+A Chaturvedi and R Gulati
+annual reports collection status
+Contract
+year
+Annual
+report
+found
+Comments
+1990
+no
+1989
+yes
+NA
+NA
+No reference to OS* contract
+Not yet available
+Not yet available
+yes
+yes
+NA
+NA
+NA
+J
+J
+1993
+1993
+1989
+1992
+1992
+1992
+1993
+1992
+1992
+yes
+NA
+Not yet
+Not yet
+Not yet
+No reference
+available
+available
+available
+to OS contract
+91192
+1993
+1990
+yes
+yes
+yes
+1991
+1989
+1992
+1992
+1989
+yes
+1990
+yes
+yes
+yes
+NA
+NA
+no
+no
+1989
+1988
+1993
+1992
+1992
+1991
+1988
+1990
+1989
+1988
+1991
+1991
+1989
+1992
+1993
+1989
+1993
+1993
+1990
+1992
+1989
+1992
+1993
+1993
+1993
+1993
+1989
+1993
+1991
+1993
+1988
+yes
+yes
+yes
+yes
+yes
+no
+yes
+NA
+NA
+yes
+NA
+NA
+no
+no
+no
+Z
+NA
+NA
+yes
+no
+no
+Not yet available
+Not a corporation
+Not yet available
+No reference to OS contract
+No reference to OS contract
+Not yet available
+Not yet available
+Not a corporation
+No reference ;o OS contract
+No reference to OS contract
+Not yet available
+J
+Not yet available
+OS mentioned in 1992 AR
+Federal agency
+Not yet available
+Not yet available
+Not yet available
+IZ
+Not a corporation
+Private company, no AR
+Not yet available
+yes
+J
+continued on page 263
+262
+International Journal of Information Management 1994 Volume 14 Number 4
+IS o&sourcing: issues and evidence: K Altinkerner, A Chaturvedi and R Gulati
+Table 5.
+Continued
+1990
+Saab Scania AB
+Signet Bank Corp.
+Subaru of America, Inc.
+Sun Refining and Marketing Co.
+Trane Co.
+(ASI subsidiary)
+Twentieth Century Fox
+United Technologies Automotive
+United Technologies Corp.
+WCI Steel
+Westmoreland Coal Co.
+Comments

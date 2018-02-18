@@ -1,0 +1,589 @@
+ISeB (2006) 4: 25–48
+DOI 10.1007/s10257-005-0021-6
+O R I GI N A L A R T I C L E
+Alok R. Chaturvedi Æ Shailendra Raj Mehta
+Daniel Dolk Æ Mukul Gupta
+Computational experimentations in market
+and supply-chain co-design: a mixed agent
+approach
+Published online: 20 October 2005
+Ó Springer-Verlag 2005
+Abstract The synthetic environment for analysis and simulations (SEAS) is a
+computational experimentation environment that mimics real life economies,
+with multiple interlinked markets, multiple goods and services, multiple
+ﬁrms and channels and multiple consumers, all built from the ground up.
+It
+is populated with human agents who make strategically complex decisions
+and artiﬁcial agents who make simple but detail intensive decisions.
+These
+agents can be calibrated with real data and allowed to make the same
+decisions in this synthetic economy as their real life counterparts.
+The
+resulting outcomes can be surprisingly accurate.
+This paper discusses the
+research in this area and goes on to detail the architecture of SEAS.
+It also
+presents a detailed case study of market and supply-chain co-design for
+business-to-business e-commerce in the PC industry.
+1 Introduction
+The fundamental tenet of business-to-business (B2B) e-commerce is disintermediation in relatively ‘‘frictionless’’ economies.
+The advent of e-com-
+A. R. Chaturvedi (&) Æ S. R. Mehta Æ D. Dolk Æ M. Gupta
+Krannert Graduate School of Management,
+Purdue University, West Lafayette, IN 47907, USA
+E-mail: alok@purdue.edu
+Tel.: +1-765-4949048
+Fax: +1-765-4941526
+E-mail: mehta@mgmt.purdue.edu
+E-mail: drdolk@nps.edu
+E-mail: Mukul.Gupta@Business.uconn.edu
+26
+A. R. Chaturvedi et al.
+merce has shrunk the competitive ‘‘time to market’’ window for new products substantially, particularly in the area of technology products themselves.
+The pressure to be ‘‘ﬁrst to market’’ and establish ‘‘lock in’’ is intense for
+companies in the software, web, and telecommunications industries.
+With
+such compressed timelines, the probability of new product success is often
+more a matter of good fortune than of careful analysis and preparation.
+Intuitively, the notion of co-design i.e., integrating all design activities in
+parallel is an appealing alternative, which a priori one would suspect is
+superior to the serial approach.
+Co-design has been used successfully, particularly in designing embedded hardware and software systems.
+This paper uses the computational experimentation method to analyze
+the co-design approach to the problem of designing the supply chain in the
+PC industry.
+This is an intensely competitive market marked by rapid
+change, extremely short product development times, and very short shelf
+lives.
+Corporations cannot aﬀord to make very many mistakes in this climate, or they risk losing market share.
+By adopting a co-design approach, we
+argue that ﬁrms have a higher probability of aligning products with markets,
+and thus maintaining their competitive edge.
+The co-design approach that we
+use to integrate the convergent technology product design processes is a
+hybrid of microeconomic and OR modeling, namely experimental economics
+complemented by agent-based simulation (ABS).
+In an interesting paper
+which provides an industry perspective on eﬃciently co-designing the demand and supply chains in an industry, Murphy-Hoye (2002) has said,
+‘‘Excel spreadsheets and email are no longer suﬃcient tools for complex
+collaborative business interaction.
+Enhanced or new modeling and simulation and techniques will be needed to improve planning capabilities and
+enable earlier identiﬁcation of potential problems.’’ This paper is a step in
+this direction.
+Toward this end, we create a synthetic economy to study a computational
+model of human decision making in the context of B2B e-commerce.
+There
+are several important aspects of B2B e-commerce, e-CRM, e-procurement,
+e-R&D, e-fulﬁllment, e-service, and e-manufacturing (Swenson et al. 1998;
+Kaplan and Sawhney 2000; Ramsdell 2000; Timmers 1999; Nagurney 2002;
+Lucking-Reiley and Spulber 2001; Fensel et al. 2001).
+We implement agents
+and simulate diﬀerent business models to study the decision-making process
+by creating their computational models.
+The remainder of the paper is organized as follows: Sect.
+2 presents the
+importance of the problem and the background research.
+Section 3 describes
+the concept of synthetic economies and presents the technical architecture of
+synthetic environment for analysis and simulations (SEAS).
+Section 4 presents the case study of application of SEAS to B2B e-commerce in the PC
+industry.
+Finally, Sect.
+5 concludes the paper.
+2 Importance of the problem
+Understanding electronic marketplaces is one of the keys for corporations in
+making the transition from the ‘‘old’’ to the ‘‘new’’ economy.
+Although
+Computational experimentations in market
+27
+many claim that the ‘‘old’’ and the ‘‘new’’ will converge and e-business will
+become just plain old business as the years unfold, companies still struggle
+with the rapid changes e-business has wrought on the landscape.
+The ﬁner
+granularity of customer relationship management, disintermediation and
+reintermediation of the supply chain, B2B exchanges, and the evolution of
+agent technology are just some of the phenomena that have emerged from
+the electronic marketplace (Bailey and Bakos 1997).
+Although these processes will undoubtedly be assimilated into the
+‘‘business as usual’’ environment at some point, they require new approaches
+and tools for analysis and modeling.
+This is particularly true in the area of
+economics where the standard neoclassical economic model has proven to be
+inadequate in capturing the dynamic evolution brought about by technological change.
+E-business faces a number of paradoxes.
+These competing issues, such as
+the conﬂict between trading exchanges and customer relationship management, Internet market eﬃciency, and competitive pricing etc., have to be
+resolved by every e-business that is to be successful in the market place.
+A
+major problem is that decision makers would have to draw upon techniques
+from various disciplines.
+In this paper, we discuss the new decision-making
+technology of ABS and its role in addressing some of the critical problems
+that arise in electronic marketplaces.
+Speciﬁcally, we look at ABS as an
+engine for building synthetic economies that can, in turn, be used as the basis
+of analyses for the e-business phenomena discussed above.
+The ABS-driven
+economy, consisting of many thousands of software agents whose emergent
+behavior deﬁnes the marketplace, can be used as a platform with which
+human players can engage in strategic decision-making simulations.
+ABS in
+this context is a hybrid of microeconomic analysis combined with the OR/
+MS discipline of simulation (although a much diﬀerent, bottom-up kind of
+simulation when compared with the typical top-down discrete event simulation).
+This approach wherein human players can participate concurrently
+with an agent-based economy oﬀers the following beneﬁts:
+– The seamless integration of human and software agents: this allows signiﬁcantly more complex experiments to be conducted than are currently
+possible in the ﬁeld of experimental economics (Kagel and Roth 1995).
+These experiments can combine depth of decision making (using humans)
+and breadth (combining artiﬁcial agents).
+– The consequences of decisions can be measured: this extends the purview
+of traditional decision support from building models that support human
+decision making to actually being able to gauge the impacts of decisions as
+well.
+– A laboratory for testing the eﬃcacy of decision support tools: experiments
+can be devised that measure the eﬀects of various decisions against the
+support tools used to arrive at those decisions.
+For the ABS approach to work eﬀectively, viable virtual economies must
+be constructed.
+This requires careful attention to the design and speciﬁcation
+of the agents who will populate the economy.
+This demands that we will be
+able to access reliable, accurate computational models of human behavior
+28
+A. R. Chaturvedi et al.
+which we can then invoke appropriately upon our population of agents to
+achieve a marketplace behavior with acceptable verisimilitude.
+There is a
+vast repository of such models from disciplines such as experimental economics, artiﬁcial intelligence, cognitive science, psychology, and decision
+theory.
+2.1 Shortcomings of classical economics
+The standard economic model is that of homo economicus.
+This is basically a
+constrained optimization exercise.
+An agent starts with an objective (maximize proﬁt, maximize utility) and a choice set (deﬁned by a budget constraint
+or an endowment or input prices), and computes the optimal solution.
+This
+solution is then implemented in a setting with certain rules (a market, a
+bilateral negotiation) and those rules then, perhaps after several iterations
+determine an outcome (an allocation, prices).
+This standard model (e.g.
+Kreps 1990; MasColell et al. 1995) forms the basis of much of economics
+and a signiﬁcant amount of management modeling.
+However, in recent years, at least three strands of literature have converged to upset this neat and somewhat limited view of human behavior.
+These include experimental economics (Kagel and Roth 1995), learning
+(Fudenberg and Levine 1999), and behavioral economics (Mullainathan and
+Thaler 2000).
+Experimental economics shows that while some parts of economic theory held up reasonably well (such as static markets with bids and
+asks), others such as individual decision making did not, and were subject to
+biases, errors, and misperceptions.
+Behavioral economics complements
+experimental economics quite nicely by looking for ﬁeld data as opposed to
+experimental data and showing that many of the same biases are found in
+real life.
+Similarly, learning theory assumes that rational behavior does not
+emerge fully formed but through a great deal of trial and error.
+It is worth quoting in detail an excerpt from a recent survey (Mullainathan and Thaler 2000) to underscore just how radical a departure this is.
+They conﬁne themselves to the ﬁeld of ﬁnance, but their remarks apply much
+more generally.
+If economists had been asked, 20 years ago in a poll, to name the domain
+in which bounded rationality was least likely to ﬁnd useful applications,
+the likely winner would have been ﬁnance.
+The limits of arbitrage arguments were not well understood and that time, one leading economist had
+called eﬃcient markets hypothesis the best-established fact in economics.
+Times change.
+Now as we begin the twenty-ﬁrst century, ﬁnance is perhaps
+the branch of economics where behavioral economics has made the
+greatest contributions.
+Two factors contributed to the surprising success of behavioral ﬁnance.
+First, ﬁnancial economics in general and the eﬃcient market hypothesis in
+particular generated sharp testable predictions about observable phenomena.
+Second, there are great data readily available to test these sharp
+predictions.
+Computational experimentations in market
+29
+They add:
+The standard economic model of human behavior includes (at least) three
+unrealistic traits, unbounded rationality, unbounded willpower, and unbounded selﬁshness.
+These three traits are good candidates for modiﬁcation.
+With this in mind what sort of modeling approach might supplement the
+standard economic model?
+Clearly a broad-based approach is required that
+incorporates insights from a variety of disciplines, including psychology,
+management, and economics.
+2.2 Agent behavior
+Traditionally, economics, and by extension, large sections of management
+have largely been insulated from the rest of the social sciences.
+However, if
+the assumptions of the standard model are modiﬁed, then the door is opened
+for importing signiﬁcant insights from the sister disciplines, such as psychology, that have had a long history of studying behavior as observed, as
+opposed to behavior, as deduced from a set of axioms.
+Clearly then, there is
+signiﬁcant motivation for building agents that engage in speciﬁc behaviors as
+opposed to optimization.
+One can then put them together in increasingly
+complex environments to see what sort of behavior results emerge (Epstein
+and Axtell 1996).
+However, much more sophisticated agents are required.
+At
+least four classes of capabilities have to be modeled in detail—including
+information gathering, information processing, responsiveness, and interaction.
+For example, Downs-Martin (1997) indicates that the informationprocessing part might consist of the behaviors as listed in Table 1.
+Table 1 Agent behavior verbs
+Actions
+Simple deﬁnitions
+Acquire
+Alert
+Detect
+Discriminate
+Extract
+Filter
+Identify
+Inspect
+Localize
+Monitor
+Recognize
+Orient
+Perceive
+Queue
+Read
+Receive
+Search
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+To
+gain by one’s own eﬀorts, to obtain
+warn to be ready or watchful
+discover something hidden, to notice, to observe
+distinguish between things
+deduce or derive, to take out from
+strain out unwanted data and so forth
+ﬁx a person or thing as the one described
+look at carefully
+trace to a particular place, discover the position of
+watch, check, regulate performance
+identify as known before
+adjust to a particular situation
+become aware of via senses, grasp mentally
+form up in a line
+get meaning by interpreting characters
+take or get freely given information
+examine carefully for a thing concealed, survey
+30
+A. R. Chaturvedi et al.
+It is important to analyze and classify these behaviors with a view to
+applying them in a broad range of social disciplines, in a collaborative and
+modular fashion.
+One sort of modeling paradigm that might work hand in
+hand with the new departures from the standard model is agent-based
+modeling techniques.
+3 Agent-based economies and SEAS
+Agent-based techniques have gained prominence in management and economics (Gode and Sunder 1993, 1997; Duﬀy 2001; Lopez-Paredes et al.
+2002) and this area shows much promise in terms of addressing the three
+challenges to the standard model, outlined above.
+The motivation for agent-based economies is as follows.
+Rust (1996)
+argues that researchers are forced to build models which are either stylized
+enough to be solved analytically or small enough to be solved computationally.
+Each of these kinds of models is, in Rust’s words, a ‘‘toy model.’’
+Moreover, such models are not modular and cannot be built up cumulatively
+by large teams of researchers working together, each developing a separate
+piece of the puzzle.
+Therefore, Rust suggests that we mimic the intelligence
+demonstrated in the organization of the market and use decentralized
+computing along with agents to study these models.
+Rust’s suggestion is
+quite appealing.
+He mentions a number of desiderata for such an agentbased environment.
+Among them is the ability to seamlessly integrate human
+and artiﬁcial agents in the same environment.
+It would allow experiments of
+greater complexity and of a larger scale than those possible with existing
+software such as the pioneering MUDA program, developed by Plott and
+Gray (1990) at Caltech.
+This would truly enable multidisciplinary research.
+Computer-based information systems would be integrated with economics to
+create synthetic economies that could be used as a common meeting ground
+for techniques from operations research, management science, psychology,
+and computer science.
+This, then, is the promise of agent-based research.
+Of crucial importance is the ability to put human and artiﬁcial agents in
+the same environment.
+This allow us to leverage human capabilities to make
+complex decisions (such as running ﬁrms or channels) and to leverage the
+large numbers of artiﬁcial agents that can be deployed to capture ﬁne details
+of market segments.
+Moreover such mixed environments allow us to calibrate human and artiﬁcial agents against each other.
+For example, can we
+mimic a particular human behavior (such as trading) in a narrow domain
+(such as a simple double auction market) by using artiﬁcial agents?
+Similarly,
+can we calibrate the complexity of a decision-making task performed by
+human beings on the basis of the complexity of the artiﬁcial agent that might
+be able to mimic it?
+In a recent landmark paper, Green (2002) argues that
+role-playing is extremely valuable in helping predict the outcomes of conﬂict
+situations, often doubling the accuracy of prediction and catapulting
+amateurs ahead of seasoned experts.
+Similarly Shubik (1975) stated that
+‘‘an extremely valuable aspect of operational gaming is the perspective
+gained by viewing a conﬂict of interests from the other side.
+Experience
+gained in playing roles foreign to one’s own interests may provide insights
+Computational experimentations in market
+31
+hard to obtain in any other manner.’’ This paper provides a joint environment incorporating ABS techniques and techniques of experimental economics to provide a rich domain in which participants may gain experience.
+In the past, machine learning has primarily been used for classiﬁcation
+problems.
+Now, these techniques are increasingly being used in decision
+support (Chaturvedi et al. 1993), real-time system control, production process control; product design and control knowledge (Chaturvedi and Gulati
+1993; Chaturvedi and Nazareth 1998); scheduling and control of ﬂexible
+manufacturing systems.
+Now machine-learning techniques are being used to
+comprehensively model human behavior in markets in the form of shopbots
+(artiﬁcially intelligent agents which help consumers buy goods and services at
+the best price) (Guttman et al. 1998; Chavez and Maes 1996; Bichler et al.
+1998; Hedberg 1996) and pricebots (artiﬁcially intelligent agents which help
+sellers determine the optional price) (Chavez and Maes 1996).
+The extraction of human knowledge and behavior requires careful
+planning.
+New knowledge has to be reconciled with existing rules.
+Conﬂicts
+must be resolved satisfactorily.
+Likewise, the potential utility of the new rules
+also needs to be examined prior to inclusion.
+Rules that are very speciﬁc, and
+are unlikely to ﬁnd application, may be discarded.
+In a similar vein, extremely general rules are unlikely to be included, as they are more prone to
+generating conﬂict.
+This is the balance that needs to be struck and a particular instance of which is described below in the modeling of our consumer
+artiﬁcial agents.
+3.1 Synthetic environment for analysis and simulations
+Synthetic environment for analysis and simulations is an interactive synthetic
+economy that models the critical relationships between economies, markets,
+product and process innovations, price, and business rules using human and
+artiﬁcial agents.
+It allows participants to view the economy from diﬀerent
+perspectives such as the government, universities, commercial sectors, and
+households/consumers/tax payers.
+The SEAS computational infrastructure allows large number of human
+players to interact with hundreds of thousands of artiﬁcial agents.
+We brieﬂy
+describe the architecture in the Appendix.
+4 PSEAS: a PC industry case study
+These ideas have been implemented in an artiﬁcial economy which mimics
+the behavior of the PC industry.
+The particular issue that we seek to
+address is as follows.
+B2B e-commerce is the new battleground for ﬁrms in
+the PC industry.
+Dell Computers pioneered the direct-sales business model
+that every other PC maker is trying to emulate, but with limited success.
+In this disintermediated model, an original equipment manufacturer
+(OEM) abandons distributors, wholesalers, and retailers and sells directly
+to the end customer.
+There are several advantages of this model.
+First, by
+manufacturing computers to order, the company economizes inventory
+32
+A. R. Chaturvedi et al.
+and prevents the depreciation due to technological obsolescence.
+Second,
+it allows the OEM to be paid before it manufactures computers and sells
+to its suppliers.
+Third, it allows the OEM to capture the lucrative margins
+on add-on services such as warranties, ﬁnancing, upgrades, and portal
+services.
+So, what prevents the other PC makers from adopting the direct model?
+With the traditional business model, OEMs developed a web of relationships
+with the channel ﬁrms, who do the assembly and supply to the ﬁnal customers.
+The problem is that the latter ‘‘own’’ the customers, and provide the
+proﬁtable parts of the computer value chain—the add-ons.
+By going direct, a
+traditional computer company runs the risk of alienating the channel.
+If that
+happens, the intermediary can set up competing operations by teaming up
+with generic PC makers.
+To analyze these questions we set up a synthetic
+economy as follows:
+1.
+In the SEAS environment, we create a synthetic economy representing the
+PC industry and populate it with four classes of agents—computer
+makers, channels and service providers, and business customers.
+2.
+We divide the business customers into three segments—small, medium,
+and large.
+Each of these segments has two subsegments—the ‘‘self-integrator’’ segment and ‘‘need help’’ segment.
+We calibrate the behavior of
+the artiﬁcial agents to closely resemble that of the segment they represent
+in the ‘‘real economy.’’
+3.
+We allow human agents to play the roles of computer makers and
+channels while thousands of artiﬁcial agents perform the roles of business
+customers.
+4.
+There are two classes of products sold in the economy—goods and services.
+The goods sold in the market are the base units and add-on options.
+Each of these goods has ﬁve levels representing ﬁve diﬀerent qualities.
+There are four classes of services—warranty, implementation, ﬁnancing,
+and portal.
+5.
+Firms can make diﬀerent types of investments to improve their performance—such as ease of doing business, e-branding, sales force, information portal, facilitation, transactions, and integration.
+4.1 Business process modeling
+PSEAS focuses on how various entities in the value-chain function and interoperate under diﬀering external circumstances.
+The ‘‘Aha!’’ experiences
+from playing the game increased the participants’ insights and awareness
+into the following issues:
+– Adoption of diﬀerent e-biz models by the players in response to the
+changes in environment;
+– Interaction among the various entities in the value chain (e.g., manufacturers, traditional channels, e-channels);
+– Implications of a manufacturer going ‘‘direct’’ on its channel partners;
+– Nature of channel conﬂicts and their implications;
+Computational experimentations in market
+33
+– Eﬀect of B2B exchanges on manufacturers’ and channels’ margins, market
+shares, and proﬁtability;
+– The sustainability of these business models?
+One of the most important decisions that participants have to make in the
+exercise is in which market are they going to choose to sell their products.
+They have to decide if they will take the risk to antagonize the channels, if
+they segregate products by channels, and how to mark up products
+according to channels, etc. PSEAS e-business model alternatives are presented in Fig.
+1.4.1.1 Human players’ overall choices
+Manufacturers have the following choices:
+1.
+Design product class and conﬁguration—should they sell stripped down
+models or models loaded with options?
+2.
+Should they just sell hardware or bundle the hardware with services?
+3.
+Sell to the channels, whether they are traditional brick and mortar distributors (BM) or e-distributors (ED).
+A manufacturer makes an oﬀer to
+a distributor by sending him/her a message with the product type,
+quantity, and price.
+The distributor may accept or reject the oﬀer.
+4.
+Sell direct to end customers.
+5.
+Sell through B2B exchange to channels or to customers.
+Manufacturers
+can create their own exchange and invite customers and suppliers (suppliers of manufacturers are not included in the model) to join them or
+they may choose join an existing exchange.
+6.
+Sell through the neutral B2B marketplace.
+Figure 2 shows the interface of a PC manufacturer.
+The cost, quantity,
+price, and outlet for the goods are shown in the picture.
+By contrast, Fig.
+3
+shows the production screen where the product is conﬁgured and then
+Fig.
+1 The business models in PSEAS
+34
+A. R. Chaturvedi et al.
+priced.
+It shows the various combinations of processor speed and add-ons
+that are available.
+Traditional distributors have the following choices:
+1.
+Sell direct to customers, whether it is through their web site or their stores,
+2.
+Create a B2B exchange and have their suppliers and manufacturers join it
+to facilitate transaction (but do not allow the competition to join),
+3.
+Join or create a neutral B2B marketplace (with the competition).
+E-distributors can:
+1.
+Create a B2B exchange and have their suppliers join it to facilitate
+transactions (but do not authorize the competition to join it),
+2.
+Join a neutral B2B marketplace,
+3.
+Create a neutral B2B marketplace and play the role of a neutral agent.
+Overall there are four diﬀerent distribution business model choices for the
+players:
+1.
+Channel: manufacturers sell to channels.
+2.
+Direct: manufacturers and channels sell directly to customers through the
+traditional method or via their web sites.
+3.
+B2B exchange: manufacturers or distributors open their own marketplace
+and allow their suppliers and customers to join or join a supplier/customer B2B marketplace.
+4.
+B2B e-hub (neutral exchange): several competitors in the industry at
+diﬀerent positions in the supply chain (manufacturers, distributors, and
+customers) join a neutral marketplace.
+A player can conﬁgure the product by clicking on the base and option
+levels and can create a bundle by clicking on the service button.
+He/she can
+Fig.
+2 PSEAS B2B interface
+Computational experimentations in market
+35
+Fig.
+3 The production interface
+set the markup by clicking on the individual oﬀering or on the entire row or
+column.
+The marginal costs of production (which is assumed to be ﬁxed for
+simplicity) for the various goods and services a ﬁrm produces are known to
+it.
+It chooses prices by choosing markups over cost.
+Production levels are
+chosen by ﬁrms for each category of goods and services.
+Once a particular
+level of the good is produced, its marginal cost times quantity is deducted
+from its cash balance.
+Firms have production capacities beyond which they
+may not produce.
+Distribution is deﬁned by product.
+If there is a leftover inventory of products not sold by channels or B2B
+exchange, then by default the inventory is liquidated.
+Firms may invest in marketing, logistic support, and customer support to
+enhance demand for their products.
+Additional investments, such as
+investment in infrastructure, lower the transaction costs.
+Firms can engage in
+two types of R&D—to increase perceived quality and to decrease the cost of
+production in the next period.
+For each investment, there is an obsolescence
+variable introduced i.e., if the ﬁrm does not invest enough in comparison
+with other ﬁrms, sales will be impacted.
+4.2 Artiﬁcial agent behavior modeling1
+Consumers make decisions in two steps.
+First they decide which product
+to buy and then they determine how much to buy.
+A product is deﬁned
+as a combination of attributes.
+For simplicity, it was assumed that more
+1
+Details of the exact functional forms are available upon request.
+What follows is a
+highly condensed description.
+36
+A. R. Chaturvedi et al.
+memory and hard drive go together and thus only two technical attributes
+were considered—processor speed and memory/storage.
+The third attribute was considered to be of quality or brand image—i.e., certain brands
+were considered to be ‘‘premium’’ brands and consumers were assumed to
+pay a premium for them.
+The valuation attached by diﬀerent consumers
+to each of these attributes varied by market segment.
+In general, high-end
+consumers value these attributes more than low-end consumers, therefore,
+other things being equal, end up buying higher-end computers.
+Consumer segments have various switching costs.

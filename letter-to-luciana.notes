@@ -1,0 +1,61 @@
+Hi Luciana,
+
+Thanks for releasing Frolog as open source software, it seems
+quite wonderful.
+
+I am looking for some software to handle a speech interface to a
+life planning agent.  The idea is that different, I don't know
+what exactly you would call them, fluents, (axioms?), about the
+world are modified via a speech interface.  So for instance, you
+can say "All the rooms have been cleaned" and then it should
+infer that the various rooms it knows about (in the house?) have
+been cleaned and assert (not (dirty ?ROOM)), etc, or perhaps
+retract all instances of (dirty ?ROOM) where (located-in ?ROOM
+?HOUSE) and ?HOUSE is correct.  The idea of the speech interface
+is to handle the world relationships which are then fed to either
+a planner (or an intelligent agent0 for making decisions about
+what to do next.  I will read more up on your use of PDDL there.
+With part of the Android interface, you can say things
+like "don't forget to take the ?X with you before you go to the
+store" etc, and then these constraints are maintained, and if you
+begin to leave to the store, it detects that it should ask you
+whether you have possession of ?X and are taking it with you to
+the store.  The speech interface works over a bluetooth headset.
+Everything is open sourced.
+
+I am aware of Frolog and Froz for some time now, and they look
+really good, although I haven't investigated their technical end
+so much.  I have a few questions.
+
+1) Is there a way to refactor the dependency on RacerPro with
+some open source DL reasoner?  (Preferably something based on
+FLORA-2 as that is the interlingua that I'm thinking I will use
+to represent all of the facts about the situation, and conducting
+inference.  I know there is a FLORA-2 reasoner available.)
+
+2) Would Frolog(/?Froz?) be the proper open source interface to
+handle this or is there something better equipped or more
+versatile?
+
+3) Do you have available under an open source license a larger
+grammar for more varied usage?
+
+4) Would you entertain the possibility of collaborating in some
+ways on Frolog (entirely open source) or is the project finished.
+Would there be other similar open source projects we could
+collaborate on?  I do know of one other person (Douglas Miles who
+worked on LogicMOO and *Cyc) who a while ago was also playing
+around with Frolog.  If you are interested I may ping him to see
+what he's up to as lately I've been incorporating more *Cyc into
+my systems.
+
+Please advise.
+
+Kind Regards,
+Andrew Dougherty
+Independent AI Researcher
+FRDCSA Project
+
+http://frdcsa.org/~andrewdo/writings/Temporal-Planning-and-Inferencing-for-Personal-Task-Management-with-SPSE2.pdf
+http://frdcsa.org/~andrewdo/WebWiki/FreeLifePlanningCoachSoftware.html
+

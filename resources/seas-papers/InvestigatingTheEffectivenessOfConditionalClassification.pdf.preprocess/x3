@@ -1,0 +1,315 @@
+Notmet
+of greatest concern to the decision maker were employed.
+The
+64 observations represented all possible combinations of the
+input dimensions.
+The output classification dimensions were workstation utilization and production rates with possible states (values)
+depicted in Table 11.
+The criteria for determining whether the
+goals were met or not was based on a boolean expression
+involving the production rates for individual product lines, and
+the utilization of individual workstations.
+The observations were generated through a set of simulation
+runs.
+The input parameters were systematically manipulated so
+as to produce all possible combinations of the data values.
+The
+set of 64 observations was randomly split into equal sets of
+32 reflecting training and holdout sets.
+A quick inspection of
+the data indicated that all possible states for each dimension
+were covered in both sets.
+V. RESULTSAND DISCUSSION
+Classification was performed on the training set, yielding
+the two decision trees in Fig.
+7.
+Note that while the simple
+classification yields disjoint sets at the leaf level (entropy = 0),
+the conditional classification tree will generally produce a fully
+decomposable matrix relating the values of the variables in
+question at the leaf level.
+The holdout set was then verified against the decision
+trees generated.
+At the first stage, i.e., using production rate
+as the output dimension, the accuracy of classification was
+100%.
+At the second stage, classification accuracy reached
+90.63% for predicting achievement of utilization goals given
+the attainment of production rate goals.
+The accuracy of classification can be misleading.
+Firstly,
+the sample sizes were relatively small, and so there was less
+room for errors during classification.
+Additionally, the data
+set employed produced some ties during the classification
+process.
+A random strategy for breaking ties fortuitously
+resolved them in a manner that permitted greater accuracy.
+For
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+192
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+Fig.
+7.
+Decision trees (simple & conditional),
+example, in the first stage, after the first split, the dimension
+Palettexapacity could have been chosen instead of NumberdfAGV’s. Had this been the case, the classification accuracy
+would have deteriorated to 90.63%.
+Likewise, during the
+conditional classification stage, other dimensions than those
+selected were also candidates for inclusion.
+The results are very much data dependent.
+An examination of the decision trees indicated that some of the rules
+were counter-intuitive.
+This prompted an examination of the
+accuracy of the classification process, which proved to have
+worked correctly.
+This in turn led to an investigation of the
+data sets themselves and the simulation runs used to generate
+the data.
+This yielded some interesting insights as to the nature
+of the data itself.
+It was found that in some cases the system
+attained near complete utilization, and thus the outcomes were
+really not affected by the decisions taken.
+However, this does
+not detract from the efficacy of the conditional classification
+process.
+Further, the categorizing functions employed also play an
+important role in the effectiveness of this approach.
+Thus
+for example, if the criteria for determining if the production
+rate and utilization goals had been met were altered, the
+results most likely would have been different.
+Attempting to
+generalize from these results is clearly foolhardy.
+Two specific issues direct the need for caution in interpreting
+these results.
+First, the relationships between input and output
+dimensions are tenuous at best.
+As with any data driven
+strategy, a relationship can always be determined, though the
+semantic or causative nature of the relationship is difficult to
+establish.
+The inherent limitations of any classification process
+are clearly applicable in this case.
+The knowledge gained
+is relatively superficial, and may not apply in other cases.
+Any form of deep understanding of the domain is lacking.
+The second concern is that the use of repetitive and dynamic
+decisions tends to make any interpretation extremely context
+sensitive.
+However, the results are encouraging, and a case can
+clearly be made for further examining the effectiveness of
+conditional classification.
+Additional investigation is neces-
+sary, first to establish the viability of conditional classification
+as a meaningful learning strategy, and second to assess its
+utility vis-a-vis other concept-based learning strategies.
+To
+achieve the former, the algorithm must be applied to other
+decisions, possibly more complex ones, using larger data sets,
+both in terms of input dimension cardinality and number
+of observations.
+The use of noisy data sets, coupled with
+anomalies is also suggested to investigate the robustness of
+the algorithm.
+To this end, the system is now being ported
+to ProKappa on an HP 9000 series 700 platform, thereby
+providing greater flexibility for a suite of experiments.
+On
+the second front, a series of experiments comparing the
+effectiveness of conditional classification versus simple and
+other variants of entropy-based classification needs to be
+performed.
+This paper represents a starting point for research
+in multidimensional classification.
+VI.
+CONCLUSION
+This paper examines the problem of learning from observations when “rules” are to be inferred on separate but
+related aspects of a problem, using identical or overlapping
+data sets.
+This form of learning is termed multidimensional
+classification.
+A general framework describing the various
+types of multidimensional classification is provided.
+The paper
+specifically concentrates on conditional classification, wherein
+the classification is initially performed on a dimension specified by the user, and the resulting knowledge then used to
+classify on other dimensions of interest.
+Drawing from concept
+learning and information theory, algorithms are presented for
+acquiring tree-structured knowledge from available data.
+An
+application to FMS scheduling is presented.
+Results indicate
+that conditional classification may provide some ability to
+better interpret related decisions in automated manufacturing
+contexts.
+Further work is necessary to ascertain if the approach
+is robust, particularly on more complex decisions, larger
+data sets, and noisy data.
+The paper lays the groundwork
+for sustained research in multidimensional classification, with
+some pointers for further research outlined.
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI AND NAZARETH: EFFECTIVENESS OF CONDITIONAL, CLASSIFICATION: APPLICATION TO MANUFACTURING SCHEDULE
+ACKNOWLEDGMENT
+The authors are grateful to the anonymous referees for their
+comments and suggestions on an earlier version of the paper.
+REFERENCES
+[I] J. Acz61 and Z. Dar&zy, On Measures of Information and Their
+Characterizations.
+New York Academic Press, 1975.
+[2] J. H. Boose, “A survey of knowledge acquisition techniques and tools,”
+Knowledge Acquisition, vol.
+1, no. 1, pp.
+3-37, Mar. 1989.
+[3] W. Buntine and T. Niblett, “A further comparison of splitting rules for
+decision-tree induction,”Mach.
+Learning, vol.
+8, no. 2, pp 75-85, 1992.
+L. Brieman, J. Friedman, R. Olshen, and C. Stone, Classification and
+Regression Trees.
+Belmont, C A Wadsworth, 1984.
+C. Carter and J. Catlett, “Assessing credit card applications using
+machine learning,” IEEE Expert, vol.
+2, pp.
+71-79, Fall 1987.
+A. R. Chaturvedi, G. K. Hutchinson, and D. L. Nazareth, “A synergistic
+approach to manufacturing systems control using machine learning and
+simulation,” J. Intell.
+Manufact., vol.
+3, pp.
+43-57, 1992.
+A. R. Chaturvedi, G. K. Hutchinson, and D. L. Nazareth, “Supporting
+complex real-time decision making through machine learning,” to appear
+in Decision Support Syst., 1993.
+R. G . Gallager,-ZnformationTheory and Reliable Communication.
+New
+York Wiley, 1968.
+A. Hart, “Experience in the use of an inductive system in knowledge
+engineering,” in Research and Developments in Expert Systems, M.
+Bramer, ed.
+Cambridge, M A Cambridge Univ. Press, 1984.
+E. B. Hunt, Concept Learning: An Information Processing Problem.
+New York: Wiley, 1962.
+E. B. Hunt, J. Marin, and P. T. Stone, Experiments in Induction.
+New
+York Academic Press, 1966.
+R. H. Jackson and A. W. Jones, “An architecture for decision making
+in the factory of the future,” Interfaces, vol.
+17, no. 6, pp.
+15-28,
+Nov.-Dec. 1987.
+R. S.Michalski and R. Chilauski, “Knowledge acquisition by encoding
+expert rules versus computer induction from examples: A case study
+using soybean pathology,” Int.
+J. Man-Mach.
+Stud., vol.
+12, no. 1, pp.
+63-87, 1980.
+J. Mingers, “Inducing rules for expert systemdtatistical aspects,” The
+Professional Statist., vol.
+5, pp.
+19-24, 1986.
+J. Mingers, “Expert systems-Experiments with rule induction,”J. Oper.
+Res.
+Soc., vol.
+37, no. 11, pp.
+1031-1037, 1986.
+J. Mingers, “Expert systems-Rule induction with statistical data,” J.
+Oper.
+Res.
+Soc., vol.
+38, no. 1, pp.
+3 9 4 7 , 1987.
+J. Mingers, “An empirical comparison of selection measures for
+decision-tree induction,” Mach.
+Learning, vol.
+3, no. 4, pp.
+319-342,
+Mar. 1989.
+D. L. Nazareth and A. R. Chaturvedi, “Multidimensional classification
+of discrete data.” working Dauer.
+School of Business Admin., Univ. of
+Wisconsin-Milwaukee, Mar. i992.
+193
+R. Quinlan, “Semi-autonomous acquisition of pattern-based knowledge,” in Introductory Readings in Expert Systems, D. Michie, ed.
+New
+York Gordon and Breach Science, 1982, pp.
+192-207,.
+J. R. Quinlan, “Induction of decision trees,” Mach.
+Learning, vol.
+1, no.
+1, pp.
+81-106, 1986.
+J. R. Quinlan, “The effect of noise on concept learning,” in Machine
+Learning 11: An Artificial Intelligence Approach, R. S . Michalski, J. G.
+Carbonell, and T. M. Mitchell, eds.
+Los Altos, C A Morgan Kaufmann,
+1986, pp.
+149-166.
+J. R. Quinlan, ‘‘Probabilistic decision trees,” in Machine Learning III:
+An Artificial Intelligence Approach, Y. Kodratoff and R. S. Michalski,
+eds.
+Los Altos, C A Morgan Kaufmann, 1990, pp.
+140-152.
+J. C. Schlimmer, “Concept acquisition through representational adjustment,” Ph.D. dissertation, Dept. of Info.
+and Comp.
+Sci., Univ. of
+California, Imine, 1987.
+C. E. Shannon, “A mathematical theory of communication,” Bell Syst.
+Tech.
+J., vol.
+27, pp.
+379-423, 623-656, 1948.
+J. Wirth and J. Catlett, “Experiments on the costs and benefits of
+windowing in ID3,” in Proc.
+Fifh Int.
+Con$ Mach.
+Learning, 1988,
+[ 191 J.
+[20]
+[21]
+1221
+[23]
+_1241_
+[25]
+__pp.
+07 nn
+01-77.
+Alok R. Chaturvedi received the Ph.
+D. in management information systems from the University
+of Wisconsin-Milwaukee, in 1989.
+He is an Assistant Professor of Management at
+the Krannert Graduate School of Management,
+Purdue University.
+His main research interests
+include machine learning, distributed systems
+design, and intelligent manufacturing.
+Dr. Chaturvedi is a member of the ACM, the
+American Association for Artificial Intelligence,
+TIMS, and ORSA.
+Derek L. Nazareth received the Ph.
+D. degree
+in management from Case Western Reserve
+University.
+He is an Associate Professor of Management Information Systems at the University
+of Wisconsin-Milwaukee.
+His research interests
+include knowledge-based system verification,
+machine
+systems.
+learning, and distributed object-oriented
+Dr. Nazareth is a member of the American
+Association for Artificial Intelligence, the ACM,
+IEEE Computer Society, and TIMS.
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.

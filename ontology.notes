@@ -1,0 +1,39 @@
+(at time T1 I saw that object X was at location Y)
+
+(again at later time T2 I saw that object X was still at location Y)
+
+(where is object X)
+
+(at time T1, where was object X)
+
+(in plan case P1, if it is known where object X should be at time
+ T3 in the future, please tell me.)
+
+(the last known location of object X is Y)
+
+(the default location of object X is Y)
+
+(the default location of object X was changed at time T4)
+
+(it is unknown where object X was at time t5)
+
+(object X was purchased at time t6)
+
+(object X was sold, consumed or destroyed at time t7)
+
+(there are 3 copies of object X in stock, in various conditions - c1, c2 and c3)
+
+(object X may have been at location L sometime around duration T8 - T9)
+
+(we've run out of object X as of now)
+
+(consumable X is expected to be fully consumed by time T)
+
+(condition C holds at time T)
+
+(object X is not where I left it)
+
+(I can't find object X)
+
+(object X has been lost since approximately time T)
+

@@ -1,0 +1,679 @@
+10.
+Algorithm to update-contexts.
+the following manner, as characterized by the
+information flows in fig.
+2.
+It does require an
+explicit means of generating an additional set of
+observations for learning.
+This is achieved through
+the use of an ECSL-based simulation of the FMS.
+The user, in this case an FMS scheduler, will
+make a scheduling or assignment request.
+The
+user is then queried for objectives to be achieved
+when meeting this request.
+Typical objectives seek
+to maximize workstation utilization, minimize
+lateness, and work-in-process.
+These objectives
+are reformulated as high-level goals to be met
+during this decision-making situation.
+The situation at hand is then abstracted into a context for
+manipulation.
+This process may require the aggregation and filtering of noisy data from the
+database.
+Contexts are then matched with decision rules for workpiece introduction and loading, based on knowledge culled from results of
+user
+objectives
+GOAL REPRESENTATION
+l
+unmet
+goals
+system
+goals
+CLASSIFICATION
+i aggregation
+criteria
+CONCEPT AGGREGATION 1
+AND EVALUATION
+i decisions
+Fig.II.
+Threestagesof FMS-DSSoperation.
+partially
+met
+goals
+prior decisions.
+Simulation parameters specific to
+the context are generated.
+The final scheduling
+decisions, coupled with the newly generated simulation parameters, are then presented to the
+user, who may choose to override or modify them.
+The simulation system is then invoked using these
+parameters and decision rules.
+Information collected during this run is used to update the
+database.
+If the specific context produced results
+outside the performance limits experienced to
+date, then the domain knowledge is updated to
+reflect this new knowledge.
+If during the course
+of context creation or goal aggregation, the systems encounters a paucity of relevant domain
+knowledge, it invokes a learning module that
+utilizes prior data and new training examples
+generated from simulation runs to acquire the
+requisite knowledge, updating the domain knowledge and historical database in the process.
+Over
+time the system relies more on acquired knowledge than newly generated examples.
+The use of objectives specified by the user
+presents some difficulty in terms of evaluation of
+overall system performance.
+For example, an objective as maximizing workstation utilization,
+though constrained between 0 and 100%, is difficult to assess as a pure number.
+To counter this,
+FMS-DSS transforms the objective measure into
+a score based on a 0-1 scale, one representing
+the best performance achieved on this objective
+to date.
+The use of this scale provides an alternative frame of reference to assess performance
+during this decision making cycle.
+In case performance on this objective falls outside these limits,
+then the limits are re-adjusted, domain knowledge refined, and the database updated to reflect
+this additional information.
+The use of multiple objectives confounds this
+approach in that objectives chosen by the user
+may be conflicting.
+For example, the maximization of workstation utilization and minimization
+of wiP are mutually conflict by nature.
+Clearly
+any chosen decision rule can at best perform well
+on one goal and poorly on the other, or average
+on both goals.
+Under these circumstances, the
+various decision rules available are evaluated on
+the 0-1 scale on each partial goal, and the user
+presented with the information.
+The user can
+then impose weights to choose among the alternatives presented.
+In addition to weights, the
+system can make a decision based on traditional
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+multiple attribute decision making strategies such
+as dominance, maximin, or conjunctive methods
+[19].
+6.
+A sample session with FMS-DSS
+This section presents a step by step discussion
+of an example scheduling session with FMS-DSS.
+It discusses the orders in which rules were fired,
+the demons or the methods used and for what
+purposes, and the assertions made.
+Scheduling by FMS-DSS is a problem-solving
+process that requires six steps, three for
+decision-making, one for uncertainty management, and two for housekeeping and consistency
+maintenance.
+The user assigns a goal to FMS-DSS
+through a relation, GOAL-REQUIREMENT.
+A relation in GoldWorks is a special construct to structure assertions or set of assertions in the knowledge base.
+The goal assigned by the assertion,
+(GOAL-REQUIREMENT SCHEDULE IMPROVE DUEDATE AVERAGE-TARDINESS BATCH), m e a n s that
+FMS-DSS should try to SCHEDULE BATCHES to
+IMPROVE AVERAGE-TARDINESS in order to meet
+DUE-DATES.
+Upon receiving the goal from the user, FMSDSS responds by issuing the query, (QUERY'j j ~
+(RUN-STATE .gX ACCOMPLISHED)), to the database
+and triggering the reasoning process.
+To match
+the pattern, run-state ?X accomplished, FMSDSS starts by looking for assertions in the assertion base (or the working memory) that match the
+query pattern.
+If the search is unsuccessful, FMSDSS next searches for the backward rule whose
+consequent matches the goal pattern.
+Here, the
+rule, ACCOMPLISH-MISSION'S consequent matches
+the goal pattern.
+The query can be satisfied only
+if all the six conditions represented by the antecedents of the backward rule are satisfied.
+The first antecedent pattern "run-state aggregate-concept created", matches the enabling pattern of the rule-set, CREATE-AGGREGATE-CONCEPT.
+This rule-set is enabled, and the forward
+rules within this rule-set is now available to the
+system for forward chaining.
+The first rule, ASSIGN-GOAL-REQUIREMENTS, is put on the agenda
+because there are assertions to match its antecedents.
+The rule, ASSIGN-GOAL-REQUIREMENTS, fires making many assertions for the assertion base.
+Next, the rule, IDENTIFY-CONCEPTTO-BE-CREATED, is put on the agenda as there are
+assertions to 'match its antecedents.
+Since no
+other rule can be put on the agenda at this time,
+this rule fires creating assertions (Concept-ToBe-Created #:SCHEDULE-IMPROVE-DUE-DATE)and
+Workstation
+Entity J
+~-~-~-~ Batch
+Average
+// Tardiness
+//Due-date ~
+/
+/jJ
+Production ~
+Rate
+\ \ Schedule Batch to /
+meet Due-date
+\\
+Machine / /
+\\
+Utilization
+//
+\\
+\
+\""\ WIP Level / i ?
+Maximum
+Tardiness
+\
+\
+\ Number of
+Tardy Batches
+Skeletal ~
+~ Schedule~
+/
+Decision ~
+Improve /
+Fig.
+12.
+Learning in FMS-DSS.
+227
+228
+A.R. Chaturvedi et al. / Machine learning for real-time decision making
+(Context-Name #'AVERAGE-TARDINESS)in the assertion base.
+Now, there are assertions to put
+rule, AGGREGATE-CONCEPTon the agenda.
+At this
+point, there is only one agenda item and the rule
+is fired.
+The firing of this rule creates a new
+frame #'SCHEDULE-IMPROVE-DUE-DATEand is put
+in its proper place in the taxonomy by making it a
+child-frame of each of the frames SCHEDULE,
+DUE-DATE, and BATCH (fig.
+12).
+Next, the rule,
+CREATE-CONTEXT, is put on the agenda and fired
+creating the context frame, #:AVERAGE-TARDINESS, f o r the concept, #'SCHEDULE-IMPROVEDUE-DATE.
+Finally, for the rule-set CREATEAGGREGATE-CONCEPT, the rule, FINISHED-CREATING-CONCEPT is put on the agenda and fired.
+It
+asserts "run-state aggregate-concept created,"
+and passes the control back to backward rule
+ACCOMPLISH-MISSION, thus satisfying the first condition.
+The second rule-set, ANALYZE-GOAL, is now
+enabled.
+The rule, INSTANTIATE-GOAL-CONCEPTAT-T0, fires to check if an instance of the active
+context already exists.
+If it does not, then the rule
+creates an instance of the active context frame.
+Next, rules are put on the agenda and fired
+according to their priorities to analyze the goal
+and to select the appropriate aggregation operators.
+The next rule to fire is SAMPLE-EXISTS,which
+checks to see if there is an instance of the frame,
+SAMPLE-DATA.
+Finally, the rule, FINISHED-GOALANALYSIS, fires asserting "run-state goal-analysis
+finished" and passes the control back to the backward rule.
+The third rule-set, RESOLVE-UNCERTAINTY, is
+activated next.
+It involves identifying noise in the
+data and resolving the resulting uncertainties
+which might be detrimental to the solution process.
+The available assertions in the working
+memory match the antecedent patterns of the
+rule, SAMPLE-WITH-TEMPORAL-UNCERTAINTY,and
+also the condition, rating at TO is greater than
+the rating at T1.
+In this situation, FMS-DSS
+immediately issues an alarm with the assertion,
+"uncertainty-type is temporal-uncertainty".
+The
+rule,
+stances.
+Since the variance is greater than 10%, it
+next compares the non-goal attributes.
+It finds
+that the variance in the non-goal attributes of the
+two instances is ~< 10%, which means the parameters are OK. The method then replaces the
+goal-attributes of ?sample with the goal-attributes
+of ?X, retracts ?sample uncertainty-type.
+The fourth step involves classification of data
+to satisfy the goal concept.
+When the rule-set,
+CLASSIFY-DATA, is enabled by the backward rule,
+the assertions in the assertion base match the
+antecedents of rules SELECT-PARAMETERS-AT-TO,
+and FINISHED-CLASSIFICATION.These rules are put
+on the agenda and fired in the order of their
+priorities.
+First the rule, SELECT-PARAMETERSAT-TO fires.
+It calls the method, SELLer-BESTRATINGS, to select the parameters that will give
+the best performance rating.
+Finally, FINISHEDCLASSIFICATION, rule fires asserting "run-state
+classification complete".
+This completes scheduling as all the relevant parameters have been
+selected.
+The fifth step involves writing the output parameters to a file which can be read by the
+simulation model.
+When the rule-set, OUTPUTPARAMETERS, is enabled, rules are matched and
+fired in order of their priorities instantiating the
+output parameter frame and writing the parameters to an output file.
+The sixth and last condition to meet the query
+requirement is accomplished by enabling the
+rule-set, RETRACT-ALL-GOALS.TWO rules are put
+on the agenda and are fired in order of their
+priority.
+The first rule to fire calls the handler,
+RETRACT-ALL-SLOTS, to retract all assertions
+stored in the slots of the instance of the frame,
+DECISION-TO-BE-MADE.
+Finally, the rule, FInISHED-RETRACTING-GOALS, fires asserting "runstate all-goals retracted" and returns the control
+to the backward rule.
+With the last assertion, all
+five conditions of the backward rule are met and
+the query of the attempt is successfully completed
+with the assertion (RUN-STATE MISSION ACCOMPLISHED).
+ANALYZE-AND-RESOLVE-CONTRADICTORY-
+DATA, is now ready to fire.
+Firing this rule calls
+the method (a LISP routine), ANALYZE-RESOLVECONTRADICTION.
+This method first locates an instance ?X in the database with the same parameters and clock as the ?Sample instance.
+It compares the goal attribute ratings of the two in-
+7.
+FMS-DSS evaluation
+In absolute terms, it is difficult to demonstrate
+that FMS-DSS can effectively acquire knowledge
+for decision support in a real-time, complex envi-
+A.R. Chaturcedi et al. / Machine learning for real-time decision making
+ronment that may have large volume of data
+which may contain noise.
+In such an environment, the utility of the system can best be determined by comparison.
+One hundred and twentyeight simulation runs were used to provide initial
+observations and to constitute the historical
+database.
+This database was used to acquire the
+knowledge about the FMS domain theory in a
+goal-directed manner.
+The acquired knowledge
+was later used in the experiments to make
+scheduling decisions.
+Simple, composite, and multiple goals were
+used in the experiments.
+A simple goal involves
+using a single contextual attribute for the goal
+coming from a single concept, e.g., for the goal
+concept, MEET DUE-DATES, using minimize the
+number of tardy batches, involves using one attribute of a concept BATCHES as the contextual
+attribute.
+A composite goal addresses more than
+one contextual attribute for the goal concept
+coming from a single concept, e.g., for the same
+goal, MEET DUE-DATES, using minimize the number of tardy batches and also the average tardiness of a batch, involves using two attributes of
+the concept BATCHES as contextual attributes.
+A
+multiple goal inherits contextual attributes from
+two or more concepts, e.g., the goal, MEET
+229
+and IMPROVE MACHINE UTILIZATION,
+using maximize critical machine utilization and
+minimize the number of tardy batches, entails
+using attributes from two concepts BATCHES and
+DUE-DATES
+WORKSTATIONS.
+7.1.
+Empirical eualuation
+To evaluate the performance of FMS-DSS a
+two-stage evaluation procedure was employed.
+In
+the first stage, the performance data from the
+simulation at period To was routed through
+FMS-DSS.
+FMS-DSS evaluated the performance
+data of period To, and selected the necessary
+parameters to improve the performance of the
+system and communicated it to the simulation's
+decision module.
+This experiment was repeated
+for different goals.
+The performance of FMS-DSS
+was compared with that of different dispatching
+rules - earliest due-date (EDD), shortest processing time (SPT), minimum number of jobs remaining (M JR), and first come first serve (FCFS).
+The
+measure used for comparison was the rating on
+the goal attribute, 1 being the historical best and
+0 being the historical worst.
+For composite and
+compound goals, ratings were cumulated.
+The
+results of average performance rating of this stage
+Table 1
+Comparison of FMS-DSS's performance
+Goals (n = 16)
+EDD
+FCFS
+M JR
+SPT
+FMS-DSS
+Simple goals
+Maximum tardiness
+No.
+of tardi bat
+Work-in-process
+Crit.
+mach.
+util
+All mach.
+util
+Stacker util.
+AGV util.
+we output
+Batch output
+0.90
+0.96
+0.54
+0.65
+0.33
+0.44
+0.45
+0.48
+0.55
+0.64
+0.81
+0.55
+0.52
+0.52
+0.53
+0.52
+0.48
+0.60
+0.48
+0.59
+0.60
+0.51
+0.40
+0.53
+0.55
+0.54
+0.70
+0.58
+0.49
+0.46
+0.62
+0.60
+0.66
+0.65
+0.72
+0.75
+0.93
+0.97
+0.84
+0.90
+0.79
+0.94
+0.92
+0.91
+0.95
+Composite goals
+Due-date (DD)
+MHS
+Production rate (PR)
+Mach.
+util (MU)
+2.32
+0.89
+1.86
+0.98
+1.66
+1.06
+2.08
+1.05
+1.39
+1.08
+2.19
+0.91
+1.68
+1.31
+2.36
+1.21
+2.55
+1.86
+3.06
+1.47
+Compound goals
+DD + MU
+OD + wle
+DD + PR
+DO + MU + ww
+OD + MU + w~v + PR
+3.30
+2.77
+4.18
+3.76
+5.61
+2.71
+2.11
+3.74
+3.16
+5.24
+2.30
+1.79
+3.58
+2.70
+4.89
+2.90
+2.22
+4.04
+3.45
+5.81
+3.70
+3.04
+5.08
+4.20
+6.46
+230
+A.R. Chaturvedi et al. / Machine learningfor real-time decision making
+Table 2
+Comparison of FMS-DSS's performance in the presence of
+noise
+Goals
+(n = 16)
+FMS-DSS
+w/o noise
+FMS-DSS
+with noise
+Simple goals
+Maximum tardiness
+No.
+of tardi bat
+Work-in-process
+Crit.
+mach.
+util
+All mach.
+util
+Stacker util.
+AGV util.
+WP output
+Batch output
+0.93
+0.97
+0.84
+0.90
+0.79
+0.94
+0.92
+0.91
+0.95
+0.83
+0.81
+0.70
+0.74
+0.68
+0.77
+0.72
+0.82
+0.78
+Composite goals
+Due-date
+MHS
+Production rate
+Mach.
+util
+2.55
+1.86
+3.06
+1.47
+2.27
+1.53
+2.86
+1.31
+Compound goals
+DO+ MU
+DD+ WIP
+DD+ PR
+DD+ MU + wn'
+OD+ MU+wn,+ PR
+3.70
+3.04
+5.08
+4.20
+6.46
+3.57
+2.89
+4.72
+4.05
+6.20
+is presented in table 1 indicating superior decision making through the use of FMS-DSS over
+traditional static dispatching rules.
+During the second stage, experiments of stage
+1 were repeated, except that data from the simulation was passed through a noise generator before it reached FMS-DSS, adding random noise
+to the data from simulation at period T O. Types
+of noise included missing values for parameters
+and goal attributes and erroneous values for parameters and goal attributes.
+The performance of
+FMS-DSS with and without noise is presented in
+table 2.
+As expected, the means of the performance
+rating for FMS-DSS without noise is greater than
+means of the performance rating for FMS-DSS
+with noise.
+However, the difference is not substantial.
+Even in the presence of noise, FMS-DSS
+outperformed the other scheduling heuristics, except for three goals - maximum tardiness, number of tardy batches, and due-date.
+All these
+occasions involve due-date considerations, and
+hence the earliest due-date rule did well.
+Further, it is evident that as more attributes are
+included in the goal, FMS-DSS clearly outper-
+forms all the dispatching heuristics.
+Also, the
+difference between FMS-DSS with and without
+noise further diminishes due to balancing of the
+effects of noise on different attributes.
+The reported tests do not completely reflect
+the power and scope of FMS-DSS.
+It employs a
+dynamic rating scheme, and the knowledge about
+prior decisions is stored in the context network.
+Instances of the context network consist of parameters determined by heuristic search of the
+highest rating.
+Scheduling knowledge contained
+in the context network is always kept current.
+If
+an exceptional situation occurs changing the historical maximum or the minimum, then the context network is updated based on the new ratings.
+Thus, the time spent on searching for best solution is reduced.
+The true effect of dynamic rating scheme on
+decision is difficult to test.
+Although FMS-DSS
+allows the user to apply weights to the partial
+goals to indicate h i s / h e r preference of contextual
+attributes, in the experiments, for composite and
+multiple goals, cumulative partial goal ratings are
+used assuming that the user wants to put equal
+weights on all the specified contextual attributes.
+In order to make the ratings to have the same
+maximum and minimum base values for the attributes, ratings where calculated at the end of
+the experiments, i.e., experiments were based on
+static data.
+Z2.
+Learning in F M S - D S S
+FMS-DSS's learning process involves creating
+new descriptions of the goal concepts and their
+contexts, and placing them in the taxonomy of the
+domain-specific knowledge, depicted in fig.
+12.
+Whenever a new goal is assigned to FMS-DSS, it
+first creates a hypothesis about description of the
+situation at hand.
+Next, it searches the database
+for instances in support of its hypothesis.
+Depending upon the strength of the match, it creates new concepts or instantiates a context of an
+existing concept, thus adding new knowledge in
+the knowledge base as a generalization of the
+encountered situation.
+FMS-DSS will always find
+a match for a goal concept, but the degree of
+match may vary.
+Thus, if FMS-DSS encounters a
+totally new situation, it will still help the user in
+finding the instances that describe the goal.
+Initially, however, the confidence in the knowledge
+A.R. Chaturvediet al. / Machinelearningfor real-time decisionmaking
+will be low.
+As more instances become available,
+the knowledge base is "fine-tuned", and the confidence increases.
+Although the learning in FMS-DSS involves
+acquiring new concepts, it can also be seen as
+acquiring new rules.
+For instance, the knowledge
+acquired by solving the problem in the above
+session can be represented by the following rule.
+The scheduling goal is to meet the due-data
+at period
+AND
+The context is number-tardy-batches
+THEN Select parameters (X Y Z)
+IF
+This is clearly a learning episode as it recognizes
+and represents the relationship between the
+scheduling goal and the decision parameters under the system conditions described by the attributes of the instances of the context, and can
+be used for future decision making without going
+through the aggregation process.
+The benefits
+realized through the use of FMS-DSS as a
+scheduling system make this approach attractive
+as these benefits are unique to this system.
+They
+include:
+Complexity reduction.
+Complexity is reduced by
+grouping several details concerning entities into a
+single concept in an intelligent manner.
+This allows for reduced control effort and more efficient
+utilization of control resources.
+Object identification.
+FMS-DSS can recognize
+objects as a member of familiar concepts instead
+of unique occurrences.
+Correspondingly, it is able
+to generalize its learning experiences to larger
+instances of observations.
+Redundancy reduction.
+Once FMS-DSS recognizes a concept, it applies previous experience
+instead of relearning it, a decided advantage over
+systems wherein the entire decision process needs
+to be performed for every instance.
+Uncertainty reduction.
+Through its ability to
+classify instances with missing, incorrect, or otherwise inaccurate information, FMS-DSS can
+eliminate some of the uncertainty involved in the
+case of incomplete information situations.
+System's action direction.
+FMS-DSS directs appropriate action to be taken by simulation after
+having classified the object.
+Events relation.
+FMS-DSS classifies the events
+and attributes and establishes the causal and
+temporal relationships between them, thus mak-

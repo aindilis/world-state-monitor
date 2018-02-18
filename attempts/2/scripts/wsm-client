@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+
+use Manager::Dialog;
+use WSM::Util::Client;
+
+my $client = WSM::Util::Client->new;
+
+my $continueloop = 1;
+while ($continueloop and my $input = QueryUser("Command?: ")) {
+  if ($input =~ /qQ/) {
+    $continueloop = 0;
+  } else {
+    print "<$input>\n";
+  }
+}

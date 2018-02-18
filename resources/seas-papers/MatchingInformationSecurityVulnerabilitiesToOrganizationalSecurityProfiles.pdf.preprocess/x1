@@ -1,0 +1,772 @@
+Decision Support Systems 41 (2006) 592 – 603
+www.elsevier.com/locate/dsw
+Matching information security vulnerabilities to organizational
+security profiles: a genetic algorithm approachB
+Mukul Guptaa,*, Jackie Reesb,1, Alok Chaturvedib,2, Jie Chic,3
+a
+Department of Operations and Information Management, School of Business, University of Connecticut, 2100 Hillside Road,
+Storrs, CT 06269-1041, United States
+b
+Krannert Graduate School of Management, Purdue University, 403 West State Street, West Lafayette, IN 47907-2056, United States
+c
+Purdue e-Business Research Center, Purdue University, 403 West State Street, West Lafayette, IN 47907-2056, United States
+Available online 10 August 2004
+Abstract
+Organizations are making substantial investments in information security to reduce the risk presented by vulnerabilities in
+their information technology (IT) infrastructure.
+However, each security technology only addresses specific vulnerabilities and
+potentially creates additional vulnerabilities.
+The objective of this research is to present and evaluate a Genetic Algorithm (GA)based approach enabling organizations to choose the minimal-cost security profile providing the maximal vulnerability
+coverage.
+This approach is compared to an enumerative approach for a given test set.
+The GA-based approach provides
+favorable results, eventually leading to improved tools for supporting information security investment decisions.
+D 2004 Elsevier B.V. All rights reserved.
+Keywords: Information security; Genetic algorithms
+1.
+Introduction
+Information technology (IT) infrastructure has
+evolved into a critical strategy-enabling and supportB
+This research is partially funded by National Science Foundation grants, numbered EIA-0075506 and DMI-01222.
+* Corresponding author.
+Tel.: +1 860 486 6178; fax: +1 860 486
+4839.
+E-mail addresses: mukul.gupta@business.uconn.edu
+(M. Gupta)8 jrees@mgmt.purdue.edu (J. Rees)8
+alok@mgmt.purdue.edu (A. Chaturvedi)8 chij@purdue.edu (J. Chi).
+1
+Tel.: +1 765 494 0320; fax: +1 765 494 1526.
+2
+Tel.: +1 765 494 9048; fax: +1 765 494 1526.
+3
+Tel.: +1 765 494 2667; fax: +1 765 494 1526.
+0167-9236/$ - see front matter D 2004 Elsevier B.V. All rights reserved.
+doi:10.1016/j.dss.2004.06.004
+ing resource for organizations.
+The IT infrastructure
+and information systems, which are so powerful in
+creating and disseminating knowledge throughout
+organizations, also possess weaknesses or vulnerabilities.
+These vulnerabilities range from allowing
+unauthorized access to the data and information stored
+within such systems to the full-scale destruction of an
+organization’s infrastructure.
+Entities such as hackers,
+terrorists, disgruntled employees and business competitors are on the lookout for any vulnerability in the
+information systems of organizations and may seek to
+exploit found weaknesses for psychological, political
+or economic advantage.
+These entities pose a serious
+threat to organizational information systems and the
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+IT infrastructure upon which the systems reside and
+often result in negative financial and other repercussions for the affected organizations.
+Organizations attempt to prevent unauthorized
+access and other harm to their systems by using
+security technologies that address known vulnerabilities in their systems.
+We refer to the organization’s
+collection or portfolio of security technologies used to
+protect against vulnerabilities as the security profile.
+However, any given security technology addresses
+only specific vulnerabilities and could possibly create
+additional vulnerabilities.
+It is worth mentioning that
+the security profile can only reduce the risk of a
+particular vulnerability from being exploited.
+However, for the purposes of this research we assume that if
+a known vulnerability is covered by a particular
+security technology, the risk of that vulnerability being
+exploited is close to zero.
+Additionally, organizations
+also must take into account the cost of using each
+security technology.
+Therefore, it is usually a difficult
+decision for organizations to create and manage a
+security profile that addresses as much vulnerability as
+possible while minimizing the total cost of the profile.
+This paper provides an innovative decision-making
+approach to selecting the appropriate security technologies to address the vulnerabilities in the system.
+The approach provides insights to management for
+managing security risks.
+This paper demonstrates a
+technique that could be incorporated into decision
+support software tools that provide recommendations
+for choosing the best combination of security solutions
+that would minimize the risk for the organization.
+To facilitate the above decision, we present and
+evaluate a Genetic Algorithm (GA)-based approach
+that improves the organization’s ability to choose a
+minimal cost security profile providing maximal
+vulnerability coverage.
+We then compare the GA
+approach to an enumerative approach of evaluating all
+possible security profiles for a given set of test
+problems.
+We perform these evaluations for several
+combinations and sizes of matrices of vulnerabilities
+and security profiles.
+The remainder of the paper is organized as
+follows: Section 2 describes relevant background on
+GAs and how they have been used to address similar
+problems in the past.
+Section 3 presents our research
+definitions of vulnerabilities and security technologies
+and the method used to match vulnerabilities to
+593
+specific security technologies.
+Section 4 contains our
+model of the problem and Section 5 details the
+experimental design.
+Results are reported in Section
+6 and conclusions and future directions are given in
+Section 7.
+2.
+Genetic algorithms for multi-objective
+optimization problems
+The problem of matching vulnerabilities to security
+technologies can be characterized as multi-objective
+since we are trying to create security profiles to
+achieve two objectives: minimize the exposed vulnerabilities of an organization and minimize the cost of
+the security technologies used to address the vulnerabilities.
+As will be discussed later in this paper, such
+multi-objective problems are typically difficult to
+solve without the use of heuristics.
+As an example
+of such a heuristic, genetic algorithm has successfully
+been used in search, single-objective optimization and
+machine learning.
+A general description of the genetic
+algorithm and how it can be designed and implemented for solving single-criterion optimization
+problems appears in [5].
+Researchers have since
+developed techniques for applying GAs to multiobjective problems.
+A survey of various GA-based
+techniques for solving multi-objective optimization
+problems is presented in [3].
+The first approach
+involved combining multiple objectives into one
+objective using addition, multiplication or any other
+combination of arithmetical operations.
+It was argued
+that if the combination of objectives is possible, this
+is not only one of the simplest approaches but also
+one of the most efficient ones [3].
+A weighted combination of fitness functions to add
+or subtract values during the schedule evaluation of a
+resource scheduler, depending on whether or not the
+constraints were violated was used in [12].
+[7,14] also
+use weighted combination of objectives to address
+multi-objective problems.
+Goal programming was
+developed in [2,6] where decision makers have to
+assign targets or goals that they wish to achieve for
+each objective.
+[10,13] have used goal programming in
+conjunction with genetic algorithms to solve multiobjective problems.
+These values are incorporated into
+the problem as additional constraints and the objective
+function tries to minimize the absolute deviations from
+594
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+the targets to the objectives.
+An e-constraint approach
+that optimizes one objective function while considering other objective functions as constraints bound by
+some allowable levels of e i was described in [9] and
+used in [8].
+In this paper, we utilize the weighted sum of
+objectives technique, used in [12] to combine the
+conflicting objectives of minimizing the security
+technology costs of addressing vulnerabilities and
+minimizing the number of uncovered vulnerabilities
+after implementation of security technologies.
+The
+problem with this approach is that it requires some
+information regarding the range of weights [3].
+However, in our problem, a good estimate of the
+weights of the objectives can be made based on the
+type and preferences of the organization.
+Organizations such as financial institutions, for which covering
+vulnerabilities is critical, will put more emphasis on
+maximizing the number of vulnerabilities covered,
+while organizations whose security requirements are
+not as stringent might wish to minimize the cost of
+security while still maintaining an adequate security
+profile.
+3.
+Definition of vulnerabilities and securities
+Organizational information systems and their
+underlying IT infrastructure contain vulnerabilities
+that can be exploited by various entities.
+Organizations
+utilize security technologies to reduce the risk of
+damage presented by these vulnerabilities.
+A RAND
+report [1] identifies a set of generic vulnerabilities
+potentially present in most organizational information
+systems and their supporting infrastructures.
+The
+report provides a generic set of vulnerabilities rather
+than specific bugs or weaknesses in information
+system.
+By utilizing a generic set of vulnerabilities,
+the problem of novel and previously unheard-of threats
+can be addressed.
+For example, a new type of Internetbased attack can be handled using the generic framework, whereas it would be outside a very specific list
+of known vulnerabilities.
+However, the generic
+approach can be easily extended to a more specific
+set of vulnerabilities and security technologies.
+These
+vulnerabilities are classified into seven categories.
+Organizations can then map their information systems
+and infrastructure to these vulnerabilities to provide an
+initial assessment of the state of risk to their systems.
+This list of vulnerabilities and the variables we used to
+represent them in our model is presented in Table 1.
+Organizations address the vulnerabilities described
+above in several ways, including changing business
+processes, employee awareness program and investing
+in security technologies.
+Security technologies reduce
+the vulnerabilities, identify attacks and breaches and
+react to these attacks and breaches.
+Each security
+technology addresses certain vulnerabilities directly
+by design; they reduce certain other vulnerabilities
+indirectly as a second order effect.
+However, security
+technologies can also directly or indirectly create
+certain other vulnerabilities in the system.
+We present
+the generic security technologies described in [1] and
+their variable representation in our model in Table 2.
+These generic security technologies are implemented
+in the context of the organization’s systems using
+actual security technologies.
+Similar classifications
+can be found in a recent NIST report [11].
+Table 1
+Technology vulnerabilities
+Category
+Vulnerability
+Representation
+Inherent Design/
+Architecture
+Uniqueness
+Singularity
+Centralization
+Separability
+Homogeneity
+Sensitivity
+Predictability
+Rigidity
+Malleability
+Gullibility
+Capacity Limits
+Lack of
+Recoverability
+Lack of
+Self-awareness
+Difficulty of
+Management
+Complacency/
+Co-optability
+Electronic
+Accessibility
+Transparency
+Physical
+Accessibility
+Electromagnetic
+Susceptibility
+Dependency
+v1
+v2
+v3
+v4
+v5
+v6
+v7
+v8
+v9
+v 10
+v 11
+v 12
+Behavioral
+Complexity
+Adaptation and
+Manipulation
+Operation/
+Configuration
+Indirect/Nonphysical
+Exposure
+Direct/Physical
+Exposure
+Supporting Facilities/
+Infrastructures
+v 13
+v 14
+v 15
+v 16
+v 17
+v 18
+v 19
+v 20
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+Table 2
+Generic security technologies
+Security
+Representation
+Heterogeneity
+Static Resource Allocation
+Dynamic Resource Allocation
+Redundancy
+Resilience and Robustness
+Rapid recovery and Reconstitution
+Deception
+Segmentation, Decentralization and Quarantine
+Immunologic Identification
+Self-organization and Collective Behavior
+Personnel Management
+Centralized Management of Information Resources
+Threat/Warning Response Structure
+s1
+s2
+s3
+s4
+s5
+s6
+s7
+s8
+s9
+s 10
+s 11
+s 12
+s 13
+595
+abilities is presented in Table 3 [1].
+The organization
+looking to cover its vulnerabilities by investing in
+security technologies has two major goals:
+(1)
+Minimize the number of uncovered vulnerabilities after implementation of security
+technologies.
+(2) Minimize the cost of security to cover
+vulnerabilities.
+Each of these security technologies addresses
+some of these vulnerabilities either fully or partially
+and creates some vulnerability either directly or
+indirectly.
+We make a simplifying assumption that if
+a technology partially covers a vulnerability or
+indirectly creates a vulnerability, the scope is uniform.
+In other words, we do not distinguish how
+severe or mild the value of the variable is. The
+mapping of these security technologies to vulner-
+Achieving these two objectives is not easy since
+the organizations have to constantly make trade-offs
+between security costs and allowing some vulnerabilities to be uncovered.
+Malicious agents can exploit
+these uncovered vulnerabilities resulting in damages
+to the organization.
+In the next section, we present the
+model used to address this problem.
+4.
+Research model
+We now demonstrate that the objective of covering a
+given set of vulnerabilities while minimizing security
+costs and new vulnerabilities introduced as a result of
+Table 3
+Matching security technologies to vulnerabilities
+Security
+s1
+s2
+Vulnerability
+v1
+v2
+v3
+v4
+v5
+v6
+v7
+v8
+v9
+v 10
+v 11
+v 12
+v 13
+v 14
+v 15
+v 16
+v 17
+v 18
+v 19
+v 20
+1
+À0.5
+À1
+1
+À1
+1
+s3
+1
+1
+1
+s4
+1
+1
+À1
+À1
+1
+s5
+1
+0.5
+0.5
+0.5
+0.5
+s6
+1
+1
+1
+1
+1
+s7
+1
+1
+À1
+1
+À1
+1
+0.5
+1
+À1
+0.5
+1
+1
+1
+1
+1
+À1
+1
+1
+À1
+À1
+1
+À1
+À1
+1
+1
+1
+À0.5
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+s9
+1
+À1
+1
+s8
+1
+1
+1
+1
+1
+1
+s 11
+À1
+1
+1
+1
+s 12
+s 13
+À1
+À0.5
+À1
+1
+1
+1
+1
+1
+À1
+À1
+1
+1
+1
+1
+s 10
+À1
+À0.5
+1
+0.5
+1
+1
+À1
+1
+1
+1
+À0.5
+0.5
+1
+1
+0.5
+0.5
+0.5
+1
+0.5
+1
+À0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+À0.5
+1
+1
+1
+1
+0.5
+0.5
+1, Security directly addresses vulnerability; 0.5, security indirectly addresses vulnerability; À0.5, security indirectly creates vulnerability; À1,
+security directly creates vulnerability.
+596
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+incorporating a security technology is a generalization
+of the well-known set-covering problem.
+Set-covering
+is defined in [4] as a finite set X and a family F of subsets
+of X, such that every element of X belongs to at least one
+subset in F. From an optimization standpoint, the
+objective of a set-covering problem is to find the
+minimal subset in F such that the selected subset
+contains all the elements of X. We can also map the setcovering problem into graphs.
+Imagine that each
+element of the set X is represented by edges in the
+graph and each of the vertices in the graph represents a
+subset that contains some edges in the graph; i.e., the
+edges are connected to the vertex.
+The objective of the
+set-covering problem is now to find the minimum
+number of vertices that cover all the edges in the graph.
+The union of the subsets represented by each vertex
+gives us the minimal subset that contains all the
+elements of set X. It has been shown that the setcovering problem is NP-complete [4].
+The objective of the vulnerability-covering problem is to maximize the number of vulnerabilities
+covered while minimizing the cost of security
+technologies.
+However, the implementation of a
+security technology might result in new vulnerabilities.
+We use the term bresidualQ vulnerabilities to
+describe these newly introduced vulnerabilities.
+The
+problem now can be defined such that
+If there exists a set of vulnerabilities V and a set of
+security technologies S whose subsets cover some
+elements in set V, but also result in creating some
+subset of residual vulnerability set R, then the
+problem is to find the minimal subset of S that covers
+all elements in V while having the smallest resulting
+subset of R.
+Representing the above problem through graphs, let
+each unique vulnerability in set V be represented by a
+colored edge.
+Each color represents a unique vulnerability.
+Let each vertex in the graph represent distinct
+security technologies from the set S. Each security
+technology that covers a vulnerability will have an
+edge with that color on the vertex.
+If a vulnerability is
+addressed only by one security technology, it is
+represented by a self-edge.
+The residual set is
+represented by unique vulnerability edges that are
+created after the covering set is determined.
+We now need to ensure that all vulnerabilities are
+covered by finding a minimal set of vertices that cover
+all unique-color edges.
+If we assume that any
+selection of a subset of S results in the same subset
+of set R, our problem is reduced to a set-covering
+problem.
+But if the subset of S results in different
+subsets of set R, our problem is more difficult to solve
+than the set-covering problem.
+Therefore, we can
+assume that our problem is NP-hard and cannot be
+solved in polynomial time.
+From the algorithm
+perspective, the time to find the solution increases
+exponentially with the problem size, i.e., if the
+number of security technologies increases, the time
+to find the solution increases exponentially in the
+number of security technologies.
+A heuristic technique, such as a GA, must be used to search for a good
+solution in such situations.
+A GA was chosen as the heuristic solution to this
+problem for several reasons.
+First, GAs have been
+shown to perform well in similar situations.
+Second,
+and perhaps more importantly, the genetic algorithm
+structure is particularly well-suited to the features of
+the problem being solved and therefore provides a
+very natural representation of the problem.
+We map the vulnerabilities, the security technologies and the residual vulnerabilities into genes or
+strings of a GA. Let each vulnerability in the
+vulnerability set be represented by a single bit in the
+vulnerability gene.
+Thus, the vulnerability profile of a
+firm is represented as,
+V ¼ fvi g8i ¼ 1 . . .
+m
+ð1Þ
+where, v i (i=1.
+. .m) represents individual vulnerability
+and can take two values, 0 or 1.
+The value 0 signifies
+that a particular vulnerability is not present in the
+organization’s information systems and the value 1
+indicates the presence of the vulnerability.
+In this
+research, m is set to 20, as there are 20 generic
+vulnerabilities.
+For example, a vulnerability profile
+d00001011011100010101T indicates that the vulnerabilities: homogeneity, predictability, rigidity, gullibility, capacity limits, lack of recoverability, electronic
+accessibility, physical accessibility and dependency
+are present.
+Every vulnerability has a different significance for
+each organization.
+Some vulnerabilities are more
+critical than others and need to be addressed
+immediately while others are not that critical.
+It may
+be cost effective for the organization to address a
+vulnerability indirectly instead of controlling it
+M. Gupta et al. / Decision Support Systems 41 (2006) 592–603
+directly.
+We assign each vulnerability a weight to
+indicate varying significance to different vulnerabilities.
+The weight for vulnerability v i is represented by
+a i 8i=1.
+. .m. The weights are assigned such that,
+m
+X
+ai ¼ 1
+ð2Þ
+i¼1
+To cover the vulnerabilities, organizations choose a
+set of security technologies.
+Let each security
+technology be represented by a single bit in the
+security gene or string.
+Thus, the security of the firm
+is represented as
+È É
+S ¼ sj 8j ¼ 1 . . .
+n
+ð3Þ
+Each individual security technology can take two
+values, 1 or 0.
+Similar to the vulnerability string, a 1
+represents the presence of the security technology
+represented by that bit and a 0 represents the absence
+of that security technology.
+In this research, n is set to
+13, as there are 13 generic security technologies.
+For
+example, the security profile d1000000001001T indicates the implementation of the following security
+technologies: heterogeneity, self-organization and
+collective behavior and threat/warning response structure.
+Each security technology has an associated cost.
+We represent these costs as relative to each other.
+The
+cost of any security s i is represented by c i 8i=1.
+. .n.
+The costs are assigned such that,
+n
+X
+ci ¼ 1
+ð4Þ
+i¼1
+Once a security technology is chosen, each
+technology bit directly reduces one or more vulnerabilities, indirectly reduces vulnerabilities, indirectly
+creates some vulnerability or directly creates some
+vulnerability.
+For 20 vulnerabilities and 13 security
+technologies, the matching of the security technologies and vulnerabilities is presented in Table 3 [1].
+Therefore, after a security technology is implemented, we must reassess the vulnerabilities that
+the organization’s information systems still possess.
+We call this the residual vulnerability portfolio.
+This
+residual vulnerability exists either because of some
+uncovered vulnerability, some partially covered
+vulnerability or can be directly or indirectly created
+by implementation of security technologies.
+597
+We represent the residual vulnerability portfolio
+by a string with each bit representing the same
+vulnerability described by the corresponding bit in
+the vulnerability string.
+Each bit in residual vulnerability string also has the same weight as the
+corresponding bit in the vulnerability.
+The residual
+vulnerability of the firm is represented as
+R ¼ fri g 8i ¼ 1 . . .
+m
+ð5Þ
+Each bit in the residual vulnerability string can have
+three values: 1, 0.5 and 0.
+The value 1 represents
+the presence of the particular vulnerability and the
+value 0 represents the absence of that vulnerability.
+The value 0.5 represents the presence of a partially
+covered vulnerability or an indirectly created vulnerability.
+By partially covered vulnerability, we refer
+to the fact that the technology was able to reduce
+the spread of vulnerability and limited its damage,
+however, the technology failed to address the
+underlying cause of vulnerability.
+Thus, the technology managed to reduce the risk but did not
+eliminate the risk.
+The coverage of vulnerabilities
+by security technologies can be described by a
+matrix t ij 8i=1,.
+.,m and j=1,.
+.,n. The sample
+matrix of t ij is described in Table 3.
+The residual
+vulnerability is determined based on the following
+rules (These rules are exhaustive and are not
+dependent on the order of rule application.):
+(1)
+(2)
+(3)
+(4)
+(5)
+(6)
+If v i =0 or 1 and any t ij =1 for 8j/s j =1, then r i =0.
+If v i =0 and all t ij =0 for 8j/s j =1, then r i =0.
+If v i =1 and all t ij =0 for 8j/s j =1, then r i =1.
+If v i =0 and no t ij =1 for 8j/s j =1 and any t ij =À1
+for 8j/s j =1, then r i =1.
+If v i =0 and no t ij =1 for 8j/s j =1 and any t ij =À0.5
+for 8j/s j =1, then r i =0.5.
+If v i =1 and no t ij =1 for 8j/s j =1 and any t ij =0.5
+for 8j/s j =1, then r i =0.5.5.
+Experimental design
+This section describes the specific implementation
+of the GA used to search for a good solution to the
+model presented above.
+We also present the details of
+the experiments run to demonstrate the approach.
+The
+same problem was then attempted using an enume-
+598

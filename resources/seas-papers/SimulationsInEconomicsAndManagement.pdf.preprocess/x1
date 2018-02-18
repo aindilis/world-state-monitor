@@ -1,0 +1,216 @@
+Future Direction
+Socialware is a new concept for network community support [2].
+We believe it opens up new areas
+of application for a multiagent framework.
+These
+areas include:
+implementing socialware as a multiagent system,
+namely how to make a coalition of agents, and how
+humans and agents can effectively collaborate as a
+system.
+c
+References
+• Modeling the behaviors of communities;
+• Structuring communities;
+• Enabling flexible communication channels;
+• Learning and collaboration of users and agents;
+and
+• Mediating public information spaces and personal
+spaces, including balancing between privacy and
+open opportunity.
+There are still several technical challenges in
+1.
+Foner, L.N. A multi-agent referral system for matchmaking.
+In Proceedings of PAAM’96 (Apr. 22–24, London).
+The Practical Application Company, Lancashire, 1996, 245–261.
+2.
+Ishida, T. Towards CommunityWare.
+In Proceedings of PAAM’97
+(Apr. 21–23, London).
+The Practical Application Company, Lancashire, 1997, 7–21.
+3.
+Kautz, H., Selman, B. and Shah, M. Referral Web: Combining
+social networks and collaborative filtering.
+Commun.
+ACM 40, 3
+(Mar. 1997), 63–65.
+4.
+LaLiberte, D. and Woolley, D. Presentation features of text-based
+conferencing systems on the WWW.
+Computer-Mediated Commun.
+4, 5 (May 1997).
+5.
+Matsubara, S., Ohguro, T. and Hattori, F. CommunityBoard:
+Social meeting system able to visualize the structure of discussions.
+Simulations in Economics and Management
+Alok R. Chaturvedi and
+Shailendra R. Mehta
+Economics addresses this basic problem: There are n
+agents interacting with each other in m markets.
+We
+want to find out the equilibrium set of actions of each
+of the agents in each of the markets as well as the
+associated prices and quantities.
+As agents and markets increase in number, the computing power
+required to solve this problem increases exponentially
+in nm, and inversely with the level of precision one
+wishes to achieve.
+It is clear, as Rust [1] eloquently argues, that for
+an even moderately complex economic model, there
+is very little hope of actually solving the problem.
+This
+has, in fact, spawned more and more literature on
+impossibility theorems (also surveyed by Rust) pertaining to the computation of economic problems.
+One solution to this conundrum is to have agentbased models.
+Here, the power and intelligence of
+real-life markets is mimicked in the laboratory populated by agents acting in markets exactly as they are
+supposed to in real life.
+Rather than trying to compute the solution to models, we actually let the market mechanism find one for us.
+Again, as Rust points
+out, the computing power required now only increases
+exponentially in the number of markets, m. This route
+provides an acceptable theoretical alternative.
+This
+is the motivation behind the Synthetic Economy for
+Analysis and Simulation (SEAS) project.
+SEAS is a distributed, interactive, real-time environment for conducting large-scale experiments and
+60
+March 1999/Vol.
+42, No. 3 COMMUNICATIONS OF THE ACM
+simulations in areas where interactions among
+agents need to be studied.
+SEAS replicates the real
+world in most crucial dimensions, such as competition, regulation, decision variables, and interaction
+dynamics.
+It consists of interlinked goods, stock,
+bond, labor, and currency markets, as the Figure in
+this sidebar shows.
+In these markets, two types of
+agents interact: live, that is, people acting as buyers,
+sellers, regulators, intermediaries; and virtual, or
+artificially intelligent software agents, that mimic
+human consumers in a narrow domain.
+SEAS is a dynamically reconfigurable environment
+structured around the interplay of human decisions
+and game events that requires active involvement of
+participants.
+It helps participants understand the
+sources and motivations underlying the decisions by
+placing them in the shoes of executives running the
+firms in different points in time and challenging them
+to do better.
+Games dealing with current or future situations help explore the potential implications of
+various courses of action and raise important questions for further investigation.
+A game design requires four steps: setting the
+geography of the game; designing the game board,
+pieces and scoring; customizing the database; and
+calibrating the artificial agents’ parameters to match
+that of the real consumers.
+SEAS simulation process
+consists of three steps:
+• Pre-game briefing.
+It provides an industry overview
+of the players and their strategic positions and the
+rules of engagement.
+In Proceedings of Knowledge-based Intelligent Electronic Systems
+(KES’98) (Apr. 21–23, Adelaide, Australia).
+IEEE, Piscataway, N.J.,
+423–428.
+6.
+Nakanishi, H., Yoshida, C., Nishimura, T. and Ishida., T. FreeWalk: Supporting casual meetings in a network.
+In Proceedings of
+CSCW’96, (Nov. 16–20, Boston.).
+ACM, N.Y., 1996, 308–314.
+7.
+Nishimura, T., Yamaki, H., Komura, T., Itoh, N., Gotoh, T. and
+Ishida, T. Community Viewer: Visualizing community formation
+on personal digital assistants.
+In Proceedings of IJCAI’97 Workshop
+on Social Interaction and Communityware (Aug. 23–29, Nagoya,
+Japan).
+Morgan-Kaufmann, San Francisco, 1997, 25–30.
+8.
+Yoshida, S., Kamei, K., Yokoo, M. Ohguro, T., Funakoshi, K. and
+Hattori, F. Community visualizing agent.
+In Proceedings of
+PAAM’98 (Mar. 23–25, London).
+The Practical Application Company, Lancashire, 1998, 643–644.
+Makoto Yokoo (yokoo@cslab.kecl.ntt.co.jp) is a research scientist
+at NTT Communication Science Laboratories, Kyoto, Japan.
+Shigeo Matsubara (matsubara@cslab.kecl.ntt.co.jp) is a research
+scientist at NTT Communication Science Laboratories, Kyoto, Japan.
+Sen Yoshida (yoshia@cslab.kecl.ntt.co.jp) is a researcher at NTT
+Communication Science Laboratories, Kyoto, Japan.
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation on the first page.
+To copy otherwise, to republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee.
+Fumio Hattori (hattori@cslab.kecl.ntt.co.jp) is the executive
+manager of the Computer Science Laboratory at NTT Communication
+Science Laboratories, Kyoto, Japan.
+Takeshi Ohguro (ohguro@cslab.kecl.ntt.co.jp) is a research
+scientist at NTT Communication Science Laboratories, Kyoto, Japan.
+• Game playing.
+Here, the participants try out their long-term
+strategic and short-term tactical moves, evaluate their performance periodically, and
+make adjustments.
+• After-action review.
+Participants are allowed to develop
+strategic insight by reviewing
+the performance of each of the
+groups, analyzing the moves,
+countermoves and their effectiveness, and learning from collective experiences.
+© 1999 ACM 0002-0782/99/0300 $5.00
+Live Agent
+Live Agent
+Live Agent
+Live Agent
+Firms
+Live Agent
+Several simulations and experiments have been conducted using
+SEAS.
+For details, see [2].
+c
+Live Agent
+Synthetic
+Goods and
+Services
+Stock
+Labor
+Bond
+Currency
+Economy
+Virtual Agents
+Virtual Agents
+Virtual Agents
+Virtual Agents
+Consumer
+References
+1.
+Rust, J. Dealing with the complexity of economic calculations.
+Workshop on Fundamental Limits to Knowledge in Economics.
+(Santa
+Fe Institute, July 31–Aug. 3, 1996).
+2.
+Chaturvedi, A. R., and Mehta, S. R. Synthetic Environments for
+Analysis and Simulations (SEAS): A Technical Report.
+Technical
+Paper, Purdue University, Aug. 1998
+Alok R. Chaturvedi (alok@mgmt.purdue.edu) is an
+associate professor of information systems in the Krannert School of
+Management at Purdue University, West Lafayette, Ind.
+Shailendra R. Mehta (mehta@mgmt.purdue.edu) is Director,
+Entrepreneurship Initiative in the Krannert School of Management
+at Purdue University, West Lafayette, Ind.
+SEAS consists of a fully functioning synthetic economy
+with interlinked goods and services, bond, labor, and currency
+markets that closely replicates essential aspects of internal and
+external business environments facing a firm.
+Teams of human
+participants represent the producer side of the economy, while
+the demand side can be represented in desired detail by
+arbitrarily large numbers of artificial agents.
+© 1999 ACM 0002-0782/99/0300 $5.00
+COMMUNICATIONS OF THE ACM March 1999/Vol.
+42, No. 3
+61

@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+use WSM;
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+$UNIVERSAL::agent = UniLang::Agent::Agent->new
+  (Name => "World-State-Monitor",
+   ReceiveHandler => \&Receive);
+$UNIVERSAL::agent->DoNotDaemonize(1);
+
+$UNIVERSAL::wsm = WSM->new();
+
+
+sub Receive {
+  my %args = @_;
+  $UNIVERSAL::wsm->ProcessMessage
+    (Message => $args{Message});
+}
+
+$UNIVERSAL::wsm->Execute();

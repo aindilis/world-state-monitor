@@ -1,0 +1,528 @@
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+183
+Investigating the Effectiveness of
+Conditional Classification: An
+Application to Manufacturing Scheduling
+Alok R. Chaturvedi and Derek L. Nazareth
+familiar with a limited set of manufacturing configurations
+and operating conditions, and are likely to perform below
+expectations when faced with unfamiliar problems.
+In such
+situations, the availability of alternative knowledge sources
+assumes vital importance to the construction and maintenance
+of KBS’s. Given the paucity of human scheduling experts,
+the availability of universal scheduling procedures that can
+be codified is an unlikely prospect.
+Therefore, creation of
+a scheduling knowledge base will be data driven to some
+extent, drawing from basic structural knowledge from the
+experts coupled with information on historical performance of
+a scheduling system.
+Integration of this knowledge requires the
+extraction of meaningful “rules” concerning the functioning
+of the domain, drawing from a set of robust observations,
+coupled with some general induction principles.
+This process
+I. INTRODUCTION
+of autonomous knowledge extraction has been termed machine
+NOWLEDGE-BASED SYSTEMS (KBS) are finding learning.
+Several different forms of machine learning have been
+increasing use as viable options for problems involving
+human judgment.
+These systems operate using a set of knowl- devised.
+In general, they can be differentiated on the basis
+edge that captures the logic needed to address the problem of the learning principle involved, and the knowledge strucat hand.
+This knowledge may be represented in a variety of ture created.
+Learning strategies available include learning
+formats including production rules, semantic nets, decision by being told, learning by example, learning by observatrees, frames, and the like.
+Most KBS’s are built around a core tion, learning by analogy, learning by explanation, learning
+set of knowledge that covers the bulk of cases presented to the by discovery, connectionist learning, genetic learning, and
+system.
+With time, this knowledge is updated and enhanced to the like [7].
+Knowledge representations employed include
+cover additional cases, rectify problematic cases, and expand neural networks, predicate calculus, decision trees and tathe scope of the system.
+The sources of this knowledge bles, semantic nets, frames, deep domain models, plans, and
+include recognized human experts, documented procedures, scripts, among others [6].
+A rather popular inductive stratobservations, among others.
+For the most part, human experts egy is concept learning, which is a form of learning by
+are the preferred source as they provide immediate access example, wherein learning occurs in a supervised mode, and
+to knowledge, reasoning concerning its usage, and mecha- the acquired knowledge is coded in the form of a decinisms for rectifying noticeable errors and gaps.
+A variety of sion tree.
+This method has been implemented in several
+mechanisms have been devised to extract this knowledge from algorithms, most notably ID3 [19], and C4 1221.
+It is a
+human experts [2].
+In some domains human experts may be simple yet elegant approach to discovering rule patterns based
+hard to find, or if available, may possess expertise in only on generalizable concepts that have little intrinsic semantic
+a portion of the domain.
+The scheduling of manufacturing meaning.
+However, its elegance, ease of implementation,
+systems is a good example of this.
+It has been argued that and general accuracy make it a popular form of machine
+there are few, if any, recognized scheduling experts [12].
+Even learning.
+There are currently several commercial products
+if experts are available, it is expected that they would be that implement this basic algorithm for several computer
+platforms, including First Class Fusion(TM)from Programs in
+Manuscript received October 23, 1992.
+Review of this manuscript was
+Motion, RulemastedTM) from Radian, and Michie’s Expertprocessed by Editor S. S. Erenguc.
+A. R. Chaturvedi is with the Krannert Graduate School of Management, Ease(TM).
+Purdue University, West Lafayette, IN 47907.
+Concept learning is based on information content (in an
+D. L. Nazareth is with the University of Wisconsin-Milwaukee, School of
+information theoretic sense) of subsets formed from a training
+Business Administration, Milwaukee, WI 53201 USA.
+IEEE Log Number 9400868.
+observation set based upon externally specified concepts, and
+Absfract- This paper examines the problem of multidimensional classification,an automated learning process where “rules”
+are to be inferred on separate but related aspects of a problem,
+using identical or overlapping data sets.
+A general framework
+describing the various types of multidimensional classification
+is provided.
+The paper specifically concentrates on conditional
+classification, wherein the order of classification is based on domain semantics.
+Drawing from concept learning and information
+theory, algorithms are presented for acquiring tree-structured
+knowledge from available data.
+An application to manufacturing
+scheduling is presented.
+Results indicate that conditional classification may provide some ability to better interpret related
+decisions in automated manufacturing contexts.
+Further work is
+necessary to ascertain if the approach is robust, particularly on
+more complex decisions, larger data sets, and noisy data.
+K
+0018-9391/94$04.00 0 1994 IEEE
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+184
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+can be traced back to work by Hunt [lo], [ll].
+It has
+been applied to several problems including chess end-game
+strategies [ 191, assessing credit requests [5], selection of
+statistical significance tests [15], among others.
+The overriding assumption is that the recommendation to be made
+is characterized by a single dimension.
+In the chess endgame example, the dimension of interest is the number of
+moves needed to capture the opposing king; in the statistical
+Unldimenslonal
+Observation sel
+system, the output dimension is the statistical test that is
+clarsnlcation
+catqoriea
+most appropriate for comparing the means of two populations.
+While this approach may be useful for problems of Fig.
+1.
+Simple classification.
+involving a single decision, it becomes problematic when
+recommendations are to be made about several aspects of
+the system, either jointly or in sequential fashion.
+Under
+11.
+MULTIDIMENSIONAL
+CLASSIFICA~ON
+these circumstances an alternative approach is warranted.
+Multidimensional classification represents a variant of tradiUsing the manufacturing scheduling example, as part of the
+scheduling process, it is expected that decisions need to be tional machine learning using semantic-free concepts.
+It allows
+made regarding the release of new orders into the system for the creation of multiple sets of training rules for several
+as well as the assignment of individual workpieces to avail- output dimensions using the same input data.
+While it may be
+able workstations.
+Though related, these are clearly different possible to employ different learning strategies for different
+decisions.
+If concept learning principles were to be applied dimensions, this paper considers the use of the same inductive
+to these decisions separately, the result would represent two mechanism for the multiple dimensions of interest.
+Several
+independent decision trees to be used at different points by forms of multidimensional classification are possible, some
+the KBS.
+However, any attempt to view these two decisions of which are described here.
+A more complete treatment of
+as being strictly independent is problematic, in that an in- multidimensional classification is available in [181.
+This paper is concerned with concept-based conditional
+complete view of the problem is adopted.
+Correspondingly,
+some manner of integrating the two decision outcomes during classification.
+It should be stressed that conditional classifithe induction process is necessary.
+One approach would be cation involves a definite sequence of output dimensions for
+to view these decisions jointly, i.e., for a specific scenario classification.
+Thus it is different from independent, joint,
+(described by batch characteristics and cell status), the pre- and sequential classification methods.
+These differences are
+ferred decision strategies for release and assignment need illustrated through a schematic representation of the classito be identified as a dichotomous pair.
+This approach in- fication types.
+Simple classification involves the mapping of
+volves an assumption of probabilistic independence between observations characterized by several dimensions onto a single
+the two decisions, which is clearly not the case.
+A more output dimension, as illustrated in Fig.
+1.
+Examples of simple
+likely scenario involves making a recommendation on the classification include diagnosis of soybean plant diseases based
+release decision first, and using that resulting information in on observable symptoms [13], credit card assessment [5],
+conjunction with batch and cell information to make the as- and classification of mushrooms as poisonous or not based
+signment decision.
+This situation is characterized as a process on physical characteristics [23], [25].
+The ID3 algorithm is
+of conditional classification, whereby observations are first representative of simple classification.
+It is possible to use the same observations to classify
+classified on one dimension, and that information is then
+employed to classify the observations on subsequent dimen- data on more than one dimension, e.g., manufacturing release and assignment decisions, based on batch and cell
+sions.
+The paper discusses the importance of conditional classi- status information.
+If the classification exercise is performed
+fication in the inductive process.
+It outlines the limitations using the same algorithm multiple times on the identical
+of independent or single dimension classification as a means observations, but employing different output dimensions for
+of deriving knowledge when classification is necessary on classification, the learning strategy is termed independent
+multiple dimensions.
+A set theoretic formulation of the classification, and is illustrated in Fig.
+2.
+While independent
+conditional classification problem is presented.
+Information classification is possible in principle, it is unlikely that the two
+content measures, viz.
+entropy are introduced.
+These are different classification dimensions will involve the same input
+subsequently adapted to deal with the problems of joint dimensions for characterization, and yet be totally independent
+and conditional classification.
+Different forms of conditional of each other as far as the resulting decision tree is concemed.
+classification are outlined.
+An algorithm is developed for Nonetheless, this situation is presented for completeness of
+the situation where semantic knowledge is available for the analysis.
+An example of independent classification would
+selecting sequence of the output dimensions for classi- be a situation where an applicant’s demographic, scholastic,
+fication.
+The application of this algorithm to a problem and financial information was used to independently classify
+of manufacturing scheduling is described.
+Implications applicant eligibility for admission and financial aid.
+of concept-based conditional classification round out the
+Given the possible relationships that can exist between
+two or more output dimensions for classification, it can be
+paper.
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+CHATURVEDI AND NAZARETH: EFFECTIVENESS OF CONDITIONAL CLASSIFICATION: APPLICATION TO MANUFACTURING SCHEDULE
+185
+Enhanced
+on
+categorlesfor
+dimenrion-1
+Cladtication
+categorlecrfor
+dimendon-1
+dimension-2
+Fig.
+4.Fig.
+2.
+Independent classification.
+Sequential classification.
+CialuMdon
+categorimfor
+dimension-1
+Observation Sa
+CiasrMeation
+categorlesfor
+dimension-2
+Fig.
+3.
+Joint classification.
+Cladtication
+0b.Smtion.a
+categofor
+dimension-1
+Classiflaition
+categorlecr for
+dimension-2
+Fig.
+5.
+Conditonal classification.
+speculated that the relationship may be viewed as probabilistically independent, but correlated.
+In this case, the
+classification is to be performed for both dimensions jointly, as
+in classification of restaurants into joint categories of quality
+(good, fair, poor) and cuisine (French, American, Oriental,
+etc.) simultaneously.
+This essentially involves treating the
+number of possible outcome categories as a multiple of the
+outcome categories for each outcome dimension, and then
+employing simple classification strategies.
+This strategy is
+termedjoint cluss$cation, and is illustrated in Fig.
+3.
+Note that
+joint classification will produce a single decision tree, unlike
+independent classification, which produces multiple decision
+trees.
+Though joint classification would appear to be a reasonable strategy from a probabilistic point of view, it remains
+problematic for several reasons.
+First, it is dependent on the
+number of output dimensions and their individual categories.
+This is subject to combinatorial explosion problems.
+Second,
+a number of the resulting (cross) categories may not have
+observations that can be mapped to them.
+Worse still, the cross
+categories may be meaningless, particularly if the decisions are
+marginally related.
+Lastly, the lack of semantic information
+concerning the cross categories makes for a less meaningful
+learning exercise.
+A more likely scenario involves the use of
+the results from one classification to guide the classification
+for subsequent dimensions.
+This approach is termed sequential
+class$cation, and is illustrated in Fig.
+4.
+In this case the actual
+output categories are aggregated with the existing input classification dimensions and a subsequent simple classification
+exercise is performed.
+If the second decision can be shown to
+be dependent on the first, then this approach may be selected.
+An example of sequential classification in a medical context
+involves the diagnosis of possible infection and the selection
+of subsequent confirmatory testing strategy based on patient
+symptoms.
+Though sequential classification has the attraction of being
+able to use the output of a prior decision for subsequent
+decision making, it does require the indiscriminate use of
+earlier input classification dimensions.
+This may be problematic, particularly if it can be argued that the input dimensions
+for the subsequent decisions need to be different from that
+of the prior decisions.
+Likewise, the importance of the prior
+decision is now downplayed considerably as it forms just
+one of the inputs to the next stage.
+It is suggested that a
+different approach be adopted for such situations, wherein the
+importance of the overall classification from the first stage play
+a significant role in subsequent classifications.
+This involves
+the use of conditional probabilities for the second classification
+given the prior probabilities for the first classification.
+This
+approach is termed conditional class$cation, and is illustrated
+in Fig.
+5.
+Diagnosis of possible infections and prescription
+of appropriate medication, based on patient symptoms and
+characteristics, is representative of a conditional classification
+situation.
+Conditional classification requires a different approach to
+computing the information content than does simple, independent, joint, or sequential classification.
+Also, unlike
+the prior approaches, where the same process can be used
+for different classification stages, conditional classification
+requires different process to be adopted during different stages.
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+186
+IEEE TRANSACTIONS ON ENGINEERING MAMAGEMENT, VOL.
+41, NO. 2, MAY 1992
+111.
+CONDITIONAL CLASSIFICATION OF DISCRETE
+DATA
+This section covers the problem of conditional classification using observations that are specified using discrete
+scales.
+Different forms of conditional classification that are
+expected to be encountered are discussed.
+The concept of joint
+classification is also introduced, though not employed here.
+The notation employed for computing information content of
+the respective classification stages is then outlined.
+In this
+paper, information content is specified in terms of entropy,
+drawing from work by Quinlan [19].
+Other measures have
+been employed for classification including chi-square statistics
+[9], [14], G-statistics [16], and impurity measures in the GIN1
+function [4], among others.
+While some studies have shown
+that these measures perform differently in terms of the size of
+the resultant tree, with information theoretic measures producing more parsimonious trees [3], [17], the overall accuracy of
+these measures appears to be comparable [ 171.
+Given the wide
+use and relative accuracy of the entropy-based measures, they
+formed the basis for the creation of conditional classification
+algorithms in this paper.
+Formulae for computing entropy
+and marginal entropy in the single dimensional classification
+are provided.
+The concept of joint entropy for simultaneous multiple classification is also introduced.
+Mechanisms
+for computing conditional entropy, where classification is to
+be performed sequentially on several dimensions are also
+included.
+Finally, an algorithm is presented for conditional
+classification when conceptual (or semantic) information is
+available.
+the basis of intrinsic information content (usually expressed
+as entropy).
+Several strategies are available, including optimal
+selection methods (branch and bound algorithms), heuristic
+selection methods (best-first, hill-climbing), and exhaustive
+selection methods (breadth-first, depth-first, random selection).
+Candidate selection criteria include parsimony of the resulting
+decision tree, and the greatest marginal improvements in
+classification at each stage.
+Stopping rules are guided by
+complete classification in the case of optimal methods, and
+prespecified maximal classification levels for other methods.
+This form of classification is termed content-based conditional
+class8cation.
+It is also possible that the expert or decision maker may
+elect to specify a sequence for selection of output dimensions
+for classification.
+The sequence may be guided by prior experience, personal knowledge, or individual preference.
+While
+this may not necessarily be extremely scientific, it serves
+as a mechanism for direct interaction on the part of the
+decision maker, thereby providing him or her the opportunity
+to explore the problem space and gain a better understanding
+of the decision task.
+This form of classification is termed
+user-specijied conditional classijication.
+This paper restricts itself to concept-based conditional classification, as it best fits the problem at hand.
+Algorithms
+for concept-based conditional classification are developed.
+Information measures for independent, joint, and sequential
+classification are also presented.
+B. Notation
+A. Forms of Conditional Classijication
+Conditional classification represents a situation where induction is performed on the output classification dimension in
+a well defined sequence.
+The selection of the first output dimension to classify on could be based on semantic information
+relevant to the classification task.
+This form of classification
+is termed concept-based conditional classijication, as it is
+driven by externally provided semantic concepts.
+In some
+situations, the sequencing of classification dimensions may be
+specified by structural or temporal constraints.
+An example is
+a flexible manufacturing case, where the release classification
+necessarily precedes the assignment classification task.
+Not
+only is there an explicit temporal relationship, but in this case
+the assignment decision is affected by the release decision.
+This assumes that scheduling is being performed with minimal
+lookahead, i.e., decisions are made based on the prevailing
+state of the system.
+Alternative scheduling practices may
+choose to set aside such assumptions, as in cases where an
+entire machine sequence is identified prior to the release of
+the workpiece into the system.
+This study concentrates on
+scheduling practices that are based on the primacy of decisions,
+wherein every decision is evaluated based upon the current
+state of the system.
+This approach provides greater flexibility
+in the scheduling process, at the potential expense of greater
+scheduling overhead.
+In case no semantic knowledge is available, the selection of
+the first dimension to classify upon can be driven by information theoretic methods.
+These strategies generally classify on
+The notation employed in this paper follows a set theoretic
+notation.
+Let
+Xi be an input dimension for classification, i = 1 , 2 , . . .
+, n
+Cj be an output dimension for classification, j = 1,2, . . .
+, m
+xip be the possible states (values) for X i , p = 1,2, . . .
+,ai
+cjn be the possible states (values) for Cj, q = 1 , 2 , . . .
+, b j
+T be the set of training observations
+S be a subset of T , S C T
+f ( S ,cjq) be the fraction of S that belongs to cjq
+Likewise, let
+f(S,cjlqlcjzq2)be the fraction of S that belongs to cjlql
+and cjZq2jointly,
+or more generally,
+f(S,~ j , . ~ , ~ = l ,be
+. . the
+. , ~fraction
+)
+of S that belongs to
+Cjlql cj2qz, . . ,Cjmqm jointly.
+The information content of any subset S of T can be
+expressed as the entropy ( H )of that set.
+In general, the entropy
+of a set is given by
+WS) = -CL(Y)
+(1)
+Y
+where
+where p(y) represents the proportion of observations that are
+classified into distinct subsets on dimension y. In the interests
+Authorized licensed use limited to: Purdue University.
+Downloaded on December 3, 2008 at 16:37 from IEEE Xplore.
+Restrictions apply.
+187
+CHATURVEDI AND NAZARETH: EFFECTIVENESS OF CONDITIONAL CLASSIFICATION: APPLICATION TO MANUFACTURING SCHEDULE
+of consistency with traditional information theory, the formula
+used for entropy will be represented as
+H Y W
+More generally, this can be expressed as
+m
+(3)
+P(Y>.10!22(P(Y))
+b,
+r=l q,=1
+Y
+(10)
+x log,(f(S, cjrqrr=l,...,m))
+with the understanding that in case p(y) = 0, then a value of
+0 will be used in the entropy computation.
+The use of 2 as
+the base for the logarithm stems from early work by Shannon
+[24] and is retained for consistency.
+The use of any other base
+would yield similar results.
+In general, the desirable properties of an measure of entropy include symmetry, expandability, decisivity, additivity,
+recursivity, among others.
+It has been shown that entropy
+measures based on Shanon’s original formulation possess these
+properties [l].
+Additionally, entropy measures should also be
+measurable, monotonic, and stable [8], which also holds for
+the basic measure adopted here.
+Using the notation developed
+here, entropy is defined for a subset S of T, based’upon a
+classification dimension C,, and is given by
+The procedures for computing entropies for selection of a
+dimension Xi and the stopping rule remains the same as in
+the independent case, except that the joint entropy formula is
+now employed.
+In cases when classification has already been performed
+on one output dimension, e.g., z, it is possible to determine
+conditional entropy, for classifying other on another output
+dimension, e.g. y. Information theoretic formulations of conditional entropy generally take the form
+Y
+Z
+This can be specialized to the problem at hand, in which case
+the entropy is given by
+b3
+f(S,C j q )
+HAS) = -
+log,(f(S,
+CjqN
+j = 172, * .
+,m
+q=l
+(4)
+When a specific dimension Xi is used for classification, then
+the resulting entropy is given by
+a,
+f(sI xi=.ip> . H ~ ( 1SX, = zip)
+H ~ ( SXi)
+, =-
+(5)

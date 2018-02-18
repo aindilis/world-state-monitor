@@ -1,0 +1,1695 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 15:52:09 May 27, 2010 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:10:45 Sep 24, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	outline: 0; 
+	font-weight: inherit; 
+	font-style: inherit;  
+	font-size: 100%; 
+	font-family: inherit; 
+	vertical-align: baseline; 
+}
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color:black;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/bg-main.gif) repeat-x top left #e6e3df; /*change for each site*/
+	text-align:center;
+	font:13px Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Arial,Helvetica,sans-serif;
+}
+
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	/*text-align:left;*/
+	font-weight:normal;
+	vertical-align:top;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	/*font-family:"Myriad Pro", Arial, Helvetica, sans-serif;*/
+	letter-spacing:.5px;
+}
+.navSubH2{
+	font-size:15px;
+	color:#A37B2C;
+	width:230px;
+	padding-bottom:4px;
+}
+h1 {
+	font-size:22px;
+	color:#FFFFFF;
+	letter-spacing:0px;
+}
+h2, h3, h4{
+	color:#a37b2c; /*change for other sites*/
+	clear:left;
+	
+}
+h2 {
+	font-size:17px;
+}
+h3 {
+	font-size:16px;
+	color:#a37b2c; /* Change based on site type */
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style:italic;
+}
+ol, ul, li {
+	list-style:none;
+}
+a {
+	color:#256F9A; /*a97000*/
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+/*===================================*/
+
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+/*===================================*/
+
+#wrapper-all { /* used for compatible centering of content */
+	width:992px;    /* master width = all columns + all padding + shadows */
+	margin:0 auto;
+}
+
+#wrapper-2col{
+	margin:10px 0 0 20px;
+	padding:0 0 20px 0;
+	float:left;
+	width:969px;
+	text-align:left;
+	font:.9em Tahoma, Arial, Verdana, sans-serif;
+	color:#333;
+	line-height:18px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/2col-bg.gif) repeat-y;
+
+}
+
+#wrapper-1col{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/wrapper1col-bg.png) repeat-y top;
+	_background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/wrapper1col-bg.gif) repeat-y top;
+	border-top:10px solid #333;
+	background-color:#333333;
+	float:left;
+	width:969px;
+	margin-left:9px;
+	text-align:left;
+	font:.9em Tahoma, Arial, Verdana, sans-serif;
+	color:#333;
+	line-height:18px;
+	border-left:1px solid #595959;
+	border-right:1px solid #595959;
+
+}
+#wrapper-1col #col1 .full{
+	display:inline;
+	float:left;
+	line-height:18px;
+	padding:30px;
+	width:900px;
+}
+
+
+
+#wrapper-header, #wrapper-footer { /* used for faux column backgrounds */
+	float:left;
+	width:100%;
+	text-align:left;
+}
+
+/*Primary Design Elements*/
+#wrapper-2col h1{
+	color:#fff;
+	background:#292622;
+	width:677px;
+	padding-left:24px;
+	line-height:47px;
+	margin-right:18px;
+	float:right;
+	_display:inline; /* IE6 Fix */
+}
+
+#wrapper-2col #col1{
+	border-top:1px solid #666;
+	float:right;
+	margin:0px 19px 0px 0px;
+	width:700px;
+	position:relative;
+}
+#wrapper-2col #col2{
+	float:left;
+	margin:-47px 0 0px;
+	width:230px;
+	padding:0 10px;
+	position:relative;
+}
+
+/*Halfblock and fullblock breakdown*/
+#col1 .full{
+	float:left;
+	display:inline;
+	margin:20px;
+	width:660px;
+	line-height:18px;
+}
+#col1 .full p{
+	margin:10px 0 12px;
+	}
+#col1 .full h2, h3, h4, h5{
+	margin-bottom:12px;
+}
+#col1 .full h2{
+	line-height:20px;
+	font-size:20px;
+	margin:5px 0 20px;
+	border-top:1px solid #c7c7c7;
+	}
+#col1 h2 span{
+	background:#fff;
+	float:left;
+	margin-top:-11px;
+	padding-right:7px;
+	position:relative;
+	z-index:500;
+	}
+	
+#col1 .halfblock{
+	float:left;
+	display:inline;
+	padding:15px 0px 0px 0px;
+	margin-left:23px;
+	width:315px;
+}
+#col1 .messageblock {
+	margin-left:-10px;
+	margin-top:-10px;
+	padding:10px;
+	background:#f3f0e8;
+	border:1px solid #cfcfcf;
+	width:320px;
+	*height:400px;
+}
+#col1 .messageblock h2 {
+	text-align:center;
+}
+#col1 .messageblock p {
+	font-size:11px;
+}
+#col1 .messageblock .message-sig, #col1 .messageblock .portrait{
+	float:right;
+}
+#col1 .messageblock .portrait{
+	margin-left:10px;
+}
+#col1 #gallery-corner {width:15px; height:13px; position:absolute; top:-1px; right:-1px; z-index:500; background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/gallery-corner.gif) no-repeat;}
+#col2 #col2-top       {width:250px; height:34px; position:absolute; top:0px; left:0px; z-index:500; background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/col2-top.gif) no-repeat;z-index:50}
+#col2 h2              {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h2-bg.png) repeat-x; line-height:35px; width:236px; margin:0 0 -13px -10px; color:#fff; padding: 0 0 20px 14px; _margin-right:-20px;z-index:10;}
+#col2 h2 a             {color:#fff; z-index:100; position:relative;}
+#col2 h2 a:hover       {color:#fff; z-index:100; position:relative;}
+#col2 h3              {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h3-bg.png) no-repeat; width:236px; margin:5px 0 0 -10px; color:#256f9a; font-weight:bold; letter-spacing:0; padding:7px 0 5px 14px; font-size:14px; _margin-right:-20px;}
+
+/* Slider 
+******************************************************/
+.slider h3 {cursor:pointer;}
+
+#col2 .slider               {margin-top:-14px; width:230px; padding:0; float:left; display:inline; margin-left:-10px; padding:0 10px;/*_padding:0px 0px 0px 10px;_margin-bottom:10px;*/}
+#col2 .slider h3            {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h3-slider.png) no-repeat right top;}
+#col2 .slider h3.open       {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h3-slider.png) no-repeat left top;}
+#col2 .slider h3.none       {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h3-bg.png) no-repeat left top; cursor:default;}
+
+#col2 .slider ul li{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/slider-tier1-dot.gif) no-repeat -4px 3px; padding-left:10px;}
+#col2 .slider ul ul li{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/slider-tier2-dot.gif) no-repeat -4px 3px; margin-left:4px; font-size:11px; padding-left:12px;}
+.subnav{padding-bottom:10px; padding-left:10px;}
+#col1 .slider               {}
+#col1 .slider h3            {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/) no-repeat right top; margin:5px 0 0 -10px; color:#256f9a; font-weight:bold; letter-spacing:0; padding:7px 0 5px 14px; font-size:14px;}
+#col1 .slider h3.open       {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/) no-repeat left top;}
+#col1 .slider h3.none       {background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/) no-repeat left top; cursor:default;}
+
+.fade{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/fade-bg.jpg) no-repeat top left #FFF;
+	margin-left:10px;
+}
+.clearleft{
+	clear:left;
+}
+/*List items*/
+.iconlist li{
+	padding-left:30px;
+	line-height:23px;
+	font-size:12px;
+	background:no-repeat left;
+}
+.iconlist{padding-bottom:10px;}
+.iconlist, .smiconlist{clear:left; float:left;}
+
+.smiconlist li{
+	padding-left:30px;
+	line-height:22px;
+	font-size:11px;
+	background:no-repeat left;
+}
+.smiconlist{margin-top:0px;}
+
+.centerlist{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/centerlist-bg.gif) repeat-y;
+	margin-bottom:10px;
+	float:left;
+}
+.centerlist li{
+	padding-left:35px !important;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/dot2.gif) no-repeat top left;
+	line-height:20px;
+}
+.smaller {
+	font-size:11px;
+}
+.larger{
+	font-size:14px;
+}
+#col1 .full ol{margin-left:20px;}
+#col1 .full ol li{
+list-style:decimal;
+}
+#col1 .full ol li p{font-size:11px; margin-top:10px;}
+#col1 .full ul {
+	margin-bottom:10px;
+}
+#col1 .full ul p{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#col1 .full ul li {
+	padding-left:20px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet.gif) no-repeat 0 .2em;
+	line-height:18px;
+	font-size:12px;
+}
+#col1 .full ul ul li {
+	background-image:url(/web/20100527155209/http://www.purdue.edu/dp2/images/miniBullet.gif);
+}
+
+ul.list {
+	padding-left:20px;
+	font-size:12px;
+}
+
+.list li{
+	list-style:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet.gif) outside;
+}
+.header{margin:0; padding:0; float:left; height:190px;}
+img.bordered{border:1px solid #ccc; padding:4px; margin:4px;}
+img.right{float:right; display:inline;}
+img.left{float:left; display:inline;}
+
+.rssnews{float:right; height:15px; width:15px; display:inline; margin-top:-29px; margin-right:0px;}
+
+/*topbar and other feature items*/
+
+#topbar{
+	width:700px;
+	height:8px;
+	border-top:5px solid #A37B2C;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/topbar-bg.gif) repeat-x top;
+	float:left;
+	display:inline;
+	clear:left;
+}
+.singlefeature{margin:0px; padding:0px; float:left; display:inline;}
+
+/*dptable*/
+
+.dptable {padding-top:10px; margin:12px 0px; !important}
+.dptable th{
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px;
+}
+.dptable td{padding:6px;}
+
+/*OLD Event CSS*/
+/*.month{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/month.gif) no-repeat top left;
+	width:100%;
+	color:#fff;
+	line-height:23px;
+	text-align:center;
+	font-weight:bold;
+	float:left;
+	margin-bottom:4px;
+	display:block;
+}
+.day{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/calendar.gif) no-repeat top left;
+	width:25px;
+	height:23px;
+	text-align:center;
+	line-height:30px;
+	font-size:10px;
+	font-weight:bold;
+	float:left;
+	margin-top:0px;
+	margin-bottom:5px;
+	clear:left;
+}
+.multiday{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/calendar-multiday.gif) no-repeat top left;
+	width:25px;
+	height:51px;
+	line-height:25px;
+	text-align:center;
+	font-weight:bold;
+	float:left;
+	margin-top:2px;
+	margin-bottom:5px;
+	font-size:10px;
+	clear:left;
+}
+
+.event{
+	float:left;
+	display:inline;
+	padding-left:5px;
+	width:200px;
+	margin-top:7px;
+	margin-bottom:5px;
+}
+.event ul li{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/miniBullet.gif) no-repeat top left;
+	line-height:14px;
+	font-size:11px;
+	padding-left:16px;
+}*/
+/*Halfblock - fullblock design elements */
+.dotline{
+	height:1px;
+	border-top:dotted 1px #bbb;
+	width:100%;
+	float:left;
+	margin:10px 0px;
+}
+
+.halfblock h2{
+	margin-bottom:12px;
+}
+.halfblock p{
+	margin-bottom:12px;
+}
+
+.divide{
+	float:left;
+	width:100%;
+	margin-top:16px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/divide-bg.jpg) no-repeat -1px 0;
+	padding-bottom:18px;
+}
+.bulletlist {
+	clear:left;
+}
+.bulletlist li{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/miniBullet.gif) no-repeat 1px 2px;
+	line-height:18px;
+	padding-left:16px;
+	font-size:11px;
+}
+.month{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/event-bg.jpg) no-repeat top left; 
+	margin-bottom:1px; 
+	padding-left:10px; 
+	padding-top:8px; 
+	text-transform:uppercase; 
+	height:19px; 
+	width:230px;}
+.events{margin-left:10px;}
+.events ul, #col1 .events ul{margin-left:0px; clear:left; padding-top:3px; margin-right:6px; margin-bottom:6px; padding-bottom:6px; border-bottom:1px dotted #ccc;}
+.events ul li, #col1 .events ul li{	
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/miniBullet.gif) no-repeat 1px 2px;
+	line-height:20px;
+	padding-left:20px;
+	font-size:11px;}
+.events li.date, #col1 .events li.date{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/icons/calendar.gif) no-repeat left;
+}
+.events ul.allevents{border-bottom:none;}
+.events ul.allevents li{background-image:url(/web/20100527155209/http://www.purdue.edu/dp2/images/icons/calendar__arrow.gif); font-weight:bold; padding-left:25px;}
+#allevents{text-transform:none; font-weight:bold;}
+#allevents a{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/icons/calendar__arrow.gif) no-repeat left; padding-left:25px;}
+#col2 .event-title, #col1 .event-title{padding-left:0px; background:none !important; font-weight:bold;}
+.floatbox{
+border:1px solid #ddd; width:295px; display:inline; float:left; background:#fff; padding:10px; margin-bottom:10px;
+}
+.floatbox img{float:right; display:inline;}
+img.borderbox{	margin:2px;
+	padding:4px;
+	border:1px solid #ccc; float:right; display:inline;}
+	
+.floatbox h4{
+	float:left; display:inline; font-weight:bold; margin-top:4px; margin-bottom:6px;
+}
+.floatbox p{
+	float:left;
+	clear:left;
+	display:inline;
+	width:290px;
+	font-size:11px;
+	margin-bottom:0px;
+}
+.presentation img{
+	border:1px solid #ccc; float:right; display:inline;
+}
+.presentation{
+	border:1px solid #ddd; width:290px; display:inline; float:left; background:#fff; padding:10px; margin-bottom:10px;
+}
+.presentation img{
+	margin:2px;
+	padding:4px;
+	border:1px solid #ccc; float:right; display:inline;
+}
+.presentation h4{
+	float:left; display:inline; font-weight:bold; margin-top:4px; margin-bottom:6px;
+}
+.presentation p{
+	float:left;
+	clear:left;
+	display:inline;
+	width:290px;
+	font-size:11px;
+	margin-bottom:6px;
+}
+
+#col2 p{
+	margin-bottom:7px;
+	
+}
+
+/*buzz elements*/
+#buzz {
+	position:relative;
+	min-height:400px;
+	*height:auto;
+	overflow:hidden;
+}
+#buzz a#prev {
+	position:absolute;
+	background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/buzz/prevButton-new.gif) no-repeat top left;
+	width:21px;
+	height:40px;
+	top:0px;
+	right:319px;
+	z-index:99;
+	cursor:pointer;
+}
+#buzz a#prev:hover{
+	background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/buzz/prevButtonHover.gif) no-repeat top left;
+}
+#buzz a#next {
+	position:absolute;
+	background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/buzz/nextButton-new.gif) no-repeat center center;
+	width:21px;
+	height:40px;
+	right:0px;
+	top:0px;
+	z-index:99;
+	cursor:pointer;
+}
+#buzz a#next:hover{
+	background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/buzz/nextButtonHover.gif) no-repeat top left;
+}
+#buzz h3 {
+	font-weight:bold;
+	margin-top:6px;
+	margin-bottom:6px;
+	font-size:14px;
+	letter-spacing:0px;
+	font-family:Tahoma,Arial,Verdana,sans-serif;
+	text-align:center;
+}
+#buzz div.buzzElement {
+	position:absolute;
+	display:none;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/buzz/youTubeGeneric.jpg) no-repeat scroll 0px 47px;
+	width:320px;
+	height:320px;
+}
+#buzz div.buzzElement h2 {
+	padding:0px 20px 0px 20px;
+	height:35px;
+}
+/*#buzz div.buzzElement object {
+	display:none;
+	visibility:hidden;
+}*/
+#buzz div.buzzElement .obHider {
+	visibility:hidden;
+}
+#buzz div.buzzElement p {
+	margin-top:10px;
+	font-size:12px;
+	font-family:Tahoma,Arial,Verdana,sans-serif;
+	/*position:absolute;
+	top:320px;*/
+}
+/*news elements*/
+#wrapper-2col #col1 .news li, #col2 .news LI{
+	background:none;
+	font-size:13px;
+	border-bottom:1px dotted #a7a7a7;
+	margin-bottom:8px;
+	line-height:20px;
+	list-style:none;
+	padding-left:0px;
+}
+#wrapper-2col #col1 .news li p{
+	font-size:12px;
+}
+#wrapper-2col #col1 .news li.last{
+	border-bottom:none;
+}
+
+
+/*News Box*/
+#col1 .newslink{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/news.gif) no-repeat left; line-height:25px; font-weight:normal; padding-left:22px;}
+.newsbox{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/newsbox.gif) no-repeat;float:left; padding:0; margin-left:-10px; display:inline; height:35px; width:315px;}
+.newsbox p{padding-left:10px; margin:0; line-height:35px;}
+.newsbox a{background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/news-archive.gif) no-repeat left; padding-left:22px; padding-right:10px;  line-height:35px;  font-size:11px;}
+
+/* Accordion */
+#basic-accordian {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/acor/bg.gif) repeat-y;
+	width:315px;
+	position:relative;
+	margin-top:5px;
+	left:-6px;
+	float:left;
+	display:inline;
+}
+.accordion_headings {
+	line-height:27px;
+	padding-left:20px;
+	font-size:12px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/acor/row.gif) no-repeat;
+	color:#256F9A;
+	cursor:pointer;
+	font-weight:bold;
+}
+.accordion_headings:hover {text-decoration:underline;}
+.accordion_child {
+	font-size:11px;
+	color:#333;
+	margin:0px 20px 20px 20px;
+
+	background:#fff;
+	_padding-bottom:20px; /* IE6 Fix */
+}
+.accordion_child p{background:#fff;}
+.accordion_child img{border:1px solid #ccc; padding:4px; float:right; margin:2px 0px 2px 4px;}
+.header_highlight {}
+#accordion_bottom{position:absolute; width:100%; height:1px; line-height:1px; background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/acor/line.gif) no-repeat;}
+#accordion_bottom img{margin:0; padding:0;}
+
+a.learnmore{
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/light.gif) left no-repeat;
+	height:20px;
+	line-height:20px;
+	font-size:11px;
+	padding-left:24px;
+	margin-top:6px;
+	display:block;
+}
+a.learnmore:hover{
+	text-decoration:underline;
+}
+
+/* Header styles */
+#header {
+	clear:both;
+	float:left;
+	width:971px; /* master width - width of 2 shadows */
+	margin-left:9px; /* adjust for shadows */
+	display:inline; /* IE6 double margin fix */
+	height:100px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/ov-header.jpg) no-repeat top; /*change for each site*/
+	/*background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bg_campus.png) no-repeat right top #02080F;*/
+	text-align:left;
+	position:relative;
+}
+#header #purdue {
+	position:absolute;
+	top:20px;
+	left:11px;
+	text-indent:-9999px;
+	width:266px;
+	height:69px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/pu_logo.png) no-repeat top left;
+	_background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/pu_logo.gif) no-repeat top left; /* IE6 */
+}
+
+#header #header-text {
+	position:absolute;
+	left:230px;
+	bottom:15px;
+	color:#fff;
+	font-size:1.8em;
+}
+
+#header h1 {
+	position:absolute;
+	bottom:-12px;
+	left:240px;
+	color:#FFFFFF;
+	font-size:180%;
+}
+#header #search {
+	position:absolute;
+	top:28px;
+	right:20px;
+	_left:696px;
+	_right:0;
+	color:#FFFFFF;
+	font-size:95%;
+}
+#header #search a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+#header #search a:hover {
+	border-bottom:1px dotted #e8b756;
+}
+#header #search form {
+	margin:5px 0;
+}
+#header #search .radio {
+	margin:2px 0;
+}
+#header #title {
+	font-size:167%;
+	position:absolute;
+	bottom:10px;
+	left:250px;
+	color:#FFFFFF;
+	text-decoration:none;
+	border:none;
+}
+.nav {
+z-index:9995;
+	clear:both;
+	float:left;
+	width:971px; /* master width - width of 2 shadows */
+	margin-left:9px; /* adjust for shadows */
+	display:inline; /* IE6 double margin fix */
+	color:#FFFFFF;
+	font-size:110%;
+	letter-spacing:-.5px;
+}
+.nav li {float:left; display:inline; position:relative;z-index:9995;}
+.nav table {position:absolute; border-collapse:collapse;top:-6px; left:0; z-index:9995;}
+.nav ul li a {padding:12px 15px 10px 15px; display:block; color:#fff; }
+.nav ul li a:hover {background:#a37b2c; text-decoration:none;z-index:9995;} /*changes for site*/
+.nav ul ul {position:absolute; z-index:9995; top:38px; _top:40px; left:-9999px; font-size:84%; background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/menu_bg.png); width:195px; }
+.nav ul ul li {float:none;}
+.nav ul ul li a {color:#fff; display:block; padding:5px 10px 5px 15px;}
+.nav ul ul li a:hover {background:#a37b2c; color:#fff; z-index:9995;} /*changes for site*/
+
+.nav ul ul ul {position:static; z-index:9995; left:-9999px; font-size:100%; background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/menu_bg.png); width:195px;}
+.nav ul ul ul li {display:block;float:none;background:transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/navBullet.gif) no-repeat scroll 20px 6px;}
+.nav ul ul ul li a {color:#fff; display:block; padding:5px 10px 5px 38px;}
+.nav ul ul ul li a:hover {background:#a37b2c url(/web/20100527155209/http://www.purdue.edu/dp2/images/navBulletHighlight.gif) repeat-y scroll 0px 0px; color:#fff; z-index:9995;}
+
+.nav ul :hover ul {left:auto; z-index:9995;}
+.nav :hover > a {background:#a37b2c; cursor:pointer; z-index:9995;} /*changes for site*/
+
+.nav li:hover {
+	z-index: 999 !important; /* IE7 fix - makes drop-down nav and gallery play nicely together */
+}
+
+.nav li.sticky {
+	float:right;
+}
+.nav ul li.sticky a {
+	padding:0;
+	margin:7px 5px 0 0;
+}
+.nav ul li.sticky a:hover {
+	background:none;
+}
+#adminMenu {
+	clear:both;
+	float:left;
+	font-size:80%;
+	width:971px; /* master width - width of 2 shadows */
+	margin-left:9px; /* adjust for shadows */
+	display:inline; /* IE6 double margin fix */
+	color:#000000;
+	font-size:95%;
+	letter-spacing:-.5px;
+	background-color:#FFFFCC;
+	border-bottom:1px solid #A37B2C;
+}
+#adminMenu li {
+	float:left;
+	display:inline;
+	margin:0 20px;
+	padding:4px 0;
+}
+
+#col1, #col2, #col3 {
+	display:inline; /* IE6 float fix */
+	/*overflow:hidden;*/
+}
+
+
+
+/* Footer styles */
+#wrapper-footer {
+	color:#AAAAAA;
+	font-size:80%;
+	_margin-left:10px; /* IE6 Fix */
+}
+#footer {
+	width:949px;
+	text-align:left;
+	margin-left:20px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/footer-bg.png) repeat-x;
+	float:left;
+	border:1px solid #a7a7a7;
+	border-top:none;
+	_display:inline; /* IE6 Fix */
+}
+#footer a {
+	color:#a08869;
+	text-decoration:none;
+}
+#footer h3 {
+	color:#666666;
+	font-weight:normal;
+	margin:0 0 2px;
+	font-size:110%;
+}
+#footnote {
+	margin:0 0 6px;
+	/*border-bottom:1px dotted #333333;*/
+	float:left;
+	#padding-bottom:10px;
+	width:100%;
+}
+#footnote p.left {
+	margin:10px 20px;
+	float:left;
+	display:inline;
+}
+#footnote p.right {
+	margin:18px 20px 0 0;
+	float:right;
+	display:inline;
+}
+
+#footnote .footer-inq {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/footer-inq.png) no-repeat;
+	padding:4px 8px 10px 10px;
+}
+
+#footnote a {
+	color:#A37B2C;
+	text-decoration:none;
+}
+#footer .col1 {
+	width:700px;
+	float:left;
+	margin-left:20px;
+	_display:inline; /* IE6 Fix */
+}
+#footer .col2 {
+	width:237px;
+	float:right;
+	text-align:center;
+	_display:inline; /* IE6 Fix */
+}
+#footer .col1 img {
+	float:left;
+	margin:0 10px 0 0;
+}
+#footer .col2 img {
+	display:block;
+	margin:0 auto;
+}
+#footer .col2 ul {
+	width:145px;
+	margin:0 auto;
+	_margin:0; /* IE6 Fix */
+}
+#footer ul {
+	background-color:#010203;
+}
+#footer li {
+	margin:4px 0;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_gold_footer.gif) no-repeat .25em .5em;
+	padding:0 0 0 20px;
+}
+#footer li.about {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_about.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.people {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_people.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.catalog {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_catalog.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.news {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_news.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.calendar {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_calendar.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.purdue {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_purdue.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.search {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_search.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+#footer li.directory {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_directory.gif) no-repeat .25em .5em;
+	padding:11px 0 8px 40px; margin:0;
+}
+
+
+
+#promo-home {
+	margin:-10px 0 20px -10px;
+}
+
+
+
+.img {
+	margin:0 20px;
+	float:right;
+	font-size: 80%;
+	line-height:120%;
+	text-align:center;
+}
+.img img {
+	border:2px solid #999999;
+	padding:3px;
+	margin:0 auto;
+	background-color:#FFFFFF;
+}
+.img p {
+	width:140px;
+	margin:0 auto;
+	#margin:0;
+}
+.mini-3col, .mini-2col {
+	float:left;
+	width:100%;
+	clear:both;
+}
+.mini-3col li span, .mini-2col li span {
+	font-size:80%;
+	display:block;
+	color:#666666;
+	margin:-5px 0 0;
+}
+.mini-3col div {
+	float:left;
+	margin:0 10px;
+	width:208px;
+}
+.mini-2col div {
+	float:left;
+	margin:0 10px;
+	width:322px;
+}
+.mini-promos {
+	text-align:center;
+	margin:20px 0;
+}
+.mini-promos img {
+	margin:5px auto;
+}
+
+
+
+.wrapper-news {
+	line-height:130%;
+	position:relative;
+}
+.wrapper-news .news div {
+	margin:1em 20px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/bullet_news.png) no-repeat left top;
+	padding:0 0 0 30px;
+}
+.wrapper-news .news h3 {
+	margin:0 0 4px;
+	font-size:110%;
+	letter-spacing:-1px;
+	font-weight:normal;
+}
+.wrapper-news .news p {
+	margin:0 20px;
+	font-size:90%;
+}
+.wrapper-news .news .caption {
+	font-size:80%;
+	color:#666666;
+}
+.rss {
+	position:absolute;
+	top:-4px;
+	right:20px;
+}
+#crumb {
+	width:961px;
+	margin:0 0 0 9px;
+	padding:3px 0 4px 10px;
+	float:left;
+	clear:both;
+	font-size:85%;
+	color:#666666;
+	background-color:#EEEEEE;
+	border-bottom:1px solid #DDDDDD;
+	_display:inline; /* IE6 Double float fix */
+	_width:971px; /* IE6 Double float fix */
+}
+
+
+/* ---------------- TABLE STYLES --------------- */
+.formData, .data {
+	margin:0 0 20px;
+	background-color:#FFFFFF;
+	border:1px solid #dedede;
+	border-left:none;
+}
+.formData caption, .data caption {
+	font:bold 18px Century Gothic, Arial, sans-serif;
+	text-align:left;
+	font-weight:bold;
+	color:#333333;
+	padding-bottom:4px;
+}
+.formData td, .formData th, .data td, .data th {
+	border-top:1px solid #efefef;
+
+	border-bottom:1px solid #efefef;
+	border-left:1px solid #dedede;
+	padding:5px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	vertical-align:top;
+}
+.formData thead, .data thead {
+	border-right:1px solid #80aabd;
+}
+.formData tr.odd, .data tr.odd {
+	background-color:#edf3fe;
+}
+.formData thead th, .formData tfoot th, .data thead th, .data tfoot th {
+	background:url(/web/20100527155209/http://www.purdue.edu/webedit/images/thBg.gif) repeat-x top left #89bacf;
+	color:#000000;
+	font:bold 110% Georgia, "Times New Roman", Times, serif;
+	letter-spacing:-.05em;
+	border-top:1px solid #80aabd;
+	border-bottom:5px solid #80aabd;
+	border-left:1px solid #80aabd;
+	text-align:left;
+}
+.formData thead th a, .data thead th a {
+	color:#000000;
+}
+.formData tr.nav, .data tr.nav {
+	padding:10px;
+	background:url(/web/20100527155209/http://www.purdue.edu/webedit/images/tableBullet1.gif) no-repeat 1px 1px #FFFFFF;
+}
+.formData tbody th, .data tbody th {
+	font-weight:bold;
+	text-align:left;
+}
+.formData br, .data br {
+	margin:0;
+	padding:0;
+}
+.inactive td, .inactive th {
+	color:#999999;
+	background-color:#F4F4F4;
+	font-style:italic !important;
+	font-size:90%;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+}
+/*_________________FORMS TABLE STYLES______________*/
+.formsTable {
+	border:none;
+	empty-cells:show;
+	border-collapse:collapse;
+}
+.formsTable th {
+	border-right:thin inset #80652e;
+	vertical-align:middle;
+	color:#FFFFFF;
+	background:#4f422f;
+	font-size:14px;
+	padding:5px;
+}
+.formsTable th.leftborder {
+	border-left:thin solid #4f422f;
+}
+.formsTable td {
+	background-color:#FFFFFF;
+	padding:5px;
+	border-top:none;
+	border-bottom-style:solid;
+	border-bottom-width: thin;
+	border-bottom-color:#999999;
+	border-left-style:solid;
+	border-left-width: thin;
+	border-left-color:#999999;
+	border-right:solid thin #999999;
+}
+.formsTable td.subheader {
+	color:#FFFFFF;
+	background-color:#999999;
+	font-size:14px
+}
+.formsTable td.icon {
+	border-left:none;
+	border-right:solid thin #999999;
+	vertical-align:middle;
+	text-align:center;
+}
+.formsTable td img {
+	vertical-align:middle;
+}
+/*_________________________________________________*/
+/*_____________COMMITTEE TABLE STYLES______________*/
+.commTable {
+	padding:5px;
+	border:none;
+	empty-cells:show;
+	border-collapse:collapse;
+}
+.commTable th {
+	border-right:thin solid #FFFFFF;
+	vertical-align:middle;
+	color:#FFFFFF;
+	background:#4f422f;
+	font-size:14px;
+	padding:5px;
+}
+.commTable th.right {
+	border-right:none;
+}
+.commTable td.rightcol {
+	background:#dcdcdc;
+	padding:5px;
+}
+.commTable td.leftcol {
+	background:#eeeeee;
+	border-right:thin #FFFFFF solid;
+	padding:5px;
+}
+/*_________________________________________________*/
+/* ---------------- TABLE STYLES --------------- */
+/* ---------------- FORM STYLES --------------- */
+#col1 fieldset {
+	border:1px solid #A37B2C;
+	background-color:#fff;
+	margin:10px 20px;
+}
+#col1 fieldset legend {
+	font-size:150%;
+	font-weight:bold;
+	padding:0 8px;
+	margin:0 10px;
+}
+#col1 fieldset div {
+	margin:10px 20px;
+}
+#col1 fieldset label {
+	font-weight:bold;
+	display:block;
+	clear:both;
+}
+label.required {
+	background:url(/web/20100527155209/http://www.purdue.edu/eboard/images/required.gif) no-repeat left 7px;
+	padding-left:12px;
+}
+#col1 fieldset h1, #col1 fieldset h2, #col1 fieldset h3, #col1 fieldset h4, #col1 fieldset h5 {
+	margin:20px 20px;
+	color:#A37B2C;
+}
+#col1 fieldset p {
+	margin:0 20px 5px;
+}
+#col1 fieldset div p {
+	margin:0 0 5px;
+}
+#col1 fieldset fieldset {
+	background-color:#EEEEEE;
+	border:1px dotted #666666;
+	_border:thin dotted #CCCCCC; /* IE 6 */
+	margin:30px;
+}
+.chkbox {
+	border:1px dotted #444444;
+	_border:thin dotted #777777; /* IE 6 */
+	background-color:#CEE3EF;
+	padding:1% 2%;
+}
+.chkbox input {
+	display:inline;
+	border:none;
+}
+#col1 fieldset input, #col1 fieldset select, #col1 fieldset textarea {
+	border:1px solid #CCCCCC;
+	border-top:1px solid #AAAAAA;
+	padding:1px 2px;
+}
+#col1 input:focus, #col1 textarea:focus {
+	border:1px solid #6EA7DB;
+}
+#col1 fieldset .error {
+	color:#FF0000;
+	border:1px solid #FF0000;
+	background-color:#FFFFCC;
+	padding:10px;
+}
+#col1 fieldset span {
+	color:#FF0000;
+	display:block;
+	margin:2px 0;
+	font-size:85%;
+}
+.button input {
+	font-size:110%;
+	padding:4px 8px;
+	font-weight:bold;
+	cursor:pointer;
+	background-color:#FFFFCC;
+	border:1px solid #999999;
+	border-right:1px solid #333333;
+	border-bottom:1px solid #333333;
+}
+/* ---------------- FORM STYLES --------------- */
+
+
+#wrapper-1col .skinny {
+	width:560px !important;
+	margin:40px 0 40px 206px !important;
+}
+
+
+/* tooltip styles */
+a.tooltip:hover {
+	position:relative;
+}
+a.tooltip span {
+	display:none;
+}
+a.tooltip:hover span {
+	display:block;
+	position:absolute;
+	top:20px;
+	left:10px;
+	#top:20px; /* IE7 */
+	#left:20px; /* IE7 */
+	_top:20px; /* IE6 */
+	_left:20px; /* IE6 */
+	padding:5px;
+	margin:0;
+	z-index:100;
+	background:#333333;
+	font-weight:bold;
+	border:1px solid #000000;
+	opacity:0.9;
+	text-decoration:none;
+	width:200px;
+	text-align:left;
+	color:#E1C35D;
+	font-size:10px;
+	line-height:150%;
+} 
+/* end tooltip styles */ 
+
+.miniShoppingPromo {
+	margin:10px auto;
+	border:1px solid #6f90b6;
+	padding:10px 20px;
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/global/fieldsetBg.gif) repeat-x top left;
+	float:left;
+	clear:both;
+	width:93%;
+}
+.miniShoppingPromo img {
+	float:left;
+	margin:10px 0;
+}
+.miniShoppingPromo ul {
+	float:left;
+	margin:0;
+}
+.error {
+	color:#FF0000;
+	border:1px solid #FF0000;
+	background-color:#FFFFCC;
+	padding:10px;
+}
+
+/* begin news styles */
+.newsbit {
+	margin-top:10px;
+	/*min-height: 100px;*/
+}
+/*\*/
+* html .newsbit {
+	height: 100px;
+}
+/**/
+.newscontact {
+	margin-top: 1em;
+	font-style: italic;
+}
+.minidate {
+	color:#888888;
+	font-size:0.85em;
+	font-style:italic;
+}
+.newsdate {
+	margin-bottom: .5em;
+}
+/* end news styles */
+
+/* begin events styles */
+.today {
+	background: #ddd;
+}
+.selected {
+	font-weight: bold;
+}
+.selected A {
+	color: #a36d0b;
+}
+.calendar A {
+	text-decoration: none;
+}
+A.day:hover {
+	display: block;
+	background: #666;
+	color: #fff;
+}
+TABLE.calendar, .calendar TD {
+	border-color: #bbb;
+	border-style: solid;
+}
+.calendar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+TABLE.calendar {
+	margin: 0 auto;
+}
+.calendar TH {
+	padding-bottom: 3px;
+	text-align: center;
+}
+.calendar TD {
+	width: 25px;
+	border-top-width: 1px;
+	text-align: center;
+}
+.calendar TD A {
+	display: block;
+	padding: 5px 2px;
+}
+.allevents DIV.eventline {
+	background: none;
+	padding: 1em 0 .5em 0;
+	border-bottom: 1px dotted #ccc;
+}
+.allevents UL {
+	padding-left: .5em;
+	border: none !important;
+}
+UL.dayhighlight {
+	background: #efefef;
+	border: 1px solid #bbb !important;
+}
+.mininote {
+	font-style: italic;
+	font-size: .85em;
+}
+.eventdetail {
+	padding-bottom: 1.5em;
+}
+.dlcal {
+	margin-top: 20px;
+	padding-left: 20px;
+	background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/icons/calendar__plus.gif) no-repeat left;
+	font-weight: bold;
+}
+/* end events styles */
+
+
+a.skip {
+	position:absolute;
+	z-index:999;
+	left:-200em;
+	border:2px solid #333;
+	background:#fff;
+	padding:.5em 1em;
+}
+a.skip:focus {
+	left:0.5em;
+}
+#skip-target {
+	position:absolute;
+}
+#app-link {
+	position:absolute;
+	left:-200em;
+	bottom:7px;
+	z-index:9999;
+}
+#app-link:focus {
+	left:720px;
+}
+
+
+/* Features Gallery
+***************************************************************************************************************/
+	#myGallery        {width:100%; height:190px; border:none; z-index:5; float:none; overflow:hidden; background:#000; position:relative; }
+	
+/* Links */
+	#myGallery a             {color:inherit; font-size:100%; text-decoration:none;}
+	#myGallery a.open        {display:block; height:190px; left:0; position:absolute; top:0; width:700px; z-index:60;}
+	#myGallery a.right,
+	#myGallery a.left        {cursor:pointer; position:absolute; top:165px; width:12px; height:14px; z-index:99; filter:alpha(opacity=100); opacity:1; -moz-opacity:1; -khtml-opacity:1;}
+	#myGallery a.left        {background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/gallery/prev.gif) no-repeat center center; left:640px;}
+	#myGallery a.right       {background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/gallery/next.gif) no-repeat center center; right:10px;}
+	#myGallery a.right:hover, 
+	#myGallery a.left:hover  {opacity:1; filter:alpha(opacity=100);	-moz-opacity:1;	-khtml-opacity:1;}
+	
+	#myGallery a.play, #myGallery a.pause {
+		position: absolute;
+		cursor: pointer;
+		opacity: 1;
+		width:11px;
+		height:14px;
+		right:26px;
+		top:165px;
+		z-index:99;
+		border-left:1px dotted #666666;
+		border-right:1px dotted #666666;
+		padding:0 3px;
+	}
+	#myGallery a.play  {background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/gallery/playbutton.gif) no-repeat center center;}
+	#myGallery a.pause {background: url(/web/20100527155209/http://www.purdue.edu/dp2/images/gallery/pausebutton.gif) no-repeat center center;}
+	
+
+	#myGallery img    {border:none; margin:0;}
+	#col1 #myGallery img.full {margin:0;float:none;width:700px;}
+	
+	#myGallery div.imageElement {position:relative; width:700px; height:190px;}
+	
+/* Info Zone*/
+	#myGallery .slideInfoZone {
+		background:#000;
+		bottom:-100px;
+		border:none;
+		color:#fff;
+		height:auto;
+		left:0;
+		margin:0;
+		overflow:hidden;
+		padding:12px 0;
+		position:absolute;
+		text-align:left;
+		text-indent:0;
+		width:100%;
+		z-index:50;
+	}
+	* html #myGallery .slideInfoZone {bottom: -1px;}
+	
+	#myGallery .slideInfoZone h2     {padding:0; margin:0 65px 2px 24px; font:bold 18px/18px Arial, Helvetica, sans-serif; color:#fff;}
+	#myGallery .slideInfoZone p      {padding:0; margin:0 65px 2px 24px; font:normal 12px/18px Tahoma, Verdana, Arial, Helvetica, sans-serif; color:#eee;}
+	
+/* Page Index for Sliders */
+
+.pageIndex{
+	visibility:hidden;
+	width:0px;
+	height:0px;
+}
+
+/* //////////// Colored Table Elements //////////// */
+.coloredTable{
+	border-top: 4px solid #937b57;
+	border-bottom: 1px solid #aaaaaa;
+}
+.coloredTable tr{
+	background-color: #dcdcdc;
+}
+.coloredTable tr.row2{
+	background-color: #eeeeee;
+}
+.coloredTable td{
+	padding: 0px 5px 5px 5px;
+	line-height:20px;
+	border-bottom: 1px solid #ffffff;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #ffffff;
+}
+.coloredTable td.mid{
+	border-left:none;
+	border-right: 1px solid #ffffff;
+}
+.coloredTable td.right{
+	border-left:none;
+	border-right: 1px solid #aaaaaa;
+}
+.coloredTable td.bottom{
+	border-bottom: none;
+}
+/* /////////////////////////////////////// */
+
+ul.startPoints li {
+	display:inline;
+	width:100px;
+	height:120px;
+	text-align:center;
+	float:left;
+}
+ul.startPoints li a {
+	display:block;
+	padding-top:90px;
+	font-weight:bold;
+}
+
+/*____________________CALENDAR_STYLES___________________*/
+
+.calEvents {
+	_height: expression( document.body.clientWidth > 299 ? "300" : "auto" ); /* sets max-width for IE */
+	max-height:300px;
+	overflow:auto;
+	margin-bottom:15px;
+}
+.calendar th.month {
+	background:url(/web/20100527155209/http://www.purdue.edu/dp2/images/ov/h2-bg.gif) repeat-x;
+	width:30px;
+	padding:5px;
+}
+.calendar th.month a {
+	color:#FFFFFF;
+}
+table.calendar {
+	width:210px;
+}
+table.calendar td {
+	width:30px;
+}
+.eventday {
+	background:#564833;
+}
+.eventday a {
+	color:#FFFFFF;
+}
+#col2 h3.calendar span {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+	float:left;
+	margin-top:-11px;
+	padding-right:7px;
+	position:relative;
+	z-index:500;
+	font-size:15px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#564833;
+}
+
+#col2 h3.calendar {
+	border-top:1px solid #C7C7C7;
+	font-size:20px;
+	line-height:20px;
+	margin:5px 0 20px;
+	background:none;
+	padding:0px 10px 0px 0px;
+	width:217px;
+}
+/*______________________________________________________*/
+
+/* ///////// AWARDS STYLES //////////////////////////// */
+
+#awardsContainer{
+	height:210px;
+}
+.awardElement{
+	display:none;
+	visibility:visible;
+}
+.awardElementSpan{
+	font-size:15px;
+	color:#A37B2C;
+	width:230px;
+	padding-bottom:4px;
+}
+.awardElementImg{
+	float:right;
+	display:inline;
+	margin-top:4px;
+}
+a.awardElementNext{
+	cursor:pointer;
+	width:17px;
+	height:16px;
+	position:relative;
+	display:block;
+	top:-3px;
+	left:213px;
+	background:transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/awards/nextButton.gif) no-repeat scroll center center;
+}
+a.awardElementNext:hover{
+	background:transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/awards/nextButtonHover.gif) no-repeat scroll center center;
+}
+a.awardElementPrev{
+	cursor:pointer;
+	width:16px;
+	height:16px;
+	position:relative;
+	display:block;
+	top:-19px;
+	left:197px;
+	background:transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/awards/prevButton.gif) no-repeat scroll center center;
+}
+a.awardElementPrev:hover{
+	background:transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/awards/prevButtonHover.gif) no-repeat scroll center center;
+}
+
+.awardsList{
+	float:left;
+	margin-left:10px;
+	margin-top:6px;
+	padding-top:1px;
+}
+.awardsList li{
+	background: transparent url(/web/20100527155209/http://www.purdue.edu/dp2/images/icons/pdfSmall.gif) scroll no-repeat 0 0;
+	padding-left:20px;
+	padding-bottom:8px;
+}
+
+/* //////////////////////////////////////////////////// */
+
+/*-------------------Breadcrumb Styles-------------------------*/
+
+#bread{
+	position:relative;
+	top:138px;
+	height:23px;
+	left:0px;
+	text-align:center;
+	width:100%;
+	background: #00ff00 url(/web/20100527155209/http://www.purdue.edu/dp2/images/breadcrumbBack.gif) scroll repeat-x center bottom;
+}
+
+#breadcrumb{
+	margin:0 auto;
+	padding-left:27px;
+	padding-top:2px;
+	display:block;
+	width:969px;
+	height:21px;
+	text-align:left;
+}
+
+#breadcrumb a{
+	color:#cccccc;
+	font-family:Tahoma,Arial,Verdana,sans-serif;
+	font-size:11px;
+}
+
+#breadcrumb img{
+	width:5px;
+	height:10px;
+	padding: 0px 8px 0px;
+}

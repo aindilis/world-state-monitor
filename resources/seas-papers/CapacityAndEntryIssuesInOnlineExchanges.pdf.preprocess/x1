@@ -1,0 +1,486 @@
+European Journal of Operational Research 185 (2008) 849–863
+www.elsevier.com/locate/ejor
+Interfaces with Other Disciplines
+Capacity and entry issues in online exchanges
+Subhajyoti Bandyopadhyay
+a,*
+, John M. Barron
+b,1
+, Alok R. Chaturvedi
+c,2
+a
+b
+Warrington School of Business, University of Florida, Gainesville, FL 32611, United States
+Department of Economics, Krannert Graduate School of Management, Purdue University, West Lafayette, IN 37907, United States
+c
+Department of MIS, Krannert Graduate School of Management, Purdue University, West Lafayette, IN 37907, United States
+Received 27 March 2005; accepted 13 December 2006
+Available online 10 January 2007
+Abstract
+With the advent of open standards and Internet technologies, the number of sellers who can participate in online
+exchanges is greatly increased.
+We model the competition between identical sellers vying for the same business, and ﬁnd
+that there exists a mixed-strategy equilibrium in prices.
+The results help us understand the dynamics between a seller’s
+capacity and his motivation to participate in an auction.
+Ó 2007 Elsevier B.V. All rights reserved.
+Keywords: Auctions; Economics; Game theory; Online exchanges; Supplier competition
+1.
+Introduction
+This paper was motivated by the rapid growth of online exchanges (sometimes called business-to-business,
+or B2B, exchanges) used by ﬁrms for their procurement requirements.
+With the advent of Internet technologies and their underlying open standards, it has become much easier for vendors to bid in response to Requests
+for Proposal (or RFP’s) that they otherwise might not have even come to know of.
+Institutional buyers thus
+have a larger universe of potential vendors for their supplies of raw materials and other internal purchases.
+This arrangement has several advantages like less dependence on a few vendors, and cost savings through
+the increased competition among the vendors.
+Carrier Corp., the world’s largest manufacturers of air-conditioners, and one of the pioneers of using
+online exchanges, has managed to quantify their own beneﬁts of using this mechanism.
+Just by putting their
+requirements online through FreeMarkets, and thereby getting a larger number of suppliers to bid for the
+requirements, Carrier Corp. realized average savings of 15% on the cost of components, amounting to more
+than $100 million [1] of savings in the year 2000.
+The company ﬁrmly believes that the online exchanges can be
+*
+Corresponding author.
+Tel.: +1 352 392 5946; fax: +1 352 392 5438.
+E-mail addresses: shubho.bandyopadhyay@cba.uﬂ.edu (S. Bandyopadhyay), barron@mgmt.purdue.edu (J.M. Barron), alok@mgmt.
+purdue.edu (A.R. Chaturvedi).
+1
+Tel.: +1 765 494 4451; fax: +1 765 494 1526.
+2
+Tel.: +1 765 494 9048; fax: +1 765 494 1526.
+0377-2217/$ - see front matter Ó 2007 Elsevier B.V. All rights reserved.
+doi:10.1016/j.ejor.2006.12.021
+850
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+a powerful cost-cutting tool when there are several vendors to choose from, especially in the current environment of worldwide sourcing for components in the manufacturing sector.
+ChemConnect, an online exchange
+specializing in chemical products, provides the example of a Fortune 500 household products company realizing 15.6% cost savings in raw materials by procuring from 13 diﬀerent suppliers at the same time, while
+Sunoco Inc., a leading manufacturer and marketer of petroleum and petrochemical products, expanded its
+universe of suppliers by two and realized cost savings of 12%.
+Among the several advantages of B2B transactions are expanding market reach, lowering buyers’ costs and
+identifying best practices [2].
+The focus of this paper is to analyze how prices might reduce from the increased
+competition between sellers.
+This is especially true in those online exchanges that are called ‘‘buy-centric
+markets’’ or ‘‘procurement hubs’’ in industry parlance (all the previously mentioned exchanges are examples
+of such buy-centric markets).
+These buy-centric hubs are especially common in the market for components
+and raw materials (like the auto industry or Carrier Corp.), but any large buyer of relatively homogeneous
+goods will have signiﬁcant interests in joining an exchange.3 Roland Berger, a consulting ﬁrm specializing
+in the auto industry estimates that about 33% of the cost savings in North American auto industry will come
+from purchase-related savings [3].
+Suppliers however have become increasingly discomﬁted with the process of reverse auctions in these
+exchanges.
+While original equipment manufacturer (OEM) buyers might argue that the price competition
+induces eﬃcient competition that was lacking before, the suppliers fear that this competition might beneﬁt
+only the buyers, resulting in a disproportionate sharing of the surplus [4].
+[The buyer] talks about the relationship being a partnership and this [the auction] really takes that away.
+There is not a partnership there at all.
+What they do is take your existing business that you have worked
+very hard to achieve and maintain.
+You work with them to give them cost reductions over the years and
+they send it out across the board for a competitive bid.
+I just do not think that is fair.
+Supplier comment [4]
+The Wall Street Journal reports that large retailers like Wal-Mart have been quick to capitalize on this
+increased competition between sellers to drive down wholesale prices of electrical goods from Chinese manufacturers, calling it the ‘‘survival of the cheapest’’ [5].
+As Dai and Kauﬀman [6] have noted, sellers have reduced information about buyers in open exchanges,
+which might make the eﬀects of the competition stacked heavily against the sellers.
+Given the monopsony
+power of a limited number of large buyers however, sellers have limited options.
+A recent Forrester Research
+survey found that 57% of auto suppliers polled said they respond to online RFP’s currently, and 70% said they
+will do so by 2003 [7].
+We analyze the case of competition between identical suppliers (we use the terms suppliers and sellers interchangeably throughout the paper) of a single raw material or component vying for business from a single large
+buyer within a B2B exchange framework.
+We concentrate on the mechanism of a one-sided, sealed-bid reverse
+auction.
+We assume that there is no combined capacity constraint as such: the sellers were supplying to the
+entire demand before the birth of the exchange, and continue to do so after it comes into play.
+It is conceivable
+however, that the ﬁrms individually cannot supply to the entire market.
+This means that while there is competition between the ﬁrms to be the low-price bidder, it is not as extreme as a Bertrand game that results in
+prices equal to marginal cost.
+As the nature of the equilibrium shows however, there remains an incentive to be
+the low-price bidder and have the ‘‘ﬁrst invitation’’ to supply a requirement.
+There are several objectives of the paper.
+We explore the nature of the pricing strategy that the suppliers
+employ in such environments in a game-theoretic framework.
+A related issue is to consider the conditions
+under which this competition would be debilitating for the suppliers.
+Our experience with bidding in industrial markets suggests that managers resort to mixed-price strategies,
+and indeed our analysis shows that there exists a support of prices where the sellers randomize their bids.
+We
+obtain an explicit expression for the average price paid by the buyers, and show that for some values of the
+3
+Wal-Mart for example has its own private exchange for buying the products they sell.
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+851
+parameters within the model, the exchange promotes competition that results in lower bids4 in a two-seller
+model.
+The nature of the equilibrium indicates the mechanism of entry into the exchange, the second seller
+being the one that caters to the residual demand.
+Our results also indicate why larger sellers might be more
+amenable to joining the exchange than smaller sellers: it is easier for a smaller number of players to induce
+cooperation for mutual beneﬁt.
+While the beneﬁts of the buyers are readily apparent, sellers have to analyze the costs and beneﬁts of joining
+the exchange.
+(Indeed, as Baumgartner et al. [8] point out, sellers have been extremely reluctant to join these
+exchanges in several instances, fearing increased competition.)
+Dai and Kauﬀman [6] model the environment
+where there is one large buyer and two suppliers.
+The suppliers are identical, realizing the same costs and beneﬁts.
+By assigning the various costs and beneﬁts of the electronic network and the exchange for both the buyer
+and the sellers, they develop several simple what-if scenarios that determine whether a supplier prefers an
+extranet or an electronic network.
+Our paper continues to investigate this model, and considers the eﬀects
+when the two sellers (and later generalizing the model to n sellers) have decided to participate in the exchange,
+and are competing for any business within that framework.
+2.
+Model environment and assumptions
+We look at a competitive game that is unique in several respects.
+To illustrate this, consider a hypothetical
+example in which a large automaker wants to purchase tires for one of its mass-market models.
+The number of
+tire manufacturers is limited, and the automaker has its own set of preferred suppliers, since the cost of analyzing quotations from the entire universe of suppliers (dedicated account management teams for buyers, sales
+force for sellers, cost of sending individual RFPs to the entire universe of sellers, etc.) might be prohibitively
+high.
+The demand for tires can be considered inelastic below a certain reservation price.
+Though the demand for the ﬁnal product (the car) might be elastic, it is unlikely that the demand for the
+tires, which constitute a very small fraction of the value of the car, is also elastic.
+Rather, manufacturers have a
+reservation price for tires – set by industry norms or internal costing data – and buy from their established list
+of sellers as long as the price is less than this reservation price.5 To put it in another way, the demand for the
+end product might go up or down because of its price, but the demand for the raw materials that are used to
+make the product will not show such a behavior – more likely, the manufacturer of the product would revise
+its reservation price for the raw material.
+With the advent of the online exchange, the buyers put their requirements on the exchange only once,
+instead of contacting the sellers individually.
+The sellers – who can be located anywhere around the world
+– look at this entire requirement, and then decide to quote their prices.
+The lowest priced seller is ﬁrst invited
+to supply the required quantity, and if there is any residual demand, it passes on to the seller with the second
+lowest price, and so on till the demand is completely satisﬁed.6
+We consider the mechanism of a one-sided, sealed bid auction mechanism: the buyer posts a RFP and
+invites speciﬁc suppliers to view and respond to the RFP.
+The suppliers are also given a date (usually several
+weeks in the future) by which they are expected to place their bids.
+The suppliers bid their selling prices, all of
+which are opened at a later date.
+The supplier with the lowest bid price gets the ﬁrst invitation to cater to the
+demand, followed by the supplier with the second-lowest bid price, and so on, until the entire demand is met.
+From the modeling point of view, it is immaterial whether the sellers respond to an aggregate demand of
+several buyers (which might be an anti-trust issue) or one single demand from a buyer7 – what is important to
+4
+The gain to the buyers will probably be lesser than what these theoretical exercises might suggest, since in practice the buyers would be
+negotiating better prices from their vendors even before the onset of the online exchanges.
+5
+We contacted Roland Berger to conﬁrm this assumption.
+We found out that auto manufacturers indeed have ‘‘target cost’’ structures
+for components, which is equivalent to the reservation price in our nomenclature.
+See also Footnote 6.
+6
+A conﬁrmation of this mechanism was obtained from IndiaMarkets.com, India’s largest B2B portal.
+The software used at
+IndiaMarkets.com is licensed from one of the pioneer B2B portals, Ariba.
+Fig.
+3 (in Appendix A) shows an actual RFP at this site, as
+presented to suppliers.
+Identities have been concealed for conﬁdentiality reasons.
+7
+The assumption in the case of multiple buyers, of course, is that all of them have the same reservation price.
+If that is not so, we would
+have to consider the contract between the buyers that speciﬁes the way they would divide a seller’s output between themselves.
+852
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+note is that the entire requirement is auctioned to the sellers, and for any unfulﬁlled demand, a lower priced
+bidder is invited before a higher priced bidder to satisfy it.
+It is readily apparent that with unlimited capacity, the sellers respond with a Bertrand competition in
+prices with the seller or sellers with the lowest marginal cost outbidding the others.
+This is not to the advantage of the sellers.
+At the other end of the spectrum, if the total capacity of the sellers is so limited as to be less
+than the total demand, it is easy to see that the sellers can sell their entire capacities at the buyer’s reservation
+price.
+Our model is diﬀerent from either of these cases.
+It is realistic to think of sellers having limited capacities so
+that any one seller cannot meet market demand.
+However in our setting we add the conditions that the aggregate output of the sellers exceeds total quantity demanded and that a ﬁrm sells all it can produce only if it is
+the low price seller.
+That is, the lowest priced seller sells to capacity, but a higher priced seller only sells to a
+residual demand.
+Sellers are therefore pulled by two opposing ‘‘forces’’ – on one hand, higher prices fetch
+higher margins, but on the other, higher prices bring about increased chances of being underbid by competition and thus selling less.
+Several models that analyze oligopolistic competition exist in literature in which the competitors are
+capacity-constrained.
+Kreps and Scheinkman [9] showed that even if two oligopolists compete in a Bertrand fashion (i.e. over prices) in a two-stage game where there is initially a pre-commitment over the
+quantity to be produced, the equilibrium is the Cournot outcome.
+Levitan and Shubik [10] show that
+varying the limited capacity of the two ﬁrms can result in a Cournot competition in one extreme to a
+Bertrand competition in the other.
+In our model, the demand is known and is ﬁxed, as long as the price
+is below a reservation price.
+These assumptions change the equilibrium from a pure strategy to a mixedstrategy outcome.
+As we pointed out earlier, these assumptions are relevant in the particular setting that
+we model; crucially, they allow us to extend our initial two-player setting results to that involving n
+players.
+To solve the generalized n-seller model, we start oﬀ by ﬁrst considering a simpliﬁed version of the above
+scenario.
+The intuition from the two-seller model then helps us to analyze the n-seller model.
+Thus, we assume
+that there is a single buyer and two sellers, with the buyer deciding on how much of its requirements are supplied by either seller.
+The two sellers are identical, with the same (constant) marginal costs c and capacity K.
+The suppliers have complete information about each other.
+With the advent of the exchange, the buyer puts its
+RFP on the exchange, and the two sellers compete for being the low bidder.
+The low bidder can sell to capacity, but the higher priced bidder cannot.
+Thus, there is an incentive for a seller not to bid very high, but at the
+same time, not bid so low as to ‘‘leave money on the table’’.
+3.
+The model
+We consider the case when both sellers have equal capacities K which are lower than the cumulative
+demand, but together are greater than the cumulative demand Q (i.e. 2K > Q > KÞ.
+In such a setting, the
+lower priced seller is invited ﬁrst to sell the required quantity, and after he has supplied his total capacity
+K, the other seller can then sell the residual demand ðQ À KÞ.
+A summary of all the variables used in this paper appears in Table 1 in Appendix A.
+Proposition 1.
+There can be no symmetric equilibrium in pure strategies.
+Proof.
+Let there be a price p^ such that ð^
+p À cÞK ¼ ðr À cÞðQ À KÞ.
+Since 2K À Q > 0, K > ðQ À KÞ, which
+implies that p^ < r. At these prices, both sellers make the same proﬁts.
+The low priced seller has a lower margin,
+but sells more; the high price seller meets residual demand at a price equal to the buyers’ reservation value.
+In
+this setting, the higher priced seller is content to sell to the residual demand at the reservation price when the
+lower priced seller sets his own price at ^
+p. However, when one seller sets its price at r, the best response for the
+other seller is to price his product at ðr À eÞ which prompts the ﬁrst seller to undercut the second by an
+inﬁnitesimal amount and so on, resulting in the prices spiraling down till one of the sellers reaches the price ^p,
+at which point the other seller responds with a price of r, and the cycle starts once again.
+Similarly, the best
+response to a bid at any price p, where ^
+p < p < r, is to undercut by an inﬁnitesimal amount, which results in a
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+853
+similar downward spiral in prices.
+Thus, there can be no pure strategy equilibrium in prices (and there is no
+incentive for any seller to undercut below the price ^p).
+(In fact, the existence of a mixed-strategy equilibrium in
+a game with discontinuous payoffs has been proved by [11] – our paper ﬁnds out the speciﬁc nature of the
+solution under the proposed set of demand and cost assumptions.)
+In a mixed-strategy equilibrium, each seller chooses a price according to a probability density function f(p).
+This function therefore effectively deﬁnes the strategy of the sellers: when the requirements are put forth by the
+exchange, the sellers respond with a price p according to its density function f(p).
+In its choice of pricing
+strategy, each seller takes the other seller’s pricing strategy and the demand behavior of the buyers as given.
+If
+its price turns out to be the lower of the two prices, it sells to capacity K and has proﬁts Ps ðpÞ.
+The other seller
+then sells the residual demand (Q À KÞ and has proﬁts Pf ðpÞ.
+We analyze the case of a symmetric equilibrium,
+when both sellers choose the same pricing strategy (which is reasonable, since both the sellers are
+identical).
+h
+Proposition 2.
+The function f ðpÞ ¼ 0 when p > r and p 6 c.
+Proof.
+Above the reservation price, nothing will be bought.
+At a price equal to marginal cost, it is better to be
+undersold and sell to the residual demand and make positive proﬁts.
+h
+Proposition 3.
+There is no equilibrium where both sellers charge the same price with positive probability.
+Proof.
+Similar to that of Proposition 1.
+The best response of each seller is to undercut the other by e, so charging the same price cannot be a Nash equilibrium.
+h
+We can therefore concentrate on establishing the nature of a price randomizing solution.
+Proposition 4.
+There are no point masses in the equilibrium pricing strategies.
+Proof.
+If the price p were charged with some positive probability, there would be a positive probability of a tie
+at p. By Proposition 3, that is not possible.
+h
+Since there are no point masses in the equilibrium density function, we can concentrate on a cumulative
+distribution function that will be continuous on some range ðp1 ; p2 Þ, such that c < p1 < p2 6 r. Let f(p) be
+the cumulative distribution function for f(p); from Proposition 4, we can state that f ðpÞ ¼ F 0 ðpÞ almost everywhere.
+In other words, ðp1 ; p2 Þ represents the range of the support of the mixed-strategy in prices that the two
+players engage in.
+In this respect, the model has some similarities to [12].
+Proposition 5.
+The maximum of the support of prices is given by p2 ¼ r.
+Proof.
+If a seller is to sell to the residual demand (since at price p2 it will be deﬁnitely undersold – there cannot
+be any ties), it is best to sell it off at the highest possible price that he can get, which is r. h
+We now proceed to expected proﬁt function of a seller.
+When a seller charges a price ^p, two events are possible.
+It may be that ^
+p is the smallest price charged, an event which we term as a success, in which case, the seller
+sells to capacity with proﬁt Ps ð^
+pÞ.
+This happens when the other seller charges a price higher than ^p, an event
+that happens with probability ð1 À F ð^
+pÞÞ. On the other hand, the seller might be undersold (we call that event
+a failure), and in that case, the proﬁt it makes is Pf ð^
+pÞ, an event that occurs with probability F ð^pÞ.
+(Proposition
+3 shows that we can leave out the possibility of a tie.)
+Hence the expected proﬁt of either seller at any price ^p is
+pÞð1 À F ð^
+pÞÞ þ Pf ð^
+pÞF ð^
+pÞ;
+Ps ð^
+ð1Þ
+where
+pÞ ¼ ^
+pK À cK ¼ ð^
+p À cÞK
+Ps ð^
+ð2Þ
+pÞ ¼ ^
+pðQ À KÞ À cðQ À KÞ ¼ ð^
+p À cÞðQ À KÞ:
+Pf ð^
+ð3Þ
+and
+854
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+We next prove that the expected proﬁt at any price is constant.
+Let the strategy space of seller i (i = 1, 2) be
+denoted by Si.
+Consider a sequence of ﬁnite approximations S ni of Si converging on to Si for all i. By Nash’s
+existence theorem, each discretized game with strategy sets xi S ni has a mixed-strategy equilibrium.
+The expected proﬁt at any price in the discrete strategy space has to be equal, for otherwise a player would place
+higher probabilities for those prices that yield higher payoﬀs. By the law of weak convergence, there is a subsequence of Nash-equilibrium mixed-strategy proﬁles, which without loss of generality can be taken to the
+above sequence itself, which converges to the mixed-strategy f(p) on Si.
+Since the expected payoﬀ (i.e., the
+proﬁt) is equal for any price in the discrete mixed-strategy proﬁles, the same holds true when the sequence
+converges onto f(p).
+Thus, we must have for all prices p
+Ps ðpÞð1 À F ðpÞÞ þ Pf ðpÞF ðpÞ ¼ P;
+where P is the value of the expected proﬁt at any price.
+Re-arranging (4), we get
+F ðpÞ ¼
+Ps À P
+:
+Ps À Pf
+ð4Þ
+ð5Þ
+At p ¼ r, the seller in question sells to the residual demand, with (expected) proﬁt
+Pf ðrÞ ¼ ðr À cÞðQ À KÞ
+ð6Þ
+By the reasoning above, this should be equal to P.
+Similarly, at p ¼ p1 , the seller sells to capacity, with (expected) proﬁt
+Ps ðp1 Þ ¼ ðp1 À cÞK ¼ P
+ð7Þ
+as before.
+Using (2), (3), (5) and (6) we get the expression for F(p)
+F ðpÞ ¼
+ðp À cÞK À ðr À cÞðQ À KÞ
+;
+ðp À cÞð2K À QÞ
+ð8Þ
+which is of the form
+F ðpÞ ¼ A À
+B
+;
+ðp À cÞ
+ð9Þ
+where
+K
+ðr À cÞðQ À KÞ
+and B ¼
+ð10Þ
+ð2K À QÞ
+ð2K À QÞ
+are constants.
+We must have F ðp1 Þ ¼ 0.
+Using (8) above, we get
+ðr À cÞðQ À KÞ
+þ c:
+ð11Þ
+p1 ¼
+K
+Note that this expression can also be obtained from the fact that Ps ðp1 Þ ¼ Pf ðrÞ ¼ P, as well as from the
+proof of Proposition 1.
+We note that since r > c and Q > K > 0, p1 > c, i.e., the sellers always charge higher
+than their marginal cost.
+Note that at the limit when 2K ! Q (i.e., the two sellers can just clear the market), p1 ! r, i.e., the density
+function tends to a point mass at p ¼ r. This is expected since the two ﬁrms need not compete to quote the lower
+price, and can aﬀord to price their quantities at the market-clearing price, which is the reservation price r.
+The following proposition deﬁnes the nature of F(p).
+A¼
+Proposition 6.
+F(p) is strictly increasing in its support.
+Proof.
+If not, let p0 < p^ < p00 , where p0 , p^ and p00 lie within the support of f(p), where F ðp0 Þ ¼ F ðp00 Þ < 1.
+Now ^p
+succeeds in being the lowest price in the same circumstances that p0 succeeds in being the lowest price: when the
+other price is higher than p00 . Similarly, ^
+p fails to be the lowest price when the other seller charges a price less
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
+0
+0
+855
+0
+than p , in which case p also fails to be the lowest price.
+But in either case, since ^p > p , charging ^p will result in
+larger proﬁts than charging p0 . h
+We now have a complete characterization of the equilibrium price density function: f ðpÞ > 0 for all p in
+ðp1 ; rÞ and f ðpÞ ¼ F 0 ðpÞ, where F(p) is given by (8) above.
+We thus get
+f ðpÞ ¼ F 0 ðpÞ ¼
+ðr À cÞðQ À KÞ
+ð2K À QÞðp À cÞ
+2
+ð12Þ
+From (11) we get
+f ðp1 Þ ¼
+K2
+ð2K À QÞðr À cÞðQ À KÞ
+ð13Þ
+and
+f ðrÞ ¼
+ðQ À KÞ
+:
+ð2K À QÞðr À cÞ
+ð14Þ
+Eqs.
+(12)–(14) characterize the entire equilibrium price distribution function.
+Fig.
+1 shows that approximate shape of the graph of F(p).
+Fig.
+2 shows the approximate nature of the graph of f(p).
+Thus, the sellers randomize between prices ðp1 ; rÞ with monotonously decreasing probability densities as
+prices increase.
+The reason for this behavior of f(p) can be understood by looking at the nature of the proﬁt function in Eq.
+(4).
+Another way to describe the nature of f(p) would be as follows.
+Diﬀerentiating (4) with respect to p on both
+sides, we get on re-arranging
+0
+f ðpÞ½Ps ðpÞ À Pf ðpÞ þ F ðpÞ½Ps ðpÞ À Pf ðpÞ ¼ K:
+ð15Þ
+The left hand side of Eq.
+(17) can be seen to be the derivative of F ðpÞ½Ps ðpÞ À Pf ðpÞ, which can be termed as
+the expected ‘‘regret’’ of being the higher priced seller at any price p. Since this expected regret increases linearly with p (the derivative is a constant), sellers will tend to stack up their equilibrium densities at lower
+prices, explaining the monotonously decreasing curve of f(p).
+It will be of interest to ﬁnd out the average price paid by the buyers under the equilibrium price density
+function.
+The average price is simply
+1
+0
+c
+p1
+r
+Fig.
+1.
+Graph of F(p).
+856
+S. Bandyopadhyay et al. / European Journal of Operational Research 185 (2008) 849–863
